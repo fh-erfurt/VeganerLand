@@ -8,7 +8,7 @@
     </head>
     <body>
     <div class="overlay">
-<form>
+<form action="#" method="post">
    <div class="con">
    <header class="head-form">
       <h2>Sing Up</h2>
@@ -28,7 +28,11 @@
       <input class="form-input" type="password" placeholder="Neues Passwort" id="pwd"  name="password" required>
       <br>
 <!--button LogIn -->
-      <button class="log-in"> Sing Up </button>
+      <button class="log-in" name="sendForm"> Sing Up </button>
+   </div>
+   <div class="other">
+       <!--      Abbrechen button-->
+   <button class="btn submits frgt-pass"> <a href="login.php"> Abbrechen</a></button>
    </div>
   </div>
 </form>
