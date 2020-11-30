@@ -1,6 +1,4 @@
-<? 
-include 'login.php';
-$loggedIn = false; ?>
+<? require_once 'helper.php'?>
 
 <!DOCTYPE html>
 <html>
@@ -10,15 +8,14 @@ $loggedIn = false; ?>
         <title><?$title?></title>
     </head>
     <body>
-        <?
-            // if($loggedIn)
-            // {
-            //     include("#");
-            // }
-            // else
-            // {
-            //     include("login.php");
-            // }
-        ?> 
+        <section>
+            <? include 'login.php' ?>
+
+            <?if (isset($error)) : ?>
+            <div class="error">
+                <?=$error?>
+            </div>
+            <?endif;?>
+        </section>
     </body>
 </html>
