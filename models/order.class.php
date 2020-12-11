@@ -1,7 +1,7 @@
 <?
 
-class Order {
-    const TABLENAME = '`order`';
+class Orders {
+    const TABLENAME = '`orders`';
     private $data;
 
     //There should be a constructor here.
@@ -19,11 +19,11 @@ class Order {
         $result = null;
 
         try {
-            $sql = 'SELECT street, number, zip, city FROM customer';
+            $sql = 'SELECT street, number, zip, city FROM customers';
 
-            if (!empty($who)) {
-                $sql .= ' WHERE ' . $who . ';';
-            }
+            
+            $sql .= ' WHERE ' . $who . ';';
+            
 
             $result = $db->query($sql)->fetchAll();
         } catch(\PDOException $e) {
