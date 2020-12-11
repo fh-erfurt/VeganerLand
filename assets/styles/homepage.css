@@ -1,0 +1,9 @@
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Vibur', cursive;
+    /*   the main font */
+    font-family: 'Abel', sans-serif;
+    opacity: .95;
+    background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
+}
