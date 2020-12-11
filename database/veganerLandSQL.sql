@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`orderitems` (
 CREATE TABLE IF NOT EXISTS `veganerLand`.`address` (
   `addressId` INT NOT NULL AUTO_INCREMENT,
   `street` VARCHAR(45) NOT NULL,
-  `number` INT NOT NULL,
+  `number` VARCHAR(45) NOT NULL,
   `zip` VARCHAR(5) NOT NULL,
   `city` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`addressId`));
