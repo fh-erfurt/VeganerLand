@@ -62,17 +62,17 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`address` (
 -- Table `veganerLand`.`customers`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `veganerLand`.`customers` (
-  `CUSTID` INT NOT NULL AUTO_INCREMENT,
+  `custId` INT NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(45) NOT NULL,
   `LASTNAME` VARCHAR(45) NOT NULL,
-  `EMAIL` VARCHAR(150) NOT NULL,
+  `email` VARCHAR(150) NOT NULL,
   `phone` VARCHAR(20) NULL,
   `gender` VARCHAR(1) NULL,
   `password` VARCHAR(50) NOT NULL,
   `addressId` INT NULL,
-  PRIMARY KEY (`CUSTID`),
-  UNIQUE INDEX `CUSTID_UNIQUE` (`CUSTID` ASC),
-  UNIQUE INDEX `EMAIL_UNIQUE` (`EMAIL` ASC),
+  PRIMARY KEY (`custId`),
+  UNIQUE INDEX `custId_UNIQUE` (`custId` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
   INDEX `fk_CUSTOMER_address1_idx` (`addressId` ASC),
   CONSTRAINT `fk_CUSTOMER_address1`
     FOREIGN KEY (`addressId`)
