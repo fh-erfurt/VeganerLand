@@ -19,6 +19,9 @@ class Controller {
             // Copies the custId from the login to the $currentUser.
             $this->currentUser = $_SESSION['userId'];
         }
+        else {
+            $this->currentUser = 'guest';
+        }
     }
 
     public function loggedIn() {
