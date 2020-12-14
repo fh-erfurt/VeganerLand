@@ -1,6 +1,6 @@
 <?php 
 
-class Bike extends BaseModel
+class Address extends BaseModel
 {
     const TABLENAME = '`address`';
 
