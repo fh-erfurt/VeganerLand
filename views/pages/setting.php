@@ -2,20 +2,22 @@
 
 //@author Molham Al-khodari
 //@version 1.0.0
-//15.12.2020
+//16.12.2020
 
 session_start();
 
-$pageTile='Einstellung';
+$pageTitle='Einstellung';
 
 $do = isset($_GET['do']) ? $_GET['do'] : '';
 if ($do == 'Edit' && isset($_SESSION['email']))  
 {
-        include '../../config/init.php';
-        include '../../config/database.php';
+        require_once '../../static/header.php'; 
+        require_once '../../config/init.php';
+        require_once '../../config/database.php';
         $userId = $_SESSION['custId'];
         
         $stmt = $db->prepare("SELECT * FROM customers WHERE custId=? LIMIT 1");
+        // $stmt2 = $db->prepare("SELECT * FROM address WHERE addressId=? LIMIT 1");
 
         $stmt->execute(array($userId));
         $row = $stmt->fetch();  
@@ -24,8 +26,8 @@ if ($do == 'Edit' && isset($_SESSION['email']))
         if ($stmt->rowCount() > 0) 
         {
         ?>
-        <title>Einstellung</title>
-        <link rel="stylesheet" href="../../assets/styles/settingStyle.css">
+        <!-- <title>Einstellung</title>
+        <link rel="stylesheet" href="../../assets/styles/settingStyle.css"> -->
         <h1>Mitglied bearbeiten</h1>
         <div class="container">
                 <form clss="from-horizonta" action="">
