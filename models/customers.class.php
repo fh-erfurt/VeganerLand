@@ -11,7 +11,7 @@ class Customers extends BaseModel
         'phone'     => ['type' => BaseModel::TYPE_STRING],
         'email'     => ['type' => BaseModel::TYPE_STRING],
         'password'  => ['type' => BaseModel::TYPE_STRING],
-        'address'   => ['type' => BaseModel::TYPE_INT]
+        'addressId'   => ['type' => BaseModel::TYPE_INT]
         
     ];
 

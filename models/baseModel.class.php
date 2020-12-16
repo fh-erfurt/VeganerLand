@@ -1,4 +1,7 @@
 <?php 
+
+// @author Molhal Al-Khodari, Jessica Eckardtsberg
+// @version 1.0.1
     abstract class BaseModel
     {
         const TYPE_INT = 'int';
@@ -44,6 +47,7 @@
             throw new \Exception('You can not write to property "' .$key. '"" for the class "'.get_called_class());
         }
 
+        /*
         public function save(&$errors = null)
         {
             if($this->id===null)
@@ -55,8 +59,9 @@
                 $this->update($errors);
             }
         }
+        */
 
-        protected function insert(&$errors)
+        public function insert(&$errors)
         {
             $db = $GLOBALS['db'];
 
@@ -95,7 +100,7 @@
             return false;
         }
 
-        protected function update(&$errors)
+        public function update(&$errors)
         {
             $db = $GLOBALS['db'];
 
@@ -208,18 +213,20 @@
             return null;
         }
 
-        public static function find($wher = '')
+        // $where gives the rowname. For example in address could $where be zip.
+        // $value gives the data we are searching for. Example above: 99986.
+        public static function find($where, $value, $tabel)
         {
             $db = $GLOBALS['db'];
             $result = null;
     
             try
             {
-                $sql = 'SELECT * FROM ' . self::tableName();
+                $sql = 'SELECT * FROM ' . $tabel;
     
-                if(!empty($wher))
+                if(!empty($where) && !empty($value))
                 {
-                    $sql .= ' WHERE ' . $wher . ';';
+                    $sql .= ' WHERE ' . $where . ' = ' . $value;
                 }
     
                 $result = $db->query($sql)->fetchAll();
@@ -230,6 +237,31 @@
             }
     
             return $result;
+        }
+
+        // $what is what we are searching for.
+        // This time where is an array of rownames depending on the tabel.
+        // $values has to be at the same lenght as $where.
+        public static function findOne($what, $where = [], $values = []) {
+            // Check if $where and $values have the same lenght.
+            if (count($where) != count($values)) {
+                die('Übergabe Parameter inkorrekt.');
+            }
+
+            $db = $GLOBALS['db'];
+            $result = self::tableName();
+
+            for ($idx = 0; $idx < count($where); $idx++) {
+                $result = find($where[$idx], $values[$idx], $result);
+            }
+
+            try {
+                $result = 'SELECT ' . $what . ' FROM ' . $result;
+            }
+            catch(\PDOException $e)
+            {
+                die('Selct statment failed: ' . $e->getMessage());
+            }
         }
     }
 ?>
