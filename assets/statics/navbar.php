@@ -1,3 +1,11 @@
+
+<!-- 
+     //@author Molham Al-khodari
+     //@version 1.0.0
+     //16.12.2020
+     -->
+
+
 <link rel="stylesheet" href="../../assets/styles/navbarStyle.css">
 <header>
   <h1>Veganer Land</h1>
@@ -5,9 +13,9 @@
 <nav >
   <ul> 
     <!-- <li><a href="#Homepage"><img src="../../assets/images/logo.png" alt="logo" width="50px" height="50px"></a></li> -->
-    <li><a class="active" href="#home">Startseite</a></li>
+    <li><a class="active" href="../../views/pages/homepage.php">Startseite</a></li>
     <li><a href="#news">Angeboten</a></li>
-    <li><a href="#contact">Über uns</a></li>
+    <li><a href="../../views/pages/about.html">Über uns</a></li>
     <li><a href="#about">Seite1</a></li>
     <li><a href="#about">Seite2</a></li>
     <li><a href="#about">Seite3</a></li>
@@ -18,7 +26,7 @@
       <a href="javascript:void(0)" class="dropbtn">Konto</a>
       <div class="dropdown-content">
         <a href="../../views/pages/login.php">Login</a>
-        <a href="#">Einstellungen</a>
+        <a href="../../views/pages/setting.php?do=Edit">Einstellungen</a>
         <a href="../../views/pages/logout.php">Logout</a>
       </div>
     </li>
