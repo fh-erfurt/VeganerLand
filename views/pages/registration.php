@@ -1,15 +1,16 @@
 <?php 
 //@author Molham Al-khodari
 //@version 1.0.0
-//15.12.2020
+//16.12.2020
 
 $noNavbar='';
 $status='';
 $pageTitle ='Sing Up';
 
-include '../../config/database.php';
-include '../../config/init.php';
-include '../../core/functions.php';
+require_once '../../static/header.php';
+require_once '../../config/database.php';
+require_once '../../config/init.php';
+// include '../../core/functions.php';
 //  include '../../models/baseModel.class.php';
 //  include '../../models/customers.class.php';
 
@@ -68,9 +69,9 @@ include '../../core/functions.php';
             
                   // prepare sql and bind parameters
                   $sql = "INSERT INTO customers (firstname, lastname, email, phone, gender, password, addressId)
-                           VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, :addressId)";
+                           VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, null)";
             
-                           $addressId = "SELECT TOP 1 addressId FROM addresses ORDER BY addressId DESC";
+                           $addressId = "SELECT TOP 1 addressId FROM addresses ORDER BY addressId DESC"; //scheiß FK
             
                   $stmt = $db->prepare("$sql");
                   $stmt->bindParam(':firstname', $firstname);
@@ -79,7 +80,7 @@ include '../../core/functions.php';
                   $stmt->bindParam(':phone', $phone);
                   $stmt->bindParam(':gender', $gender);
                   $stmt->bindParam(':password', $password_hash);
-                  $stmt->bindParam(':addressId', $addressId);
+                  // $stmt->bindParam(':addressId', $addressId);  //scheiß FK
             
                   $stmt->execute();
                   echo "New records created successfully";
@@ -107,8 +108,8 @@ include '../../core/functions.php';
    }
 ?>
 
-<title>Sing Up</title>  <!-- Weil funktion getTitle funktioniert nicht-->
-<link rel="stylesheet" href="../../assets/styles/registrationStyle.css">   <!-- Weil funktion getTitle funktioniert nicht-->
+<!-- <title>Sing Up</title>  Weil funktion getTitle funktioniert nicht -->
+<!-- <link rel="stylesheet" href="../../assets/styles/registrationStyle.css">   Weil funktion getTitle funktioniert nicht -->
 <div class="con">
    <form name="registration" action="" method="post">
       <header class="head-form">
