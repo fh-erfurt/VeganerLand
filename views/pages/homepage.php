@@ -5,10 +5,9 @@
 //16.12.2020
 
 $pageTitle = "Homepage";
-require_once '../../static/header.php';
-include "../../config/init.php";
+require_once '../../assets/static/header.php';
+require_once "../../config/init.php";
 // include '../../core/functions.php';  in header zu sehen.
-// include '../../static/header.php';   error
 
 session_start();
 if (isset($_SESSION['email']))
@@ -23,7 +22,10 @@ else
 ?>
 <title>Homepage</title>
 <link rel="stylesheet" type="text/css" href="../../assets/styles/homepageStyle.css">
-
-<?php  include '../../static/footer.php'; ?>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<?php  require_once '../../assets/static/footer.php'; ?>
 
     
