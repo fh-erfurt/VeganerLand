@@ -1,20 +1,28 @@
-<!Doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title><?getTitle()?></title>
-        <link rel='stylesheet' href='assets/styles/navbarStyle.css'>
-        <? if ($pageTitle == 'Sing Up') : ?> 
-        <link rel='stylesheet' href ='assets/styles/registrationStyle.css'>
-        <? elseif ($pageTitle == 'Login'): ?>
-        <link rel='stylesheet' href ='assets/styles/loginStyle.css'>
-        <? elseif ($pageTitle == 'Homepage'): ?>
-        <link rel='stylesheet' href ='assets/styles/>homepage.css'>
-        <? endif; ?>
-        
-        
-    </head>
-    <body>
+<!-- 
+    //@author Molham Al-khodari
+    //@version 1.0.0
+    // 16.12.2020
+ -->
 
-    This is header <br>
+ <?php include '../../core/functions.php'; ?>
+
+<!Doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title><?php getTitle()?></title>
+            <? if ($pageTitle == 'Sing Up') : ?> 
+            <link rel='stylesheet' href ='../../assets/styles/registrationStyle.css'>
+            <? elseif ($pageTitle == 'Login'): ?>
+            <link rel='stylesheet' href ='../../assets/styles/loginStyle.css'>
+            <? elseif ($pageTitle == 'Passwort Vergessen'): ?>
+            <link rel='stylesheet' href ='../../assets/styles/loginStyle.css'>
+            <? elseif ($pageTitle == 'Homepage'): ?>
+            <link rel='stylesheet' href ='../../assets/styles/>homepage.css'>
+            <? elseif ($pageTitle == 'Einstellung'): ?>
+            <link rel="stylesheet" href="../../assets/styles/settingStyle.css">
+            <? endif; ?>
+            
+        </head>
+        <body>
