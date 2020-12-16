@@ -1,11 +1,21 @@
 <?
+
+//@author Molham Al-khodari
+//@version 1.0.0
+//16.12.2020
+
     $noNavbar='';
     $pageTitle = 'Login';
+    require_once '../../static/header.php';
     require_once '../../config/database.php';
     require_once '../../config/init.php';
-    require_once '../../core/functions.php';
+    // require_once '../../core/functions.php';
 
     session_start();
+    if(isset($_SESSION['email']))
+    {
+        header('Location: homepage.php');
+    }
     
     // check if User coming from http post
 
@@ -17,15 +27,17 @@
 
         // check if the User Exist in Database
 
-        $stmt = $db->prepare("SELECT email, password FROM customers WHERE email=? AND password=?");
+        $stmt = $db->prepare("SELECT custId, email, password FROM customers WHERE email=? AND password=?");
         $stmt->execute(array($email,$hashedPassword));
+        $row = $stmt->fetch();  // neu code
         $count = $stmt->rowCount();
 
         // if Cout > 0 This Mean The Database Cotanin Record  About This Email
 
         if ($count > 0)
         {
-            $_SESSION['email'] = $email;    // Register Session Email
+            $_SESSION['email'] = $email;            // Register Session Email
+            $_SESSION['custId']= $row['custId'];    // Register Customer ID
             header('Location: homepage.php');
             exit();
         }
@@ -35,8 +47,8 @@
         }
     }
     ?>
-<title>Login</title>
-<link rel="stylesheet" href="../../assets/styles/loginStyle.css">
+<!-- <title>Login</title>
+<link rel="stylesheet" href="../../assets/styles/loginStyle.css"> -->
 <form action="" method="post">
     <div class="con">
         <header class="head-form">
