@@ -15,7 +15,7 @@
     <!-- <li><a href="#Homepage"><img src="../../assets/images/logo.png" alt="logo" width="50px" height="50px"></a></li> -->
     <li><a class="active" href="../../views/pages/homepage.php">Startseite</a></li>
     <li><a href="#news">Angeboten</a></li>
-    <li><a href="../../views/pages/about.html">Über uns</a></li>
+    <li><a href="../../views/pages/about.php">Über uns</a></li>
     <li><a href="#about">Seite1</a></li>
     <li><a href="#about">Seite2</a></li>
     <li><a href="#about">Seite3</a></li>
