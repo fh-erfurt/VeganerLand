@@ -1,5 +1,19 @@
-<title>Verganer Land Anmeldung</title>
-<link rel="stylesheet" href="../../../assets/styles/loginStyle.css">
+    <!-- 
+    @author Molham Al-khodari
+    @version 1.0.0
+    16.12.2020
+     -->
+
+     <?php 
+            $pageTitle = 'Passwort Vergessen';
+            $noNavbar='';
+            require_once '../../static/header.php';
+            require_once '../../config/database.php';
+            require_once '../../config/init.php';
+     ?>
+
+<!-- <title>Verganer Land Anmeldung</title>
+<link rel="stylesheet" href="../../../assets/styles/loginStyle.css"> -->
 <div class="overlay">
     <form action="#" method="post">
         <div class="con">
