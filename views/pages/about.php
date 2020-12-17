@@ -158,4 +158,4 @@
         </p>
     </article>
 
-</body>
+    <?php require_once '../../assets/static/footer.php' ?>
