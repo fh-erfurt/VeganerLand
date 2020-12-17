@@ -47,7 +47,7 @@
             throw new \Exception('You can not write to property "' .$key. '"" for the class "'.get_called_class());
         }
 
-        /*
+        /* I don't see any reason to add this function.
         public function save(&$errors = null)
         {
             if($this->id===null)

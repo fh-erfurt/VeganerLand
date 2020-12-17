@@ -6,9 +6,8 @@
 class PagesController extends Controller {
 
     public function actionIndex(){
-        //Still nothing. I'm trying to figure out for what we need this.
+        //Still nothing.
     }
-    //Don't know for what we need this. I'm reserving space.
 
     // Original Code: Molham Al-Khodari
     public function actionLogin() {
