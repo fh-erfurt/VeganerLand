@@ -114,6 +114,7 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                 require_once '../../config/database.php';
 
                 echo "<h1>Mitglied Update</h1>";
+                echo "<div calss ='container'>";
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
@@ -130,16 +131,25 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
 
                         // Password Trick
 
-                        $password       = '';
-                        if (empty($_POST['newPassword'])) 
+                        $password = empty($_POST['newPassword']) ? $password = $_POST['oldPassword'] : $password = md5($_POST['newPassword']);
+
+                        // Validate The from
+
+                        $formErrors = array();
+
+                        if (empty ($email))        $formErrors[] = 'Email muss eingegeben sein!'; 
+                        // if (empty ($street))    $formErrors[] = 'Straße muss eingegeben sein!'; 
+                        // if (empty ($number))    $formErrors[] = 'Hausnummer muss eingegeben sein!'; 
+                        // if (empty ($zip))       $formErrors[] = 'zip muss eingegeben sein!'; 
+                        // if (empty ($city))      $formErrors[] = 'Stadt muss eingegeben sein!'; 
+
+                        foreach($formErrors as $error) 
                         {
-                                $password = $_POST['oldPassword'];
-                        }
-                        else
-                        {
-                                $password = md5($_POST['newPassword']);
+                                echo $error . '<br>';
                         }
 
+                        if (empty ($formErrors))
+                        {
                         // Update the Datebase with this Info
 
                         $stmt1 = $db->prepare("UPDATE customers SET email = ?, phone = ?, password = ? WHERE custId = ?");
@@ -151,11 +161,13 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                         // echo success message
 
                         echo 'updated successfully';
-
+                        }
                 }
                 else {
                         echo 'you can not browse this page directly';
                 }
+
+                echo "</div>";
         }
         else
         {
