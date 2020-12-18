@@ -1,7 +1,7 @@
 <?php 
-//@author Molham Al-khodari
-//@version 1.0.0
-//16.12.2020
+//Molham Al-khodari
+//18.12.2020 
+//18:40 Uhr
 
 $noNavbar='';
 $status='';
@@ -55,66 +55,70 @@ require_once '../../config/init.php';
          $email          = $_POST['email'];
          $password       = $_POST['password'];
          $passwordagain  = $_POST['passwordagain'];
-         $passwordHash  = md5($password);
+         $passwordHash   = md5($password);
 
          // Is this Mail not already registered?
          $availableEmail = isEmailAvailable($db, $email);
+
+         // Does this password work for our safety standards?
+         $isPasswordSafe = isPasswordSafe($password);
 
          if($availableEmail == true) 
          {
             if($password === $passwordagain)
             {
-               try 
+               if ($isPasswordSafe == true) 
                {
-                  if(!empty($_POST['street'])
-                  && !empty($_POST['number'])
-                  && !empty($_POST['zip'])
-                  && !empty($_POST['city']))
+                  try 
                   {
-                     $street         = $_POST['street'];
-                     $number         = $_POST['number'];
-                     $zip            = $_POST['zip'];
-                     $city           = $_POST['city'];
+                     if (!empty($_POST['street'])
+                     && !empty($_POST['number'])
+                     && !empty($_POST['zip'])
+                     && !empty($_POST['city'])) 
+                     {
+                        $street         = $_POST['street'];
+                        $number         = $_POST['number'];
+                        $zip            = $_POST['zip'];
+                        $city           = $_POST['city'];
 
-                     // prepare sql and bind parameters
-                     $sql2 = "INSERT INTO address (street, number, zip, city) 
+                        // prepare sql and bind parameters
+                        $sql2 = "INSERT INTO address (street, number, zip, city) 
                         VALUES (:street, :number, :zip, :city)";
-                     $stmt = $db->prepare("$sql2");
-                     $stmt->bindParam(":street", $street);
-                     $stmt->bindParam(":number", $number);
-                     $stmt->bindParam(":zip", $zip);
-                     $stmt->bindParam(":city", $city);
-                     $stmt->execute();
+                        $stmt = $db->prepare("$sql2");
+                        $stmt->bindParam(":street", $street);
+                        $stmt->bindParam(":number", $number);
+                        $stmt->bindParam(":zip", $zip);
+                        $stmt->bindParam(":city", $city);
+                        $stmt->execute();
 
-                     $lastAddressId = $db->lastInsertId();
-                  }
-                  else
-                  {
-                     $lastAddressId = null;
-                  }
-                  
-            
-                  // prepare sql and bind parameters
-                  $sql = "INSERT INTO customers (firstname, lastname, email, phone, gender, password, addressId)
-                           VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, :addressId)";
-                        
-                  $stmt = $db->prepare("$sql");
-                  $stmt->bindParam(':firstname', $firstname);
-                  $stmt->bindParam(':lastname', $lastname);
-                  $stmt->bindParam(':email', $email);
-                  $stmt->bindParam(':phone', $phone);
-                  $stmt->bindParam(':gender', $gender);
-                  $stmt->bindParam(':password', $passwordHash);
-                  $stmt->bindParam(':addressId', $lastAddressId);
-            
-                  $stmt->execute();
-                  echo "New records created successfully";
-            
+                        $lastAddressId = $db->lastInsertId();
+                     } else {
+                        $lastAddressId = null;
+                     }
+                     
+               
+                       // prepare sql and bind parameters
+                       $sql = "INSERT INTO customers (firstname, lastname, email, phone, gender, password, addressId)
+                              VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, :addressId)";
+                           
+                       $stmt = $db->prepare("$sql");
+                       $stmt->bindParam(':firstname', $firstname);
+                       $stmt->bindParam(':lastname', $lastname);
+                       $stmt->bindParam(':email', $email);
+                       $stmt->bindParam(':phone', $phone);
+                       $stmt->bindParam(':gender', $gender);
+                       $stmt->bindParam(':password', $passwordHash);
+                       $stmt->bindParam(':addressId', $lastAddressId);
+               
+                       $stmt->execute();
+                       echo "New records created successfully";
+                   } catch (PDOException $e) {
+                       echo "Error: " . $e->getMessage();
+                   }
                }
-                  catch (PDOException $e)
-                  {
-                        echo "Error: " . $e->getMessage();
-                  }
+               else {
+                  $status = 'Password not safe enough';
+               }
             }
             else {
                $status = 'Password and Repeat Password must be the same!!';

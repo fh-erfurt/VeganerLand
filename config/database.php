@@ -10,7 +10,7 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ];
 
-$db = null;
+$_GLOBALS['db'] = null;     //das macht registration und setting rot!? 
 
 try
 {
@@ -20,3 +20,4 @@ catch (PDOException $e)
 {
     die ('Database connection failed ' .$e->getMessage() );
 }
+
