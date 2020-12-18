@@ -6,10 +6,11 @@
 }
 
 .footer {
+    margin: 50px;
     width: 100vw;
     display: block;
     overflow: hidden;
-    padding: 70px 0;
+    padding: 70px;
     box-sizing: border-box;
     background-color: #18181a;
 }
