@@ -27,7 +27,7 @@
 
         // check if the User Exist in Database
 
-        $stmt = $db->prepare("SELECT custId, email, password FROM customers WHERE email=? AND password=?");
+        $stmt = $db->prepare("SELECT custId, email, password, addressId FROM customers WHERE email=? AND password=?");
         $stmt->execute(array($email,$hashedPassword));
         $row = $stmt->fetch();  // neu code
         $count = $stmt->rowCount();
@@ -36,8 +36,9 @@
 
         if ($count > 0)
         {
-            $_SESSION['email'] = $email;            // Register Session Email
-            $_SESSION['custId']= $row['custId'];    // Register Customer ID
+            $_SESSION['email'] = $email;                    // Register Session Email
+            $_SESSION['custId']= $row['custId'];            // Register Customer ID
+            $_SESSION['addressId']= $row['addressId'];      // Register Address ID
             header('Location: homepage.php');
             exit();
         }

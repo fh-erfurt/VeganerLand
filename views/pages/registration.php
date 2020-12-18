@@ -23,30 +23,39 @@ require_once '../../config/init.php';
       && !empty($_POST['password'])) 
       {
 
-         switch ($_POST['gender'])
+         if(isset($_POST['gender']))
          {
-               case 'female':
-                  $gender = 'f';
-               break;
-               case 'male':
-                  $gender = 'm';
-               break;
-               default:
-                  $gender = 'd';
-               break;
+            switch ($_POST['gender'])
+            {
+            case 'female':
+               $gender = 'f';
+            break;
+            case 'male':
+               $gender = 'm';
+            break;
+            default:
+               $gender = 'd';
+            break;
+            }
+         }
+         else {
+            $gender = null;
          }
 
+         if(!empty($_POST['phone']))
+         {
+            $phone = $_POST['phone'];
+         }
+         else {
+            $phone = null;
+         }
+         
          $firstname      = $_POST['firstname'];
          $lastname       = $_POST['lastname'];
          $email          = $_POST['email'];
-         $phone          = $_POST['phone'];
          $password       = $_POST['password'];
          $passwordagain  = $_POST['passwordagain'];
-         $password_hash  = md5($password);
-         $street         = $_POST['street'];
-         $number         = $_POST['number'];
-         $zip            = $_POST['zip'];
-         $city           = $_POST['city'];
+         $passwordHash  = md5($password);
 
          // Is this Mail not already registered?
          $availableEmail = isEmailAvailable($db, $email);
@@ -57,30 +66,46 @@ require_once '../../config/init.php';
             {
                try 
                {
-                  // prepare sql and bind parameters
-                  $sql2 = "INSERT INTO address (street, number, zip, city) 
-                           VALUES (:street, :number, :zip, :city)";
-                  $stmt = $db->prepare("$sql2");
-                  $stmt->bindParam(":street", $street);
-                  $stmt->bindParam(":number", $number);
-                  $stmt->bindParam(":zip", $zip);
-                  $stmt->bindParam(":city", $city);
-                  $stmt->execute();
+                  if(!empty($_POST['street'])
+                  && !empty($_POST['number'])
+                  && !empty($_POST['zip'])
+                  && !empty($_POST['city']))
+                  {
+                     $street         = $_POST['street'];
+                     $number         = $_POST['number'];
+                     $zip            = $_POST['zip'];
+                     $city           = $_POST['city'];
+
+                     // prepare sql and bind parameters
+                     $sql2 = "INSERT INTO address (street, number, zip, city) 
+                        VALUES (:street, :number, :zip, :city)";
+                     $stmt = $db->prepare("$sql2");
+                     $stmt->bindParam(":street", $street);
+                     $stmt->bindParam(":number", $number);
+                     $stmt->bindParam(":zip", $zip);
+                     $stmt->bindParam(":city", $city);
+                     $stmt->execute();
+
+                     $lastAddressId = $db->lastInsertId();
+                  }
+                  else
+                  {
+                     $lastAddressId = null;
+                  }
+                  
             
                   // prepare sql and bind parameters
                   $sql = "INSERT INTO customers (firstname, lastname, email, phone, gender, password, addressId)
-                           VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, null)";
-            
-                           $addressId = "SELECT TOP 1 addressId FROM addresses ORDER BY addressId DESC"; //scheiß FK
-            
+                           VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, :addressId)";
+                        
                   $stmt = $db->prepare("$sql");
                   $stmt->bindParam(':firstname', $firstname);
                   $stmt->bindParam(':lastname', $lastname);
                   $stmt->bindParam(':email', $email);
                   $stmt->bindParam(':phone', $phone);
                   $stmt->bindParam(':gender', $gender);
-                  $stmt->bindParam(':password', $password_hash);
-                  // $stmt->bindParam(':addressId', $addressId);  //scheiß FK
+                  $stmt->bindParam(':password', $passwordHash);
+                  $stmt->bindParam(':addressId', $lastAddressId);
             
                   $stmt->execute();
                   echo "New records created successfully";
@@ -132,7 +157,7 @@ require_once '../../config/init.php';
          <label for="female">Weiblich</label>
          <input type="radio" name="gender" id="female" value="female">
          <label for="divers">Divers</label>
-         <input type="radio" name="gender" id="divers" value=""> <br>
+         <input type="radio" name="gender" id="divers" value="divers"> <br>
          </div>
 
          <input class="form-input" type="phone" name="phone" id="phone" placeholder="Phone"> <br>

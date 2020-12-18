@@ -21,7 +21,7 @@
     /* Start form  attributes */
     
     form {
-        width: 450px;
+        width: 600px;
         min-height: 500px;
         height: auto;
         border-radius: 5px;
@@ -68,7 +68,7 @@
     /* inputs form  */
     
     input[class="form-input"] {
-        width: 175px;
+        width: 250px;
         height: 25px;
         margin-top: 2%;
         padding: 15px;

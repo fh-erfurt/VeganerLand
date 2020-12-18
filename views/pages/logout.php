@@ -1,5 +1,8 @@
 <?php
 
+//@author Molham Al-khodari
+//@version 1.0.0
+
 session_start();
 
 session_unset();

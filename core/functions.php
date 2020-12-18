@@ -25,7 +25,7 @@
         function isEmailAvailable ( $db, $email) {
             $request =  $db->prepare(" SELECT * 
                                                 FROM customers 
-                                                WHERE eMail = ? ");
+                                                WHERE email = ? ");
             $request->execute(array($email)); 
 
             if($request->rowCount() > 0){
