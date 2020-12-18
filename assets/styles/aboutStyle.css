@@ -1,5 +1,5 @@
 /* Molham Alkhodari
-16.12.2020 */
+18.12.2020 */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -208,5 +208,15 @@ a.logo:active {
     .icon {
         display: inline-block;
         margin-right: 1em;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
