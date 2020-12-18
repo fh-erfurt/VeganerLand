@@ -33,11 +33,11 @@ if (isset($_GET['a'])) {
 }
 
 // I'm not sure if this is right.
-if (file_exists(CONTROLLERSPATH.$controllerName.'pagesController.php')) {
-    require_once CONTROLLERSPATH.$controllerName.'pagesController.php';
+if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
+    require_once CONTROLLERSPATH.$controllerName.'Controller.php';
 
     $className = ucfirst($controllerName).'pagesController';
-    $controller = new $className($controllerName, $actionName);
+    $controller = new {$className}($controllerName, $actionName);
 
     $actionMethod = 'action'.ucfirst($actionName);
     if (!method_exists($controller, $actionMethod)) {

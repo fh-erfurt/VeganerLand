@@ -6,7 +6,11 @@
 class PagesController extends Controller {
 
     public function actionIndex(){
-        //Still nothing.
+        if ($this->loggedIn()) {
+            $controllerId = $this->params['userId'];
+            $name = $customers->find('custId', $controllerId, $self::tableName());
+            $this->setParam('name', $name);
+        }
     }
 
     // Original Code: Molham Al-Khodari
@@ -29,7 +33,7 @@ class PagesController extends Controller {
         if (isset($_POST['submit'])) {
             // Check if the user is in the database.
             // It will look if there is a customer with that E-Mail and Password and gives back only the custId.
-            $checkId = 'SELECT custId FROM customers WHERE email=$email AND password=$hashedPassword';
+            $checkId = $customers->findOne('custId', ['email', 'password'], [$email, $hashedPassword]);
     
             if (!$checkId) {
                 echo 'Error: E-Mail oder Passwort nicht korrekt. Bitte erneut eingeben.';
