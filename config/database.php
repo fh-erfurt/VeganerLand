@@ -1,5 +1,9 @@
 <?php 
 
+// Molham Al khodari
+// 18.12.2020
+// 18:50 Uhr
+
 $dbName = 'veganerland';
 
 $dns    = 'mysql:dbname=' .$dbName. ';host=localhost';
@@ -10,7 +14,7 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ];
 
-$_GLOBALS['db'] = null;     //das macht registration und setting rot!? 
+$_GLOBALS['db'] = null; 
 
 try
 {

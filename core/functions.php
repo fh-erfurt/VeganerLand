@@ -1,7 +1,8 @@
 <?php 
 
 // Molham Al-khodari
-// 15.22.2020
+// 18.22.2020
+// 18:50 Uhr
 
     require '../../config/database.php';
 
