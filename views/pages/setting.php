@@ -1,8 +1,8 @@
 <?php
 
-//@author Molham Al-khodari
-//@version 1.0.0
-//17.12.2020
+//Molham Al-khodari
+//18.12.2020
+// 19:30 Uhr
 
 session_start();
 $pageTitle='Einstellung';
@@ -13,6 +13,7 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                 require_once '../../assets/static/header.php'; 
                 require_once '../../config/init.php';
                 require_once '../../config/database.php';
+
                 $custId = $_SESSION['custId'];
                 $addressId = $_SESSION['addressId']; 
                 
@@ -47,7 +48,8 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                                         <div class="form-groub">
                                                 <label class="col-sm-2 control-label">Password</label>
                                                 <div class="col-sm-10">
-                                                        <input type="password" name="password" class="form-control">
+                                                        <input type ="hidden" name="oldPassword" value="<?php echo $row['password']; ?>">
+                                                        <input type="password" name="newPassword" class="form-control">
                                                 </div>
                                         </div>
                                         <!-- End Password Field -->
@@ -120,17 +122,28 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                         $addressId      = $_POST['addressId'];       
                         $custId         = $_POST['custId'];
                         $email          = $_POST['email'];
-                        // $password    = $_POST['password'];
                         $phone          = $_POST['phone'];
                         $street         = $_POST['street'];
                         $number         = $_POST['number'];
                         $zip            = $_POST['zip'];
                         $city           = $_POST['city'];
 
+                        // Password Trick
+
+                        $password       = '';
+                        if (empty($_POST['newPassword'])) 
+                        {
+                                $password = $_POST['oldPassword'];
+                        }
+                        else
+                        {
+                                $password = md5($_POST['newPassword']);
+                        }
+
                         // Update the Datebase with this Info
 
-                        $stmt1 = $db->prepare("UPDATE customers SET email = ?, phone = ? WHERE custId = ?");
-                        $stmt1->execute(array($email, $phone, $custId));
+                        $stmt1 = $db->prepare("UPDATE customers SET email = ?, phone = ?, password = ? WHERE custId = ?");
+                        $stmt1->execute(array($email, $phone, $password, $custId));
 
                         $stmt2 = $db->prepare("UPDATE address SET street = ?, number = ?, zip = ?, city = ? WHERE addressId = ?");
                         $stmt2->execute(array($street, $number, $zip, $city, $addressId));
