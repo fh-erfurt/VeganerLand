@@ -130,15 +130,7 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
 
                         // Password Trick
 
-                        $password       = '';
-                        if (empty($_POST['newPassword'])) 
-                        {
-                                $password = $_POST['oldPassword'];
-                        }
-                        else
-                        {
-                                $password = md5($_POST['newPassword']);
-                        }
+                        $password = empty($_POST['newPassword']) ? $password = $_POST['oldPassword'] : $password = md5($_POST['newPassword']);
 
                         // Update the Datebase with this Info
 
