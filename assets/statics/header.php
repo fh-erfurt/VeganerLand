@@ -19,7 +19,7 @@
             <? elseif ($pageTitle == 'Passwort Vergessen'): ?>
             <link rel='stylesheet' href ='../../assets/styles/loginStyle.css'>
             <? elseif ($pageTitle == 'Homepage'): ?>
-            <link rel='stylesheet' href ='../../assets/styles/>homepage.css'>
+            <link rel='stylesheet' href ='../../assets/styles/homepageStyle.css'>  
             <? elseif ($pageTitle == 'Einstellung'): ?>
             <link rel="stylesheet" href="../../assets/styles/settingStyle.css">
             <? endif; ?>
