@@ -37,6 +37,11 @@
             }
         }
 
+        function doesEmailExists($email) {
+            $result = Customers::find('email', $email, self::tableName());
+            return (!empty($result)) ? true : false;
+        }
+
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
