@@ -36,7 +36,7 @@ if (isset($_GET['a'])) {
 if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
     require_once CONTROLLERSPATH.$controllerName.'Controller.php';
 
-    $className = ucfirst($controllerName).'pagesController';
+    $className = ucfirst($controllerName).'Controller';
     $controller = new {$className}($controllerName, $actionName);
 
     $actionMethod = 'action'.ucfirst($actionName);

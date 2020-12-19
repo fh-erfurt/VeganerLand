@@ -47,7 +47,7 @@
             throw new \Exception('You can not write to property "' .$key. '"" for the class "'.get_called_class());
         }
 
-        /* I don't see any reason to add this function.
+        /*
         public function save(&$errors = null)
         {
             if($this->id===null)
@@ -164,14 +164,7 @@
                 }
             }
 
-            if(count($errors) === 0)
-            {
-                return true;
-            }
-            else 
-            {
-                return false;
-            }
+            return (count($errors) === 0) ? true : false;
         }
 
         protected function  validateValue($attribute, &$value,&$schemaOptions)
@@ -252,7 +245,7 @@
             $result = self::tableName();
 
             for ($idx = 0; $idx < count($where); $idx++) {
-                $result = find($where[$idx], $values[$idx], $result);
+                $result = self::find($where[$idx], $values[$idx], $result);
             }
 
             try {
@@ -262,6 +255,8 @@
             {
                 die('Selct statment failed: ' . $e->getMessage());
             }
+
+            return $result;
         }
     }
 ?>

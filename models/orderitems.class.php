@@ -1,6 +1,6 @@
 <?php 
 
-class orderItems extends BaseModel
+class OrderItems extends BaseModel
 {
     const TABLENAME = '`orderitems`';
 
