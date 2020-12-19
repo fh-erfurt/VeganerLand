@@ -1,6 +1,6 @@
 <?
 
-// @author Jessica Eckardtsberg
+// @author Molham Al-Khodari, @author Jessica Eckardtsberg
 // @version 1.0.0
 
 class PagesController extends Controller {
@@ -8,12 +8,16 @@ class PagesController extends Controller {
     public function actionIndex(){
         if ($this->loggedIn()) {
             $controllerId = $this->params['userId'];
-            $name = $customers->find('custId', $controllerId, $self::tableName());
+
+            $name = Address::find('custId', $controllerId, self::tableName());
             $this->setParam('name', $name);
+
+            // Get the data from orderitems for the customer.
+            $cart = OrderItems::find('custId', $controllerId, self::tableName());
+            $this->setParams('cart', $cart);
         }
     }
 
-    // Original Code: Molham Al-Khodari
     public function actionLogin() {
 
         //gets the inputs from the form in login.php
@@ -45,7 +49,7 @@ class PagesController extends Controller {
                 $_SESSION['loggedIn'] = true;
     
                 //Redirects the User from the Login to the homepage.
-                header('Location: index.php?c=pages&a=homepage');
+                header('Location: index.php?c=pages&a=index');
             }    
             // Give the Login-Information into the $param Array
             $this->setParam('userId', $checkId);
@@ -55,48 +59,88 @@ class PagesController extends Controller {
 
     // Original Code: Molham Al-Khodari
     public function actionSignUp() {
-        $addId = null;
-
-        // Looks if there is something in the fields for the adress.
-        if (!empty($_POST['street'])
-        && !empty($_POST['number'])
-        && !empty($_POST['zip'])
-        && !empty($_POST['city'])) {
-            $addressParam = [$_POST['street'],
-                             $_POST['number'],
-                             $_POST['zip'],
-                             $_POST['city']];
-            
-            $addId = $address->findOne('addressId', ['street', 'number', 'zip', 'city'], $addressParam);
-
-            if (!empty($addId)) {
-                if ($address->validate()) {
-                    $adress->inset();
-                    $addId = $address->findOne('addressId', ['street', 'number', 'zip', 'city'], $addressParam);
+        if (isset($_POST['submit'])) 
+        {
+            // Checks if all needed fields hold data.
+            if(!empty($_POST['firstname'])
+            && !empty($_POST['lastname'])
+            && !empty($_POST['email'])
+            && !empty($_POST['password'])
+            && !empty($_POST['passwordagain'])) 
+            {
+                if (doesEmailExists($_POST['email'])) {
+                    die('Ungültige Eingabe');
                 }
-                else {
-                    die('Fehler bei den eingegeben Daten.');
+                
+                switch ($_POST['gender']) {
+                    case 'female':
+                        $gender = 'f';
+                    break;
+                    case 'male':
+                        $gender = 'm';
+                    break;
+                    case 'divers':
+                        $gender = 'd';
+                    break;
+                    default:
+                        $gender = null;
                 }
+
+                if ($_POST['password'] !== $_POST['passwordagain']) {
+                    die('Ungültige Eingabe.');
+                }
+                
+                $addressId = null;
+
+                // Checks if and Adress has been submitted.
+                if(!empty($_POST['street'])
+                  && !empty($_POST['number'])
+                  && !empty($_POST['zip'])
+                  && !empty($_POST['city'])) {
+
+                    $addressParams = [$_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
+
+                    //Makes sure that the Address isn't already in the database.
+                    $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
+                    if (empty($addressId)) {
+                        $address = new Adress($addressParams);
+                        if (!$address->validate()) {
+                            die('Ungültige Eingabe.');
+                        } else {
+                            // If the address doesn't exist already and has the correct values, add it to the database.
+                            $address->insert();
+                            $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
+                        }
+                    }
+                  }
+
+                $hashedPassword = md5($_POST['password']);              
+                $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId]
             }
         }
-
-        
-
-        // Validates data given for customer.
-        // Input data into customer.
-        if ($customers->validate()) {}
-
-        // Automatic Login. → actionLogin()
-        // Return to the homepage.
     }
 
-    // public function resetPassword
+    // public function actionResetPassword
+    // public function actionSearch
+    // public function actionAboutUs
+    // public function actionConfig
+    // public function actionFavorites
+    // 20 Products
+    // public function actionFruits
+    // public function actionVeggies
+    // Some Products
+    // public function actionCitrus
+    // public function actionBerries
+    // public function actionExotics
+    // public function actionNuts
+    // public function actionPotatoes
+    // public function actionMushrooms
+    // public function actionBargain
 
-    // public function addToCart
-    // public function removeFromCart
+    // public static function addToCart
+    // public static function removeFromCart
 
     public function actionLogout() {
-        session_destroy();
         header('Location: index.php?c=pages&a=login');
     }
 }
