@@ -37,6 +37,16 @@
             }
         }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        // Other possible check for unique E-Mail.
+        function doesEmailExists ($email) {
+            $result = Customers::find('email', $email, self::tableName());
+            return (!empty($result)) ? true : false;
+        }
+=======
+>>>>>>> Stashed changes
         // Returns true if the password is safe
         function isPasswordSafe ( $candidate ) {
             $r1='/[A-Z]/';  //Uppercase
@@ -56,3 +66,7 @@
             
             return true;
         }
+<<<<<<< Updated upstream
+=======
+>>>>>>> 4f6cb271738fdeb4b14d4bbf28da77411d8162f2
+>>>>>>> Stashed changes
