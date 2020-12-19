@@ -16,6 +16,15 @@ h1 {
     text-align: center;
 }
 
+.error center {
+    margin: 5%;
+    padding: 10px;
+    width: 60%;
+    border: 3px solid black;
+    padding: 10px;
+    background: #ff9d9d;
+}
+
 .group {}
 
 .label {}

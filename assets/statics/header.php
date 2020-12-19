@@ -1,7 +1,7 @@
 <!-- 
     //@author Molham Al-khodari
-    //@version 1.0.0
-    // 16.12.2020
+    // 20.12.2020
+    // 00:00 Uhr
  -->
 
  <?php include '../../core/functions.php'; ?>
@@ -22,6 +22,12 @@
             <link rel='stylesheet' href ='../../assets/styles/homepageStyle.css'>  
             <? elseif ($pageTitle == 'Einstellung'): ?>
             <link rel="stylesheet" href="../../assets/styles/settingStyle.css">
+            <? elseif ($pageTitle == 'Über uns'): ?>
+            <link rel="stylesheet" href="../../assets/styles/aboutStyle.css">
+            <? elseif ($pageTitle == 'Obst'): ?>
+            <link rel="stylesheet" href="../../assets/styles/fruitStyle.css">
+            <? elseif ($pageTitle == 'Gemüse'): ?>
+            <link rel="stylesheet" href="../../assets/styles/vegetablesStyle.css">
             <? endif; ?>
             
         </head>

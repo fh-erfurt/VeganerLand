@@ -7,9 +7,6 @@
 }
 
 
-/* End Global rules */
-
-
 /* Start body rules */
 
 body {
@@ -21,9 +18,6 @@ body {
     opacity: .95;
     background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
 }
-
-
-/* End body rules */
 
 
 /* Start form  attributes */
@@ -76,12 +70,13 @@ header p {
     letter-spacing: 0.05em;
 }
 
-.input-item {
+
+/* .input-item {
     background: #fff;
     color: #333;
     padding: 14.5px 0px 15px 9px;
     border-radius: 5px 0px 0px 5px;
-}
+} */
 
 
 /* inputs form  */

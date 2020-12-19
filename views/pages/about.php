@@ -1,22 +1,14 @@
-<!--//@author Molham Al-khodari
-    //@version 1.0.0 
-    //16.12.2020
-    -->
+<?php 
+    //Molham Alkhodari
+    //19.12.2020
 
+    $pageTitle = 'Über uns';
+    require_once '../../assets/static/header.php';
+?>
 
-<!Doctype html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../assets/styles/aboutStyle.css">
-</head>
-
-<body>
-    <div class="about-section">
-        <h1>Veganer Land</h1>
-        <p>About Us Page</p>
-    </div>
+    <header>
+    <h1>Veganer Land</h1>
+    </header>
 
     <h2 style="text-align:center">Team</h2>
     <div class="row">
@@ -70,32 +62,32 @@
             </li>
             <li>
                 <a href="#dashboard" accesskey="1">
-                    <span class="icon icon-dashboard">&nbsp;</span> Dashboard
+                    Dashboard
                 </a>
             </li>
             <li>
                 <a href="#content" accesskey="2" class="active">
-                    <span class="icon icon-align-justify">&nbsp;</span> Content
+                    Content
                 </a>
             </li>
             <li>
                 <a href="#email" accesskey="3">
-                    <span class="icon icon-envelope">&nbsp;</span> E-Mail
+                    E-Mail
                 </a>
             </li>
             <li>
                 <a href="#analytics" accesskey="4">
-                    <span class="icon icon-bar-chart">&nbsp;</span> Analytics
+                    Analytics
                 </a>
             </li>
             <li>
                 <a href="#support" accesskey="5">
-                    <span class="icon icon-question-sign">&nbsp;</span> Support
+                    Support
                 </a>
             </li>
             <li>
                 <a href="#impressum" accesskey="6">
-                    <span class="icon icon-briefcase">&nbsp;</span> Impressum
+                    Impressum
                 </a>
             </li>
         </ul>
@@ -103,7 +95,7 @@
 
     <!-- only sample content following. not needed. -->
 
-    <h1>Sticky Responsive Bottom Menu</h1>
+    <h1 class="page-title">Sticky Responsive Bottom Menu</h1>
 
     <article id="dashboard">
         <h2>Dashboard</h2>
@@ -157,5 +149,3 @@
             Pellentesque fringilla urna nec velit pellentesque, et lobortis orci pulvinar.
         </p>
     </article>
-
-    <?php require_once '../../assets/static/footer.php' ?>

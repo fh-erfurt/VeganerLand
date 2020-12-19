@@ -1,13 +1,41 @@
-/* Molham Alkhodari
-16.12.2020 */
+/* Molham Alkhodari */
+
+
+/* 19.12.2020 */
+
+
+/* 00:00 Uhr */
+
+
+/* * {
+    box-sizing: border-box;
+} */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Vibur', cursive;
     margin: 0;
+    padding: 0;
+    background-color: #FCFBE3;
+    color: #333333;
+    padding-bottom: 5em;
 }
+
+
+/* scroll funktion und box style */
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+/* scroll funktion */
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 *,
@@ -15,6 +43,21 @@ html {
 *:after {
     box-sizing: inherit;
 }
+
+
+/* Veganer land  */
+
+header {
+    background-color: #474e5d;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Team */
 
 .column {
     float: left;
@@ -28,13 +71,6 @@ html {
     margin: 8px;
 }
 
-.about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-}
-
 .container {
     padding: 0 16px;
 }
@@ -44,10 +80,6 @@ html {
     content: "";
     clear: both;
     display: table;
-}
-
-.title {
-    color: grey;
 }
 
 .button {
@@ -62,35 +94,21 @@ html {
     width: 100%;
 }
 
-.button:hover {
-    background-color: #555;
-}
 
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
+/* page */
 
-body {
-    background-color: #FCFBE3;
-    color: #333333;
+.page-title {
+    color: grey;
 }
 
 article,
-h1 {
+.page-title {
     margin: 2em 10%;
     line-height: 1.5em;
 }
 
-* {
-    box-sizing: border-box;
-}
 
-body {
-    padding-bottom: 5em;
-}
+/* navbar */
 
 .mvp-menu-bottom {
     position: fixed;
@@ -100,92 +118,109 @@ body {
     background-color: #333;
 }
 
-ul,
-li,
-a {
+.mvp-menu-bottom ul,
+.mvp-menu-bottom li,
+.mvp-menu-bottom a {
     height: 100%;
 }
 
-ul {
+.mvp-menu-bottom ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0 20%;
 }
 
-li {
+.mvp-menu-bottom li {
     flex: 1;
     /* for IE */
     float: left;
     width: auto;
 }
 
-a {
+.mvp-menu-bottom a {
     display: block;
     text-align: center;
     text-decoration: none;
     padding: 2em 1em 1em 1em;
     color: #fff;
-    height: 4em;
+    /* height: 4em; */
     text-shadow: 2px 1px 0 #000000;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
-    transition: background 0.3s;
+    /* filter: dropshadow(color=#000000, offx=1, offy=1); */
+    /* transition: background 0.3s; */
 }
 
-a.logo {
+.mvp-menu-bottom a.logo {
     padding-top: 1.3em;
 }
 
-a:hover {
+.mvp-menu-bottom a:hover {
     background-color: #555;
     color: white;
     text-decoration: none;
 }
 
-a.active,
+
+/* wictig für alle geräte  */
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+
+/* a.active,
 a:active {
     background-color: #F02311;
     color: #ffffff;
     cursor: default;
-}
+} */
 
-a.logo.active,
+
+/* a.logo.active,
 a.logo:active {
     background-color: inherit;
-}
+} */
 
-.icon {
+
+/* .icon {
     display: block;
     margin: 0 auto;
     margin: -1.25em 0 0.35em 0;
     font-size: 0.8em;
-}
+} */
 
 
 /* responsiveness */
 
-@media all and (min-width:1600px) {
+
+/* @media all and (min-width:1600px) {
     .mvp-menu-bottom {
         font-size: 1.05em;
     }
-}
+} */
 
-@media all and (max-width:1024px) {
+
+/* @media all and (max-width:1024px) {
     .mvp-menu-bottom {
         font-size: 0.8em;
     }
     ul {
         margin: 0 5%;
     }
-}
+} */
 
-@media all and (max-width:720px) {
+
+/* @media all and (max-width:720px) {
     .mvp-menu-bottom ul {
         margin: 0;
     }
-}
+} */
 
-@media all and (max-width:480px) {
+
+/* @media all and (max-width:480px) {
     body {
         padding-bottom: 0;
     }
@@ -209,14 +244,4 @@ a.logo:active {
         display: inline-block;
         margin-right: 1em;
     }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-}
+} */

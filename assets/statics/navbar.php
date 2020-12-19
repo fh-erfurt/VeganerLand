@@ -1,23 +1,23 @@
 
 <!-- 
      //@author Molham Al-khodari
-     //@version 1.0.0
-     //16.12.2020
+     //20.12.2020
+     // 00:00 Uhr
      -->
 
 
-<link rel="stylesheet" href="../../assets/styles/navbarStyle.css">
+     <link rel="stylesheet" href="../../assets/styles/navbarStyle.css">
 <header>
   <h1>Veganer Land</h1>
 </header>
-<nav >
-  <ul> 
+<nav class="nav-container">
+  <ul class="nav-list"> 
     <!-- <li><a href="#Homepage"><img src="../../assets/images/logo.png" alt="logo" width="50px" height="50px"></a></li> -->
     <li><a class="active" href="../../views/pages/homepage.php">Startseite</a></li>
     <li><a href="#news">Angeboten</a></li>
     <li><a href="../../views/pages/about.php">Über uns</a></li>
-    <li><a href="#about">Seite1</a></li>
-    <li><a href="#about">Seite2</a></li>
+    <li><a href="../../views/pages/fruit.php">Obst</a></li>
+    <li><a href="../../views/pages/vegetables.php">Gemüse</a></li>
     <li><a href="#about">Seite3</a></li>
     <li><a href="#about">Seite4</a></li>
     <li><a href="#about">Seite5</a></li>

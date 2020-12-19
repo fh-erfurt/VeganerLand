@@ -1,9 +1,10 @@
 body {
+    margin: 0;
+    padding: 0;
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Vibur', cursive;
+    /* font-family: 'Abel', sans-serif; */
     /*   the main font */
-    font-family: 'Abel', sans-serif;
-    opacity: .95;
     background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
 }

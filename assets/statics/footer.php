@@ -5,12 +5,12 @@
  -->
 
 
- <link rel="stylesheet" type="text/css" href="../../assets/styles/footerStyle.css">
+ <!-- <link rel="stylesheet" type="text/css" href="../../assets/styles/footerStyle.css">
 
     <div class ="footer">
         <div class="inner_footer">
             <div class="logo_container">
-                <!-- <img src="../../assets/images/logo.png" alt="logo"/> -->
+                <img src="../../assets/images/logo.png" alt="logo"/>
             </div>
             <div class="footer_third">
                 <h1>Need Help?</h1>
@@ -47,7 +47,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
     
 </body>
 </html>
