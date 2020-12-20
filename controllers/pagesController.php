@@ -57,7 +57,6 @@ class PagesController extends Controller {
         }
     }
 
-    // Original Code: Molham Al-Khodari
     public function actionSignUp() {
         if (isset($_POST['submit'])) 
         {
@@ -120,28 +119,68 @@ class PagesController extends Controller {
         }
     }
 
-    // public function actionResetPassword
-    // public function actionSearch
-    // public function actionAboutUs
-    // public function actionConfig
-    // public function actionFavorites
-    // 20 Products
-    // public function actionFruits
-    // public function actionVeggies
-    // Some Products
-    // public function actionCitrus
-    // public function actionBerries
-    // public function actionExotics
-    // public function actionNuts
-    // public function actionPotatoes
-    // public function actionMushrooms
-    // public function actionBargain
+    public function actionResetPassword() {
+        // Customer as forgotten Password. → Customer gets an E-Mail with a new password.
+        // Customer wants to change Password. → Customer gives old password and 2x new password.
+    }
+    public function actionSearch() {
+        // Input whta to search in field (Name of fruit of veggie)
+        if (isset($_POST['submit'])) {
+            $result = Products::find('descrip', $_POST['search'], self::tableName());
+            setParams('search', $result);
+            // Display $result.
+        }
+    }
 
-    // public static function addToCart
-    // public static function removeFromCart
+    public function actionAboutUs() {
+        // This is a static site. So nothing is to do, but we kind off need the method, I think.
+    }
+
+    public function actionConfig() {
+        // Customer can look into his given data and change his address, phone number and favorite products.
+        // For password there is a button to the resetPassword.php. (Open for discussion)
+    }
+
+    public function actionFavorites() {
+        // Gives a List of the Customers favorite products. We still need a model for this table.
+        $custId = $this->params['userId'];
+        $favs = Favorites::find('customerId', $custId, self::tableName());
+        // Display $fav.
+    }
+
+    // 20 Products
+    public function actionFruits() {
+        // Selects all fruits from the products table.
+        $fruits = Products::find('cat', 'f', self::tableName());
+    }
+
+    public function actionVeggies() {
+        // Selects all fruits from the products table.
+        $veggies = Products::find('cat', 'v', self::tableName());
+    }
+
+    // Some Products
+    public function actionCitrus() {}
+
+    public function actionBerries() {}
+
+    public function actionExotics() {}
+
+    public function actionNuts() {}
+
+    public function actionPotatoes() {}
+
+    public function actionMushrooms() {}
+
+    public function actionBargain() {}
+
+
+    public static function addToCart() {}
+
+    public static function removeFromCart() {}
 
     public function actionLogout() {
-        header('Location: index.php?c=pages&a=login');
+        header('Location: index.php?c=pages&a=homepage');
     }
 }
 
