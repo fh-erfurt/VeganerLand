@@ -4,15 +4,20 @@
 //18.12.2020
 // 19:30 Uhr
 
-session_start();
-$pageTitle='Einstellung';
-$do = isset($_GET['do']) ? $_GET['do'] : '';
+        session_start();
+        $pageTitle='Einstellung';
+        require_once '../../assets/statics/header.php'; 
+        require_once '../../config/init.php';
+        require_once '../../config/database.php';
+        require_once '../../core/functions.php';
+
+        $do = isset($_GET['do']) ? $_GET['do'] : '';
 
         if ($do == 'Edit' && isset($_SESSION['email']))  
         {
-                require_once '../../assets/statics/header.php'; 
-                require_once '../../config/init.php';
-                require_once '../../config/database.php';
+                // require_once '../../assets/statics/header.php'; 
+                // require_once '../../config/init.php';
+                // require_once '../../config/database.php';
 
                 $custId = $_SESSION['custId'];
                 $addressId = $_SESSION['addressId']; 
@@ -103,18 +108,18 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
                 }
                 else
                 {
-                        echo 'There is no such ID';
+                        echo '<div class="alert alert-danger">There is no such ID</div>';       // das kann eigentlich nicht passieren 
                 }
-                include '../../assets/static/footer.php';
+                include '../../assets/statics/footer.php';                                      // das macht vielleicht hier kein sinn 
         }
         elseif($do == 'Update')
         {
-                require_once '../../assets/static/header.php'; 
-                require_once '../../config/init.php';
-                require_once '../../config/database.php';
+                // require_once '../../assets/statics/header.php'; 
+                // require_once '../../config/init.php';
+                // require_once '../../config/database.php';
 
                 echo "<h1>Mitglied Update</h1>";
-                echo "<div calss ='container'>";
+                echo "<div class ='container'>";
 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
@@ -137,7 +142,7 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
 
                         $formErrors = array();
 
-                        if (empty ($email))        $formErrors[] = 'Email muss eingegeben sein!'; 
+                        if (empty ($email))        $formErrors[] = '<div class="alert alert-danger">Email muss eingegeben sein!</div>'; 
                         // if (empty ($street))    $formErrors[] = 'Straße muss eingegeben sein!'; 
                         // if (empty ($number))    $formErrors[] = 'Hausnummer muss eingegeben sein!'; 
                         // if (empty ($zip))       $formErrors[] = 'zip muss eingegeben sein!'; 
@@ -160,17 +165,19 @@ $do = isset($_GET['do']) ? $_GET['do'] : '';
 
                         // echo success message
 
-                        echo 'updated successfully';
+                        $theMessage = '<div class="alert alert-success">updated successfully</div>';
+                        redirectHome($theMessage, 'back');
                         }
                 }
                 else {
-                        echo 'you can not browse this page directly';
+                        $theMessage = '<div class="alert alert-danger">you can not browse this page directly!</div>';
+                        redirectHome($theMessage, 5);
                 }
 
-                echo "</div>";
+                echo "</div>";  // end container css Style
         }
         else
         {
-                echo 'Du bist nicht angemeldet! <br>
-                <a href="../../views/pages/login.php">Anmelden</a>  ' ;
+                $theMessage = '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="../../views/pages/login.php">Anmelden</a></div>';
+                redirectHome($theMessage, 5);
         }

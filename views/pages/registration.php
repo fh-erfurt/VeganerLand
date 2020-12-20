@@ -118,18 +118,24 @@ require_once '../../config/init.php';
                }
                else {
                   $status = 'Password not safe enough';
+                  echo "<div class='alert alert-danger'>Password not safe enough!</div>";
                }
             }
             else {
                $status = 'Password and Repeat Password must be the same!!';
+               echo "<div class='alert alert-danger'>Password and Repeat Password must be the same!</div>";
+
             }
          }
          else{
                $status = 'Email already beeing used';
+               echo "<div class='alert alert-danger'>Email already beeing used!</div>";
          }
       }
       else{
          $status = 'All fields must be filled';
+         echo "<div class='alert alert-danger'>All fields must be filled!</div>";
+
       }
 
    }

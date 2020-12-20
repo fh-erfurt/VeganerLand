@@ -42,9 +42,8 @@
             header('Location: homepage.php');
             exit();
         }
-        else
-        {
-            echo 'Error!';
+        else {
+            echo '<div class="alert alert-danger">You Email or Password is incorrect</div>';
         }
     }
     ?>
