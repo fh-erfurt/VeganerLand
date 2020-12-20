@@ -4,7 +4,7 @@
 //21:30 Uhr
 
 $pageTitle = "Homepage";
-require_once '../../assets/static/header.php';
+require_once '../../assets/statics/header.php';
 require_once "../../config/init.php";
 // include '../../core/functions.php';  in header zu sehen.
 
@@ -20,6 +20,6 @@ else
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<?php  require_once '../../assets/static/footer.php'; ?>
+<?php  require_once '../../assets/statics/footer.php'; ?>
 
     
