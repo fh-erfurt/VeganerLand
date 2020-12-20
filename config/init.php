@@ -11,12 +11,12 @@ define('STYLESPATH', 'styles'.DIRECTORY_SEPARATOR);
 
 define('ROOTPATH', strlen(dirname($_SERVER['SCRIPT_NAME']))) > 1 ? dirname($_SERVER['SCRIPT_NAME']). '/' : '/';
 
-// Include ../../static/header.php; error
+// Include ../../statics/header.php; error
 
 // Include Navbar On All Pages Expect The One With $noNavbar Vairable
 
 if(!isset($noNavbar))
 {
-    include '../../assets/static/navbar.php';
+    include '../../assets/statics/navbar.php';
     
 }
