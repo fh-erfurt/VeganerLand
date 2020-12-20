@@ -7,7 +7,7 @@ $noNavbar='';
 $status='';
 $pageTitle ='Sing Up';
 
-require_once '../../assets/static/header.php';
+require_once '../../assets/statics/header.php';
 require_once '../../config/database.php';
 require_once '../../config/init.php';
 // include '../../core/functions.php';
