@@ -6,7 +6,10 @@
 
     require '../../config/database.php';
 
-        // Title Function that echo the page Title in case the page
+        /*
+        ** Title Function that echo the page Title in case the page
+        ** has the Variable $pageTitle and echo defult Title for other pages
+        */
         
         function getTitle() 
         {
@@ -22,7 +25,10 @@
             }
         }
 
-        // Returns a true if a there are not Registered Users with that email
+        /*
+        ** Returns a true if a there are not Registered Users with that email
+        */
+
         function isEmailAvailable ( $db, $email) {
             $request =  $db->prepare(" SELECT * 
                                                 FROM customers 
