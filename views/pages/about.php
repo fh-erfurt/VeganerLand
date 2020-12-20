@@ -3,7 +3,7 @@
     //19.12.2020
 
     $pageTitle = 'Über uns';
-    require_once '../../assets/static/header.php';
+    require_once '../../assets/statics/header.php';
 ?>
 
     <header>
