@@ -4,8 +4,8 @@
     // 00:00 Uhr
 
     $pageTitle = 'Gemüse';
-    require_once '../../assets/static/navbar.php';
-    require_once '../../assets/static/header.php';
+    require_once '../../assets/statics/navbar.php';
+    require_once '../../assets/statics/header.php';
     require_once '../../config/database.php';
 ?>
 
