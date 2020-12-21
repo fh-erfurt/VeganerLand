@@ -80,37 +80,3 @@
             $result = Customers::find('email', $email, self::tableName());
             return (!empty($result)) ? true : false;
         }
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        // Other possible check for unique E-Mail.
-        function doesEmailExists ($email) {
-            $result = Customers::find('email', $email, self::tableName());
-            return (!empty($result)) ? true : false;
-        }
-=======
->>>>>>> Stashed changes
-        // Returns true if the password is safe
-        function isPasswordSafe ( $candidate ) {
-            $r1='/[A-Z]/';  //Uppercase
-            $r2='/[a-z]/';  //lowercase
-            $r3='/[!@#$%^&*()\-_=+{};:,<.>]/';  //special char
-            $r4='/[0-9]/';  //numbers
-            
-            if(preg_match_all($r1,$candidate, $o) < 1) return false;
-            
-            if(preg_match_all($r2,$candidate, $o) < 1) return false;
-            
-            if(preg_match_all($r3,$candidate, $o) < 1) return false;
-            
-            if(preg_match_all($r4,$candidate, $o) < 1) return false;
-            
-            if(strlen($candidate) < 8) return false;
-            
-            return true;
-        }
-<<<<<<< Updated upstream
-=======
->>>>>>> 4f6cb271738fdeb4b14d4bbf28da77411d8162f2
->>>>>>> Stashed changes
