@@ -4,7 +4,7 @@
      //20.12.2020
      // 00:00 Uhr
      -->
-
+<?php $cartItems = 0;?>
 
      <link rel="stylesheet" href="../../assets/styles/navbarStyle.css">
 <header>
@@ -22,8 +22,9 @@
     <li><a href="#about">Seite4</a></li>
     <li><a href="#about">Seite5</a></li>
     <li><a href="#about">Seite6</a></li>
+    <li class = "nav-item"> Warenkorb (<?= $cartItems ?>)</li>
     <li style="float:right" class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Konto</a>
+      <a href="" class="dropbtn">Konto</a>
       <div class="dropdown-content">
         <a href="../../views/pages/login.php">Login</a>
         <a href="../../views/pages/setting.php?do=Edit">Einstellungen</a>

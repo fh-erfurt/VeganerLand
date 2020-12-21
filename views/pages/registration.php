@@ -111,7 +111,7 @@ require_once '../../config/init.php';
                        $stmt->bindParam(':addressId', $lastAddressId);
                
                        $stmt->execute();
-                       echo "New records created successfully";
+                       echo "<div class='alert alert-success'>New records created successfully</div>";
                    } catch (PDOException $e) {
                        echo "Error: " . $e->getMessage();
                    }

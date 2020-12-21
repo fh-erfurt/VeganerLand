@@ -25,10 +25,8 @@
             <link rel="stylesheet" href="../../assets/styles/settingStyle.css">
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="../../assets/styles/aboutStyle.css">
-            <? elseif ($pageTitle == 'Obst'): ?>
+            <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse'): ?>
             <link rel="stylesheet" href="../../assets/styles/fruitStyle.css">
-            <? elseif ($pageTitle == 'Gemüse'): ?>
-            <link rel="stylesheet" href="../../assets/styles/vegetablesStyle.css">
             <? endif; ?>
             
         </head>

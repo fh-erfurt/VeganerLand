@@ -3,80 +3,25 @@
     // 19.12.2020
     // 00:00 Uhr
 
-    $pageTitle = 'Gemüse';
+    $pageTitle = 'Obst';
     require_once '../../assets/statics/navbar.php';
     require_once '../../assets/statics/header.php';
     require_once '../../config/database.php';
+
+    $sql = "SELECT prodId, descrip, cat, stdPrice FROM products WHERE cat = 'V'";
+
+    $result = $db->query($sql);
 ?>
 
     <div class="block-container">
         <ul class="cards">
-            <?php   // wird von Jesse gemacht ... ?>
+            <?php while($row = $result->fetch()): ?>
             <li class="cards__item"> 
+
                 <div class="col">
-                    <?php include 'fruitCard.php'?>
+                    <?php include 'vegetablesCard.php'?>
                 </div>
             </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item"> 
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-        </ul>
-        <ul class="cards">
-            <?php   // wird von Jesse gemacht ... ?>
-            <li class="cards__item"> 
-                <div class="col">
-                    <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item"> 
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-        </ul>
-        <ul class="cards">
-            <?php   // wird von Jesse gemacht ... ?>
-            <li class="cards__item"> 
-                <div class="col">
-                    <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item"> 
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
-            <li class="cards__item">
-                <div class="col">
-                <?php include 'fruitCard.php'?>
-                </div>
-            </li>
+            <?php endwhile; ?>
         </ul>
     </div>

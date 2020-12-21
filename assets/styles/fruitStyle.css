@@ -34,8 +34,8 @@
     .block-container ul li {
         float: left;
         list-style: none;
-        width: 20%;
-        /* height: 300px; */
+        width: auto;
+        height: auto;
         background: #7f8c8d;
         margin: 20px 0px 20px 55px;
         border: 2px solid none;
@@ -110,6 +110,14 @@
         font-weight: 300;
         letter-spacing: 2px;
         text-transform: uppercase;
+    }
+    /* wictig für alle geräte  */
+    
+    @media screen and (max-width: 650px) {
+        .column {
+            width: 100%;
+            display: block;
+        }
     }
     /* .card__image {
         background-position: center center;
