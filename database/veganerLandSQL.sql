@@ -136,3 +136,20 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`favorits` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+               
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Speisemöhren', 'V', '1.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Speisekartoffeln', 'V', '2.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Weißer Spargel', 'V', '0.94');
+
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Helle Tafeltrauben', 'F', '1.64');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Heidelbeeren', 'F', '1.95');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Vorgereifte Avocado', 'F', '0.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Orangen', 'F', '2.00');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Clementinen', 'F', '1.64');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Mango essreif', 'F', '1.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Apfel Braeburn rot', 'F', '1.34');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Kaki', 'F', '0.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Avocado', 'F', '1.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Himbeere', 'F', '2.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Mandarine Bio', 'F', '1.94');
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES (NULL, 'Galiamelone', 'F', '0.94');
