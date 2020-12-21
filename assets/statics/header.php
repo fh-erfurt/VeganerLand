@@ -12,7 +12,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title><?php getTitle()?></title>
-            <link rel="stylesheet" href="../../assets/styles/alertStyle.css">
+            <link rel="stylesheet" href="../../assets/styles/staticStyle.css">
             <? if ($pageTitle == 'Sing Up') : ?> 
             <link rel='stylesheet' href ='../../assets/styles/registrationStyle.css'>
             <? elseif ($pageTitle == 'Login'): ?>

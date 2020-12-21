@@ -1,4 +1,8 @@
-/* Start Global rules */
+/* Molham Al-khodari    21.12.2020  22:33 Uhr
+ ***************************
+ ** Start Global rules 
+ ***************************
+ */
 
 * {
     padding: 0;
@@ -7,20 +11,11 @@
 }
 
 
-/* Start body rules */
-
-body {
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: 'Vibur', cursive;
-    /*   the main font */
-    font-family: 'Abel', sans-serif;
-    opacity: .95;
-    background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
-}
-
-
-/* Start form  attributes */
+/*
+ ***************************
+ ** Start form  attributes 
+ ***************************
+ */
 
 form {
     width: 450px;
@@ -30,14 +25,17 @@ form {
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
     padding: 2%;
-    /* background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%); */
+    background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
 }
 
 
-/* form Container */
+/*
+ ***************************
+ ** form Container 
+ ***************************
+ */
 
 form .con {
-    display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-around;
     justify-content: space-around;
@@ -47,7 +45,11 @@ form .con {
 }
 
 
-/* the header form form */
+/*
+ ***************************
+ ** the header form form
+ ***************************
+ */
 
 header {
     margin: 2% auto 10% auto;
@@ -55,31 +57,23 @@ header {
 }
 
 
-/* Login title form form */
+/*
+ ***************************
+ ** Login title form form
+ ***************************
+ */
 
 header h2 {
     font-size: 250%;
-    font-family: Arial, Helvetica, sans-serif;
     color: #3e403f;
 }
 
 
-/*  A welcome message or an explanation of the login form */
-
-header p {
-    letter-spacing: 0.05em;
-}
-
-
-/* .input-item {
-    background: #fff;
-    color: #333;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-} */
-
-
-/* inputs form  */
+/*
+ ***************************
+ ** inputs form
+ ***************************
+ */
 
 input[class="form-input"] {
     width: 240px;
@@ -96,7 +90,11 @@ input[class="form-input"] {
 }
 
 
-/* focus  */
+/*
+ ***************************
+ ** focus
+ ***************************
+ */
 
 input:focus {
     transform: translateX(-2px);
@@ -104,7 +102,11 @@ input:focus {
 }
 
 
-/* buttons  */
+/*
+ ***************************
+ ** buttons
+ ***************************
+ */
 
 button {
     display: inline-block;
@@ -124,7 +126,11 @@ button {
 }
 
 
-/* Submits */
+/*
+ ***************************
+ ** Submits
+ ***************************
+ */
 
 .submits {
     width: 48%;
@@ -134,21 +140,33 @@ button {
 }
 
 
-/* Forgot Password button FAF3DD  */
+/*
+ ***************************
+ ** Forgot Password button
+ ***************************
+ */
 
 .frgt-pass {
-    background: transparent;
+    background: #B8F2E6;
 }
 
 
-/* Sign Up button  */
+/*
+ ***************************
+ ** Sign Up button
+ ***************************
+ */
 
 .sign-up {
     background: #B8F2E6;
 }
 
 
-/* buttons hover */
+/*
+ ***************************
+ ** buttons hover
+ ***************************
+ */
 
 button:hover {
     transform: translatey(3px);
@@ -156,7 +174,11 @@ button:hover {
 }
 
 
-/* buttons hover Animation */
+/*
+ ***************************
+ ** buttons hover Animation
+ ***************************
+ */
 
 button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;

@@ -36,70 +36,47 @@
                 if ($stmt->rowCount() > 0)
                 {
 ?>
-                        <h1>Mitglied bearbeiten</h1>
-                        <div class="container">
-                                <form clss="from-horizonta" action="?do=Update" method="post">
-                                        <input type="hidden" name = "custId" value="<?php echo $custId; ?>" />
-                                        <input type="hidden" name = "addressId" value="<?php echo $addressId; ?>" />
-                                        <!-- Start Email Field -->
-                                        <div class="groub">
+                        <div class="con">
+                                <form class="from-horizonta" action="?do=Update" method="post">
+                                        <header class="head-form">
+                                                <h2>Mitglied bearbeiten</h2>
+                                                <p> bearbeite einfach deine Daten</p>
+                                        </header>
+                                        <div class="field-set">
+                                                <input class="form-input" type="hidden" name = "custId" value="<?php echo $custId; ?>" />
+                                                <input class="form-input" type="hidden" name = "addressId" value="<?php echo $addressId; ?>" />
+                                                <div class="form-group">
                                                 <label class="label">Email</label>
-                                                <div class="input">
-                                                        <input type="text" name="email" class="form-control" value="<?echo $row['email']?>">
+                                                <input class="form-input" type="text" name="email" value="<?echo $row['email']?>">
                                                 </div>
-                                        </div>
-                                        <!-- End Email Field -->
-                                        <!-- Start Password Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">Password</label>
-                                                <div class="col-sm-10">
-                                                        <input type ="hidden" name="oldPassword" value="<?php echo $row['password']; ?>">
-                                                        <input type="password" name="newPassword" class="form-control">
+                                                <input class="form-input" type ="hidden" name="oldPassword" value="<?php echo $row['password']; ?>">
+                                                <input class="form-input" type="password" name="newPassword">
                                                 </div>
-                                        </div>
-                                        <!-- End Password Field -->
-                                        <!-- Start Phone Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">Phone</label>
-                                                <div class="col-sm-10">
-                                                        <input type="text" name="phone" class="form-control" value="<?echo $row['phone']?>">
+                                                <input class="form-input" type="text" name="phone" value="<?echo $row['phone']?>">
                                                 </div>
-                                        </div>
-                                        <!-- End Phone Field -->
-                                        <!-- Start Street Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">Straße</label>
-                                                <div class="col-sm-10">
-                                                        <input type="text" name="street" class="form-control" value="<?echo $row2['street']?>">
+                                                <input class="form-input" type="text" name="street" value="<?echo $row2['street']?>">
                                                 </div>
-                                        </div>
-                                        <!-- End Street Field -->
-                                        <!-- Start Number Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">Hausnummer</label>
-                                                <div class="col-sm-10">
-                                                        <input type="text" name="number" class="form-control" value="<?echo $row2['number']?>">
+                                                <input class="form-input" type="text" name="number" value="<?echo $row2['number']?>">
                                                 </div>
-                                        </div>
-                                        <!-- End Number Field -->
-                                        <!-- Start ZIP Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">zip</label>
-                                                <div class="col-sm-10">
-                                                        <input type="text" name="zip" class="form-control" value="<?echo $row2['zip']?>">
+                                                <input class="form-input" type="text" name="zip" value="<?echo $row2['zip']?>">
                                                 </div>
-                                        </div>
-                                        <!-- End ZIP Field -->
-                                        <!-- Start City Field -->
-                                        <div class="form-groub">
+                                                <div class="form-group">
                                                 <label class="col-sm-2 control-label">Stadt</label>
-                                                <div class="col-sm-10">
-                                                        <input type="text" name="city" class="form-control" value="<?echo $row2['city']?>">
+                                                <input class="form-input" type="text" name="city" value="<?echo $row2['city']?>">
                                                 </div>
                                         </div>
-                                        <!-- End City Field -->
                                         <div>
-                                                <input type="submit" name="submit" value="Save" class="save">
+                                                <button class="save" type="submit" name="submit">Save</button>
                                         </div>
 
                                 </form>

@@ -7,7 +7,7 @@
 <?php $cartItems = 0;?>
 
      <link rel="stylesheet" href="../../assets/styles/navbarStyle.css">
-<header>
+<header class="navbar-header">
   <h1>Veganer Land</h1>
 </header>
 <nav class="nav-container">

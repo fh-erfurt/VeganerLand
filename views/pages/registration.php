@@ -142,9 +142,6 @@ require_once '../../config/init.php';
    else{
    }
 ?>
-
-<!-- <title>Sing Up</title>  Weil funktion getTitle funktioniert nicht -->
-<!-- <link rel="stylesheet" href="../../assets/styles/registrationStyle.css">   Weil funktion getTitle funktioniert nicht -->
 <div class="con">
    <form name="registration" action="" method="post">
       <header class="head-form">
@@ -178,8 +175,8 @@ require_once '../../config/init.php';
          <input class="form-input" id="city" type="text" name="city" placeholder="Stadt">
          <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP">
          
-         <button class="log-in" type="submit" name="submit"> Register </button> <br>
+         <button class="sign-up" type="submit" name="submit"> Register </button> <br>
          <spam id ="login"><a href="login.php"> hast du schon ein Konto! melde dich an</a></spam>
       </div>
-</form>
+   </form>
 </div>

@@ -1,34 +1,158 @@
-body {
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: 'Vibur', cursive;
-    /*   the main font */
+/* Molham Al-khodari    21.12.2020  22:33 Uhr
+***************************
+** Start Global rules 
+***************************
+*/
+
+.from-horizonta {
+    width: 600px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
+}
+
+
+/* form Container */
+
+.from-horizonta .con {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+
+/* the header form form */
+
+.head-form {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+
+
+/* Login title form form */
+
+.head-form h2 {
+    font-size: 250%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3e403f;
+}
+
+
+/*  A welcome message or an explanation of the login form */
+
+.head-form p {
+    letter-spacing: 0.05em;
+}
+
+
+/* inputs form  */
+
+input[class="form-input"] {
+    width: 250px;
+    height: 25px;
+    margin-top: 2%;
+    padding: 15px;
+    font-size: 16px;
     font-family: 'Abel', sans-serif;
-    opacity: .95;
-    background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    display: table;
+    margin: auto;
 }
 
-h1 {
+
+/* focus  */
+
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+
+/* buttons  */
+
+button {
+    display: inline-block;
+    color: #252537;
+    width: 375px;
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
     text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
 }
 
-.container {
-    text-align: center;
+
+/* Submits */
+
+.submits {
+    width: 48%;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
 }
 
-.error center {
-    margin: 5%;
-    padding: 10px;
-    width: 60%;
-    border: 3px solid black;
-    padding: 10px;
-    background: #ff9d9d;
+
+/* Forgot Password button FAF3DD  */
+
+.frgt-pass {
+    background: transparent;
+    margin-top: auto;
 }
 
-.group {}
 
-.label {}
+/* Sign Up button  */
 
-.input {}
+.sign-up {
+    background: #B8F2E6;
+}
 
-.save {}
+
+/* buttons hover */
+
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+
+/* buttons hover Animation */
+
+button:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.save {
+    background: #B8F2E6;
+    color: black;
+}
+
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+button:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.form-group {
+    display: inline-block;
+}

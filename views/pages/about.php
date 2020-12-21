@@ -6,11 +6,12 @@
     require_once '../../assets/statics/header.php';
 ?>
 
-    <header>
+    <header class="page-header">
     <h1>Veganer Land</h1>
     </header>
 
-    <h2 style="text-align:center">Team</h2>
+    <article>
+    <h2>Team</h2>
     <div class="row">
         <div class="column">
             <div class="card">
@@ -51,6 +52,8 @@
             </div>
         </div>
     </div>
+    </article>
+
     <!-- code for the menu -->
 
     <nav class="mvp-menu-bottom">

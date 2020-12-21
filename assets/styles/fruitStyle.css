@@ -1,139 +1,123 @@
-    body {
-        background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%);
-        margin: 0;
-        padding: 0;
-        font-family: 'Vibur', cursive;
-    }
-    
-    html {
-        background-color: #f0f0f0;
-    }
-    
-    img {
-        height: auto;
-        max-width: 100%;
-        vertical-align: middle;
-    }
-    
-    .block-container {
-        width: 90%;
-        margin: auto;
-        overflow: hidden;
-        /* background: #333333; */
-        background: white;
-        margin-top: 20px;
-        /* display: inline-block; */
-        position: relative;
-    }
-    
-    .block-container ul {
-        padding: 0px;
-        margin: 0px;
-    }
-    
-    .block-container ul li {
-        float: left;
-        list-style: none;
-        width: auto;
-        height: auto;
-        background: #7f8c8d;
-        margin: 20px 0px 20px 55px;
-        border: 2px solid none;
-        box-sizing: border-box;
-    }
-    
-    .block-container ul li:hover {
-        opacity: 0.8;
-    }
-    
-    .block-container ul li .bottom {
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        background: blue;
-        text-align: center;
-        color: white;
-        font-size: 20px;
-    }
-    
-    .col {
-        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    }
-    
-    .col:hover {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.23);
-    }
-    
-    .btn {
-        background-color: white;
-        border: 1px solid #cccccc;
-        color: #696969;
-        padding: 0.5rem;
-        text-transform: lowercase;
-    }
-    /* .btn--block {
-        display: block;
+/* Molham Al-khodari    21.12.2020  22:33 Uhr
+********************************
+** rewrite html style
+********************************
+*/
+
+html {
+    background-color: #f0f0f0;
+}
+
+
+/*
+********************************
+** phots size and style 
+********************************
+*/
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+/*
+********************************
+** Block size and style 
+********************************
+*/
+
+.block-container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    background: white;
+    margin-top: 20px;
+    position: relative;
+}
+
+.block-container ul li {
+    float: left;
+    list-style: none;
+    width: auto;
+    height: auto;
+    background: #7f8c8d;
+    margin: 20px 0px 20px 55px;
+    border: 2px solid none;
+    box-sizing: border-box;
+}
+
+.block-container ul li:hover {
+    opacity: 0.8;
+}
+
+
+/*
+********************************
+** alle cards size and position
+********************************
+*/
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cards__item {
+    display: flex;
+    padding: 1rem;
+    @media(min-width: 40rem) {
         width: 50%;
-    } */
-    
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
     }
-    
-    .cards__item {
-        display: flex;
-        padding: 1rem;
-        @media(min-width: 40rem) {
-            width: 50%;
-        }
-        @media(min-width: 56rem) {
-            width: 33.3333%;
-        }
+    @media(min-width: 56rem) {
+        width: 33.3333%;
     }
-    
-    .card {
-        background-color: white;
-        border-radius: 0.25rem;
-        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
-    .card-title {
-        text-align: center;
-        font-size: 1.25rem;
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-    /* wictig für alle geräte  */
-    
-    @media screen and (max-width: 650px) {
-        .column {
-            width: 100%;
-            display: block;
-        }
-    }
-    /* .card__image {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top-left-radius: 0.25rem;
-        border-top-right-radius: 0.25rem;
-        filter: contrast(70%);
-        overflow: hidden;
-        position: relative;
-        transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
-        ;
-    } */
-    /* .card__text {
-        flex: 1 1 auto;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        margin-bottom: 1.25rem;
-    } */
+}
+
+
+/*
+********************************
+** inner card
+********************************
+*/
+
+.card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.col {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.col:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.23);
+}
+
+.btn {
+    background-color: white;
+    border: 1px solid #cccccc;
+    color: #696969;
+    padding: 0.5rem;
+    text-transform: lowercase;
+}
+
+.btn--block {
+    width: 49%;
+}
