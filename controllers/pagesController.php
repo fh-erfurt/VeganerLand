@@ -122,7 +122,8 @@ class PagesController extends Controller {
                     die('Ungültige Eingabe.');
                 } else {
                     $customer->insert();
-
+                    $custId = Customers::findOne('custId', ['email'], [$_POST['email']]);
+                    $this->setParams('userId', $custId);
                 }
 
             }
@@ -149,6 +150,33 @@ class PagesController extends Controller {
     public function actionSettings() {
         // Customer can look into his given data and change his address, phone number and favorite products.
         // For password there is a button to the resetPassword.php. (Open for discussion)
+
+        $info = ['firstName' => null,
+                 'lastName' => null,
+                 'email' => null,
+                 'phone' => null,
+                 'street' => null,
+                 'number' => null,
+                 'zip' => null,
+                 'city' => null];
+
+        $custInfo = Customers::find('custId', $params['userId'], self::tableName());
+        $info['firstName'] = $custInfo['firstName'];
+        $info['lastName'] = $custInfo['lastName'];
+        $info['email'] = $custInfo['email'];
+        $info['phone'] = $custInfo['phone'];
+
+        if (!empty($custInfo['addressId'])) {
+            $addressInfo = Address::find('addressId', $custInfo['addressId'], self::tableName());
+            $info['street'] = $addressInfo['street'];
+            $info['number'] = $addressInfo['number'];
+            $info['zip'] = $addressInfo['zip'];
+            $info['city'] = $addressInfo['city'];
+        }
+
+        $this->setParams('customerInfo', $info);
+
+        // Now only the part where one can change everything is left...
     }
 
     public function actionFavorites() {
