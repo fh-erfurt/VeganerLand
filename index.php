@@ -37,7 +37,7 @@ if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
     require_once CONTROLLERSPATH.$controllerName.'Controller.php';
 
     $className = ucfirst($controllerName).'Controller';
-    $controller = new {$className}($controllerName, $actionName);
+    $controller = new $className($controllerName, $actionName); //Error!!
 
     $actionMethod = 'action'.ucfirst($actionName);
     if (!method_exists($controller, $actionMethod)) {
