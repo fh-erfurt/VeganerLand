@@ -97,7 +97,7 @@ class PagesController extends Controller {
                   && !empty($_POST['zip'])
                   && !empty($_POST['city'])) {
 
-                    $addressParams = [$_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
+                    $addressParams = [null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
 
                     //Makes sure that the Address isn't already in the database.
                     $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
@@ -109,12 +109,22 @@ class PagesController extends Controller {
                             // If the address doesn't exist already and has the correct values, add it to the database.
                             $address->insert();
                             $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
+                            $this->setParams('address', $addressId);
                         }
                     }
                   }
 
                 $hashedPassword = md5($_POST['password']);              
-                $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId]
+                $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId];
+
+                $customer = new Customer($customerParams);
+                if (!$customer->validate()) {
+                    die('Ungültige Eingabe.');
+                } else {
+                    $customer->insert();
+
+                }
+
             }
         }
     }
@@ -127,8 +137,8 @@ class PagesController extends Controller {
         // Input whta to search in field (Name of fruit of veggie)
         if (isset($_POST['submit'])) {
             $result = Products::find('descrip', $_POST['search'], self::tableName());
-            setParams('search', $result);
-            // Display $result.
+            
+            $this->setParams('search', $result);
         }
     }
 
@@ -136,7 +146,7 @@ class PagesController extends Controller {
         // This is a static site. So nothing is to do, but we kind off need the method, I think.
     }
 
-    public function actionConfig() {
+    public function actionSettings() {
         // Customer can look into his given data and change his address, phone number and favorite products.
         // For password there is a button to the resetPassword.php. (Open for discussion)
     }
@@ -145,41 +155,76 @@ class PagesController extends Controller {
         // Gives a List of the Customers favorite products. We still need a model for this table.
         $custId = $this->params['userId'];
         $favs = Favorites::find('customerId', $custId, self::tableName());
-        // Display $fav.
+
+        $this->setParams('favorites', $favs);
     }
 
     // 20 Products
     public function actionFruits() {
-        // Selects all fruits from the products table.
+        // Selects all fruits from the products table. Exceptions are citrus fruits (c), berries (b),
+        // exotics (e), and nuts (n).
         $fruits = Products::find('cat', 'f', self::tableName());
+
+        $this->setParams('fruits', $fruits);
     }
 
     public function actionVeggies() {
-        // Selects all fruits from the products table.
+        // Selects all veggies from the products table. Exceptions are potatoes (p) and mushrooms (m).
         $veggies = Products::find('cat', 'v', self::tableName());
+
+        $this->setParams('veggies', $veggies);
     }
 
     // Some Products
-    public function actionCitrus() {}
+    public function actionCitrus() {
+        $citrus = Products::find('cat', 'c', self::tableName());
 
-    public function actionBerries() {}
+        $this->setParams('citrus', $citrus);
+    }
 
-    public function actionExotics() {}
+    public function actionBerries() {
+        $berries = Products::find('cat', 'b', self::tableName());
 
-    public function actionNuts() {}
+        $this->setParams('berries', $berries);
+    }
 
-    public function actionPotatoes() {}
+    public function actionExotics() {
+        $exotics = Products::find('cat', 'e', self::tableName());
 
-    public function actionMushrooms() {}
+        $this->setParams('exotics', $exotics);
+    }
 
-    public function actionBargain() {}
+    public function actionNuts() {
+        $nuts = Products::find('cat', 'n', self::tableName());
 
+        $this->setParams('nuts', $nuts);
+    }
 
+    public function actionPotatoes() {
+        $potatos = Products::find('cat', 'p', self::tableName());
+
+        $this->setParams('potatoes', $potatoes);
+    }
+
+    public function actionMushrooms() {
+        $mushrooms = Products::find('cat', 'm', self::tableName());
+
+        $this->setParams('mushrooms', $mushrooms);
+    }
+
+    public function actionBargain() {
+        // A static page. I think. Or we search by the name and add them to an array.
+    }
+
+    // Still not sure on how to do the code.
     public static function addToCart() {}
 
     public static function removeFromCart() {}
 
     public function actionLogout() {
+        $this->setParam('userId', null);
+        $this->setParam('password', null);
+
         header('Location: index.php?c=pages&a=homepage');
     }
 }
