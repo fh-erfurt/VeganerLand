@@ -55,7 +55,7 @@
         {
             if ($url === null) 
             {
-                $url = '../../views/pages/homepage.php';
+                $url = VIEWSPATH.'/pages/homepage.php';
                 $link = 'Homepage';
             }
             else {
@@ -65,7 +65,7 @@
                     $link = 'Previous Page';
                 }
                 else {
-                    $url = '../../views/pages/homepage.php';
+                    $url = VIEWSPATH.'pages/homepage.php';
                     $link = 'Homepage'; 
                 }
             }
@@ -77,6 +77,6 @@
         }
 
         function doesEmailExists($email) {
-            $result = Customers::find('email', $email, self::tableName());
+            $result = Customers::find('email', $email, Customers::tableName());
             return (!empty($result)) ? true : false;
         }
