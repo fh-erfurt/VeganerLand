@@ -4,7 +4,7 @@
     // 00:00 Uhr
  -->
 
- <?php include '../../core/functions.php'; ?>
+ <?php include_once COREPATH.'functions.php'; ?>
 
 <!Doctype html>
     <html>
