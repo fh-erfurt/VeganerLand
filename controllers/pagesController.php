@@ -9,11 +9,11 @@ class PagesController extends Controller {
         if ($this->loggedIn()) {
             $controllerId = $this->params['userId'];
 
-            $name = Address::find('custId', $controllerId, self::tableName());
+            $name = Address::find('custId', $controllerId, Address::tableName());
             $this->setParam('name', $name);
 
             // Get the data from orderitems for the customer.
-            $cart = OrderItems::find('custId', $controllerId, self::tableName());
+            $cart = OrderItems::find('custId', $controllerId, OrderItems::tableName());
             $this->setParams('cart', $cart);
         }
     }
@@ -102,7 +102,7 @@ class PagesController extends Controller {
                     //Makes sure that the Address isn't already in the database.
                     $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
                     if (empty($addressId)) {
-                        $address = new Adress($addressParams);
+                        $address = new Address($addressParams);
                         if (!$address->validate()) {
                             die('Ungültige Eingabe.');
                         } else {
@@ -137,7 +137,7 @@ class PagesController extends Controller {
     public function actionSearch() {
         // Input whta to search in field (Name of fruit of veggie)
         if (isset($_POST['submit'])) {
-            $result = Products::find('descrip', $_POST['search'], self::tableName());
+            $result = Products::find('descrip', $_POST['search'], Products::tableName());
             
             $this->setParams('search', $result);
         }
@@ -160,14 +160,14 @@ class PagesController extends Controller {
                  'zip' => null,
                  'city' => null];
 
-        $custInfo = Customers::find('custId', $params['userId'], self::tableName());
+        $custInfo = Customers::find('custId', $params['userId'], Customers::tableName());
         $info['firstName'] = $custInfo['firstName'];
         $info['lastName'] = $custInfo['lastName'];
         $info['email'] = $custInfo['email'];
         $info['phone'] = $custInfo['phone'];
 
         if (!empty($custInfo['addressId'])) {
-            $addressInfo = Address::find('addressId', $custInfo['addressId'], self::tableName());
+            $addressInfo = Address::find('addressId', $custInfo['addressId'], Address::tableName());
             $info['street'] = $addressInfo['street'];
             $info['number'] = $addressInfo['number'];
             $info['zip'] = $addressInfo['zip'];
@@ -182,7 +182,7 @@ class PagesController extends Controller {
     public function actionFavorites() {
         // Gives a List of the Customers favorite products. We still need a model for this table.
         $custId = $this->params['userId'];
-        $favs = Favorites::find('customerId', $custId, self::tableName());
+        $favs = Favorites::find('customerId', $custId, Favorites::tableName());
 
         $this->setParams('favorites', $favs);
     }
@@ -191,51 +191,51 @@ class PagesController extends Controller {
     public function actionFruits() {
         // Selects all fruits from the products table. Exceptions are citrus fruits (c), berries (b),
         // exotics (e), and nuts (n).
-        $fruits = Products::find('cat', 'f', self::tableName());
+        $fruits = Products::find('cat', 'f', Products::tableName());
 
         $this->setParams('fruits', $fruits);
     }
 
     public function actionVeggies() {
         // Selects all veggies from the products table. Exceptions are potatoes (p) and mushrooms (m).
-        $veggies = Products::find('cat', 'v', self::tableName());
+        $veggies = Products::find('cat', 'v', Products::tableName());
 
         $this->setParams('veggies', $veggies);
     }
 
     // Some Products
     public function actionCitrus() {
-        $citrus = Products::find('cat', 'c', self::tableName());
+        $citrus = Products::find('cat', 'c', Products::tableName());
 
         $this->setParams('citrus', $citrus);
     }
 
     public function actionBerries() {
-        $berries = Products::find('cat', 'b', self::tableName());
+        $berries = Products::find('cat', 'b', Products::tableName());
 
         $this->setParams('berries', $berries);
     }
 
     public function actionExotics() {
-        $exotics = Products::find('cat', 'e', self::tableName());
+        $exotics = Products::find('cat', 'e', Products::tableName());
 
         $this->setParams('exotics', $exotics);
     }
 
     public function actionNuts() {
-        $nuts = Products::find('cat', 'n', self::tableName());
+        $nuts = Products::find('cat', 'n', Products::tableName());
 
         $this->setParams('nuts', $nuts);
     }
 
     public function actionPotatoes() {
-        $potatos = Products::find('cat', 'p', self::tableName());
+        $potatos = Products::find('cat', 'p', Products::tableName());
 
         $this->setParams('potatoes', $potatoes);
     }
 
     public function actionMushrooms() {
-        $mushrooms = Products::find('cat', 'm', self::tableName());
+        $mushrooms = Products::find('cat', 'm', Products::tableName());
 
         $this->setParams('mushrooms', $mushrooms);
     }
