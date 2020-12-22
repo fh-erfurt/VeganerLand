@@ -4,11 +4,10 @@
 //21:30 Uhr
 
 $pageTitle = "Homepage";
-require_once '../../assets/statics/header.php';
-require_once "../../config/init.php";
+require_once TEMPLATESPATH.'/header.php';
+require_once CONFIGPATH.'/init.php';
 // include '../../core/functions.php';  in header zu sehen.
 
-session_start();
 if (isset($_SESSION['email']))
 {
 }
@@ -20,6 +19,6 @@ else
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<?php  require_once '../../assets/statics/footer.php'; ?>
+<?php  require_once TEMPLATESPATH.'/footer.php'; ?>
 
     
