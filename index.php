@@ -23,7 +23,7 @@ session_start();
 
 // Default values for controller and action.
 $controllerName = 'pages';
-$actionName = 'index';
+$actionName = 'homepage';
 
 if (isset($_GET['c'])) {
     $controllerName = $_GET['c'];
