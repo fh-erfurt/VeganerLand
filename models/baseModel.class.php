@@ -206,26 +206,22 @@
             return null;
         }
 
-        // $where gives the rowname. For example in address could $where be zip.
-        // $value gives the data we are searching for. Example above: 99986.
-        public static function find($where, $value, $tabel)
+        public static function find($condition, $tabel)
         {
             $db = $GLOBALS['db'];
             $result = null;
     
-            try
-            {
+            try {
                 $sql = 'SELECT * FROM ' . $tabel;
     
                 if(!empty($where) && !empty($value))
                 {
-                    $sql .= ' WHERE ' . $where . ' = ' . $value;
+                    $sql .= ' WHERE ' . $condition;
                 }
     
                 $result = $db->query($sql)->fetchAll();
             }
-            catch(\PDOException $e)
-            {
+            catch(\PDOException $e) {
                 die('Selct statment failed: ' . $e->getMessage());
             }
     
@@ -245,7 +241,7 @@
             $result = self::tableName();
 
             for ($idx = 0; $idx < count($where); $idx++) {
-                $result = self::find($where[$idx], $values[$idx], $result);
+                $result = self::find("$where[$idx] = $values[$idx]", $result);
             }
 
             try {
