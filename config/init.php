@@ -18,6 +18,6 @@ define('ROOTPATH', strlen(dirname($_SERVER['SCRIPT_NAME']))) > 1 ? dirname($_SER
 
 if(!isset($noNavbar))
 {
-    include TEMPLATESPATH.'/navbar.php';
+    include TEMPLATESPATH.'navbar.php';
     
 }
