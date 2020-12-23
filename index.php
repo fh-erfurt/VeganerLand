@@ -83,8 +83,8 @@ switch ($actionName) {
 
 <?
     $pageTitle = 'Homepage';
-    require_once TEMPLATESPATH.'/header.php';
-    require_once TEMPLATESPATH.'/navbar.php';
+    require_once TEMPLATESPATH.'header.php';
+    require_once TEMPLATESPATH.'navbar.php';
 
     $controller->render();
 
