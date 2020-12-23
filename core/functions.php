@@ -4,7 +4,8 @@
 // 18.22.2020
 // 18:50 Uhr
 
-    require '../../config/database.php';
+    //require '../../config/database.php'; // error
+    require_once 'config/database.php';     // so geht das ..
 
         /*
         ** Title Function that echo the page Title in case the page
