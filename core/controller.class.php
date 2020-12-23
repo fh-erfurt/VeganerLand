@@ -46,7 +46,7 @@ class Controller {
 
     // This function gives the data in $value to the array params with the position
     // being $key.
-    protected function setParam($key, $value = null) {
+    protected function setParams($key, $value = null) {
         $this->params[$key] = $value;
     }
 
