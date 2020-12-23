@@ -53,19 +53,14 @@ if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title><?getTitle()?></title>
-    </head>
-    <body>
-        <?
-        
-            $controller->render();
+<?
+    $pageTitle = 'Homepage';
+    require_once TEMPLATESPATH.'/header.php';
+    require_once TEMPLATESPATH.'/navbar.php';
 
-        ?>
+    $controller->render();
+
+?>
         <section>
             <?if (isset($error)) : ?>
             <div class="error">
