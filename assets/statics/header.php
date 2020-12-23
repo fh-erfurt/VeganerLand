@@ -19,7 +19,7 @@
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <? elseif ($pageTitle == 'Homepage'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'homepageStyle.css'?>">  
-            <? elseif ($pageTitle == 'Einstellung'): ?>
+            <? elseif ($pageTitle == 'Einstellungen'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'aboutStyle.css'?>">
