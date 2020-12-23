@@ -4,8 +4,8 @@
 // 18.22.2020
 // 18:50 Uhr
 
-    //require '../../config/database.php'; // error
-    require_once 'config/database.php';     // so geht das ..
+    //require '../../config/database.php';  // error me´´beim login und singup funktioniert es am start seite nicht 
+    require_once 'config/database.php';     // so geht das .. das ist aber keine lösung weil es geht am start seite und beim login oder singup nicht mehr 
 
         /*
         ** Title Function that echo the page Title in case the page
