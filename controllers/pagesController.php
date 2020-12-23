@@ -10,7 +10,7 @@ class PagesController extends Controller {
             $controllerId = $this->params['userId'];
 
             $name = Address::find('custId', $controllerId, Address::tableName());
-            $this->setParam('name', $name);
+            $this->setParams('name', $name);
 
             // Get the data from orderitems for the customer.
             $cart = OrderItems::find('custId', $controllerId, OrderItems::tableName());
@@ -52,8 +52,8 @@ class PagesController extends Controller {
                 header('Location: index.php?c=pages&a=index');
             }    
             // Give the Login-Information into the $param Array
-            $this->setParam('userId', $checkId);
-            $this->setParam('password', $hashedPassword);
+            $this->setParams('userId', $checkId);
+            $this->setParams('password', $hashedPassword);
         }
     }
 
@@ -250,8 +250,8 @@ class PagesController extends Controller {
     public static function removeFromCart() {}
 
     public function actionLogout() {
-        $this->setParam('userId', null);
-        $this->setParam('password', null);
+        $this->setParams('userId', null);
+        $this->setParams('password', null);
 
         header('Location: index.php?c=pages&a=homepage');
     }
