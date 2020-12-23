@@ -51,6 +51,34 @@ if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
     die('404 Controller you called does not exist.');
 }
 
+switch ($actionName) {
+    case 'fruits':
+        $pageTitle = 'Obst';
+        break;
+    case 'vegetables':
+        $pageTitle = 'Gemüse';
+        break;
+    case 'bargain':
+        $pageTitle = 'Angebote';
+        break;
+    case 'login':
+        $pageTitle = 'Login';
+        break;
+    case 'registration':
+        $pageTitle = 'Sign Up';
+        break;
+    case 'setting':
+        $pageTitle = 'Einstellungen';
+        break;
+    case 'resetPassword':
+        $pageTitle = 'Passwort zurücksetzen';
+        break;
+    case 'about':
+        $pageTitle = 'Über Uns';
+        break;
+    default:
+        $pageTitle = 'Homepage';
+}
 ?>
 
 <?
