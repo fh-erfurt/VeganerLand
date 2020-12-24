@@ -9,9 +9,9 @@
     require_once '../../assets/statics/header.php';
     require_once '../../config/database.php';
 
-    $sql = "SELECT prodId, descrip, cat, stdPrice FROM products WHERE cat = 'F'";
+//     $sql = "SELECT prodId, descrip, cat, stdPrice FROM products WHERE cat = 'F'";
 
-    $result = $db->query($sql);
+//     $result = $db->query($sql);
 
     // $cartItems=0;
 
@@ -55,15 +55,236 @@
     // $cartItems = $cartResult->fetchColumn();
 ?>
 
-    <div class="block-container">
+<!--     <div class="block-container">
         <ul class="cards">
-            <?php while($row = $result->fetch()): ?>
+            <?php // while($row = $result->fetch()): ?>
             <li class="cards__item"> 
 
                 <div class="col">
-                    <?php include 'fruitCard.php'?>
+                    <?php // include 'fruitCard.php'?>
                 </div>
             </li>
-            <?php endwhile; ?>
+            <?php // endwhile; ?>
+        </ul>
+    </div> -->
+
+
+    <div class="block-container">
+        <ul class="cards">
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Apfel</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/apfel.jpg" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Apricots</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/apricots.jpg" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Banana</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/bananas.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">blueberries</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/blueberries.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">cherries</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/cherries.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Test</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/fruit.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Orangen</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/orangen.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Strawberry</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="../../assets/images/strawberry.jpg"   class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Test1</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="http://placekitten.com/271/180" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Test1</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="http://placekitten.com/271/180" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Test1</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="http://placekitten.com/271/180" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+
+            <div class="col">
+                <li class="cards__item"> 
+                    <div class ="card">
+                        <div class="card-title">Test1</div>  <!--wird aus datenbank gelesen-->
+                        <img class='ard__image card__image--fence' src="http://placekitten.com/271/180" class="card-img-top" alt="Artikal">   <!--Statics Bilder-->
+                        <div class="card__text">
+                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen,wir haben noch kein spalte!-->
+                            <hr>
+                            <p>1.99$</p>                                                                <!--wird aus dem datenbank gelesen-->
+                        </div>
+                        <div class="card-footer">
+                            <a href="#"><button class="btn btn--block card__btn">details</button></a>
+                            <a href="#"><button class="btn btn--block card__btn">In den Warenkorb</button></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
         </ul>
     </div>
