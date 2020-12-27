@@ -214,7 +214,7 @@
             try {
                 $sql = 'SELECT * FROM ' . $tabel;
     
-                if(!empty($where) && !empty($value))
+                if(!empty($condition))
                 {
                     $sql .= ' WHERE ' . $condition;
                 }
