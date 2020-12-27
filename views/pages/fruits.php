@@ -1,5 +1,4 @@
 <?php 
-<?php 
 // Molham Alkhodari, Jessica Eckardtsberg
 // 27.12.2020
 // 00:00 Uhr
