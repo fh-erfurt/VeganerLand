@@ -82,14 +82,13 @@
                 {
                     if($_POST["password1"] == $_POST["password2"])
                     {
-                        $passwordHash = md5($password1);
+                        $passwordHash = md5($_POST['password1']);
                         $stmt = $db->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
-                        $stmt->bindParam(':password1', $passwordHash);
+                        $stmt->bindParam(':password', $passwordHash);
                         $stmt->bindParam(':tocken', $_GET["tocken"]);
                         $stmt->execute();
 
-                        echo '<div class="alert alert-info" das passwort wurde geändert</div> <br>
-                              <a href ="?a=login">Login</a>';  
+                       header('Location: ?a=login');  
                     }
                     else {
                         echo '<div class="alert alert-danger" die Passwörte stimmen nicht überein</div>';
