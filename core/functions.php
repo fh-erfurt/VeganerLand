@@ -1,11 +1,12 @@
 <?php 
 
-// Molham Al-khodari
-// 18.22.2020
-// 18:50 Uhr
+echo 'hier ist functions.php <br>';
 
-    //require '../../config/database.php';  // error me´´beim login und singup funktioniert es am start seite nicht 
-    require_once 'config/database.php';     // so geht das .. das ist aber keine lösung weil es geht am start seite und beim login oder singup nicht mehr 
+/*
+================================
+== Molham Al-khodari 26.12.2020
+================================
+*/
 
         /*
         ** Title Function that echo the page Title in case the page
@@ -30,7 +31,7 @@
         ** Returns a true if a there are not Registered Users with that email
         */
 
-        function isEmailAvailable ( $db, $email) {
+        function isEmailAvailable( $db, $email) {
             $request =  $db->prepare(" SELECT * 
                                                 FROM customers 
                                                 WHERE email = ? ");
@@ -44,10 +45,8 @@
             }
         }
 
-        /*
-        ===========================================
-        == Returns true if the password is safe 
-        ===========================================
+                /*
+        ** Returns true if the password is safe 
         */
 
         function isPasswordSafe ( $candidate ) {
@@ -105,4 +104,21 @@
         function doesEmailExists($email) {
             $result = Customers::find('email', $email, Customers::tableName());
             return (!empty($result)) ? true : false;
+        }
+
+        /*
+        ================================
+        == generateRandomString gemacht für Tocken
+        ================================
+        */
+
+        function generateRandomString($length = 10) 
+        {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
         }
