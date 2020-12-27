@@ -1,18 +1,9 @@
 <?php 
-//Molham Al-khodari
-//18.12.2020 
-//18:40 Uhr
-
-$noNavbar='';
-$status='';
-$pageTitle ='Sing Up';
-
-require_once '../../assets/statics/header.php';
-require_once '../../config/database.php';
-require_once '../../config/init.php';
-// include '../../core/functions.php';
-//  include '../../models/baseModel.class.php';
-//  include '../../models/customers.class.php';
+/*
+================================
+== Molham Al-khodari 26.12.2020
+================================
+*/
 
    // If form submitted, insert values into the database.
    if (isset($_POST['submit'])) 
@@ -42,13 +33,7 @@ require_once '../../config/init.php';
             $gender = null;
          }
 
-         if(!empty($_POST['phone']))
-         {
-            $phone = $_POST['phone'];
-         }
-         else {
-            $phone = null;
-         }
+         $phone = !empty($_POST['phone']) ? $_POST['phone'] : null;
          
          $firstname      = $_POST['firstname'];
          $lastname       = $_POST['lastname'];
@@ -98,8 +83,8 @@ require_once '../../config/init.php';
                      
                
                        // prepare sql and bind parameters
-                       $sql = "INSERT INTO customers (firstname, lastname, email, phone, gender, password, addressId)
-                              VALUES     (:firstname, :lastname, :email, :phone, :gender, :password, :addressId)";
+                       $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
+                              VALUES     (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
                            
                        $stmt = $db->prepare("$sql");
                        $stmt->bindParam(':firstname', $firstname);
@@ -176,7 +161,7 @@ require_once '../../config/init.php';
          <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP">
          
          <button class="sign-up" type="submit" name="submit"> Register </button> <br>
-         <spam id ="login"><a href="login.php"> hast du schon ein Konto! melde dich an</a></spam>
+         <spam id ="login"><a href="?a=login"> hast du schon ein Konto! melde dich an</a></spam>
       </div>
    </form>
 </div>
