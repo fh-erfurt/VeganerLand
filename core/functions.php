@@ -32,7 +32,7 @@ echo 'hier ist functions.php <br>';
         */
 
         function isEmailAvailable( $db, $email) {
-            $request =  $db->prepare(" SELECT * 
+            $request =  $GLOBALS['db']->prepare(" SELECT * 
                                                 FROM customers 
                                                 WHERE email = ? ");
             $request->execute(array($email)); 

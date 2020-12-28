@@ -22,123 +22,168 @@ class PagesController extends Controller {
         }
     }
 
-    public function actionLogin() {
-
-        //gets the inputs from the form in login.php
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-        //coded Password which is saved in the database
-        $hashedPassword = md5($password);
-
-        // Check if Input is valid.
-        if ($email === '' || $password === '') {
-            echo 'Error: E-Mail oder Passwort sind nicht gegeben.';
-            // The field for the forms should be resetted.
-            // Normal Login-Page with the message.
-            // Using exit()?
+    public function actionLogin() 
+    {
+        if(isset($_SESSION['email']))
+        {
+            header('Location: homepage.php');
         }
-
-        if (isset($_POST['submit'])) {
-            // Check if the user is in the database.
-            // It will look if there is a customer with that E-Mail and Password and gives back only the custId.
-            $checkId = $customers->findOne('custId', ['email', 'password'], [$email, $hashedPassword]);
+        
+        // check if User coming from http post
     
-            if (!$checkId) {
-                echo 'Error: E-Mail oder Passwort nicht korrekt. Bitte erneut eingeben.';
-                // Normal Login-Page with the message, all fields should be resetted.
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+        {
+            $email      = $_POST['email'];
+            $password   = $_POST['password'];
+            $hashedPassword = md5($password);  
+    
+            // check if the User Exist in Database
+    
+            $stmt = $GLOBALS['db']->prepare("SELECT custId, email, password, addressId FROM customers WHERE email=? AND password=?");
+            $stmt->execute(array($email,$hashedPassword));
+            $row = $stmt->fetch();
+            $count = $stmt->rowCount();
+    
+            // if Count > 0 This Mean The Database Cotanin Record About This Email
+    
+            if ($count > 0)
+            {
+                $_SESSION['email'] = $email;                    // Register Session Email
+                $_SESSION['custId']= $row['custId'];            // Register Customer ID
+                $_SESSION['addressId']= $row['addressId'];      // Register Address ID
+                header('Location: ?a=homepage');
+                exit();
             }
             else {
-                // I changed this from email to custId
-                $_SESSION['userId'] = $checkId;
-                $_SESSION['loggedIn'] = true;
-    
-                //Redirects the User from the Login to the homepage.
-                header('Location: index.php?c=pages&a=index');
-            }    
-            // Give the Login-Information into the $param Array
-            $this->setParams('userId', $checkId);
-            $this->setParams('password', $hashedPassword);
+                echo '<div class="alert alert-danger">You Email or Password is incorrect</div>';
+            }
         }
     }
 
     //This function doesn't work. There are still several errors.
-    public function actionRegistration() {
+    public function actionRegistration() 
+    {
+        // If form submitted, insert values into the database.
         if (isset($_POST['submit'])) 
         {
-            // Checks if all needed fields hold data.
             if(!empty($_POST['firstname'])
             && !empty($_POST['lastname'])
             && !empty($_POST['email'])
-            && !empty($_POST['password'])
-            && !empty($_POST['passwordagain'])) 
+            && !empty($_POST['password'])) 
             {
-                if (doesEmailExists($_POST['email'])) {
-                    echo "<div class='alert alert-danger'>Email wird bereits verwendet!</div>";
-                } else {
-                    if(isset($_POST['gender'])) {
-                        switch ($_POST['gender']) {
-                        case 'female':
-                        $gender = 'f';
-                        break;
-                        case 'male':
-                        $gender = 'm';
-                        break;
-                        default:
-                        $gender = 'd';
-                        break;
+
+                if(isset($_POST['gender']))
+                {
+                    switch ($_POST['gender'])
+                    {
+                    case 'female':
+                    $gender = 'f';
+                    break;
+                    case 'male':
+                    $gender = 'm';
+                    break;
+                    default:
+                    $gender = 'd';
+                    break;
+                    }
+                }
+                else {
+                    $gender = null;
+                }
+
+                $phone = !empty($_POST['phone']) ? $_POST['phone'] : null;
+                
+                $firstname      = $_POST['firstname'];
+                $lastname       = $_POST['lastname'];
+                $email          = $_POST['email'];
+                $password       = $_POST['password'];
+                $passwordagain  = $_POST['passwordagain'];
+                $passwordHash   = md5($password);
+
+                // Is this Mail not already registered?
+                $availableEmail = isEmailAvailable($GLOBALS['db'], $email);
+
+                // Does this password work for our safety standards?
+                $isPasswordSafe = isPasswordSafe($password);
+
+                if($availableEmail == true) 
+                {
+                    if($password === $passwordagain)
+                    {
+                    if ($isPasswordSafe == true) 
+                    {
+                        try 
+                        {
+                            if (!empty($_POST['street'])
+                            && !empty($_POST['number'])
+                            && !empty($_POST['zip'])
+                            && !empty($_POST['city'])) 
+                            {
+                                $street         = $_POST['street'];
+                                $number         = $_POST['number'];
+                                $zip            = $_POST['zip'];
+                                $city           = $_POST['city'];
+
+                                // prepare sql and bind parameters
+                                $sql2 = "INSERT INTO address (street, number, zip, city) 
+                                VALUES (:street, :number, :zip, :city)";
+                                $stmt = $GLOBALS['db']->prepare("$sql2");
+                                $stmt->bindParam(":street", $street);
+                                $stmt->bindParam(":number", $number);
+                                $stmt->bindParam(":zip", $zip);
+                                $stmt->bindParam(":city", $city);
+                                $stmt->execute();
+
+                                $lastAddressId = $GLOBALS['db']->lastInsertId();
+                            } else {
+                                $lastAddressId = null;
+                            }
+                            
+                            // prepare sql and bind parameters
+                            $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
+                                    VALUES     (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
+                                
+                            $stmt = $GLOBALS['db']->prepare("$sql");
+                            $stmt->bindParam(':firstname', $firstname);
+                            $stmt->bindParam(':lastname', $lastname);
+                            $stmt->bindParam(':email', $email);
+                            $stmt->bindParam(':phone', $phone);
+                            $stmt->bindParam(':gender', $gender);
+                            $stmt->bindParam(':password', $passwordHash);
+                            $stmt->bindParam(':addressId', $lastAddressId);
+                    
+                            $stmt->execute();
+                            echo "<div class='alert alert-success'>New records created successfully</div>";
+                        } catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
                         }
                     }
                     else {
-                        $gender = null;
+                        $status = 'Password not safe enough';
+                        echo "<div class='alert alert-danger'>Password not safe enough!</div>";
                     }
-                    if ($_POST['password'] !== $_POST['passwordagain']) {
-                        echo "<div class='alert alert-danger'>Password and Repeat Password must be the same!</div>";
-                    } else {
-                        $addressId = null;
-        
-                        // Checks if and Adress has been submitted.
-                        if(!empty($_POST['street'])
-                          && !empty($_POST['number'])
-                          && !empty($_POST['zip'])
-                          && !empty($_POST['city'])) {
-        
-                            $addressParams = [null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
-        
-                            //Makes sure that the Address isn't already in the database.
-                            $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']);
-                            if (empty($addressId)) {
-                                $address = new Adress([null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']]);
-                                if (!$address->validate()) {
-                                    echo "<div class='alert alert-danger'>Ungültige Eingabe!</div>";
-                                } else {
-                                    // If the address doesn't exist already and has the correct values, add it to the database.
-                                    $address->save();
-                                    $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']);
-                                    $this->setParams('address', $addressId);
-                                }
-                            }
-                        }
-        
-                        $hashedPassword = md5($_POST['password']);              
-                        $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId];
-        
-                        $customer = new Customers([$_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId]);
-                        if (!$customer->validate()) {
-                            echo "<div class='alert alert-danger'>Ungültige Eingabe!</div>";
-                        } else {
-                            $customer->save();
-                            echo "<div class='alert alert-success'>New records created successfully</div>";
-                            $custId = Customers::findOne('custId', ['email'], [$_POST['email']]);
-                            $this->setParams('userId', $custId);
-                        }
-                        //header('Location: index.php?a=homepage');
                     }
-                }             
+                    else {
+                    $status = 'Password and Repeat Password must be the same!!';
+                    echo "<div class='alert alert-danger'>Password and Repeat Password must be the same!</div>";
+
+                    }
+                }
+                else{
+                    $status = 'Email already beeing used';
+                    echo "<div class='alert alert-danger'>Email already beeing used!</div>";
+                }
             }
-            else {
+            else{
+                $status = 'All fields must be filled';
                 echo "<div class='alert alert-danger'>All fields must be filled!</div>";
+
             }
+
         }
+        else{
+            // da kann michts schilmmes passieren :D
+        }    
     }
     
     public function actionResetPassword() {
