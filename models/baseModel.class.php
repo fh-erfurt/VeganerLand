@@ -228,31 +228,34 @@
             return $result;
         }
 
-        // $what is what we are searching for.
-        // This time where is an array of rownames depending on the tabel.
-        // $values has to be at the same lenght as $where.
+        // Still doesn't work, but its better than before.
         public static function findOne($what, $where = [], $values = []) {
             // Check if $where and $values have the same lenght.
+            $db = $GLOBALS['db'];
+            $result = null;
+
             if (count($where) != count($values)) {
                 die('Übergabe Parameter inkorrekt.');
             }
 
-            $db = $GLOBALS['db'];
-            $result = self::tableName();
-
-            for ($idx = 0; $idx < count($where); $idx++) {
-                $result = self::find("$where[$idx] = $values[$idx]", $result);
-            }
-
             try {
-                $result = 'SELECT ' . $what . ' FROM ' . $result;
-            }
-            catch(\PDOException $e)
-            {
-                die('Selct statment failed: ' . $e->getMessage());
-            }
+                $sql = 'SELECT ' . $what . ' FROM ' . self::tableName();
+                for ($idx = 0; $idx < count($where); $idx++) {
+                    if ($idx === 0) {
+                        $sql .= ' WHERE ';
+                    }
+                    $condition = "$what[$idx]";
+                    $sql .= "$where[$idx]" . ' = ' . '"$condition"' . ' & ';
+                    if ($idx === count($where) - 1) {
+                        $sql = rtrim($sql, " & ") . ';';
+                    }
+                }
 
-            return $result;
+                $result = $db->query($sql)->fetchAll();
+
+            } catch(\PDOException $e) {
+                die('Select statement failed: '. $e->getMessage());
+            }
         }
     }
 ?>
