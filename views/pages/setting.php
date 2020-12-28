@@ -1,15 +1,23 @@
 <?php
 
-/*
-================================
-== Molham Al-khodari 27.12.2020
-================================
-*/
+//Molham Al-khodari
+//18.12.2020
+// 19:30 Uhr
+
+        session_start();
+        $pageTitle='Einstellung';
+        require_once '../../assets/statics/header.php'; 
+        require_once '../../config/init.php';
+        require_once '../../config/database.php';
+        require_once '../../core/functions.php';
 
         $do = isset($_GET['do']) ? $_GET['do'] : '';
 
         if ($do == 'Edit' && isset($_SESSION['email']))  
         {
+                // require_once '../../assets/statics/header.php'; 
+                // require_once '../../config/init.php';
+                // require_once '../../config/database.php';
 
                 $custId = $_SESSION['custId'];
                 $addressId = $_SESSION['addressId']; 
@@ -29,7 +37,7 @@
                 {
 ?>
                         <div class="con">
-                                <form class="from-horizonta" action="?a=setting&do=Update" method="post">
+                                <form class="from-horizonta" action="?do=Update" method="post">
                                         <header class="head-form">
                                                 <h2>Mitglied bearbeiten</h2>
                                                 <p> bearbeite einfach deine Daten</p>
@@ -79,9 +87,14 @@
                 {
                         echo '<div class="alert alert-danger">There is no such ID</div>';       // das kann eigentlich nicht passieren 
                 }
+                include '../../assets/statics/footer.php';                                      // das macht vielleicht hier kein sinn 
         }
         elseif($do == 'Update')
         {
+                // require_once '../../assets/statics/header.php'; 
+                // require_once '../../config/init.php';
+                // require_once '../../config/database.php';
+
                 echo "<h1>Mitglied Update</h1>";
                 echo "<div class ='container'>";
 

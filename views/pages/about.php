@@ -1,3 +1,11 @@
+<?php 
+    //Molham Alkhodari
+    //19.12.2020
+
+    $pageTitle = 'Über uns';
+    require_once '../../assets/statics/header.php';
+?>
+
     <header class="page-header">
     <h1>Veganer Land</h1>
     </header>
@@ -51,8 +59,8 @@
     <nav class="mvp-menu-bottom">
         <ul>
             <li>
-                <a href="?a=homepage" class="logo" accesskey="h">
-                    <img src="assets/images/logo.png" alt="logo" width="50px" height="50px" />
+                <a href="homepage.php" class="logo" accesskey="h">
+                    <img src="../../assets/images/logo.png" alt="logo" width="50px" height="50px" />
                 </a>
             </li>
             <li>

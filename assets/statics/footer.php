@@ -1,4 +1,8 @@
- Hier ist FOOTER :P
+
+<!-- 
+    //@author Molham Al-khodari
+    //@version 1.0.0
+ -->
 
 
  <!-- <link rel="stylesheet" type="text/css" href="../../assets/styles/footerStyle.css">

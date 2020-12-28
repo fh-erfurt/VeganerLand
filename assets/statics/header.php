@@ -4,6 +4,8 @@
     // 00:00 Uhr
  -->
 
+ <?php include_once COREPATH.'functions.php'; ?>
+
 <!Doctype html>
     <html>
         <head>
@@ -15,8 +17,6 @@
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
             <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort Vergessen'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
-            <? elseif ($pageTitle == 'Reset Password'): ?>
-            <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <? elseif ($pageTitle == 'Homepage'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'homepageStyle.css'?>">  
             <? elseif ($pageTitle == 'Einstellungen'): ?>
@@ -26,7 +26,6 @@
             <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'fruitStyle.css'?>">
             <? endif; ?>
-            <script type="text/javascript" src="assets/js/forms.js"></script>
             
         </head>
         <body>
