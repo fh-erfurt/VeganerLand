@@ -2,7 +2,7 @@
 
 class Products extends BaseModel
 {
-    const TABLENAME = '`customers`';
+    const TABLENAME = '`products`';
 
     protected $schema = [
         'prodId'    => ['type' => BaseModel::TYPE_INT],
