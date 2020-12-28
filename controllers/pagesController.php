@@ -26,7 +26,7 @@ class PagesController extends Controller {
     {
         if(isset($_SESSION['email']))
         {
-            header('Location: homepage.php');
+            header('Location: ?a=homepage');
         }
         
         // check if User coming from http post
