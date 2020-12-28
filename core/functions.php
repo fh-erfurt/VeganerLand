@@ -102,7 +102,7 @@ echo 'hier ist functions.php <br>';
         }
 
         function doesEmailExists($email) {
-            $result = Customers::find('email', $email, Customers::tableName());
+            $result = Customers::find("email = '$email'", Customers::tableName());
             return (!empty($result)) ? true : false;
         }
 
