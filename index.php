@@ -32,12 +32,11 @@ if (isset($_GET['a'])) {
     $actionName = $_GET['a'];
 }
 
-// I'm not sure if this is right.
 if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
     require_once CONTROLLERSPATH.$controllerName.'Controller.php';
 
     $className = ucfirst($controllerName).'Controller';
-    $controller = new $className($controllerName, $actionName); //Error!!
+    $controller = new $className($controllerName, $actionName);
 
     $actionMethod = 'action'.ucfirst($actionName);
     if (!method_exists($controller, $actionMethod)) {
@@ -54,47 +53,66 @@ if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
 switch ($actionName) {
     case 'fruits':
         $pageTitle = 'Obst';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
         break;
     case 'vegetables':
         $pageTitle = 'Gemüse';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
         break;
     case 'bargain':
-        $pageTitle = 'Angebote';
+        $pageTitle = 'Angebote';    // die seite gibt es noch nicht
+        require_once TEMPLATESPATH.'header.php';
         break;
     case 'login':
         $pageTitle = 'Login';
+        require_once TEMPLATESPATH.'header.php';
         break;
     case 'registration':
-        $pageTitle = 'Sign Up';
+        $pageTitle = 'Sing Up';
+        require_once TEMPLATESPATH.'header.php';
         break;
     case 'setting':
         $pageTitle = 'Einstellungen';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
         break;
     case 'resetPassword':
         $pageTitle = 'Passwort zurücksetzen';
+        require_once TEMPLATESPATH.'header.php';
         break;
     case 'about':
-        $pageTitle = 'Über Uns';
+        $pageTitle = 'Über uns';
+        require_once TEMPLATESPATH.'header.php';
+        break;
+    case 'logout':
         break;
     default:
         $pageTitle = 'Homepage';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
+        break;
 }
-?>
-
-<?
-    $pageTitle = 'Homepage';
-    require_once TEMPLATESPATH.'header.php';
-    require_once TEMPLATESPATH.'navbar.php';
-
-    $controller->render();
 
 ?>
-        <section>
-            <?if (isset($error)) : ?>
-            <div class="error">
-                <?=$error?>
-            </div>
-            <?endif;?>
-        </section>
-    </body>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <?
+        $controller->render();
+        
+    ?>
+    <section>
+        <?if (isset($error)) : ?>
+        <div class="error">
+            <?=$error?>
+        </div>
+        <?endif;?>
+    </section>
+    <? require_once TEMPLATESPATH.'footer.php';?>
+</body>
 </html>
