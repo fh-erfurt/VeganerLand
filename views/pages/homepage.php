@@ -3,16 +3,15 @@
 //18.12.2020
 //21:30 Uhr
 
-$pageTitle = "Homepage";
-require_once TEMPLATESPATH.'/header.php';
-require_once CONFIGPATH.'/init.php';
-// include '../../core/functions.php';  in header zu sehen.
-
 if (isset($_SESSION['email']))
 {
+    echo 'email: ' . $_SESSION['email'] . '<br>';
+    echo 'custId: ' . $_SESSION['custId'] . '<br>';
+    echo 'addressId' . $_SESSION['addressId'] . '<br>';
 }
 else
 {
+    echo 'You are gast <br>';
 }
 ?>
 

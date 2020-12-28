@@ -68,11 +68,18 @@ body {
 }
 
 
-/* wictig für alle geräte  */
+/* add responsive media quaries  */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1200px) {
     .column {
-        width: 100%;
+        width: 40%;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 40%;
         display: block;
     }
 }

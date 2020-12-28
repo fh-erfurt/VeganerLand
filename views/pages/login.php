@@ -4,14 +4,6 @@
 //@version 1.0.0
 //16.12.2020
 
-    $noNavbar='';
-    $pageTitle = 'Login';
-    require_once '../../assets/statics/header.php';
-    require_once '../../config/database.php';
-    require_once '../../config/init.php';
-    // require_once '../../core/functions.php';
-
-    session_start();
     if(isset($_SESSION['email']))
     {
         header('Location: homepage.php');
@@ -32,14 +24,14 @@
         $row = $stmt->fetch();  // neu code
         $count = $stmt->rowCount();
 
-        // if Cout > 0 This Mean The Database Cotanin Record  About This Email
+        // if Count > 0 This Mean The Database Cotanin Record About This Email
 
         if ($count > 0)
         {
             $_SESSION['email'] = $email;                    // Register Session Email
             $_SESSION['custId']= $row['custId'];            // Register Customer ID
             $_SESSION['addressId']= $row['addressId'];      // Register Address ID
-            header('Location: homepage.php');
+            header('Location: ?a=homepage');
             exit();
         }
         else {
@@ -47,8 +39,7 @@
         }
     }
     ?>
-<!-- <title>Login</title>
-<link rel="stylesheet" href="../../assets/styles/loginStyle.css"> -->
+
 <form action="" method="post">
     <div class="con">
         <header class="head-form">
@@ -67,9 +58,9 @@
             <!--other buttons -->
         <div class="other">
             <!--      Forgot Password button-->
-               <button class="btn submits frgt-pass"> <a href="./passwordForgot.php"> Passwort vergessen </a> </button>
+               <button class="btn submits frgt-pass"> <a href="?a=resetPassword&do=identify"> Passwort vergessen </a> </button>
             <!--     Sign Up button -->
-               <button class="btn submits sign-up"><a href="registration.php">Registrieren</a> </button>
+               <button class="btn submits sign-up"><a href="?a=registration">Registrieren</a> </button>
         </div>
     </div>
 </form>

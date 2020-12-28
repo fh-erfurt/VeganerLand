@@ -1,8 +1,12 @@
 <?php 
 
-// Molham Al khodari
-// 18.12.2020
-// 18:50 Uhr
+echo 'hier ist database.php <br>';
+
+/*
+===============================
+== Molham Al-khodari 26.12.2020
+===============================
+*/
 
 $dbName = 'veganerland';
 
