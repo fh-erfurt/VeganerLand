@@ -61,7 +61,8 @@ class PagesController extends Controller {
         }
     }
 
-    public function actionSignUp() {
+    //This function doesn't work. There are still several errors.
+    public function actionRegistration() {
         if (isset($_POST['submit'])) 
         {
             // Checks if all needed fields hold data.
@@ -72,69 +73,74 @@ class PagesController extends Controller {
             && !empty($_POST['passwordagain'])) 
             {
                 if (doesEmailExists($_POST['email'])) {
-                    die('Ungültige Eingabe');
-                }
-                
-                switch ($_POST['gender']) {
-                    case 'female':
+                    echo "<div class='alert alert-danger'>Email wird bereits verwendet!</div>";
+                } else {
+                    if(isset($_POST['gender'])) {
+                        switch ($_POST['gender']) {
+                        case 'female':
                         $gender = 'f';
-                    break;
-                    case 'male':
+                        break;
+                        case 'male':
                         $gender = 'm';
-                    break;
-                    case 'divers':
+                        break;
+                        default:
                         $gender = 'd';
-                    break;
-                    default:
-                        $gender = null;
-                }
-
-                if ($_POST['password'] !== $_POST['passwordagain']) {
-                    die('Ungültige Eingabe.');
-                }
-                
-                $addressId = null;
-
-                // Checks if and Adress has been submitted.
-                if(!empty($_POST['street'])
-                  && !empty($_POST['number'])
-                  && !empty($_POST['zip'])
-                  && !empty($_POST['city'])) {
-
-                    $addressParams = [null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
-
-                    //Makes sure that the Address isn't already in the database.
-                    $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
-                    if (empty($addressId)) {
-                        $address = new Adress($addressParams);
-                        if (!$address->validate()) {
-                            die('Ungültige Eingabe.');
-                        } else {
-                            // If the address doesn't exist already and has the correct values, add it to the database.
-                            $address->insert();
-                            $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $addressParams);
-                            $this->setParams('address', $addressId);
+                        break;
                         }
                     }
-                  }
-
-                $hashedPassword = md5($_POST['password']);              
-                $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId];
-
-                $customer = new Customer($customerParams);
-                if (!$customer->validate()) {
-                    die('Ungültige Eingabe.');
-                } else {
-                    $customer->insert();
-                    $custId = Customers::findOne('custId', ['email'], [$_POST['email']]);
-                    $this->setParams('userId', $custId);
-                }
-                header('Location: index.php?a=homepage');
+                    else {
+                        $gender = null;
+                    }
+                    if ($_POST['password'] !== $_POST['passwordagain']) {
+                        echo "<div class='alert alert-danger'>Password and Repeat Password must be the same!</div>";
+                    } else {
+                        $addressId = null;
+        
+                        // Checks if and Adress has been submitted.
+                        if(!empty($_POST['street'])
+                          && !empty($_POST['number'])
+                          && !empty($_POST['zip'])
+                          && !empty($_POST['city'])) {
+        
+                            $addressParams = [null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']];
+        
+                            //Makes sure that the Address isn't already in the database.
+                            $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']);
+                            if (empty($addressId)) {
+                                $address = new Adress([null, $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']]);
+                                if (!$address->validate()) {
+                                    echo "<div class='alert alert-danger'>Ungültige Eingabe!</div>";
+                                } else {
+                                    // If the address doesn't exist already and has the correct values, add it to the database.
+                                    $address->save();
+                                    $addressId = Address::findOne('addressId', ['street', 'number' , 'zip', 'city'], $_POST['street'], $_POST['number'], $_POST['zip'], $_POST['city']);
+                                    $this->setParams('address', $addressId);
+                                }
+                            }
+                        }
+        
+                        $hashedPassword = md5($_POST['password']);              
+                        $customerParams = [null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId];
+        
+                        $customer = new Customers([$_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['phone'], $gender, $hashedPassword, $addressId]);
+                        if (!$customer->validate()) {
+                            echo "<div class='alert alert-danger'>Ungültige Eingabe!</div>";
+                        } else {
+                            $customer->save();
+                            echo "<div class='alert alert-success'>New records created successfully</div>";
+                            $custId = Customers::findOne('custId', ['email'], [$_POST['email']]);
+                            $this->setParams('userId', $custId);
+                        }
+                        //header('Location: index.php?a=homepage');
+                    }
+                }             
             }
-
+            else {
+                echo "<div class='alert alert-danger'>All fields must be filled!</div>";
+            }
         }
     }
-
+    
     public function actionResetPassword() {
         // Customer as forgotten Password. → Customer gets an E-Mail with a new password.
         // Customer wants to change Password. → Customer gives old password and 2x new password.
