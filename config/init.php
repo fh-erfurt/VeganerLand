@@ -1,5 +1,7 @@
 <?php
 
+echo 'hier ist init.php <br>';
+
 define('COREPATH',  'core'.DIRECTORY_SEPARATOR);
 define('CONFIGPATH', 'config'.DIRECTORY_SEPARATOR);
 define('VIEWSPATH',  'views'.DIRECTORY_SEPARATOR);
@@ -11,13 +13,3 @@ define('STYLESPATH', 'assets'.DIRECTORY_SEPARATOR.'styles'.DIRECTORY_SEPARATOR);
 
 
 define('ROOTPATH', strlen(dirname($_SERVER['SCRIPT_NAME']))) > 1 ? dirname($_SERVER['SCRIPT_NAME']). '/' : '/';
-
-// Include ../../statics/header.php; error
-
-// Include Navbar On All Pages Expect The One With $noNavbar Vairable
-
-if(!isset($noNavbar))
-{
-    include TEMPLATESPATH.'navbar.php';
-    
-}
