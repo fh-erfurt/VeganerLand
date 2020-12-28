@@ -16,12 +16,12 @@ require_once CONFIGPATH.'database.php';*/
             <li class="cards__item"> 
                 <div class="col">
                     <div class="card">
-                        <div class="card-title"><?=$fruits[$counter]['descrip']?></div>  <!--wird aus datenbank gelesen-->
-                        <img class='ard__image card__image--fence' src="http://placekitten.com/271/180" class="card-img-top" alt="Artikal">   <!--Static Bilder-->
+                        <div class="card-title"><?=$fruits[$counter]['descrip']?></div>
+                        <img class='ard__image card__image--fence' src="<?=FRUITPATH.$fruits[$counter]['descrip']?>.jpg" class="card-img-top" alt="Artikel">
                         <div class="card__text">
-                            <p>test product, hier eine tolle lange beschreibung</p>                     <!--wird aus dem datenbank gelesen-->
+                            <p>test product, hier eine tolle lange beschreibung</p>
                             <hr>
-                            <p><?=$fruits[$counter]['stdPrice']?></p>                                                                <!--wird aus dem datenbank gelesen-->
+                            <p><?=$fruits[$counter]['stdPrice']?></p>
                         </div>
                         <div class="card-footer">
                             <button class="btn btn--block card__btn">details</button>
