@@ -145,6 +145,8 @@ class PagesController extends Controller {
                     
                             $stmt->execute();
                             echo "<div class='alert alert-success'>New records created successfully</div>";
+                            
+                            header('Location: ?homepage');
                         } catch (PDOException $e) {
                             echo "Error: " . $e->getMessage();
                         }
