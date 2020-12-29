@@ -224,7 +224,6 @@ class PagesController extends Controller {
 
             $addressId = $custInfo[0]['addressId'];
             $info['addressId'] = $addressId;
-            var_dump($custInfo);
 
             if (!empty($addressId)) {
                 $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
