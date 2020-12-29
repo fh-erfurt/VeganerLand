@@ -349,13 +349,45 @@ class PagesController extends Controller {
     }
 
     public function actionFruits() {
-        $fruits = Products::find("cat = 'F' OR cat = 'C' OR cat = 'B' OR cat = 'E' OR cat = 'N'", Products::tableName());
+
+        $cat = $_GET['cat'];
+        
+        switch ($cat) {
+            case 'citrus':
+                $fruits = Products::find("cat = 'C'", Products::tableName());
+                break;
+            case 'berry':
+                $fruits = Products::find("cat = 'B'", Products::tableName());
+                break;
+            case 'nuts':
+                $fruits = Products::find("cat = 'N'", Products::tableName());
+                break;
+            case 'exotics':
+                $fruits = Products::find("cat = 'E'", Products::tableName());
+                break;
+            default:
+                $fruits = Products::find("cat = 'F' OR cat = 'C' OR cat = 'B' OR cat = 'E' OR cat = 'N'", Products::tableName());
+                break;
+        }
 
         $this->setParams('fruits', $fruits);
     }
 
     public function actionVegetables() {
-        $veggies = Products::find("cat = 'V' OR cat = 'P' OR cat = 'M'", Products::tableName());
+
+        $cat = $_GET['cat'];
+
+        switch ($cat) {
+            case 'potato':
+                $veggies = Products::find("cat = 'P'", Products::tableName());
+                break;
+            case 'mushroom':
+                $veggies = Products::find("cat = 'M'", Products::tableName());
+                break;
+            default:
+                $veggies = Products::find("cat = 'V' OR cat = 'P' OR cat = 'M'", Products::tableName());
+                break;
+        }
 
         $this->setParams('veggies', $veggies);
     }
