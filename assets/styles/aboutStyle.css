@@ -1,6 +1,6 @@
 /*
 ===================================
-== Molham Al-khodari    26.12.2020
+== Molham Al-khodari    29.12.2020
 ===================================
 
 =================
@@ -36,6 +36,10 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+}
+
+.card img {
+    height: 200px;
 }
 
 .container {
