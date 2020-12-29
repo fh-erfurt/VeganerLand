@@ -18,7 +18,7 @@
 <nav class="nav-container">
   <ul class="nav-list"> 
     <li><a class="active" href="?a=homepage">Startseite</a></li>
-    <li><a href="#">Angeboten</a></li>
+    <li><a href="?a=bargain">Angeboten</a></li>
     <li><a href="?a=about">Über uns</a></li>
     <li><a href="?a=fruits">Obst</a></li>
     <li><a href="?a=vegetables">Gemüse</a></li>
