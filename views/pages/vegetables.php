@@ -1,14 +1,14 @@
 <?//@author Molham Al-Khodari, Jessica Eckardtsberg?>
 <link rel="stylesheet" href="<?=STYLESPATH.'navbarStyle.css'?>">
 
+<nav class="fruit-nav-container">
+    <ul class="fruit-nav-list">
+        <li><a href="?a=vegetables">Alle</a></li>
+        <li><a href="?a=vegetables&cat=potato">Kartoffeln</a></li>
+        <li><a href="?a=vegetables&cat=mushroom">Pilze</a></li>
+    </ul>
+</nav>
 <div class="block-container">
-    <nav class="nav-container">
-        <ul class="nav-list">
-            <li><a href="?a=vegetables"></a>Alle</li>
-            <li><a href="?a=vegetables&cat=potato">Kartoffeln</a></li>
-            <li><a href="?a=vegetables&cat=mushroom">Pilze</a></li>
-        </ul>
-    </nav>
     <ul class="cards">
         <? $counter = 0;
         while($counter < count($veggies)): ?>
