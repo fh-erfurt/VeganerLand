@@ -9,6 +9,6 @@ session_unset();
 
 session_destroy();
 
-header('Location: index.php?a=login');
+header('Location: ?a=homepage');
 
 exit();
