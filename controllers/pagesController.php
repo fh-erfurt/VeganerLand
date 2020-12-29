@@ -350,8 +350,7 @@ class PagesController extends Controller {
 
     public function actionFruits() {
 
-        $cat = null;
-        $cat = $_GET['cat'];
+        $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
         
         switch ($cat) {
             case 'citrus':
@@ -376,8 +375,7 @@ class PagesController extends Controller {
 
     public function actionVegetables() {
 
-        $cat = null;
-        $cat = $_GET['cat'];
+        $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
 
         switch ($cat) {
             case 'potato':
