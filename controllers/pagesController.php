@@ -348,62 +348,22 @@ class PagesController extends Controller {
         $this->setParams('favorites', $favs);
     }
 
-    // 20 Products
     public function actionFruits() {
-        // Selects all fruits from the products table. Exceptions are citrus fruits (c), berries (b),
-        // exotics (e), and nuts (n).
-        $fruits = Products::find("cat = 'F'", Products::tableName());
+        $fruits = Products::find("cat = 'F' OR cat = 'C' OR cat = 'B' OR cat = 'E' OR cat = 'N'", Products::tableName());
 
         $this->setParams('fruits', $fruits);
     }
 
     public function actionVegetables() {
-        // Selects all veggies from the products table. Exceptions are potatoes (p) and mushrooms (m).
-        $veggies = Products::find("cat = 'V'", Products::tableName());
+        $veggies = Products::find("cat = 'V' OR cat = 'P' OR cat = 'M'", Products::tableName());
 
         $this->setParams('veggies', $veggies);
     }
 
-    // Some Products
-    public function actionCitrus() {
-        $citrus = Products::find("cat = 'C'", Products::tableName());
-
-        $this->setParams('citrus', $citrus);
-    }
-
-    public function actionBerries() {
-        $berries = Products::find("cat = 'B'", Products::tableName());
-
-        $this->setParams('berries', $berries);
-    }
-
-    public function actionExotics() {
-        $exotics = Products::find("cat = 'E'", Products::tableName());
-
-        $this->setParams('exotics', $exotics);
-    }
-
-    public function actionNuts() {
-        $nuts = Products::find("cat = 'N'", Products::tableName());
-
-        $this->setParams('nuts', $nuts);
-    }
-
-    public function actionPotatoes() {
-        $potatos = Products::find("cat = 'P'", Products::tableName());
-
-        $this->setParams('potatoes', $potatoes);
-    }
-
-    public function actionMushrooms() {
-        $mushrooms = Products::find("cat = 'M'", Products::tableName());
-
-        $this->setParams('mushrooms', $mushrooms);
-    }
-
     public function actionBargain() {
-        // A static page. I think. Or we search by the name and add them to an array.
-        // All products under 1€
+        $bargain = Products::find("stdPrice < 1.50", Products::tableName());
+
+        $this->setParams('bargain', $bargain);
     }
 
     // Still not sure on how to do the code.
