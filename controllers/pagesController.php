@@ -336,7 +336,8 @@ class PagesController extends Controller {
                 }
             }
         } else {
-            '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="?login">Anmelden</a></div>';
+            header('Location: ?a=homepage');
+            echo '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="?login">Anmelden</a></div>';
         }
     }
     public function actionFavorites() {
