@@ -1,49 +1,72 @@
- Hier ist FOOTER :P
 
+<link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
 
- <!-- <link rel="stylesheet" type="text/css" href="../../assets/styles/footerStyle.css">
+<header class="page-footer">
+    <h1>Veganer Land</h1>
+</header>
 
-    <div class ="footer">
-        <div class="inner_footer">
-            <div class="logo_container">
-                <img src="../../assets/images/logo.png" alt="logo"/>
-            </div>
-            <div class="footer_third">
-                <h1>Need Help?</h1>
-                <a href="#">Terms &amp; Conditions</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            <div class="footer_third">
-                <h1>More</h1>
-                <a href="#">Brouchures</a>
-                <a href="#">Donate</a>
-                <a href="#">Governance</a>
-                <a href="#">Impact Report</a>   
-                <a href="#">Brouchures</a>
-                <a href="#">Donate</a>
-                <a href="#">Governance</a>
-                <a href="#">Impact Report</a>
-            </div>
-            <div class="footer_third">
-                <h1>Follow us</h1>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-
-                <span>
-                    World Merit Registered Charity <br>
-                    Germany & Wales - 1161402 <br>
-                    Unit 223, The Tea Factory <br>
-                    82 Wood Street <br>
-                    Weimar<br>
-                    99423
-                    
-                </span>
-            </div>
-
-        </div>
-    </div> -->
-    
-</body>
-</html>
+<!-- FOOTER START -->
+<div class="footer">
+    <div class="contain">
+    <div class="col">
+        <h1>Company</h1>
+        <ul>
+        <li><a href="?a=about">About</a></li>
+        <li><a href="?a=about#team">Team</a></li>
+        <li><a href="?a=about">Services</a></li>
+        <li><a href="?a=about#impressum">Impressum</a></li>
+        <li><a href="?a=about">Analytics</a></li>
+        <li><a href="?a=about#email">Get in touch</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h1>Products</h1>
+        <ul>
+        <li><a href="?a=about">About</a></li>
+        <li><a href="?a=about#dashboard">Dashboard</a></li>
+        <li><a href="?a=about#content">Content</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h1>Accounts</h1>
+        <ul>
+        <li><a href="?a=about">About</a></li>
+        <li><a href="?a=about">Mission</a></li>
+        <li><a href="?a=about">Services</a></li>
+        <li><a href="?a=about">Social</a></li>
+        <li><a href="?a=about#email">Get in touch</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h1>Resources</h1>
+        <ul>
+        <li><a href="?a=about">Webmail</a></li>
+        <li><a href="?a=about">Redeem code</a></li>
+        <li><a href="?a=about">WHOIS lookup</a></li>
+        <li><a href="?a=about">Site map</a></li>
+        <li><a href="?a=about">Web templates</a></li>
+        <li><a href="?a=about#email">Email templates</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <h1>Support</h1>
+        <ul>
+        <li><a href="?a=about#email">Contact us</a></li>
+        <li><a href="?a=about#email">E-Mail</a></li>
+        <li><a href="?a=about#support">Support</a></li>
+        <li><a href="?a=about">Web chat</a></li>
+        <li><a href="?a=about">Open ticket</a></li>
+        </ul>
+    </div>
+    <div class="col social">  <!--das haben wir nicht also keine icons ?-->
+        <h1>Social</h1>
+        <ul>
+        <li><img src="?a=about" alt="F" width="32" style="width: 32px;"></li>
+        <li><img src="?a=about" alt="I" width="32" style="width: 32px;"></li>
+        <li><img src="?a=about" alt="T" width="32" style="width: 32px;"></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+</div>
+<!-- END OF FOOTER -->

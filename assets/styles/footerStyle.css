@@ -1,97 +1,131 @@
-/*
-================================== 
-== wird von Mahmoud Mater gemacht
-==================================
-*/
+/* REMOVE THIS, USE YOUR OWN  */
+
+html,
+body {
+    background-color: #070617;
+}
+
+.page-footer,
+.page-footer h1 {
+    background-color: white;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
-/* * {
+/* STYLES SPECIFIC TO FOOTER  */
+
+.footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #070617;
+}
+
+.footer .col {
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+}
+
+.footer .col h1 {
     margin: 0;
     padding: 0;
-    list-style: none;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+}
+
+.footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer .col ul li,
+a {
+    color: #999999;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
     text-decoration: none;
 }
 
-.footer {
-    margin: 50px;
-    width: 100vw;
-    display: block;
-    overflow: hidden;
-    padding: 70px;
-    box-sizing: border-box;
-    background-color: #18181a;
-}
-
-.innner_footer {
-    display: block;
-    margin: 0;
-    width: 1100px;
-    height: 100%;
-}
-
-.innner_footer .logo_container {
-    width: 35%;
-    float: left;
-    height: 100%;
-    display: block;
-}
-
-.innner_footer .logo_container img {
-    width: 65px;
-    height: 65px;
-    float: left;
-    display: block;
-}
-
-.inner_footer .footer_third {
-    width: calc(21.6666666667% - 20px);
-    margin-right: 10px;
-    float: left;
-    height: 100%;
-}
-
-.inner_footer .footer_third:last-child {
-    margin-right: 0;
-}
-
-.inner_footer .footer_third h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    color: white;
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.inner_footer .footer_third a {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: white;
-    display: block;
-    font-weight: 200;
-    width: 100%;
-    padding-bottom: 5px;
-}
-
-.inner_footer .footer_third li {
+.social ul li {
     display: inline-block;
-    padding: 0 5px;
-    font-size: 20px;
+    padding-right: 5px !important;
 }
 
-.inner_footer .footer_third span {
-    color: white;
-    font-family: 'arial';
-    font-size: 16px;
-    font-weight: 200;
-    display: block;
-    width: 100%;
-    padding-top: 20px;
+.footer .col ul li:hover,
+a:hover {
+    color: #ffffff;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
 }
 
-@media(max-width: 800px) {
-    .footer .inner_footer {
-        width: 100%;
-        margin-bottom: 30px;
+.clearfix {
+    clear: both;
+}
+
+@media only screen and (min-width: 1280px) {
+    .contain {
+        width: 1200px;
+        margin: 0 auto;
     }
-} */
+}
+
+@media only screen and (max-width: 1139px) {
+    .contain .social {
+        width: 1000px;
+        display: block;
+    }
+    .social h1 {
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .footer .col {
+        width: 33%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer .col {
+        width: 50%;
+    }
+    .footer .col h1 {
+        font-size: 14px;
+    }
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .footer .col {
+        width: 100%;
+    }
+}

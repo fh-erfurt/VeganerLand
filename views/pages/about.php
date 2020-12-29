@@ -3,7 +3,7 @@
     </header>
 
     <article>
-    <h2>Team</h2>
+    <h2 id="team">Team</h2>
     <div class="row">
         <div class="column">
             <div class="card">
