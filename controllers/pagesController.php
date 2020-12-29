@@ -10,16 +10,7 @@ class PagesController extends Controller {
     }
     
     public function actionHomepage() {
-        if ($this->loggedIn()) {
-            $controllerId = $this->params['userId'];
-    
-            $name = Address::find("custId = '$controllerId'", Address::tableName());
-            $this->setParams('name', $name);
-    
-            // Get the data from orderitems for the customer.
-            $cart = OrderItems::find("custId = '$controllerId'", OrderItems::tableName());
-            $this->setParams('cart', $cart);
-        }
+        // Here is nothing to do.
     }
 
     public function actionLogin() 
