@@ -1,4 +1,7 @@
 
+<div class="note">
+   <span>aus berührung wird Rührung</span> - wir sind online weiter hin für dich da!
+</div>
 
 <section class="header">
     <h1>Welcome to <em>VeganerLand</em></h1>

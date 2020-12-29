@@ -7,10 +7,12 @@ Section
     height: 60%;
     text-align: center;
     display: inherit;
+    margin: 12px;
+    padding: 1px;
 }
 
 .header h1 {
-    padding-top: 11%;
+    padding-top: 5%;
     font-family: 'Vollkorn', serif;
     font-size: 48px;
 }
@@ -21,6 +23,20 @@ Section
     font-family: 'Muli', sans-serif;
     font-size: 18px;
     line-height: 1.35;
+}
+
+.note {
+    background-color: #AE3C58;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+}
+
+span {
+    color: #DCBE5C;
 }
 
 .button {
@@ -49,6 +65,11 @@ Section
 
 /* block */
 
+.grid-full {
+    margin: 12px;
+    padding: 1px;
+}
+
 .rowBlock {
     display: flex;
     margin-top: 50px;
@@ -63,10 +84,15 @@ Section
     width: 50%;
 }
 
+.angebot {
+    margin: 12px;
+    padding: 1px;
+}
+
 .blockFull {
     width: 100%;
     margin-left: 5%;
-    margin-top: 111px;
+    margin-top: 50px;
 }
 
 
