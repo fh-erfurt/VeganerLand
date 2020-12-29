@@ -1,4 +1,16 @@
-    <div class="block-container">
+<?//@author Molham Al-Khodari, Jessica Eckardtsberg?>
+<link rel="stylesheet" href="<?=STYLESPATH.'navbarStyle.css'?>">
+
+<div class="block-container">
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li><a href="?a=fruits"></a>Alle</li>
+            <li><a href="?a=fruits&cat=citrus">Zitrus Früchte</a></li>
+            <li><a href="?a=fruits&cat=berry">Beeren</a></li>
+            <li><a href="?a=fruits&cat=nuts">Nüsse</a></li>
+            <li><a href="?a=fruits&cat=exotics">Exotische Früchte</a></li>
+        </ul>
+    </nav>
     <ul class="cards">
         <? $counter = 0;
         while($counter < count($fruits)): ?>
