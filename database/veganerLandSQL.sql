@@ -184,3 +184,15 @@ INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES
 (41, 'tomaten', 'V', '1.20'),
 (42, 'zucchini', 'V', '0.56'),
 (43, 'zwiebeln', 'V', '6.73');
+               
+INSERT INTO `products` (`prodId`, `descrip`, `cat`, `stdPrice`) VALUES 
+(NULL, 'brombeere', 'B', '2.12'), 
+(NULL, 'johannisbeere-rot', 'B', '2.00'), 
+(NULL, 'beeren-mix', 'B', '4.50'), 
+(NULL, 'zitrone', 'C', '4.32'), 
+(NULL, 'limette', 'C', '1.20'), 
+(NULL, 'mandarine', 'C', '1.79'), 
+(NULL, 'pfifferlinge', 'M', '3.50'), 
+(NULL, 'steinpilze', 'M', '2.70'), 
+(NULL, 'judasohr', 'M', '4.30'), 
+(NULL, 'violetter lacktrichterling', 'M', '4.30'); 
