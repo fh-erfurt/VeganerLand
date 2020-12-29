@@ -62,8 +62,9 @@ switch ($actionName) {
         include TEMPLATESPATH.'navbar.php';
         break;
     case 'bargain':
-        $pageTitle = 'Angebote';    // die seite gibt es noch nicht
+        $pageTitle = 'Angebote';
         require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
         break;
     case 'login':
         $pageTitle = 'Login';
