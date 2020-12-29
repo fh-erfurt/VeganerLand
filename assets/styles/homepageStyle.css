@@ -4,7 +4,7 @@ Section
 
 .header {
     background-image: linear-gradient(to top, #8cec6d 0%, #589b72 100%);
-    height: 60%;
+    height: 300px;
     text-align: center;
     display: inherit;
     margin: 12px;
@@ -92,7 +92,6 @@ span {
 .blockFull {
     width: 100%;
     margin-left: 5%;
-    margin-top: 50px;
 }
 
 
@@ -100,17 +99,17 @@ span {
 
 .block-fruit img {
     width: 99%;
-    height: 500px;
+    height: 650px;
 }
 
 .block-vegetable img {
     width: 99%;
-    height: 500px;
+    height: 650px;
 }
 
 .blockFull img {
     width: 90%;
-    height: 500px;
+    height: 400px;
 }
 
 .blockFull button {
