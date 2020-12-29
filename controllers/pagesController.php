@@ -198,42 +198,148 @@ class PagesController extends Controller {
     }
 
     public function actionSetting() {
-        // Customer can look into his given data and change his address, phone number and favorite products.
-        // For password there is a button to the resetPassword.php. (Open for discussion)
+    // Customer can look into his given data and change his address, phone number and favorite products.
 
-        $info = ['firstName' => null,
-                 'lastName' => null,
-                 'email' => null,
-                 'phone' => null,
-                 'password' => null,
-                 'street' => null,
-                 'number' => null,
-                 'zip' => null,
-                 'city' => null];
-        $email = $_SESSION['email'];
+        if (isset($_SESSION['email'])) {
+            $info = ['custId'   => null,
+                    'firstName' => null,
+                    'lastName'  => null,
+                    'email'     => null,
+                    'phone'     => null,
+                    'password'  => null,
+                    'addressId' => null,
+                    'street'    => null,
+                    'number'    => null,
+                    'zip'       => null,
+                    'city'      => null];
+            $email = $_SESSION['email'];
 
-        $custInfo = Customers::find("email = '$email'", Customers::tableName());
-        $info['firstName'] = $custInfo[0]['firstName'];
-        $info['lastName'] = $custInfo[0]['lastName'];
-        $info['email'] = $custInfo[0]['email'];
-        $info['phone'] = $custInfo[0]['phone'];
-        $info['password'] = $custInfo[0]['password'];
+            $custInfo = Customers::find("email = '$email'", Customers::tableName());
+            $info['custId'] = $custInfo[0]['custId'];
+            $info['firstName'] = $custInfo[0]['firstName'];
+            $info['lastName'] = $custInfo[0]['lastName'];
+            $info['email'] = $custInfo[0]['email'];
+            $info['phone'] = $custInfo[0]['phone'];
+            $info['password'] = $custInfo[0]['password'];
 
-        $addressId = $custInfo[0]['addressId'];
+            $addressId = $custInfo[0]['addressId'];
+            $info['addressId'] = $addressId;
+            var_dump($custInfo);
 
-        if (!empty($custInfo['addressId'])) {
-            $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
-            $info['street'] = $addressInfo[0]['street'];
-            $info['number'] = $addressInfo[0]['number'];
-            $info['zip'] = $addressInfo[0]['zip'];
-            $info['city'] = $addressInfo[0]['city'];
+            if (!empty($addressId)) {
+                $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
+                var_dump($addressInfo);
+                $info['street'] = $addressInfo[0]['street'];
+                $info['number'] = $addressInfo[0]['number'];
+                $info['zip'] = $addressInfo[0]['zip'];
+                $info['city'] = $addressInfo[0]['city'];
+            }
+
+            $this->setParams('customerInfo', $info);
+
+            if (isset($_POST['submit'])) {
+                $newInfo = ['custId'    => $_POST['custId'],
+                            'email'     => $_POST['email'],
+                            'password'  => $_POST['oldPassword'],
+                            'phone'     => $_POST['phone'],
+                            'addressId' => $_POST['addressId'],
+                            'street'    => $_POST['street'],
+                            'number'    => $_POST['number'],
+                            'zip'       => $_POST['zip'],
+                            'city'      => $_POST['city']];
+                $formErrors = 0;
+                $noNewAddress = false;
+                var_dump($newInfo);
+
+                if (!empty($_POST['newPassword'])) {
+                    if (isPasswordSafe($_POST['newPassword'])) {
+                        $newInfo['password'] = md5($_POST['newPassword']);
+                    } else {
+                        $formErrors++;
+                    }
+                }
+
+                if (empty($newInfo['email'])) {
+                    $formErrors++;
+                } else {
+                    // Checks if the email has been changed into another email already existing in the database.
+                    if (doesEmailExists($newInfo['email'])
+                    &&  $newInfo['email'] !== $email) {
+                        $formErrors++;
+                    }
+                }
+
+                // Checks if all fields are filled.
+                if (!empty($newInfo['street'])
+                &&  !empty($newInfo['number'])
+                &&  !empty($newInfo['zip'])
+                &&  !empty($newInfo['city'])){
+
+                    $street = $newInfo['street'];
+                    $number = $newInfo['number'];
+                    $zip = $newInfo['zip'];
+                    $city = $newInfo['city'];
+                    $addressInfo = Address::find("street = '$street' AND
+                                                  number = '$number' AND 
+                                                  zip    = '$zip'    AND 
+                                                  city   = '$city'", 
+                                                  Address::tableName());
+
+                } else if (!empty($newInfo['street'])//Checks if only some fields are filled.
+                       ||  !empty($newInfo['number'])
+                       ||  !empty($newInfo['zip'])
+                       ||  !empty($newInfo['city'])) {
+                    $formErrors++;
+                } else {
+                    $noNewAddress = true;
+                }
+
+                if ($formErrors !== 0) {
+                    echo '<div class="alert alert-danger">Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.</div>';
+                    exit();
+                } else {
+                    // Update the Database
+                    if (empty($addressInfo) && !$noNewAddress){ //Creats an new entry in sddress table if address doesn't exists there.
+                        try {
+                            $sql1 = "INSERT INTO " . Address::tableName() . " (street, number, zip, city) 
+                                     VALUES ('$street', '$number', '$zip', '$city');";
+                            
+                            $stmt = $GLOBALS['db']->prepare($sql1);
+                            $stmt->execute();
+
+                            $newInfo['addressId'] = $GLOBALS['db']->lastInsertId();
+                        } catch (\PDOException $e){
+                            echo 'Fehlschlag: ' . $e->getMessage();
+                        }
+                    } else if (!$noNewAddress){
+                        $newInfo['addressId'] = $addressInfo[0]['addressId'];
+                    }
+
+                    // Update Customer Entry
+                    $email = $newInfo['email'];
+                    $phone = $newInfo['phone'];
+                    $password = $newInfo['password'];
+                    $addressId = $newInfo['addressId'];
+                    $id = $newInfo['custId'];
+
+                    try {
+                        $sql2 = "UPDATE " . Customers::tableName() . " SET 
+                                email = '$email', phone = '$phone', password = '$password', addressId = '$addressId' 
+                                WHERE custId = $id;";
+                        
+                        $stmt = $GLOBALS['db']->prepare($sql2);
+                        $stmt->execute();
+                    } catch (\PDOException $e) {
+                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                    }
+
+                    echo '<div class="alert alert-success">Update erfolgreich!</div>';
+                }
+            }
+        } else {
+            '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="?login">Anmelden</a></div>';
         }
-
-        $this->setParams('customerInfo', $info);
-
-        // Now only the part where one can change everything is left... save-button
     }
-
     public function actionFavorites() {
         // Gives a List of the Customers favorite products. We still need a model for this table.
         $custId = $this->params['userId'];
