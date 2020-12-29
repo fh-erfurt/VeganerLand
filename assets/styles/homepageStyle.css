@@ -1,0 +1,107 @@
+/*****************
+Section 
+******************/
+
+.header {
+    background-image: linear-gradient(to top, #8cec6d 0%, #589b72 100%);
+    height: 60%;
+    text-align: center;
+    display: inherit;
+}
+
+.header h1 {
+    padding-top: 11%;
+    font-family: 'Vollkorn', serif;
+    font-size: 48px;
+}
+
+.header p {
+    width: 500px;
+    margin: -28px auto 32px;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+.button {
+    height: 50px;
+    width: 220px;
+    background-image: linear-gradient(-225deg, #f3f3f300 50%, #3cc80e 50%);
+    color: inherit;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #AE3C58;
+}
+
+.button:focus {
+    outline: none;
+    border: 2px solid #BA4662;
+    box-shadow: 0 0 10px #BA4662;
+}
+
+
+/* block */
+
+.rowBlock {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+.block-fruit {
+    width: 50%;
+}
+
+.block-vegetable {
+    width: 50%;
+}
+
+.blockFull {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 111px;
+}
+
+
+/* photo */
+
+.block-fruit img {
+    width: 99%;
+    height: 100%;
+}
+
+.block-vegetable img {
+    width: 99%;
+    height: 100%;
+}
+
+.blockFull img {
+    width: 90%;
+    height: 400px;
+}
+
+.blockFull button {
+    width: 90%;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    padding: 8px;
+    color: black;
+    background-image: linear-gradient(-225deg, #f3f3f300 50%, #3cc80e 50%);
+    cursor: pointer;
+    width: 99%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2px;
+    padding: auto;
+}
