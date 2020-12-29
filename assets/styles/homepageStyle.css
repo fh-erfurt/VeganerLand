@@ -100,15 +100,17 @@ span {
 
 .block-fruit img {
     width: 99%;
+    height: 500px;
 }
 
 .block-vegetable img {
     width: 99%;
+    height: 500px;
 }
 
 .blockFull img {
     width: 90%;
-    height: 400px;
+    height: 500px;
 }
 
 .blockFull button {
