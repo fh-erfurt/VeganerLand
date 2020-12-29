@@ -203,23 +203,28 @@ class PagesController extends Controller {
                  'lastName' => null,
                  'email' => null,
                  'phone' => null,
+                 'password' => null,
                  'street' => null,
                  'number' => null,
                  'zip' => null,
                  'city' => null];
+        $email = $_SESSION['email'];
 
-        $custInfo = Customers::find("custId = '{$this->params}['userId']'", Customers::tableName());
-        $info['firstName'] = $custInfo['firstName'];
-        $info['lastName'] = $custInfo['lastName'];
-        $info['email'] = $custInfo['email'];
-        $info['phone'] = $custInfo['phone'];
+        $custInfo = Customers::find("email = '$email'", Customers::tableName());
+        $info['firstName'] = $custInfo[0]['firstName'];
+        $info['lastName'] = $custInfo[0]['lastName'];
+        $info['email'] = $custInfo[0]['email'];
+        $info['phone'] = $custInfo[0]['phone'];
+        $info['password'] = $custInfo[0]['password'];
+
+        $addressId = $custInfo[0]['addressId'];
 
         if (!empty($custInfo['addressId'])) {
-            $addressInfo = Address::find("addressId = '{$custInfo}['addressId']'", Address::tableName());
-            $info['street'] = $addressInfo['street'];
-            $info['number'] = $addressInfo['number'];
-            $info['zip'] = $addressInfo['zip'];
-            $info['city'] = $addressInfo['city'];
+            $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
+            $info['street'] = $addressInfo[0]['street'];
+            $info['number'] = $addressInfo[0]['number'];
+            $info['zip'] = $addressInfo[0]['zip'];
+            $info['city'] = $addressInfo[0]['city'];
         }
 
         $this->setParams('customerInfo', $info);
