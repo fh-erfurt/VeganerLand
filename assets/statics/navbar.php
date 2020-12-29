@@ -33,7 +33,7 @@
       <a href="" class="dropbtn">Konto</a>
       <div class="dropdown-content">
         <a href="?a=login">Login</a>
-        <a href="?a=setting&do=Edit">Einstellungen</a>
+        <a href="?a=setting">Einstellungen</a>
         <a href="?a=logout">Logout</a>
       </div>
     </li>
