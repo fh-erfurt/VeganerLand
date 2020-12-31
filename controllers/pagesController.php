@@ -187,9 +187,12 @@ class PagesController extends Controller {
     public function actionSearch() {
         // Input whta to search in field (Name of fruit of veggie)
         if (isset($_POST['submit'])) {
-            $result = Products::find("descrip = '{$_POST}['search']'", Products::tableName());
-            
+
+            $search = $_POST['search'];
+            $result = Products::find("descrip LIKE '%$search%'", Products::tableName());
+
             $this->setParams('search', $result);
+
         }
     }
 
