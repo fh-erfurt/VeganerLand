@@ -1,4 +1,4 @@
-/* Molham Al-khodari    21.12.2020  22:33 Uhr
+/* Molham Al-khodari    31.12.2020  22:33 Uhr
  ***************************
  ** Start Global rules 
  ***************************
@@ -26,6 +26,7 @@ form {
     box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
     padding: 2%;
     background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
+    margin-top: -30px;
 }
 
 
