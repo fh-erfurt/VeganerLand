@@ -31,7 +31,7 @@
 
 /* the header form form */
 
-.head-form {
+.setting-head-form {
     margin: 2% auto 10% auto;
     text-align: center;
 }
@@ -39,7 +39,7 @@
 
 /* Login title form form */
 
-.head-form h2 {
+.setting-head-form h2 {
     font-size: 250%;
     font-family: Arial, Helvetica, sans-serif;
     color: #3e403f;
@@ -48,7 +48,7 @@
 
 /*  A welcome message or an explanation of the login form */
 
-.head-form p {
+.setting-head-form p {
     letter-spacing: 0.05em;
 }
 
@@ -82,7 +82,9 @@ input:focus {
 
 /* buttons  */
 
-button {
+.save {
+    background: #B8F2E6;
+    color: black;
     display: inline-block;
     color: #252537;
     width: 375px;
@@ -100,34 +102,9 @@ button {
 }
 
 
-/* Submits */
-
-.submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-}
-
-
-/* Forgot Password button FAF3DD  */
-
-.frgt-pass {
-    background: transparent;
-    margin-top: auto;
-}
-
-
-/* Sign Up button  */
-
-.sign-up {
-    background: #B8F2E6;
-}
-
-
 /* buttons hover */
 
-button:hover {
+.save button:hover {
     transform: translatey(3px);
     box-shadow: none;
 }
@@ -135,21 +112,16 @@ button:hover {
 
 /* buttons hover Animation */
 
-button:hover {
+.save button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
 
-.save {
-    background: #B8F2E6;
-    color: black;
-}
-
-button:hover {
+.save button:hover {
     transform: translatey(3px);
     box-shadow: none;
 }
 
-button:hover {
+.save button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
 

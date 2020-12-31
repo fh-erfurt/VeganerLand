@@ -114,6 +114,11 @@ switch ($actionName) {
         </div>
         <?endif;?>
     </section>
-    <? require_once TEMPLATESPATH.'footer.php';?>
+    <?
+    if($pageTitle != 'Login' and $pageTitle != 'Sing Up' and $pageTitle != 'Passwort zurücksetzen') 
+    {
+        require_once TEMPLATESPATH.'footer.php';
+    }
+    ?>
 </body>
 </html>

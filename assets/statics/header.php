@@ -13,7 +13,7 @@
             <link rel="stylesheet" href="<?=STYLESPATH.'staticStyle.css'?>">
             <? if ($pageTitle == 'Sing Up') : ?> 
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
-            <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort Vergessen'): ?>
+            <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort zurücksetzen'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <? elseif ($pageTitle == 'Reset Password'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
