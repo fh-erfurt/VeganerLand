@@ -1,5 +1,3 @@
-/* REMOVE THIS, USE YOUR OWN  */
-
 html,
 body {
     background-color: #070617;
@@ -14,9 +12,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-
-/* STYLES SPECIFIC TO FOOTER  */
 
 .footer {
     width: 100%;
