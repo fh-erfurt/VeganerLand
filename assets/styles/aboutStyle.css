@@ -2,7 +2,17 @@
 ===================================
 == Molham Al-khodari    29.12.2020
 ===================================
+*/
 
+
+/* wir müssen hier body überschreiben wegen navbar fixed */
+
+body {
+    padding: 0;
+}
+
+
+/*
 =================
  == Veganer land 
 =================
@@ -86,7 +96,7 @@ article,
 ===========
 */
 
-.mvp-menu-bottom {
+.menu-bottom {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -94,27 +104,27 @@ article,
     background-color: #333;
 }
 
-.mvp-menu-bottom ul,
-.mvp-menu-bottom li,
-.mvp-menu-bottom a {
-    height: 100%;
+.menu-bottom ul,
+.menu-bottom li,
+.menu-bottom a {
+    height: 80px;
 }
 
-.mvp-menu-bottom ul {
+.menu-bottom ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0 20%;
 }
 
-.mvp-menu-bottom li {
+.menu-bottom li {
     flex: 1;
     /* for IE */
     float: left;
     width: auto;
 }
 
-.mvp-menu-bottom a {
+.menu-bottom a {
     display: block;
     text-align: center;
     text-decoration: none;
@@ -123,12 +133,16 @@ article,
     text-shadow: 2px 1px 0 #000000;
 }
 
-.mvp-menu-bottom a.logo {
+.menu-bottom a.logo {
     padding-top: 1.3em;
 }
 
-.mvp-menu-bottom a:hover {
+.menu-bottom a:hover {
     background-color: #555;
     color: white;
     text-decoration: none;
+}
+
+.list-group {
+    margin-top: 7px;
 }

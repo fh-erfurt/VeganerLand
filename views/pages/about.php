@@ -1,4 +1,4 @@
-    <header class="page-header">
+<header class="page-header">
     <h1>Veganer Land</h1>
     </header>
 
@@ -48,7 +48,7 @@
 
     <!-- code for the menu -->
 
-    <nav class="mvp-menu-bottom">
+    <nav class="menu-bottom">
         <ul>
             <li>
                 <a href="?a=homepage" class="logo" accesskey="h">
@@ -56,32 +56,32 @@
                 </a>
             </li>
             <li>
-                <a href="#dashboard" accesskey="1">
+                <a class = "list-group" href="#dashboard" accesskey="1">
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="#content" accesskey="2" class="active">
+                <a class = "list-group" href="#content" accesskey="2" class="active">
                     Content
                 </a>
             </li>
             <li>
-                <a href="#email" accesskey="3">
+                <a class = "list-group" href="#email" accesskey="3">
                     E-Mail
                 </a>
             </li>
             <li>
-                <a href="#analytics" accesskey="4">
+                <a class = "list-group" href="#analytics" accesskey="4">
                     Analytics
                 </a>
             </li>
             <li>
-                <a href="#support" accesskey="5">
+                <a class = "list-group" href="#support" accesskey="5">
                     Support
                 </a>
             </li>
             <li>
-                <a href="#impressum" accesskey="6">
+                <a class = "list-group" href="#impressum" accesskey="6">
                     Impressum
                 </a>
             </li>

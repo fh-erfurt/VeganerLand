@@ -75,7 +75,6 @@ img {
     overflow: hidden;
     background: white;
     margin-top: 20px;
-    position: relative;
 }
 
 .cards {
@@ -83,7 +82,6 @@ img {
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
-    margin-left: 17px;
     padding: 0;
 }
 
@@ -114,9 +112,10 @@ img {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.23);
 }
 
-.block-container ul li:hover {
+
+/* .block-container ul li:hover {
     opacity: 0.8;
-}
+} */
 
 
 /*

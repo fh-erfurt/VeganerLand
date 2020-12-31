@@ -1,7 +1,5 @@
 <?php 
 
-echo 'hier ist functions.php <br>';
-
 /*
 ================================
 == Molham Al-khodari 26.12.2020

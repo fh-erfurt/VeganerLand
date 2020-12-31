@@ -1,7 +1,5 @@
 <?php
 
-echo 'hier ist init.php <br>';
-
 define('COREPATH',  'core'.DIRECTORY_SEPARATOR);
 define('CONFIGPATH', 'config'.DIRECTORY_SEPARATOR);
 define('VIEWSPATH',  'views'.DIRECTORY_SEPARATOR);
