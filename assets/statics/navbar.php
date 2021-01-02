@@ -43,9 +43,9 @@
       <!-- searchform -->
       <li>
         <div class="search-container">
-          <form action="#" name="searchform" method="GET ">
-            <input type="text" name="search" placeholder="Suche" maxlength="50">
-            <button type="submit" name="submit" formaction="?a=search">Suchen</button>
+          <form name="search" method="post">
+             <input type="text" name="search" placeholder="Suche" maxlength="50">
+             <button type="submit" name="submit" formaction="?a=search">Suchen</button>
           </form>
         </div>
       </li>
