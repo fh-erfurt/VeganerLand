@@ -35,7 +35,7 @@ img {
     width: 100%;
     color: #000000;
     padding: 0px 500px;
-    background-color: #333333;
+    margin-top: -5px;
 }
 
 .fruit-nav-list {
