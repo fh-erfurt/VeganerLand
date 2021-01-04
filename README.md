@@ -20,7 +20,7 @@ Das Team vom VeganerLand besteht aus: <br>
 </ul>
 
 <h2>Idee und Produkt</h2>
-zum Miroboard für die Ideenfindung: https://miro.com/app/board/o9J_lf2VPJc=/ <br>
+zum Miroboard für die Ideenfindung: link <br>
 <br>
 text...!
 
