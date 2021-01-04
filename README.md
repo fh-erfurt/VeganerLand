@@ -2,8 +2,8 @@
 Webprogrammierung Project
 
 
-![alt text]( https://cdn.discordapp.com/attachments/783318437384552521/793117042214567946/locsterw3_2.png "Logo Title Text 1")
-<h6>Ein Java-Projekt von Dirk Hofmann, Jakob Gensel, Matthias Gabel, Molham Al-Khodari, Saskia Wohlers</h6>
+![alt text]()
+<h6>Ein web programmierung von Jessica Eckardtsberg, Molham Al-Khodari, Mahmoud Matar</h6>
 
 <h2>Soziales Netzwerk mit Biss</h2>
 Im Rahmen der Veranstaltung "Java Programmierung 1 & 2" haben wir uns entschlossen, ein soziales Netzwerk mit Schwerpunkt auf chatten und "stalken" zu programmieren. Ganz ohne nervige Babybilder und Katzenvideos.<br>
