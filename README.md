@@ -37,8 +37,6 @@ text ...
 </details>
 
 <details>
-
-<details>
 <summary>Programmcode</summary><br>
 <h2>Sprache</h2>
 <br>
