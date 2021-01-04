@@ -59,7 +59,8 @@ hier vielleicht unsere letzte PowerPoint ?
 </details>
 
 <details>
-<h2>Installation Step by Step</h2>
+<summary>Installation Step by Step</summary><br>
+<h2>text...</h2>
 <br>
 text...
 </details>
