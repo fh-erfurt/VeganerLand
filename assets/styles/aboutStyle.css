@@ -146,3 +146,25 @@ article,
 .list-group {
     margin-top: 7px;
 }
+
+
+/*
+===========
+ == documentation 
+===========
+*/
+
+.documentation a {
+    color: black;
+    font-weight: 300px;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: white;
+    width: auto;
+    height: auto;
+}
+
+.documentation a:hover {
+    background-color: pink;
+}

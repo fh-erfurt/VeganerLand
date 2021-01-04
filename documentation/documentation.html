@@ -1,0 +1,476 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: "MontserratRegular";
+            src: url('./Screenshots/fonts/Montserrat/Montserrat-Regular.ttf');
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: "MontserratRegular";
+        }
+        
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 25%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #27313a;
+            padding-top: 20px;
+        }
+        
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            color: #00a19c;
+        }
+        
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        
+        .content {
+            width: 75%;
+            margin-left: 27%;
+        }
+        
+        .content h2 {
+            text-align: center;
+        }
+        
+        .recherche img,
+        .sitemap img,
+        .funktionalitaeten img {
+            width: 80%;
+            margin-bottom: 30px;
+        }
+        
+        #relational_Modell {
+            text-decoration: none;
+        }
+        
+        #rollen_pdf {
+            text-decoration: none;
+        }
+    </style>
+
+    <title>Documentation</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidenav">
+            <a href="#start">Start</a>
+            <a href="#inhalt">Inhalt</a>
+            <a href="#software">Benutzte Software</a>
+            <a href="#recherche">Ergebnisse der Recherche</a>
+            <a href="#checklist">Checkliste</a>
+            <a href="#sitemap">Wireframe & Sitemap</a>
+            <a href="#design">Design</a>
+            <a href="#funktionalitaeten">Funktionalit&auml;ten</a>
+            <a href="#erModell">ERModell</a>
+            <a href="#relationales">Relationales Modell</a>
+            <a href="#rollenModell">Rollen Modell</a>
+            <a href="#herausforederungen">Herausforderungen</a>
+            <a href="#besonderheiten">Besonderheiten</a>
+            <a href="#werHatWasGemacht">Projektmanagment</a>
+        </div>
+
+        <div class="content" id="start">
+            <h2>
+                Wilkommen in der Dokumentation
+            </h2>
+            <div>
+                <h4>Projektstellung</h4>
+                <p>F&uuml;r das dritte Semester Angewandte Informatik in der Fachhoschule Erfurt war ein modul&uuml;bergreifendes Projekt geplannt.
+                    <br> Das Projekt geht es darum, eine Webseite in zweier Gruppen selbst zu programmieren.
+                    <br> Die Sprache die hierf&uuml;r benutzt werden waren, sind: SQL, PHP, HTML, CSS, JS(+AJAX).
+                </p>
+                <hr>
+            </div>
+            <div id="inhalt">
+                <h4>Beschreibung der Kunden</h4>
+                <p>Welche Personen h&auml;tten Interesse an unserer Seite?</p>
+                <ul>
+                    <li>Personen, die Interesse an Technologie haben</li>
+                    <ul>
+                        <li>Ziel von Kunde: Sich von Neuigkeiten in der Tech-Welt zu informieren</li>
+                    </ul>
+                    <li>Personen, die sich &uuml;ber einen spezifischen Produkt informieren wollen</li>
+                </ul>
+                <hr>
+            </div>
+            <div id="software">
+                <h4>Beschreibung der verwendeten Projektinfrastruktur</h4>
+                <p>Software die f&uuml;r die Herstellung der Webseite benutzt wurde:</p>
+                <ul>
+                    <li>Team-Kommunikation: WhatsApp</li>
+                    <li>Code: Visual Studio Code</li>
+                    <li>Server: XAMPP (Lokales Server f&uuml;r Datenbank + PHP)</li>
+                    <li>Projektmanagment: TortoiseGit (Im verbindung mit GitHub)</li>
+                    <li>Browser: Google Chrome</li>
+                    <li>Datenbank: MySQLWorkbench + phpMyAdmin</li>
+                </ul>
+                <hr>
+            </div>
+            <div class="recherche" id="recherche">
+                <h4>Ergebnisse der Recherche von &auml;hnliche Seiten</h4>
+                <p>Als inspiration haben wir haupts&auml;chlich 4 Seiten als Beispiel genommen</p>
+                <ul>
+                    <li>
+                        <a href="https://9to5google.com/">https://9to5google.com/</a>
+                    </li>
+                    <li>
+                        <p>F&uuml;r alle Nachrichten bezogen auf Android, Google</p>
+                        <img src="./Screenshots/9to5Google.jpg" alt="9to5google">
+                    </li>
+
+                    <li>
+                        <a href="https://9to5mac.com/">https://9to5mac.com/</a>
+                    </li>
+                    <li>
+                        <p>F&uuml;r alle Nachrichten bezogen auf Apple, IOS</p>
+                        <img src="./Screenshots/9to5Mac.jpg" alt="9to5mac">
+                    </li>
+
+
+                    <li>
+                        <a href="http://ary-themes.com/html/noor_tech/newspoint/">http://ary-themes.com/html/noor_tech/newspoint/</a>
+                    </li>
+                    <li>
+                        <p>Inspiration f&uuml;r das Design von unserer Seite</p>
+                        <img src="./Screenshots/newspoint.jpg" alt="newspoint">
+                    </li>
+
+                    <li>
+                        <a href="https://www.petronas.com/">https://www.petronas.com/</a>
+                    </li>
+                    <li>
+                        <p>Inspiration f&uuml;r das Farbeauswahl</p>
+                        <img src="./Screenshots/petronas.jpg" alt="petronas">
+                    </li>
+
+                </ul>
+                <hr>
+            </div>
+            <div class="checklist" id="checklist">
+                <h4>Checklist</h4>
+                <p>Allgemein GWP/DWP
+                    <p>
+                        <ul>
+                            <li><s>Mindestens 6 Seiten</s></li>
+                            <ul>
+                                <li>Taketec besitzt 15 Seiten</li>
+                            </ul>
+                            <li><s>Mindestens 3 Unterseiten</s></li>
+                            <ul>
+                                <li>Unterseiten von Login</li>
+                                <ul>
+                                    <li>Profile</li>
+                                    <ul>
+                                        <li>Update Password</li>
+                                    </ul>
+                                    <li>Admin</li>
+                                    <ul>
+                                        <li>Delete User</li>
+                                        <li>Add Article</li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                            <li><s>Einheitliche Navigation</s></li>
+                            <ul>
+                                <li>Header ist Semi-Statisch (Abhängig von Besucher)</li>
+                                <li>Ist immer im gleichen Stelle und gleiche maß</li>
+                                <img src="./Screenshots/header.png" alt="header" style="width: 80%;">
+                            </ul>
+                            <li><s>Navigation mit Untermen&uuml;</s></li>
+                            <ul>
+                                <li>Top 10 hat zwei Untermen&uuml;s</li>
+                                <img src="./Screenshots/top10menu.png" alt="top10menu" style="height: 100px;">
+                            </ul>
+                            <li><s>Mindestens 3 Formulare</s></li>
+                            <ul>
+                                <li>Einige Formulare (Nicht alle)</li>
+                                <img src="./Screenshots/formulare.png" alt="formulare" style="width: 80%;">
+                            </ul>
+                            <li><s>Vermeidung von doppelten Code</s></li>
+                            <ul>
+                                <li>Wir haben alle Funktionen in /init/20.funtions.php auszulagern</li>
+                            </ul>
+                            <li><s>Codestyle und Dokumentation</s></li>
+                            <ul>
+                                <li>Alle notwendige Kommentare (f&uuml;r alle Funktionen und Code die nicht selbstverstänlich ist)</li>
+                            </ul>
+                            <li><s>Keine Verwendung von Frameworks</s></li>
+                            <li><s>Projektdokumentation</s></li>
+                            <ul>
+                                <li>Es wurde versucht die Dokumentation so ausf&uuml;hrlich wie m&ouml;glich zu machen</li>
+                            </ul>
+                            <li><s>Installationshinweise</s></li>
+                            <ul>
+                                <li>Zu Finden im \README.pdf</li>
+                                <li>Da sind auch die Logins vorhanden</li>
+                            </ul>
+                            <li><s>Datenbank-Export</s></li>
+                            <ul>
+                                <li>Zu Finden im \Projekt\src\database\taketec-pdo-version-1.sql</li>
+                                <li>Dazu sind auch &auml;ltere Versionen von dem Datenbank</li>
+                            </ul>
+                            <li><s>Test</s></li>
+                            <ul>
+                                <li>Chrome: 24 Zoll Monitor, 14 Zoll Monitor</li>
+                                <li>Edge: 24 Zoll Monitor, 14 Zoll Monitor</li>
+                                <li>Chrome Dev-Tools: iPhone X, Pixel 2</li>
+                            </ul>
+                        </ul>
+                        <p>Allgemein GWP</p>
+                        <ul>
+                            <li><s>Passende, abwechslungsreiche Gestaltung</s></li>
+                            <li><s>Interaktivit&auml;t schaffen mit CSS/JavasCript</s></li>
+                            <ul>
+                                <li>Es wurde versucht, einfaches und klares Design zu erstellen</li>
+                            </ul>
+                            <li><s>Quelltext Optimierung durch Metas, Alt, Title, Noscript</s></li>
+                            <ul>
+                                <li>alt Attribut wurde bei allen Bilder als Quelle eingesetzt</li>
+                            </ul>
+                            <li><s>Sinvolle Verwendung von HTML5</s></li>
+                            <ul>
+                                <li>Nav, header und footer wurden in der Implementierung benutzt</li>
+                            </ul>
+                            <li><s>Einbindung von Bilder</s></li>
+                            <ul>
+                                <li>Die Einbindung von Bildern geht dynamisch durch php, der Admin soll die Name des Bildes
+                                    <br> die Nameendung beim Artikelhinzuf&uuml;gen geben und das Bild in Projekt/assets/images/ speichern
+                                </li>
+                            </ul>
+                            <li><s>Responsive Webdesign</s></li>
+                            <ul>
+                                <li>Optimiert f&uuml;r Bildschrirme kleiner und gr&ouml;ser als 720px</li>
+                                <li>F&uuml;r die Ausl&ouml;sung der Laptops und Handys</li>
+                            </ul>
+
+                        </ul>
+                        <p>Allgemein DWP</p>
+                        <ul>
+                            <li><s>Formulare werden mittels PHP/JS behandelt und Fehler angezeigt</s></li>
+                            <ul>
+                                <li>Alle Formulare werden clientseitig mittels JavaScript und HTML required Attribut gepr&uuml;ft,
+                                    <br>dann werden sie zum server gesendet und da werden sie nochmal mittels PHP gecheckt.
+                                    <br> HTMLspecialchars wurde auch verwendet und bei der Eingabefehler wurden die Daten des Nutzers
+                                    <br> behalten bei Fehler</li>
+                            </ul>
+                            <li><s>Nutzeranmeldung</s></li>
+                            <ul>
+                                <li>Gilt durch E-mail (Wenn nicht bereit registriert in der Datenbank) und Password (RegEx)</li>
+                            </ul>
+                            <li><s>Nutzerregistrierung</s></li>
+                            <ul>
+                                <li>Bei der Registrierung des Nutzers wird es gepr&uuml;ft, ob die eingegebene E-Mail Adresse schon in der Datenbank
+                                    <br>vorhanden ist, wenn ja wird der Nutzer eine Mitteilung bekommen, dass er bereits bei uns registriert ist</li>
+                            </ul>
+                            <li><s>Funktionsbereitstellung mit/ohne JS</s></li>
+                            <ul>
+                                <li>Die Seitefunktionalit&auml;t arbeitet komplett ohne Javascript.
+                                    <br> noscript Tag wurde auch benutzt</li>
+                            </ul>
+                            <li><s>Absenden von Formulare mit AJAX</s></li>
+                            <ul>
+                                <li>Wurde Implementiert aber leider hat nicht funktioniert (das Code ist noch zusehen) <br> Siehe contact.php/contact.js und registration.php/registration.js</li>
+                            </ul>
+                            <li><s>Seiten werden dynamisch ausgebaut (Datenbank)</s></li>
+                            <ul>
+                                <li>Home, topTen, readArticle, buy Article und profile werden alle aus der Datenbank gebaut</li>
+                            </ul>
+                            <li>Nachlade Funktion mit JS</li>
+                            <ul>
+                                <li>Wir wollten in HomePage die anzahl von Artikel auf 4 reduzieren. Wenn der nutzer gescrollt
+                                    <br> hat, sollten mehrere Artikel von dem Datenbank herausgeholt. Leider hat diese Funktion
+                                    <br> bei uns nicht funktioniert. Alles was wir in Netzt gefunden haben, brauchte JQuery.
+                                    <br> Hier was uns gefehlt hat, war eigentlich Zeit.
+                                </li>
+                            </ul>
+                            <li><s>Seite Nicht gefunden (404)</s></li>
+                            <ul>
+                                <li>Bei einem falschen Seitename, wird 404 aufgerufen und von dort wurde ein Link zu Home gebaut
+                                    <br> Hinweis: Es lohnt sich, die sich anzugucken
+                                </li>
+                            </ul>
+                            <li><s>Datenbank angebunden</s></li>
+                            <ul>
+                                <li>Mittels PDO und bereitgestellte Funktionen in 20_function.php</li>
+                            </ul>
+                            <li><s>Daten werden von Datenbank gelesen</s></li>
+                            <ul>
+                                <li>Wird &uuml;berall gemacht. Beispiel daf&uuml;r ist die Ausgabe von Artikeln im HomePage</li>
+                            </ul>
+                            <li><s>Daten werden in Datenbank geschrieben</s></li>
+                            <ul>
+                                <li>Passiert in mehrere Orten. Beispiel daf&uuml;r ist die Eingabe bei Registrierung</li>
+                            </ul>
+                        </ul>
+
+            </div>
+            <div class="sitemap" id="sitemap">
+                <h4>Wireframe & Sitemap</h4>
+                <p>&uuml;berlegung f&uuml;r das Wireframe von Home</p>
+                <img src="./Screenshots/Wireframe.png" alt="wireframe">
+                <p>Sitemap</p>
+                <img src="./Screenshots/sitemap.png" alt="sitemap">
+                <hr>
+            </div>
+            <div id="design">
+                <h4>Design</h4>
+                <p>Farbenauswahl</p>
+                <ul>
+                    <li>#27313a -> Dunkles Gr&uuml;n</li>
+                    <li>#00a19c -> Helles Gr&uuml;n </li>
+                    <li>#ffffff -> Wei&szlig;</li>
+                </ul>
+                <p>Logo</p>
+                <img src="./Screenshots/logo-crop.png" alt="logo">
+                <p>Favicon</p>
+                <img src="./Screenshots/favicon.ico" alt="favicon">
+                <p>Layout</p>
+                <p>
+                    In unserer Website wird &uuml;ber Handys, Laptops und tablets gesprochen,
+                    <br>damit der Inhalt und die Gestaltung zusammenpassen haben wir das Logo und die Navigation
+                    <br>eher technisch gehalten. Das einfache Design unseres Layouts, spricht eine Junge Zielgruppe an
+                    <br>da es durch die &Uuml;berschaubarkeit und Abstraktion modern wirkt.
+
+                </p>
+                <p>Schrifftarten</p>
+                <ul>
+                    <li>PT_Sans_Caption</li>
+                    <li>Offside</li>
+                    <li>MontserratRegular</li>
+                </ul>
+                <hr>
+            </div>
+            <div class="funktionalitaeten" id="funktionalitaeten">
+                <h4>Seiten Funktionalit&auml;ten</h4>
+                <p>MVC</p>
+                <img src="./Screenshots/MVC1.png" alt="mvc1">
+                <img src="./Screenshots/MVC2.png" alt="mvc2">
+                <p>Home Seite</p>
+                <img src="./Screenshots/homeFunkt.png" alt="home">
+                <p>Admin Seite</p>
+                <img src="./Screenshots/adminFunkt.png" alt="admin">
+                <p>Artikel Kaufen Seite</p>
+                <img src="./Screenshots/buyArticleFunkt.png" alt="buyArtikel">
+                <p>Login Seite</p>
+                <img src="./Screenshots/loginFunkt.png" alt="login">
+                <p>Profile Seite</p>
+                <img src="./Screenshots/profileFunkt.png" alt="profile">
+                <p>Read Article Seite</p>
+                <img src="./Screenshots/readArticleFunkt.png" alt="readArticle">
+                <hr>
+            </div>
+            <div id="erModell">
+                <h4>ER-Modell</h4>
+                <img src="./Screenshots/ERModell.png" alt="erModell" style="width: 80%;">
+                <hr>
+            </div>
+            <div id="relationales">
+                <h4>Relationales Modell</h4>
+                <a href="relationales-Modell.pdf" target="_Blank" id="relational_Modell"> Link zu PDF </a>
+                <hr>
+            </div>
+            <div id="rollenModell">
+                <h4>Rollen Modell</h4>
+                <img src="./Screenshots/Stackholder.png" alt="Stackholder" style="height: 400px; width: 500px;">
+                <hr>
+            </div>
+            <div id="herausforederungen">
+                <h4>Herausforederungen</h4>
+                <ol>
+                    <li>
+                        Viele Projektideen am anfang des Semesters:
+                        <br> die L&ouml;sung: was macht am meisten Spa&szlig; beim Implementieren und gleichzeitig deckt die ganzen Anforderungen ab
+                    </li>
+                    <li>
+                        Zeitgrenze: viele ideen &uuml;ber das Projekt, die wir nicht in der Zeit schaffen k&ouml;nnen
+                        <br>die L&ouml;sung: Die Anforderungen in 3 Teile abteilen:
+                        <ul>
+                            <li>
+                                Musskriterien
+                            </li>
+                            <li>
+                                W&uuml;nschkriterien (wenn es Zeit am Ende bleibt)
+                            </li>
+                            <li>
+                                Abgrenzungkriterien
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        am Anfang jeder gro&szlig;en Aufgabe sieht aus, als sie unm&ouml;glich zu machen
+                        <br>die L&ouml;sung: Diese Aufgabe in kleinerer Teilaufgaben teilen und sofort mit einem Teil anfangen
+                    </li>
+                </ol>
+                <hr>
+            </div>
+            <div id="besonderheiten">
+                <h4>Besonderheiten</h4>
+                <ul>
+                    <li>
+                        Random Seite: es wird jedes Mal, wenn auf Random im Nav geklickt ist, ein neuer Artikel gezeigt.
+                        <br> durch eine Funktion wird die Vorhandene Artikel in Datenbank gelesen und einer gezeigt
+                    </li>
+                    <li>
+                        Top Ten Artikel: es wird nach der Likesanzahl oder nach der Kommentareanzahl die Artikel gefiltert
+                        <br> und die Top 10 Artikel angezeigt
+                    </li>
+                    <li>
+                        Search Bar: es k&ouml;nnte nach einem Wort im Inhalt der Artikel, des Teasers, des Titels oder
+                        <br> des Vornames der Admin gesucht werden
+                    </li>
+                    <li>
+                        Likes und Kommentare: der angemeldete Nutzer kann einen Artikel liken oder kommentieren. Der Kommentar wird sofort
+                        <br> unter dem Artikel mit dem Name des Nutzers gezeigt oder/und die Anzahl der Likes erh&ouml;ht
+                    </li>
+                    <li>
+                        Gepr&uuml;fte E-Mail: ein Nutzer, der sich schon in der Seite registriert hat, kann er sich nicht nochmal mit
+                        <br> der selbe E-mail Adresse registrieren und wird er dar&uuml;ber informiert
+                    </li>
+                    <li>
+                        In index.php gibt es eine Feature, die automatisch der richtige JS und CSS Seite für die gewünschte Seite ladet.
+                    </li>
+                    <li>
+                        Manipulation von URI wurde behandelt, sodass nur die Seite dem Nutzer gezeigt werden, die er zugreiffen darf.
+                    </li>
+                    <li>
+                        Im Profile Seite wird der Avatar-Profilbild nach der Geschlecht der Nutzer dynamisch angepasst
+                    </li>
+                </ul>
+                <hr>
+            </div>
+            <div id="werHatWasGemacht" style="margin-bottom: 50%;">
+                <h4>Arbeit Aufteilung</h4>
+                <a href="Rollen.pdf" target="_blank" id="rollen_pdf">Link zu PDF</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

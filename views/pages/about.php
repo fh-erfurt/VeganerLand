@@ -144,3 +144,7 @@
             Pellentesque fringilla urna nec velit pellentesque, et lobortis orci pulvinar.
         </p>
     </article>
+
+    <article class="documentation">
+         <a href="../VeganerLand-test/documentation/documentation.html" target="_blank" title=" Go to Documentation">Documentation</a> 
+    </article>
