@@ -58,3 +58,8 @@ hier vielleicht unsere 2. PowerPoint ?
 hier vielleicht unsere letzte PowerPoint ?
 </details>
 
+<details>
+<h2>Installation Step by Step</h2>
+<br>
+text...
+</details>
