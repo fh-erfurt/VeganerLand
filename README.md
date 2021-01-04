@@ -2,7 +2,7 @@
 Webprogrammierung Project
 
 
-![alt text]()
+![Logo]()
 <h6>Ein web programmierung von Jessica Eckardtsberg, Molham Al-Khodari, Mahmoud Matar</h6>
 
 <h2>Soziales Netzwerk mit Biss</h2>
