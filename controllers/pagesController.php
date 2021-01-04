@@ -392,7 +392,7 @@ class PagesController extends Controller {
                 break;
         }
 
-        $this->setParams('veggies', $veggies);
+        $this->setParams('vegetables', $veggies);
     }
 
     public function actionBargain() {
