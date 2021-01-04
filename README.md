@@ -5,20 +5,18 @@ Webprogrammierung Project
 ![Logo]()
 <h6>Ein web programmierung von Jessica Eckardtsberg, Molham Al-Khodari, Mahmoud Matar</h6>
 
-<h2>Soziales Netzwerk mit Biss</h2>
-Im Rahmen der Veranstaltung "Java Programmierung 1 & 2" haben wir uns entschlossen, ein soziales Netzwerk mit Schwerpunkt auf chatten und "stalken" zu programmieren. Ganz ohne nervige Babybilder und Katzenvideos.<br>
+<h2>Online Shop mit Biss</h2>
+Im Rahmen der Veranstaltung "GWP & DWP" haben wir uns entschlossen, ein Online Shop zu programmieren.<br>
 <br>
 <details>
 <summary> Projekt allgemein</summary><br>
 <h2>Projektteam</h2>
-Das Team vom Locster besteht aus: <br>
+Das Team vom VeganerLand besteht aus: <br>
 <br>
 <ul>
-<li><strong>Dirk Hofmann</strong> https://github.com/Munchkin129 <br></li>
-<li><strong>Jakob Gensel</strong> https://github.com/bro-scientist <br></li>
-<li><strong>Matthias Gabel</strong> https://github.com/f0rkster <br></li>
+<li><strong>Jessica Eckardtsberg</strong> https://github.com/... <br></li>
 <li><strong>Molham Al-Khodari</strong> https://github.com/Molham321 <br></li>
-<li><strong>Saskia Wohlers</strong> https://github.com/schnoernja <br></li>
+<li><strong>Mahmoud Matar</strong> https://github.com/... <br></li>
 </ul>
 
 <h2>Idee und Produkt</h2>
