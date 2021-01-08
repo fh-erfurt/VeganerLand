@@ -91,7 +91,7 @@ switch ($actionName) {
         $pageTitle = 'Suchergebnisse';
         require_once TEMPLATESPATH.'header.php';
         include TEMPLATESPATH.'navbar.php';
-        break
+        break;
     case 'logout':
         break;
     default:
