@@ -87,6 +87,11 @@ switch ($actionName) {
         $pageTitle = 'Über uns';
         require_once TEMPLATESPATH.'header.php';
         break;
+    case 'search':
+        $pageTitle = 'Suchergebnisse';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
+        break
     case 'logout':
         break;
     default:
