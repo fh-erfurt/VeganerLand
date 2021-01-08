@@ -334,7 +334,7 @@ class PagesController extends Controller {
                     } catch (\PDOException $e) {
                         echo 'Update fehlgeschlagen: ' . $e->getMessage();
                     }
-
+                    header('Location: ?a=setting');
                     echo '<div class="alert alert-success">Update erfolgreich!</div>';
                 }
             }
