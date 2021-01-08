@@ -51,7 +51,7 @@
     <nav class="menu-bottom">
         <ul>
             <li>
-                <a href="?a=homepage" class="logo" accesskey="h">
+                <a href="?c=pages&a=homepage" class="logo" accesskey="h">
                     <img src="assets/images/logo.png" alt="logo" width="50px" height="50px" />
                 </a>
             </li>

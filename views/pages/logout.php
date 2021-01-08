@@ -9,6 +9,6 @@ session_unset();
 
 session_destroy();
 
-header('Location: ?a=homepage');
+header('Location: ?c=pages&a=homepage');
 
 exit();

@@ -16,9 +16,9 @@
             <!--other buttons -->
         <div class="other">
             <!--      Forgot Password button-->
-               <button class="btn submits frgt-pass"> <a href="?a=resetPassword&do=identify"> Passwort vergessen </a> </button>
+               <button class="btn submits frgt-pass"> <a href="?c=pages&a=resetPassword&do=identify"> Passwort vergessen </a> </button>
             <!--     Sign Up button -->
-               <button class="btn submits sign-up"><a href="?a=registration">Registrieren</a> </button>
+               <button class="btn submits sign-up"><a href="?c=registration&a=registration">Registrieren</a> </button>
         </div>
     </div>
 </form>

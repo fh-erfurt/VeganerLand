@@ -11,59 +11,59 @@
     <div class="col">
         <h1>Company</h1>
         <ul>
-        <li><a href="?a=about">About</a></li>
-        <li><a href="?a=about#team">Team</a></li>
-        <li><a href="?a=about">Services</a></li>
-        <li><a href="?a=about#impressum">Impressum</a></li>
-        <li><a href="?a=about">Analytics</a></li>
-        <li><a href="?a=about#email">Get in touch</a></li>
+        <li><a href="?c=pages&a=about">About</a></li>
+        <li><a href="?c=pages&a=about#team">Team</a></li>
+        <li><a href="?c=pages&a=about">Services</a></li>
+        <li><a href="?c=pages&a=about#impressum">Impressum</a></li>
+        <li><a href="?c=pages&a=about">Analytics</a></li>
+        <li><a href="?c=pages&a=about#email">Get in touch</a></li>
         </ul>
     </div>
     <div class="col">
         <h1>Products</h1>
         <ul>
-        <li><a href="?a=about">About</a></li>
-        <li><a href="?a=about#dashboard">Dashboard</a></li>
-        <li><a href="?a=about#content">Content</a></li>
+        <li><a href="?c=pages&a=about">About</a></li>
+        <li><a href="?c=pages&a=about#dashboard">Dashboard</a></li>
+        <li><a href="?c=pages&a=about#content">Content</a></li>
         </ul>
     </div>
     <div class="col">
         <h1>Accounts</h1>
         <ul>
-        <li><a href="?a=about">About</a></li>
-        <li><a href="?a=about">Mission</a></li>
-        <li><a href="?a=about">Services</a></li>
-        <li><a href="?a=about">Social</a></li>
-        <li><a href="?a=about#email">Get in touch</a></li>
+        <li><a href="?c=pages&a=about">About</a></li>
+        <li><a href="?c=pages&a=about">Mission</a></li>
+        <li><a href="?c=pages&a=about">Services</a></li>
+        <li><a href="?c=pages&a=about">Social</a></li>
+        <li><a href="?c=pages&a=about#email">Get in touch</a></li>
         </ul>
     </div>
     <div class="col">
         <h1>Resources</h1>
         <ul>
-        <li><a href="?a=about">Webmail</a></li>
-        <li><a href="?a=about">Redeem code</a></li>
-        <li><a href="?a=about">WHOIS lookup</a></li>
-        <li><a href="?a=about">Site map</a></li>
-        <li><a href="?a=about">Web templates</a></li>
-        <li><a href="?a=about#email">Email templates</a></li>
+        <li><a href="?c=pages&a=about">Webmail</a></li>
+        <li><a href="?c=pages&a=about">Redeem code</a></li>
+        <li><a href="?c=pages&a=about">WHOIS lookup</a></li>
+        <li><a href="?c=pages&a=about">Site map</a></li>
+        <li><a href="?c=pages&a=about">Web templates</a></li>
+        <li><a href="?c=pages&a=about#email">Email templates</a></li>
         </ul>
     </div>
     <div class="col">
         <h1>Support</h1>
         <ul>
-        <li><a href="?a=about#email">Contact us</a></li>
-        <li><a href="?a=about#email">E-Mail</a></li>
-        <li><a href="?a=about#support">Support</a></li>
-        <li><a href="?a=about">Web chat</a></li>
-        <li><a href="?a=about">Open ticket</a></li>
+        <li><a href="?c=pages&a=about#email">Contact us</a></li>
+        <li><a href="?c=pages&a=about#email">E-Mail</a></li>
+        <li><a href="?c=pages&a=about#support">Support</a></li>
+        <li><a href="?c=pages&a=about">Web chat</a></li>
+        <li><a href="?c=pages&a=about">Open ticket</a></li>
         </ul>
     </div>
     <div class="col social">  <!--das haben wir nicht also keine icons ?-->
         <h1>Social</h1>
         <ul>
-        <li><img src="?a=about" alt="F" width="32" style="width: 32px;"></li>
-        <li><img src="?a=about" alt="I" width="32" style="width: 32px;"></li>
-        <li><img src="?a=about" alt="T" width="32" style="width: 32px;"></li>
+        <li><img src="?c=pages&a=about" alt="F" width="32" style="width: 32px;"></li>
+        <li><img src="?c=pages&a=about" alt="I" width="32" style="width: 32px;"></li>
+        <li><img src="?c=pages&a=about" alt="T" width="32" style="width: 32px;"></li>
         </ul>
     </div>
     <div class="clearfix"></div>

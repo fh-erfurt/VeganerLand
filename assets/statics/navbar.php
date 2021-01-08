@@ -20,11 +20,11 @@
   <!-- start all link  -->
   <nav class="nav-container">
     <ul class="nav-list"> 
-      <li><a class="active" href="?a=homepage">Startseite</a></li>
-      <li><a href="?a=bargain">Angeboten</a></li>
-      <li><a href="?a=about">Über uns</a></li>
-      <li><a href="?a=fruits">Obst</a></li>
-      <li><a href="?a=vegetables">Gemüse</a></li>
+      <li><a class="active" href="?c=pages&a=homepage">Startseite</a></li>
+      <li><a href="?c=pages&a=bargain">Angeboten</a></li>
+      <li><a href="?c=pages&a=about">Über uns</a></li>
+      <li><a href="?c=pages&a=fruits">Obst</a></li>
+      <li><a href="?c=pages&a=vegetables">Gemüse</a></li>
       <li><a href="#">Seite3</a></li>
       <li><a href="#">Seite4</a></li>
       <li><a href="#">Seite5</a></li>
@@ -35,9 +35,9 @@
       <li style="float:right" class="dropdown">
         <a href="" class="dropbtn">Konto</a>
         <div class="dropdown-content">
-          <a href="?a=login">Login</a>
-          <a href="?a=setting">Einstellungen</a>
-          <a href="?a=logout">Logout</a>
+          <a href="?c=pages&a=login">Login</a>
+          <a href="?c=pages&a=setting">Einstellungen</a>
+          <a href="?c=pages&a=logout">Logout</a>
         </div>
       </li>
       <!-- searchform -->
@@ -45,7 +45,7 @@
         <div class="search-container">
           <form name="search" method="post">
              <input type="text" name="search" placeholder="Suche" maxlength="50">
-             <button type="submit" name="submit" formaction="?a=search">Suchen</button>
+             <button type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
           </form>
         </div>
       </li>

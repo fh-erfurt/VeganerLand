@@ -1,4 +1,3 @@
-
 <div class="note">
    <span>aus berührung wird Rührung</span> - wir sind online weiter hin für dich da!
 </div>
@@ -6,7 +5,7 @@
 <section class="header">
     <h1>Welcome to <em>VeganerLand</em></h1>
     <p>veganer land is a website for the purpose of selling fruit and vegetable products.</p>
-    <a href="?a=registration">
+    <a href="?c=registration&a=registration">
     <input type="submit" class="button" value="SIGN UP HERE">
     </a>
 </section>
@@ -15,7 +14,7 @@
     <div class="rowBlock">
     
         <div class="block-fruit">
-            <a href="?a=fruits">
+            <a href="?c=pages&a=fruits">
                 <img src="assets/images/obst.jpg" alt="obst">
                 <p><button class="button" src="?a=fruits">Obst</button></p>
             </a>
@@ -23,7 +22,7 @@
     
         
         <div class="block-vegetable">
-            <a href="?a=vegetables">
+            <a href="?c=pages&a=vegetables">
                 <img src="assets/images/gemüse.jpg" alt="gemüse">
                 <p><button class="button" src="?a=vegetables">Gemüse</button></p>
             </a>
@@ -33,7 +32,7 @@
 
  <section class="angebot">
  <div class="blockFull">
-            <a href="?a=angebote">
+            <a href="?c=pages&a=bragain">
                 <img src="assets/images/angebot.jpg" alt="angebot">
                 <p><button class="button" src="?a=angebote">Angebote</button></p>
             </a>
