@@ -62,7 +62,7 @@
             </li>
             <li>
                 <a class = "list-group" href="#content" accesskey="2" class="active">
-                    Content
+                    Inhalt
                 </a>
             </li>
             <li>
@@ -72,12 +72,12 @@
             </li>
             <li>
                 <a class = "list-group" href="#analytics" accesskey="4">
-                    Analytics
+                    Analytik
                 </a>
             </li>
             <li>
                 <a class = "list-group" href="#support" accesskey="5">
-                    Support
+                    Unterstützung
                 </a>
             </li>
             <li>
@@ -102,7 +102,7 @@
     </article>
 
     <article id="content">
-        <h2>Content</h2>
+        <h2>Inhalt</h2>
         <p>
             Donec dapibus sapien quis erat pretium sodales. Donec tincidunt justo arcu, nec mollis nunc venenatis ut. Aenean gravida tempus elit non hendrerit. Sed at ultricies dolor. Donec sed mauris urna. Mauris lectus lorem, pulvinar at lacinia eget, vestibulum
             quis turpis. Quisque commodo, mi sit amet ultricies sagittis, diam est eleifend neque, eget aliquam lacus sem vitae dolor. Cras sit amet fermentum odio. Aliquam scelerisque enim odio, non gravida massa scelerisque quis.
@@ -119,7 +119,7 @@
     </article>
 
     <article id="analytics">
-        <h2>Analytics</h2>
+        <h2>Analytik</h2>
         <p>
             Aenean pellentesque aliquet nibh eu molestie. Vivamus sit amet dignissim nunc. Integer tempor metus sit amet elementum interdum. Nunc pellentesque, odio non ornare sagittis, tellus dolor commodo sapien, non laoreet magna nunc in libero. Aliquam dictum
             augue congue aliquam dictum. Donec eget purus elit. Phasellus metus nibh, aliquet sit amet dapibus non, vulputate et ipsum. In eget fermentum tellus. Nunc enim justo, consectetur eget euismod eu, consequat pulvinar nulla. Aenean in sem vitae
@@ -128,7 +128,7 @@
     </article>
 
     <article id="support">
-        <h2>Support</h2>
+        <h2>Unterstützung</h2>
         <p>
             Donec dapibus sapien quis erat pretium sodales. Donec tincidunt justo arcu, nec mollis nunc venenatis ut. Aenean gravida tempus elit non hendrerit. Sed at ultricies dolor. Donec sed mauris urna. Mauris lectus lorem, pulvinar at lacinia eget, vestibulum
             quis turpis. Quisque commodo, mi sit amet ultricies sagittis, diam est eleifend neque, eget aliquam lacus sem vitae dolor. Cras sit amet fermentum odio. Aliquam scelerisque enim odio, non gravida massa scelerisque quis

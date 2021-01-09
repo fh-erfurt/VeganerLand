@@ -3,8 +3,8 @@
 </div>
 
 <section class="header">
-    <h1>Welcome to <em>VeganerLand</em></h1>
-    <p>veganer land is a website for the purpose of selling fruit and vegetable products.</p>
+    <h1>Willkommen bei <em>VeganerLand</em></h1>
+    <p>veganer land ist eine Website zum Verkauf von Obst- und Gemüseprodukten.</p>
     <a href="?c=registration&a=registration">
     <input type="submit" class="button" value="SIGN UP HERE">
     </a>
