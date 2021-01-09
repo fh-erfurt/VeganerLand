@@ -123,7 +123,6 @@ class PagesController extends Controller {
                             'city'      => $_POST['city']];
                 $formErrors = 0;
                 $noNewAddress = false;
-                var_dump($newInfo);
 
                 if (!empty($_POST['newPassword'])) {
                     if (isPasswordSafe($_POST['newPassword'])) {
