@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema veganerLand
+-- Schema veganerland
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema veganerLand
+-- Schema veganerland
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `veganerLand` DEFAULT CHARACTER SET utf8 ;
-USE `veganerLand` ;
+CREATE SCHEMA IF NOT EXISTS `veganerland` DEFAULT CHARACTER SET utf8 ;
+USE `veganerland` ;
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`products`
+-- Table `veganerland`.`products`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`products` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`products` (
   `prodId` INT NOT NULL AUTO_INCREMENT,
   `descrip` VARCHAR(50) NOT NULL,
   `cat` CHAR(1) NOT NULL,
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`products` (
 
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`orderitems`
+-- Table `veganerland`.`orderitems`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`orderitems` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`orderitems` (
   `itemId` INT NOT NULL AUTO_INCREMENT,
   `prodId` INT NOT NULL,
   `qyt` INT NOT NULL,
@@ -41,15 +41,15 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`orderitems` (
   INDEX `fk_ORDERITEMS_PRODUCTS_idx` (`prodId` ASC),
   CONSTRAINT `fk_ORDERITEMS_PRODUCTS`
     FOREIGN KEY (`prodId`)
-    REFERENCES `veganerLand`.`products` (`prodId`)
+    REFERENCES `veganerland`.`products` (`prodId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`address`
+-- Table `veganerland`.`address`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`address` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`address` (
   `addressId` INT NOT NULL AUTO_INCREMENT,
   `street` VARCHAR(45) NOT NULL,
   `number` VARCHAR(45) NOT NULL,
@@ -59,9 +59,9 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`address` (
 
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`customers`
+-- Table `veganerland`.`customers`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`customers` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`customers` (
   `custId` INT NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
@@ -77,15 +77,15 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`customers` (
   INDEX `fk_CUSTOMER_address1_idx` (`addressId` ASC),
   CONSTRAINT `fk_CUSTOMER_address1`
     FOREIGN KEY (`addressId`)
-    REFERENCES `veganerLand`.`address` (`addressId`)
+    REFERENCES `veganerland`.`address` (`addressId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`orders`
+-- Table `veganerland`.`orders`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`orders` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`orders` (
   `orderId` INT NOT NULL AUTO_INCREMENT,
   `itemId` INT NOT NULL,
   `custId` INT NOT NULL,
@@ -99,37 +99,37 @@ CREATE TABLE IF NOT EXISTS `veganerLand`.`orders` (
   INDEX `fk_ORDERS_address1_idx` (`addressId` ASC),
   CONSTRAINT `fk_ORDERS_ORDERITEMS1`
     FOREIGN KEY (`itemId`)
-    REFERENCES `veganerLand`.`orderitems` (`itemId`)
+    REFERENCES `veganerland`.`orderitems` (`itemId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ORDERS_CUSTOMER1`
     FOREIGN KEY (`custId`)
-    REFERENCES `veganerLand`.`customers` (`custId`)
+    REFERENCES `veganerland`.`customers` (`custId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ORDERS_address1`
     FOREIGN KEY (`addressId`)
-    REFERENCES `veganerLand`.`address` (`addressId`)
+    REFERENCES `veganerland`.`address` (`addressId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `veganerLand`.`favorits`
+-- Table `veganerland`.`favorits`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `veganerLand`.`favorits` (
+CREATE TABLE IF NOT EXISTS `veganerland`.`favorits` (
   `prodId` INT NOT NULL,
   `custId` INT NOT NULL,
   INDEX `fk_favoriten_products1_idx` (`prodId` ASC),
   INDEX `fk_favorits_customers1_idx` (`custId` ASC),
   CONSTRAINT `fk_favoriten_products1`
     FOREIGN KEY (`prodId`)
-    REFERENCES `veganerLand`.`products` (`prodId`)
+    REFERENCES `veganerland`.`products` (`prodId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_favorits_customers1`
     FOREIGN KEY (`custId`)
-    REFERENCES `veganerLand`.`customers` (`custId`)
+    REFERENCES `veganerland`.`customers` (`custId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
