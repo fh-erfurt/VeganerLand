@@ -97,12 +97,13 @@ class RegistrationController extends Controller {
                                 $stmt->bindParam(':gender', $gender);
                                 $stmt->bindParam(':password', $passwordHash);
                                 $stmt->bindParam(':addressId', $lastAddressId);
-
-                                $stmt = $GLOBALS['db']->prepare("SELECT custId, addressId FROM customers WHERE email=?");
-                                $stmt->execute(array($email));
-                                $row = $stmt->fetch();
-                        
                                 $stmt->execute();
+
+                                $stmt2 = $GLOBALS['db']->prepare("SELECT custId, addressId FROM customers WHERE email=?");
+                                $stmt2->execute(array($email));
+                                $row = $stmt2->fetch();
+                        
+                                $stmt2->execute();
                                 $_SESSION['email'] = $email;                    // Register Session Email
                                 $_SESSION['custId']= $row['custId'];            // Register Customer ID
                                 $_SESSION['addressId']= $row['addressId'];      // Register Address ID
