@@ -1,6 +1,6 @@
 <div class="con">
         <form class="from-horizonta" method="post">
-                <header class="head-form">
+                <header class="setting-head-form">
                         <h2>Mitglied bearbeiten</h2>
                         <p> bearbeite einfach deine Daten</p>
                 </header>

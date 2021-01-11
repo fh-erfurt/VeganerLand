@@ -20,13 +20,13 @@
                     <!-- Email Input  -->
                     <input class="form-input" id="email" type="text" name="email" placeholder="Email" required> <br>
 
-                    <!--button LogIn -->
+                    <!--button Recover your password -->
                     <button class="log-in" name="submit" type="submit"> Recover your password</button> </button>
                 </div>
                     <!--other buttons -->
                 <div class="other">
                  <!--     Sign Up button -->
-                    <button class="btn submits sign-up"><a href="?a=registration">Registrieren</a> </button>
+                    <button class="btn submits sign-up"><a href="?c=registration&a=registration">Registrieren</a> </button>
                 </div>
             </div>
         </form>
@@ -37,7 +37,7 @@
         
                 // check if the User Exist in Database
 
-                $stmt = $db->prepare("SELECT * FROM customers WHERE email= :email LIMIT 1");
+                $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE email= :email LIMIT 1");
                 $stmt->bindParam(":email", $_POST['email']);
                 $stmt->execute();
                 $count = $stmt->rowCount();
@@ -46,7 +46,7 @@
                 if ($count != 0) 
                 {
                     $tocken = generateRandomString(25);
-                    $stmt = $db->prepare("UPDATE customers SET tocken = :tocken WHERE email = :email");
+                    $stmt = $GLOBALS['db']->prepare("UPDATE customers SET tocken = :tocken WHERE email = :email");
                     $stmt->bindParam(":tocken", $tocken,);
                     $stmt->bindParam(":email", $_POST['email']);
                     $stmt->execute();
@@ -71,7 +71,7 @@
     {
         if(isset($_GET["tocken"]))
         {
-            $stmt = $db->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
+            $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
             $stmt->bindParam(":tocken", $_GET['tocken']);
             $stmt->execute();
             $count = $stmt->rowCount();
@@ -83,7 +83,7 @@
                     if($_POST["password1"] == $_POST["password2"])
                     {
                         $passwordHash = md5($_POST['password1']);
-                        $stmt = $db->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
+                        $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
                         $stmt->bindParam(':password', $passwordHash);
                         $stmt->bindParam(':tocken', $_GET["tocken"]);
                         $stmt->execute();
@@ -95,13 +95,17 @@
                     }
                 }
                 ?>
-
-                <h1> Neues Passwort setzten </h1>
-                <form action="?a=resetPassword&do=setPassword&tocken=<?echo $_GET['tocken'];?>" method="post">
-                    <input type = "password" name="password1" placeholder ="Password" required> <br>
-                    <input type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
-                    <button type="submit" name="submit">passwort setzten</button>
-                </form>
+                    <form action="?a=resetPassword&do=setPassword&tocken=<?echo $_GET['tocken'];?>" method="post">
+                        <div class="con">
+                            <header class="head-form">
+                                <h2> Neues Passwort setzten </h2>
+                                <p>bearbeiten Sie hier Passwort</p>
+                            </header>
+                                <input class="form-input" type = "password" name="password1" placeholder ="Password" required> <br>
+                                <input class="form-input" type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
+                                <button class="log-in" type="submit" name="submit">passwort setzten</button>
+                        </div>
+                    </form>
                 <?php
             }
             else {

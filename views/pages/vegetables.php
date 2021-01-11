@@ -3,9 +3,9 @@
 ?>
 <nav class="fruit-nav-container">
     <ul class="fruit-nav-list">
-        <li><a href="?a=vegetables">Alle</a></li>
-        <li><a href="?a=vegetables&cat=potato">Kartoffeln</a></li>
-        <li><a href="?a=vegetables&cat=mushroom">Pilze</a></li>
+        <li><a href="?c=pages&a=vegetables">Alle</a></li>
+        <li><a href="?c=pages&a=vegetables&cat=potato">Kartoffeln</a></li>
+        <li><a href="?c=pages&a=vegetables&cat=mushroom">Pilze</a></li>
     </ul>
 </nav>
 <?include "include.php";?>
