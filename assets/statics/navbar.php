@@ -32,14 +32,19 @@
       <!-- warenkorb -->
       <li class = "nav-item"> Warenkorb (<?= $cartItems ?>)</li>
       <!-- Konto dropdown -->
+      <?php if(isset($_SESSION['email'])) : ?>
       <li style="float:right" class="dropdown">
         <a href="" class="dropbtn">Konto</a>
         <div class="dropdown-content">
-          <a href="?c=pages&a=login">Login</a>
           <a href="?c=pages&a=setting">Einstellungen</a>
           <a href="?c=pages&a=logout">Logout</a>
         </div>
       </li>
+      <?php else : ?>
+        <li style="float:right" class="dropdown">
+        <a href="?c=pages&a=login">Login</a>
+        </li>
+        <?php endif; ?>
       <!-- searchform -->
       <li>
         <div class="search-container">
