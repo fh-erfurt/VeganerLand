@@ -6,7 +6,7 @@
 class PagesController extends Controller {
 
     public function actionIndex(){
-        header('Location: index.php?a=homepage');
+        header('Location: index.php?c=pages&a=homepage');
     }
     
     public function actionHomepage() {
@@ -17,7 +17,7 @@ class PagesController extends Controller {
     {
         if(isset($_SESSION['email']))
         {
-            header('Location: ?a=homepage');
+            header('Location: ?c=pages&a=homepage');
         }
         
         // check if User coming from http post
@@ -42,7 +42,7 @@ class PagesController extends Controller {
                 $_SESSION['email'] = $email;                    // Register Session Email
                 $_SESSION['custId']= $row['custId'];            // Register Customer ID
                 $_SESSION['addressId']= $row['addressId'];      // Register Address ID
-                header('Location: ?a=homepage');
+                header('Location: ?c=pages&a=homepage');
                 exit();
             }
             else {
@@ -123,6 +123,7 @@ class PagesController extends Controller {
                             'city'      => $_POST['city']];
                 $formErrors = 0;
                 $noNewAddress = false;
+                var_dump($newInfo);
 
                 if (!empty($_POST['newPassword'])) {
                     if (isPasswordSafe($_POST['newPassword'])) {
@@ -205,7 +206,7 @@ class PagesController extends Controller {
                     } catch (\PDOException $e) {
                         echo 'Update fehlgeschlagen: ' . $e->getMessage();
                     }
-                    header('Location: ?a=setting');
+                    header('Location: ?c=pages&a=setting');
                     echo '<div class="alert alert-success">Update erfolgreich!</div>';
                 }
             }
@@ -281,8 +282,7 @@ class PagesController extends Controller {
         $this->setParams('userId', null);
         $this->setParams('password', null);
 
-        header('Location: index.php?a=homepage');
+        header('Location: index.php?c=pages&a=homepage');
     }
 }
-
 ?>

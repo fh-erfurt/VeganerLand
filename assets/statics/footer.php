@@ -1,9 +1,9 @@
 
 <link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
 
-<header class="page-footer">
+<!-- <header class="page-footer">
     <h1>Veganer Land</h1>
-</header>
+</header> -->
 
 <!-- FOOTER START -->
 <div class="footer">
