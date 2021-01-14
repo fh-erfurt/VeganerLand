@@ -35,7 +35,7 @@
             <div class="card">
                 <img src="#" alt="Mo" style="width:100%">
                 <div class="container">
-                    <h2>Mo Salah</h2>
+                    <h2>Mahmoud Matar</h2>
                     <p class="title">Designer</p>
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                     <p>salah@gmail.com</p>
@@ -109,14 +109,7 @@
         </p>
     </article>
 
-    <article id="email">
-        <h2>E-Mail</h2>
-        <p>
-            Praesent non lectus sit amet justo vestibulum eleifend. Suspendisse potenti. Ut pulvinar feugiat odio congue pharetra. Curabitur varius bibendum quam sit amet mattis. Duis cursus euismod neque in facilisis. Ut ut adipiscing nulla. Proin varius, tellus
-            sit amet ornare convallis, leo magna rhoncus magna, vel dignissim nulla purus id dolor. Donec consequat consequat tellus, sed faucibus odio imperdiet in. Aenean sagittis lacinia sapien, id fringilla arcu dignissim ut. Vestibulum elementum
-            lorem in erat facilisis, vitae luctus tellus fringilla. Quisque non diam in ipsum convallis viverra at quis dui. Sed nisl tellus, bibendum vitae commodo vel, tristique vel velit. Integer a nunc in quam pulvinar euismod.
-        </p>
-    </article>
+    
 
     <article id="analytics">
         <h2>Analytik</h2>
@@ -138,10 +131,24 @@
     <article id="impressum">
         <h2>Impressum</h2>
         <p>
-            Donec ultricies orci diam, vel mattis ante tempor et. Vestibulum sit amet leo vitae nisi mollis dignissim sed non lacus. Morbi ac feugiat felis, sit amet consectetur lectus. In egestas, nisl vel elementum bibendum, lorem metus pretium elit, ac volutpat
-            turpis quam at massa. Etiam rutrum dictum augue vel pulvinar. Maecenas tellus lectus, ultrices eu quam sit amet, ultricies bibendum mauris. Curabitur tincidunt orci odio. Nunc volutpat, nibh faucibus ultrices dictum, ante nulla condimentum
-            libero, ac venenatis libero ligula nec leo. Integer bibendum magna et consectetur commodo. Donec lectus ipsum, tempor at arcu eu, blandit ultrices odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            Pellentesque fringilla urna nec velit pellentesque, et lobortis orci pulvinar.
+        <strong>Seitenbetreiber der Webseite </strong>
+        <a href="Localhost/VeganerLand-main/index.php">
+        <strong>www.vaganerland.de</strong>
+        </a>
+        </p>
+
+        <p>
+        <strong>Vaganer Land GmbH</strong>
+        <br/>
+        Sitz: Erfurt
+        <br/>
+        <strong>Geschäftsführung:</strong>
+        Mahmoud Matar
+        <br/>
+        <p>
+        E-Mail: 
+        <a href="mailto:mahmoud.matar@fh-erfurt.de">impressum@veganerland.de</a>
+        <br/>
         </p>
     </article>
 
