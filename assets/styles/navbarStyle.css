@@ -133,3 +133,48 @@
 .nav-item {
     float: left;
 }
+
+
+/* @media screen and (max-width: 600px) {
+    ul.nav-list li.dropdown,
+    ul.nav-list li {
+        float: none;
+    }
+} */
+
+@media only screen and (min-width: 1280px) {
+    .nav-list {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .nav-container .nav-list {
+        width: 33%;
+    }
+    .nav-container .nav-list h1 {
+        font-size: 14px;
+    }
+    .nav-container .nav-list ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-container .nav-list {
+        width: 50%;
+    }
+    .nav-container .nav-list h1 {
+        font-size: 14px;
+    }
+    .nav-container .nav-list ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .nav-container .nav-list {
+        width: 100%;
+    }
+}
