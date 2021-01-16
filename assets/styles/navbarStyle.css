@@ -1,18 +1,10 @@
-/* Molham Al-khodari    21.12.2020  22:33 Uhr
-**********************************
-** Veganer Land
-**********************************
-*/
-
-.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0;
+* {
+    box-sizing: border-box;
+    padding: 0;
 }
 
-.nav {
-    width: 100%;
-    height: 20px;
+body {
+    font-family: sans-serif;
 }
 
 .navbar-header,
@@ -24,74 +16,176 @@
     align-items: center;
 }
 
-.nav-container {
-    color: #000000;
-    background-color: #333333;
-    padding: 0px 116px;
+nav {
+    background: #222;
+    padding: 5px 20px;
 }
 
-
-/*
-**********************************
-** search
-**********************************
-*/
-
-.search-container {
-    background-color: #333333;
-    padding: 1px 2px 1px 8px;
-}
-
-.search-container button {
-    margin-top: 10px;
-}
-
-
-/*
-**********************************
-** Liste
-**********************************
-*/
-
-.nav-list {
+ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
 }
 
-.nav-container li {
-    float: left;
-}
-
-
-/*
-**********************************
-** linke und einkaufwagen
-**********************************
-*/
-
-.nav-container a,
-.nav-item {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+a {
+    color: black;
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
 
-/*
-**********************************
-** hover effect
-**********************************
-*/
+.logo a:hover {
+    text-decoration: none;
+}
 
-.nav-container li a:hover,
-.dropdown:hover .dropbtn,
-.nav-item:hover {
-    background-color: red;
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+
+.button.secondary {
+    border-bottom: 1px #444 solid;
+}
+
+
+/* Mobile menu */
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle {
+    order: 1;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+
+.item.active {
+    display: block;
+}
+
+
+/* Navbar Toggle */
+
+.toggle {
+    cursor: pointer;
+}
+
+.bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.bars:before,
+.bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.bars:before {
+    top: 5px;
+}
+
+.bars:after {
+    top: -5px;
+}
+
+
+/* Tablet menu */
+
+@media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius: 50em;
+    }
+    .button.secondary a {
+        background: transparent;
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition: all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    }
+}
+
+
+/* Desktop menu */
+
+@media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
 }
 
 
@@ -101,7 +195,7 @@
 **********************************
 */
 
-.nav-container li.dropdown {
+.menu li.item.button {
     display: inline-block;
 }
 
@@ -123,7 +217,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: red;
 }
 
 .dropdown:hover .dropdown-content {
@@ -134,47 +228,8 @@
     float: left;
 }
 
-
-/* @media screen and (max-width: 600px) {
-    ul.nav-list li.dropdown,
-    ul.nav-list li {
-        float: none;
-    }
-} */
-
-@media only screen and (min-width: 1280px) {
-    .nav-list {
-        width: 1200px;
-        margin: 0 auto;
-    }
-}
-
-@media only screen and (max-width: 950px) {
-    .nav-container .nav-list {
-        width: 33%;
-    }
-    .nav-container .nav-list h1 {
-        font-size: 14px;
-    }
-    .nav-container .nav-list ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .nav-container .nav-list {
-        width: 50%;
-    }
-    .nav-container .nav-list h1 {
-        font-size: 14px;
-    }
-    .nav-container .nav-list ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .nav-container .nav-list {
-        width: 100%;
-    }
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
 }

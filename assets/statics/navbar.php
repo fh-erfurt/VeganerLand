@@ -1,61 +1,70 @@
-<?php
-  /*
-  ================================
-  == Molham Al-khodari 26.12.2020
-  ================================
-  */
-
-  $cartItems = 0; // wichtig für einkaufskorb 
-?>
-
 <link rel="stylesheet" href="<?=STYLESPATH.'navbarStyle.css'?>">
 
-<div class = "fixed">
-  <!-- start header of the navbar -->
-  <header class="navbar-header">
-    <h1>Veganer Land</h1>
-  </header>
-  <!-- end header of the navbar -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous">
+</script>
+<script>
 
-  <!-- start all link  -->
-  <nav class="nav-container">
-    <ul class="nav-list"> 
-      <li><a class="active" href="?c=pages&a=homepage">Startseite</a></li>
-      <li><a href="?c=pages&a=bargain">Angeboten</a></li>
-      <li><a href="?c=pages&a=about">Über uns</a></li>
-      <li><a href="?c=pages&a=fruits">Obst</a></li>
-      <li><a href="?c=pages&a=vegetables">Gemüse</a></li>
-      <li><a href="#">Seite3</a></li>
-      <li><a href="#">Seite4</a></li>
-      <li><a href="#">Seite5</a></li>
-      <li><a href="#">Seite6</a></li>
-      <!-- warenkorb -->
-      <li class = "nav-item"> Warenkorb (<?= $cartItems ?>)</li>
+$(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+</script>
+
+</head>
+<nav class="fixed">
+    <ul class="menu">
+        <li class="logo"><a href="?c=pages&a=homepage">VeganerLand</a></li>
+        <li class="item"><a href="?c=pages&a=homepage">Startseite</a></li>
+        <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
+        <li class="item"><a href="?c=pages&a=bargain">Angeboten</a></li>
+        <li class="dropdown item"><a href="?c=pages&a=fruits">Obst</a>
+        <div class="dropdown-content">
+          <a href="?c=pages&a=fruits">Alle</a>
+          <a href="?c=pages&a=fruits&cat=citrus">Zitrus Früchte</a>
+          <a href="?c=pages&a=fruits&cat=berry">Beeren</a>
+          <a href="?c=pages&a=fruits&cat=nuts">Nüsse</a>
+          <a href="?c=pages&a=fruits&cat=exotics">Exotische Früchte</a>
+        </div>
+      </li>
+      <li class="dropdown item"><a href="?c=pages&a=vegetables">Gemüse</a>
+        <div class="dropdown-content">
+          <a href="?c=pages&a=vegetables">Alle</a>
+          <a href="?c=pages&a=vegetables&cat=potato">Kartoffeln</a>
+          <a href="?c=pages&a=vegetables&cat=mushroom">Pilze</a>
+        </div>
+      </li>
+        </li>
+        <!-- searchform -->
+        <li class="item">
+          <div class="search-container">
+            <form name="search" method="post">
+              <input type="text" name="search" placeholder="Suche" maxlength="50">
+              <button type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
+            </form>
+          </div>
+        </li>
+
       <!-- Konto dropdown -->
       <?php if(isset($_SESSION['email'])) : ?>
-      <li style="float:right" class="dropdown">
-        <a href="" class="dropbtn">Konto</a>
-        <div class="dropdown-content">
-          <a href="?c=pages&a=setting">Einstellungen</a>
-          <a href="?c=pages&a=logout">Logout</a>
-        </div>
-      </li>
-      <?php else : ?>
-        <li style="float:right" class="dropdown">
-        <a href="?c=pages&a=login">Login</a>
+        <li class="dropdown item button secondary"><a href="#">Konto</a>
+          <div class="dropdown-content">
+            <a href="?c=pages&a=setting">Einstellungen</a>
+            <a href="?c=pages&a=logout">Logout</a>
+          </div>
         </li>
+      <?php else : ?>
+        <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
+
         <?php endif; ?>
-      <!-- searchform -->
-      <li>
-        <div class="search-container">
-          <form name="search" method="post">
-             <input type="text" name="search" placeholder="Suche" maxlength="50">
-             <button type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
-          </form>
-        </div>
-      </li>
-      <!-- end searchform -->
+        <li class="item button secondary"><a href="#">Warenkorb</a></li>
+        <li class="toggle"><span class="bars"></span></li>
     </ul>
-    <!-- end all links -->
-  </nav>
-</div>
+</nav>

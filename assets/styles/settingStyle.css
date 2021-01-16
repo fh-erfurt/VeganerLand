@@ -4,6 +4,10 @@
 ***************************
 */
 
+body {
+    margin-top: 110px;
+}
+
 .from-horizonta {
     width: 600px;
     min-height: 500px;

@@ -39,7 +39,7 @@ span {
     color: #DCBE5C;
 }
 
-.button {
+.homepage-button {
     height: 50px;
     width: 220px;
     background-image: linear-gradient(-225deg, #f3f3f300 50%, #3cc80e 50%);
@@ -52,11 +52,11 @@ span {
     cursor: pointer;
 }
 
-.button:hover {
+.homepage-button:hover {
     background: #AE3C58;
 }
 
-.button:focus {
+.homepage-button:focus {
     outline: none;
     border: 2px solid #BA4662;
     box-shadow: 0 0 10px #BA4662;
@@ -115,7 +115,7 @@ span {
     width: 100%;
 }
 
-.button {
+.homepage-button {
     border: none;
     outline: 0;
     padding: 8px;

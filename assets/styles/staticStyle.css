@@ -21,9 +21,9 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: black;
-    margin: 0px;
+    margin: 0;
+    margin-top: 95px;
     border: 0px;
-    padding-top: 130px;
     box-sizing: border-box;
 }
 
