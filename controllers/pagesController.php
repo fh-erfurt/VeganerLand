@@ -102,7 +102,6 @@ class PagesController extends Controller {
 
             if (!empty($addressId)) {
                 $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
-                var_dump($addressInfo);
                 $info['street'] = $addressInfo[0]['street'];
                 $info['number'] = $addressInfo[0]['number'];
                 $info['zip'] = $addressInfo[0]['zip'];
@@ -123,7 +122,6 @@ class PagesController extends Controller {
                             'city'      => $_POST['city']];
                 $formErrors = 0;
                 $noNewAddress = false;
-                var_dump($newInfo);
 
                 if (!empty($_POST['newPassword'])) {
                     if (isPasswordSafe($_POST['newPassword'])) {

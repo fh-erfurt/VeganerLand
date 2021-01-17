@@ -24,7 +24,7 @@ $(function() {
         <li class="logo"><a href="?c=pages&a=homepage">VeganerLand</a></li>
         <li class="item"><a href="?c=pages&a=homepage">Startseite</a></li>
         <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
-        <li class="item"><a href="?c=pages&a=bargain">Angeboten</a></li>
+        <li class="item"><a href="?c=pages&a=bargain">Angebote</a></li>
         <li class="dropdown item"><a href="?c=pages&a=fruits">Obst</a>
         <div class="dropdown-content">
           <a href="?c=pages&a=fruits">Alle</a>
@@ -64,7 +64,7 @@ $(function() {
         <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
 
         <?php endif; ?>
-        <li class="item button secondary"><a href="#">Warenkorb</a></li>
+        <li class="item button secondary"><a href="#">Warenkorb()</a></li>
         <li class="toggle"><span class="bars"></span></li>
     </ul>
 </nav>

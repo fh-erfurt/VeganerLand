@@ -32,7 +32,7 @@
 
  <section class="angebot">
  <div class="blockFull">
-            <a href="?c=pages&a=bragain">
+            <a href="?c=pages&a=bargain">
                 <img src="assets/images/angebot.jpg" alt="angebot">
                 <p><button class="homepage-button" src="?a=angebote">Angebote</button></p>
             </a>
