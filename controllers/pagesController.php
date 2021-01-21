@@ -244,7 +244,8 @@ class PagesController extends Controller {
         }
 
         $this->setParams('fruits', $fruits);
-        $this->addToFavorit();  // wir müssen hier nachschauen 
+        $this->addToCart();
+        $this->addToFavorites(); 
     }
 
     public function actionVegetables() {
@@ -264,12 +265,16 @@ class PagesController extends Controller {
         }
 
         $this->setParams('vegetables', $veggies);
+        $this->addToCart();
+        $this->addToFavorites();
     }
 
     public function actionBargain() {
         $bargain = Products::find("stdPrice < 1.50", Products::tableName());
 
         $this->setParams('bargain', $bargain);
+        $this->addToCart();
+        $this->addToFavorites();
     }
 
         protected function addToCart() {
@@ -350,42 +355,31 @@ class PagesController extends Controller {
         header('Location: index.php?c=pages&a=homepage');
     }
     
-     protected function addToFavorit()
-    {
-//         if (isset($_POST['prodId'])) // $_POST['submit] -> prodId
-//         {
-//             $prodId = $_POST['prodId'];
+     protected function addToFavorites() {
+        if (!empty($_POST['fav'])) {
+            if (isset($_SESSION['custId'])) {
+                $idP = $_POST['fav'];
+                $idC = $_SESSION['custId'];
 
-//             if(isset($_SESSION['custId']))
-//             {
-//                 $castId = $_SESSION['custId'];
+                $check = Favorits::find("prodId = '$idP' AND custID = '$idC'", Favorits::tableName());
+                if (empty($check)) {
+                    try {
+                        $sql = "INSERT INTO " . Favorits::tableName() . "(prodId, custId) VALUES ('$idP', '$idC')";
+                        $stmt = $GLOBALS['db']->prepare($sql);
+                        $stmt->execute();
+                    } catch (\PDOException $e) {
+                        echo '<div class="alert alert-danger">Fehlgeschlag.</div>';
+                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                    }
+                } else {
+                    echo '<div class="alert alert-danger">Dieses Produkt ist bereits in den Favoriten eingetragen.</div>';
+                }
 
-//                 echo "$prodId . ',' . $custId";
-//                 exit();
-                
-//                 try
-//                 {
-//                     $sql = "INSERT INTO ". Favorits::tablenName() . " (prodId, custId) VALUES ('$prodId', '$castId')";
-//                     $stmt = $GLOBALS['db']->prepare($sql);
-                    
-//                     $stmt->execute();
 
-//                     // header("Location: c=pages&a=fruits");
-//                     // exit();
-
-//                 } catch (\PDOException $e) {
-//                     echo '<div class="alert alert-danger">fehlgeschlagen</div>';
-//                     echo 'Update fehlgeschlagen: ' . $e->getMessage();
-//                 }
-//             } else{
-//                 echo '<div class="alert alert-danger">fehlgeschlagen</div>';
-//             }
-
-//         }
-//         else
-//         {
-//             // nothing happened
-//         }
+            } else {
+                echo '<div class="alert alert-danger">Sie sind nicht angemeldet!</div>';
+            }
+        }
     }
 
     public static function removeFromfavorits() {}
