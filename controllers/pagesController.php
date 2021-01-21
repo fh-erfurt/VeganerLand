@@ -244,6 +244,7 @@ class PagesController extends Controller {
         }
 
         $this->setParams('fruits', $fruits);
+        $this->addToFavorit();  // wir müssen hier nachschauen 
     }
 
     public function actionVegetables() {
@@ -338,5 +339,45 @@ class PagesController extends Controller {
 
         header('Location: index.php?c=pages&a=homepage');
     }
+    
+     protected function addToFavorit()
+    {
+//         if (isset($_POST['prodId'])) // $_POST['submit] -> prodId
+//         {
+//             $prodId = $_POST['prodId'];
+
+//             if(isset($_SESSION['custId']))
+//             {
+//                 $castId = $_SESSION['custId'];
+
+//                 echo "$prodId . ',' . $custId";
+//                 exit();
+                
+//                 try
+//                 {
+//                     $sql = "INSERT INTO ". Favorits::tablenName() . " (prodId, custId) VALUES ('$prodId', '$castId')";
+//                     $stmt = $GLOBALS['db']->prepare($sql);
+                    
+//                     $stmt->execute();
+
+//                     // header("Location: c=pages&a=fruits");
+//                     // exit();
+
+//                 } catch (\PDOException $e) {
+//                     echo '<div class="alert alert-danger">fehlgeschlagen</div>';
+//                     echo 'Update fehlgeschlagen: ' . $e->getMessage();
+//                 }
+//             } else{
+//                 echo '<div class="alert alert-danger">fehlgeschlagen</div>';
+//             }
+
+//         }
+//         else
+//         {
+//             // nothing happened
+//         }
+    }
+
+    public static function removeFromfavorits() {}
 }
 ?>
