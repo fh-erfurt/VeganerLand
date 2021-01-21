@@ -64,7 +64,7 @@ $(function() {
         <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
 
         <?php endif; ?>
-        <li class="item button secondary"><a href="#">Warenkorb()</a></li>
+        <li><a href="?c=pages&a=cart">Warenkorb</a></li>
         <li class="toggle"><span class="bars"></span></li>
     </ul>
 </nav>
