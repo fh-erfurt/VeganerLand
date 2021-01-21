@@ -306,6 +306,7 @@ class PagesController extends Controller {
 
     public function actionCart() {
         if (isset($_SESSION['custId'])) {
+            $this->removeFromCart();
             $id = $_SESSION['custId'];
             
             $cartList = OrderItems::find("custId = '$id'", OrderItems::tableName());
@@ -331,7 +332,16 @@ class PagesController extends Controller {
             header('Location: index.php?c=pages&a=homepage');
         }
     }
-    public static function removeFromCart() {}
+    
+    protected function removeFromCart() {
+        if (isset($_POST['delete'])) {
+            $id = $_POST['delete'];
+
+            $sql = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
+            $stmt = $GLOBALS['db']->prepare($sql);
+            $stmt->execute();
+        }
+    }
 
     public function actionLogout() {
         $this->setParams('userId', null);
