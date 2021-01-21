@@ -271,9 +271,65 @@ class PagesController extends Controller {
         $this->setParams('bargain', $bargain);
     }
 
-    // Still not sure on how to do the code.
-    public static function addToCart() {}
+        protected function addToCart() {
+        if (isset($_SESSION['custId'])) {
+            $idC = $_SESSION['custId'];
+            if (isset($_POST['submit'])) {
+                // $_POST['submit'] → Name of the product
+                if (!empty($_POST['qty'])){
+                    $item = $_POST['submit'];
+                    $itemdata = Products::find("descrip = '$item'", Products::tableName());
+                    $idP = $itemdata[0]['prodId'];
+                    $qty = $_POST['qty'];
+                    $check = OrderItems::find("custId = '$idC' AND prodId = '$idP' AND qyt = '$qty'", OrderItems::tableName());
+                    if (empty($check)) {
+                        try {
+                            $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$idP', '$qty')";
+                            $stmt = $GLOBALS['db']->prepare($sql);
+                            $stmt->execute();
+                        } catch (\PDOException $e) {
+                            echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
+                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                        }
+                    } else {
+                        // Maybe get back the itemId.
+                    }
+                } else {
+                    //echo '<div class="alert alert-danger">Bitte gib die gewünschte Menge an!</div>';
+                }
+            } else {
+                // Nothing happens :P
+            }
+        } else {}
+    }
 
+    public function actionCart() {
+        if (isset($_SESSION['custId'])) {
+            $id = $_SESSION['custId'];
+            
+            $cartList = OrderItems::find("custId = '$id'", OrderItems::tableName());
+            $productList = array();
+            $priceList = array();
+            $ttPrice = 0;
+
+            for ($idx = 0; $idx < count($cartList); $idx++) {
+                $id = $cartList[$idx]['prodId'];
+                $productInfo = Products::find("prodId = '$id'", Products::tableName());
+                array_push($productList, $productInfo);
+
+                $price = $cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'];
+                array_push($priceList, $price);
+                $ttPrice += $price;
+            }
+
+            $this->setParams('cart', $cartList);
+            $this->setParams('prodInfo', $productList);
+            $this->setParams('price', $priceList);
+            $this->setParams('ttprice', $ttPrice);
+        } else {
+            header('Location: index.php?c=pages&a=homepage');
+        }
+    }
     public static function removeFromCart() {}
 
     public function actionLogout() {
