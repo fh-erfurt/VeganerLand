@@ -23,7 +23,7 @@
             <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'aboutStyle.css'?>">
-            <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse'): ?>
+            <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse' || $pageTitle == 'Warenkorb'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'fruitStyle.css'?>">
             <? endif; ?>
             <script type="text/javascript" src="assets/js/forms.js"></script>
