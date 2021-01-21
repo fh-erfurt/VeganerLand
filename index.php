@@ -92,6 +92,11 @@ switch ($actionName) {
         require_once TEMPLATESPATH.'header.php';
         include TEMPLATESPATH.'navbar.php';
         break;
+    case 'cart':
+        $pageTitle = 'Warenkorb';
+        require_once TEMPLATESPATH.'header.php';
+        include TEMPLATESPATH.'navbar.php';
+        break;
     case 'logout':
         break;
     default:
