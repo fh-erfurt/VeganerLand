@@ -1,39 +1,3 @@
-<?php 
-
-// $sql = "SELECT 	prodId, descrip, cat, stdPrice FROM products";
-
-// $result = $GLOBALS['db']->query($sql);
-
-// $GLOBALS['castId'] = 0;
-// $GLOBALS['favoritItems'] = 0;
-
-// if(strpos($route, '/favorit/add/')!== false)
-// {
-//     $routeParts = explode('/',$route);
-//     $productId = (int)$routeParts[3];
-
-//     $sql = "INSERT INTO favorits SET custId = :custId, prodId = :prodId";
-//     $stmt = $GLOBALS['db']->prepare($sql);
-
-//     $stmt->execute([
-//         ':custId' => $GLOBALS['custId'],
-//         ':prodId' => $productId
-//     ]);
-
-//     header("Location: c=pages&a=fruits");
-//     exit();
-     
-// }
-
-// $sql = "SELECT COUNT(prodId) FROM favorit WHERE custId = ".$GLOBALS['castId'];
-// $favoritResult = $GLOBALS['db']->query($sql);
-
-// $GLOBALS['favoritItems'] = $favoritResult->fetchColumn();
-
-// echo "favorit:" . $GLOBALS['favoritItems'];
-
-?>
-
 <?
 // @author Jessica Eckardtsberg
 $pages = isset($_GET['a']) ? $_GET['a'] : '';
@@ -59,9 +23,10 @@ $pages = isset($_GET['a']) ? $_GET['a'] : '';
                             <p><?=$$pages[$counter]['stdPrice']?></p>
                         </div>
                         <div class="card-footer">
-                        <form action="" method="POST">
-                            <button class="btn btn--block card__btn" type="submit" name="submit" value="<?$$pages[$counter]['prodId']?>"><?echo $$pages[$counter]['prodId']?></button> <!-- zu den Favoriten hinzufügen -->
-                            <button class="btn btn--block card__btn">In den Warenkorb</button>
+                        <form class="card-footer" method="post">
+                            <button class="btn btn--block card__btn" name="fav" type="submit" value="<?=$$pages[$counter]['prodId']?>"><?echo $$pages[$counter]['prodId']?></button>
+                            <button class="btn btn--block card__btn" name="submit" type="submit" value="<?=$$pages[$counter]['descrip']?>">In den Warenkorb</button>
+                            <input name="qty" type="number">
                         </form>
                         </div>
                     </div>
@@ -71,46 +36,3 @@ $pages = isset($_GET['a']) ? $_GET['a'] : '';
         endwhile; ?>
     </ul>
 </div>
-
-<?php 
-    if(isset($_POST['submit']))
-    {
-        $prodId = (int)$_POST['submit']; 
-    
-        if (isset($_SESSION['custId'])) {
-            $castId  = $_SESSION['custId'];
-
-            echo $prodId . ' prodId <br>';
-            echo $castId . ' custId <br>';
-        }
-            
-        //     try
-        //     {
-        //         $sql = "INSERT INTO favorits (prodId, custId) VALUES ('$prodId', '$castId')";
-        //         // $sql = "INSERT INTO favorits SET custId = :custId, prodId = :prodId";
-        //         // $stmt = $GLOBALS['db']->prepare($sql);
-
-        //         // $stmt->execute([
-        //         //              ':custId' => $GLOBALS['custId'],
-        //         //              ':prodId' => $prodId
-        //         //          ]);
-        //         $stmt = $GLOBALS['db']->prepare($sql);
-        //         $stmt->execute();
-
-        //         // header("Location: c=pages&a=fruits");
-        //         // exit();
-
-        //     } catch (\PDOException $e) {
-        //         echo '<div class="alert alert-danger">fehlgeschlagen db Fehler</div>';
-        //         echo 'Update fehlgeschlagen: ' . $e->getMessage();
-        //     }
-        // } else{
-        //     echo '<div class="alert alert-danger">fehlgeschlagen no custId</div>';
-        // }
-
-    }
-    else
-    {
-        // nothing kann happening 
-    }
-?>
