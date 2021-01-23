@@ -142,6 +142,16 @@ img {
     text-transform: uppercase;
 }
 
+/*
+===================================
+** alert messages in Fruit
+===================================
+*/
+
+.alert-danger {
+    margin-top: 110px;
+}
+
 .btn {
     background-color: white;
     border: 1px solid #cccccc;
