@@ -47,7 +47,7 @@ $(function() {
           <div class="search-container">
             <form name="search" method="post">
               <input type="text" name="search" placeholder="Suche" maxlength="50">
-              <button type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
+              <button class="search" type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
             </form>
           </div>
         </li>
