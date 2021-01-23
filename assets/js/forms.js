@@ -1,12 +1,9 @@
 /*
 ================================
-== Molham Al-khodari 31.12.2020
+== Molham Al-khodari 
 ================================
 */
 
-// tests 
-
-alert("Js is hier!");
 
 // es macht nicht wirklich sinn an der stelle, cos HTML form validation can be performed automatically by the browser ...
 
@@ -59,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var regex2 = /^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$/m;
             var regex3 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
 
-            if (String.match(regex3)) {
+            if (inputPassword.value.match(regex3)) {
                 inputPassword.style.border = '2px solid green';
-            } else if (str.match(regex2)) {
+            } else if (inputPassword.value.match(regex2)) {
                 inputPassword.style.border = '2px solid blue';
-            } else if (str.match(regex1)) {
+            } else if (inputPassword.value.match(regex1)) {
                 inputPassword.style.border = '2px solid yellow';
             } else {
                 inputPassword.style.border = '2px solid red';
