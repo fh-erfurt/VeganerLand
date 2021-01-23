@@ -7,14 +7,15 @@ body {
     font-family: sans-serif;
 }
 
-.navbar-header,
+
+/* .navbar-header,
 .navbar-header h1 {
     background-color: #ffffffff;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 nav {
     background: #222;
@@ -51,6 +52,17 @@ a:hover {
 
 .button.secondary {
     border-bottom: 1px #444 solid;
+}
+
+.search {
+    display: inline-block;
+    color: #252537;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
 }
 
 

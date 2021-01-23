@@ -26,45 +26,6 @@ img {
 
 /*
 ===================================
-== fruit navbar 
-===================================
-*/
-
-.fruit-nav-container {
-    background-color: #333333;
-    width: 100%;
-    color: #000000;
-    padding: 0px 500px;
-    margin-top: -5px;
-}
-
-.fruit-nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.fruit-nav-container li {
-    float: left;
-}
-
-.fruit-nav-container a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.fruit-nav-container li a:hover {
-    background-color: red;
-}
-
-
-/*
-===================================
 == Block size and style 
 ===================================
 */
@@ -142,16 +103,6 @@ img {
     text-transform: uppercase;
 }
 
-/*
-===================================
-** alert messages in Fruit
-===================================
-*/
-
-.alert-danger {
-    margin-top: 110px;
-}
-
 .btn {
     background-color: white;
     border: 1px solid #cccccc;
@@ -162,4 +113,15 @@ img {
 
 .btn--block {
     width: 49%;
+}
+
+
+/*
+===================================
+** alert messages in Fruit
+===================================
+*/
+
+.alert-danger {
+    margin-top: 110px;
 }

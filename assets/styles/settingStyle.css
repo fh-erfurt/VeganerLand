@@ -80,26 +80,6 @@ input:focus {
 }
 
 
-/* buttons  */
-
-button {
-    display: inline-block;
-    color: #252537;
-    width: 375px;
-    height: 50px;
-    padding: 0 20px;
-    background: #fff;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-}
-
-
 /* Submits */
 
 .submits {
@@ -142,6 +122,20 @@ button:hover {
 .save {
     background: #B8F2E6;
     color: black;
+    display: inline-block;
+    color: #252537;
+    width: 375px;
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
 }
 
 button:hover {
