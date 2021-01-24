@@ -1,7 +1,9 @@
+<!-- inform about the current situation -->
 <div class="note">
    <span>aus berührung wird Rührung</span> - wir sind online weiter hin für dich da!
 </div>
 
+<!-- welcome phrase with brief description of the page -->
 <section class="header">
     <h1>Willkommen bei <em>VeganerLand</em></h1>
     <p>veganer land ist eine Website zum Verkauf von Obst- und Gemüseprodukten.</p>
@@ -10,6 +12,7 @@
     </a>
 </section>
 
+<!-- fruit and vegetable block with photos and button -->
 <section id="homeBlocks" class="grid-full">
     <div class="rowBlock">
     
@@ -20,7 +23,6 @@
             </a>
         </div>
     
-        
         <div class="block-vegetable">
             <a href="?c=pages&a=vegetables">
                 <img src="assets/images/gemüse.jpg" alt="gemüse">
@@ -28,8 +30,9 @@
             </a>
         </div>
     </div>
- </section>  <!-- end rowBlock -->  
+ </section>
 
+<!-- bargain block with photos and button -->
  <section class="angebot">
  <div class="blockFull">
             <a href="?c=pages&a=bargain">
