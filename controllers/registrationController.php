@@ -97,29 +97,41 @@ class RegistrationController extends Controller
                             
                                 $stmt2->execute();
                                 $_SESSION['email'] = $email;                    // Register Session Email
-                                    $_SESSION['custId']= $row['custId'];            // Register Customer ID
-                                    $_SESSION['addressId']= $row['addressId'];      // Register Address ID
-                                
-                                    header('Location: ?a=homepage');
+                                $_SESSION['custId']= $row['custId'];            // Register Customer ID
+                                $_SESSION['addressId']= $row['addressId'];      // Register Address ID
+
+                                    if(isset($_GET['ajax']))
+                                    {
+                                        http_response_code(200);                // OK
+                                        echo "<div class='alert alert-success'>login success</div>";
+                                    }
+                                header('Location: ?a=homepage');
                                 exit();
                             } catch (PDOException $e) {
                                 echo "Error: " . $e->getMessage();
                             }
                         } else {
                             $status = 'Password not safe enough';
-                            echo "<div class='alert alert-danger'>Password not safe enough!</div>";
+                            echo "<div class='alert alert-danger'>$status</div>";
+
+                            if(isset($_GET['ajax'])) 
+                            {
+                                http_response_code(404); // NOT Found
+                                echo "<div class='alert alert-danger'>$status</div>";    
+                                exit(0);
+                            }
                         }
                     } else {
                         $status = 'Password and Repeat Password must be the same!!';
-                        echo "<div class='alert alert-danger'>Password and Repeat Password must be the same!</div>";
+                        echo "<div class='alert alert-danger'>$status</div>";
                     }
                 } else {
                     $status = 'Email already beeing used';
-                    echo "<div class='alert alert-danger'>Email already beeing used!</div>";
+                    echo "<div class='alert alert-danger'>$status</div>";
                 }
             } else {
                 $status = 'All fields must be filled';
-                echo "<div class='alert alert-danger'>All fields must be filled!</div>";
+                echo "<div class='alert alert-danger'>$status</div>";
             }
         } else {
             // da kann michts schilmmes passieren :D

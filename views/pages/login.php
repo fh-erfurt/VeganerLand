@@ -11,7 +11,7 @@
             <!--Password Input-->
             <input class="form-input" id="password" type="password" name="password" placeholder="Password" required> <br>
             <!--button LogIn -->
-            <button class="log-in" name="submit" type="submit"> Login </button>
+            <button class="log-in" id="submit" name="submit" type="submit"> Login </button>
         </div>
             <!--other buttons -->
         <div class="other">

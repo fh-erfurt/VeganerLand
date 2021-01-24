@@ -13,8 +13,10 @@
             <link rel="stylesheet" href="<?=STYLESPATH.'staticStyle.css'?>">
             <? if ($pageTitle == 'Sing Up') : ?> 
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
+            <script type="text/javascript" src="assets/js/forms.js"></script>
             <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort zurücksetzen'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
+            <script type="text/javascript" src="assets/js/forms.js"></script>
             <? elseif ($pageTitle == 'Reset Password'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <? elseif ($pageTitle == 'Homepage'): ?>
@@ -26,7 +28,6 @@
             <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse' || $pageTitle == 'Warenkorb'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'fruitStyle.css'?>">
             <? endif; ?>
-            <script type="text/javascript" src="assets/js/forms.js"></script>
             
         </head>
         <body>

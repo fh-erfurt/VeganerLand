@@ -5,32 +5,34 @@
 */
 
 
-// es macht nicht wirklich sinn an der stelle, cos HTML form validation can be performed automatically by the browser ...
+// HTML form validation can be performed automatically by the browser ... we did it also with js 
 
-// function validateForm() {
-//     var x = document.forms["myForm"]["fname"].value;
-//     if (x == "") {
-//         alert("Name must be filled out");
-//         return false;
-//     }
-// }
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
 
 // check password Firstname and Lastname in Signup
 
 document.addEventListener('DOMContentLoaded', function() {
-    var btnSubmit = document.getElementById('submitRegister');
+    var btnSubmit = document.getElementById('submit');
     var inputFirstname = document.getElementById('firstname');
     var inputLastname = document.getElementById('lastname');
     var inputPassword = document.getElementById('password');
 
     if (btnSubmit) {
         btnSubmit.addEventListener('click', function(event) {
-            var valid = ture;
-            if (!inputFirstname || inputFirstname.value.length < 2) {
+            var valid = true;
+
+            if (inputFirstname || inputFirstname.value.length < 2) {
+
                 valid = false;
             }
 
-            if (!inputLastname || inputLastname.value.length < 2) {
+            if (inputLastname || inputLastname.value.length < 2) {
                 valid = false;
             }
 
@@ -40,9 +42,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 valid = false;
             }
 
-            if (valid === false) {
-                event.precentDefault(); // disable default event
+            if (window.XMLHttpRequest) {
+                valid = false;
+                event.preventDefault(); // disable default event
                 event.stopPropagation(); // disable event handling in hir
+
+                var request = new XMLHttpRequest();
+                request.open("POST", '?c=registration&a=registration');
+
+                request.onreadystatechange = function() {
+                    if (this.readyState == XMLHttpRequest.DONE) {
+                        if (this.status == 200) {
+                            window.location = 'c=pages&a=homepage';
+                        } else if (this.status == 404) {
+                            alert(this.responseText);
+                        } else {
+                            alert('Fehler beim Signup');
+                        }
+                    }
+                };
+
+                var form = document.getElementById('register');
+                request.send(new FormData(form));
             }
 
             return valid;

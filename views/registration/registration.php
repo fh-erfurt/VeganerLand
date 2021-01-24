@@ -31,8 +31,8 @@
          <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=htmlspecialchars($_POST['city'] ?? '')?>">
          <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP" value="<?=htmlspecialchars($_POST['zip'] ?? '')?>">
          
-         <button class="sign-up" type="submit" name="submit"> Register </button> <br>
-         <spam id ="login"><a href="?a=login"> hast du schon ein Konto! melde dich an</a></spam>
+         <button class="log-in" id="submit" name="submit" type="submit"> Register </button> <br>
+         <spam id ="login"><a href="?c=pages&a=login"> hast du schon ein Konto! melde dich an</a></spam>
       </div>
    </form>
 </div>
