@@ -301,7 +301,7 @@ class PagesController extends Controller {
                         // Maybe get back the itemId.
                     }
                 } else {
-                    //echo '<div class="alert alert-danger">Bitte gib die gewünschte Menge an!</div>';
+                    echo '<div class="alert alert-danger">Bitte gib die gewünschte Menge an!</div>';
                 }
             } else {
                 // Nothing happens :P
