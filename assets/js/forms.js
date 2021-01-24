@@ -1,9 +1,8 @@
 /*
-================================
+======================
 == Molham Al-khodari 
-================================
+======================
 */
-
 
 // HTML form validation can be performed automatically by the browser ... we did it also with js 
 
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (inputFirstname || inputFirstname.value.length < 2) {
-
                 valid = false;
             }
 
@@ -61,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 };
-
                 var form = document.getElementById('register');
                 request.send(new FormData(form));
             }
@@ -72,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (inputPassword) {
         inputPassword.addEventListener('keyup', function() {
-
             var regex1 = /^(?=.*?[a-z]).{4,}$/m;
             var regex2 = /^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$/m;
             var regex3 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
