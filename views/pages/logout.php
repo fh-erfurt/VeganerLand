@@ -1,14 +1,11 @@
 <?php
 
-//@author Molham Al-khodari
-//@version 1.0.0
+    //@author Molham Al-khodari
+    //@version 1.0.0
 
-session_start();
+    session_start();
+    session_unset();
+    session_destroy();
 
-session_unset();
-
-session_destroy();
-
-header('Location: ?c=pages&a=homepage');
-
-exit();
+    header('Location: ?c=pages&a=homepage');
+    exit();
