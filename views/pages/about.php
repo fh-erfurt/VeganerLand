@@ -88,7 +88,7 @@
         </ul>
     </nav>
 
-    <!-- only sample content following. not needed. -->
+    <!-- information about the company and products for customers. -->
 
     <h1 class="page-title">Sticky Responsive Bottom Menu</h1>
 
