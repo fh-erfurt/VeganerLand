@@ -19,6 +19,7 @@
     require_once MODELSPATH.'orders.class.php';
     require_once MODELSPATH.'products.class.php';
     require_once MODELSPATH.'favorits.class.php';
+    require_once MODELSPATH.'category.class.php';
 
     session_start();
 
