@@ -23,11 +23,8 @@
     session_start();
 
     // Default values for controller and action.
-    $controllerName = 'pages';
-    $actionName = 'homepage';
-
-    $controllerName = isset($_GET['c']) ? $_GET['c'] : '';
-    $actionName     = isset($_GET['a']) ? $_GET['a'] : '';
+    $controllerName = isset($_GET['c']) ? $_GET['c'] : 'pages';
+    $actionName     = isset($_GET['a']) ? $_GET['a'] : 'homepage';
 
     if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) 
     {
