@@ -42,13 +42,15 @@ if (file_exists(CONTROLLERSPATH.$controllerName.'Controller.php')) {
     $actionMethod = 'action'.ucfirst($actionName);
     if (!method_exists($controller, $actionMethod)) {
         // Fehlermeldung.
-        die('404 Method you called does not exist.');
+        // redirect to error page 404 because not found
+        redirect('index.php?c=errors&a=error404&error=nonaction');
     } else {
         $controller->{$actionMethod}();
     }
 } else {
     //Fehlermeldung
-    die('404 Controller you called does not exist.');
+    // redirect to error page 404 because not found
+    redirect('index.php?c=errors&a=error404&error=nocontroller');
 }
 
 switch ($actionName) {
@@ -116,7 +118,6 @@ switch ($actionName) {
 <body>
     <?
         $controller->render();
-        
     ?>
     <section>
         <?if (isset($error)) : ?>

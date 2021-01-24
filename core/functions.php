@@ -99,15 +99,27 @@
             exit();
         }
 
+        /*
+        =========================================================================
+        == redirect is good to leave the page with the wrong action or controller
+        =========================================================================
+        */
+
+        function redirect($url)
+        {
+            header('Location: '.$url);
+            exit(0);
+        }
+
         function doesEmailExists($email) {
             $result = Customers::find("email = '$email'", Customers::tableName());
             return (!empty($result)) ? true : false;
         }
 
         /*
-        ================================
-        == generateRandomString gemacht für Tocken
-        ================================
+        ============================================================
+        == generateRandomString gemacht für Tocken (Forgot Password)
+        ============================================================
         */
 
         function generateRandomString($length = 10) 

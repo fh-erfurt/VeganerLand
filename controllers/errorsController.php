@@ -19,7 +19,7 @@ class ErrorsController extends Controller
                 case 'nocontroller':
                     $errorMessage = 'Controller konnte nicht gefunden werden.';
                     break;
-                case 'viewpath':
+                case 'nonaction':
                     $errorMessage = 'View konnte nicht gefunden werden.';
                     break;
             }

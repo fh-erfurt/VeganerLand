@@ -64,7 +64,41 @@ $(function() {
         <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
 
         <?php endif; ?>
-                <li class="item button secondary"><a href="?c=pages&a=cart">Warenkorb()</a></li>
+                <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb()</a></li>
         <li class="toggle"><span class="bars"></span></li>
     </ul>
 </nav>
+
+<div id="popover" class="popover" style="width: 100vw; height: 100vw; display: none; background: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0;">
+  <div id="close" style="position: absolute; top: 0; left: 0; height: 44px; width: 44px; background: white;">X</div>    
+  <? 
+      include VIEWSPATH.'pages'.DIRECTORY_SEPARATOR.'cart.php'  // Controler Probleme 
+  ?>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var btnCartPage = document.getElementById('cart');
+    var btnPopoverClose = document.getElementById('close');
+    if(btnCartPage)
+    {
+      btnCartPage.addEventListener('click', function(event){
+        event.preventDefault();
+
+        var elmPopover = document.getElementById('popover');
+        elmPopover.style.display = 'block';
+      });
+    }
+
+    if(btnCartPage)
+    {
+      btnPopoverClose.addEventListener('click', function(){
+        event.preventDefault();
+
+        var elmPopover = document.getElementById('popover');
+        elmPopover.style.display = 'none';
+      });
+    }
+
+  });
+</script>
