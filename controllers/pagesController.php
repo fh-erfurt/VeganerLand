@@ -71,8 +71,6 @@ class PagesController extends Controller {
                 $this->setParams('products', array());
                 echo "<div class='alert alert-danger'>Es konnte nichts gefunden werden.</div>";
             }
-            
-            $this->decidePath($result);
         }
     }
 
