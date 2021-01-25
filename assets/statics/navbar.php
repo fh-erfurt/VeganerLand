@@ -8,21 +8,28 @@
     <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
     <li class="item"><a href="?c=pages&a=bargain">Angebote</a></li>
 
-    <li class="dropdown item"><a href="#">Obst</a>
+    <li class="dropdown item">Obst
       <div class="dropdown-content">
-        <a href="?c=pages&a=fruits">Alle</a>
-        <a href="?c=pages&a=fruits&cat=citrus">Zitrus Früchte</a>
-        <a href="?c=pages&a=fruits&cat=berry">Beeren</a>
-        <a href="?c=pages&a=fruits&cat=nuts">Nüsse</a>
-        <a href="?c=pages&a=fruits&cat=exotics">Exotische Früchte</a>
+        <?
+        $fruits = PagesController::getCategoryName('fruits');
+        foreach ($fruits as $cat)
+        {
+          $name = ($cat[0] === 'alle') ? 'a=fruits' : "a=fruits&cat=$cat[1]";
+          ?>
+        <a href="?c=pages&<?=$name?>"><? echo ucfirst($cat[0]); ?></a> <?
+        } ?>
       </div>
     </li>
-
-    <li class="dropdown item"><a href="#">Gemüse</a>
+    <li class="dropdown item">Gemüse
       <div class="dropdown-content">
-        <a href="?c=pages&a=vegetables">Alle</a>
-        <a href="?c=pages&a=vegetables&cat=potato">Kartoffeln</a>
-        <a href="?c=pages&a=vegetables&cat=mushroom">Pilze</a>
+        <?
+        $vegetables = PagesController::getCategoryName('vegetables');
+        foreach ($vegetables as $cat)
+        {
+          $name = ($cat[0] === 'alle') ? 'a=vegetables' : "a=vegetables&cat=$cat[1]";
+          ?>
+        <a href="?c=pages&<?=$name?>"><? echo ucfirst($cat[0]); ?></a> <?
+        } ?>
       </div>
     </li>
     
