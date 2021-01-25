@@ -51,74 +51,78 @@ class PagesController extends Controller {
         }
     }
     
-    public function actionSearch() {
+    public function actionSearch()
+    {
         // Input whta to search in field (Name of fruit of veggie)
         if (isset($_POST['submit'])) {
 
             $search = $_POST['search'];
-            $result = Products::find("descrip LIKE '%$search%'", Products::tableName());
+            $result = array();
 
-            $this->setParams('search', $result);
+            $info = Products::find("descrip LIKE '%$search%'", Products::tableName());
+            if (!empty($info))
+            {
+                array_push($result, $info);
 
+                $this->setParams('products', $result);
+            }
+            else
+            {
+                $this->setParams('products', array());
+                echo "<div class='alert alert-danger'>Es konnte nichts gefunden werden.</div>";
+            }
+            
+            $this->decidePath($result);
         }
     }
 
-    public function actionAbout() {
+    public function actionAbout()
+    {
         // This is a static site. So nothing is to do, but we kind off need the method, I think.
     }
-
-    public function actionFruits() {
-
+    
+    private function getProductsByCategory()
+    {
         $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
+        $page = $_GET['a'];
+    
+        $result = array();
+        $catList = (!empty($cat)) ? Products::find("descrip LIKE '%$cat'", Category::tableName()) : Products::find("descrip LIKE '$page%'", Category::tableName());
         
-        switch ($cat) {
-            case 'citrus':
-                $fruits = Products::find("cat = 'C'", Products::tableName());
-                break;
-            case 'berry':
-                $fruits = Products::find("cat = 'B'", Products::tableName());
-                break;
-            case 'nuts':
-                $fruits = Products::find("cat = 'N'", Products::tableName());
-                break;
-            case 'exotics':
-                $fruits = Products::find("cat = 'E'", Products::tableName());
-                break;
-            default:
-                $fruits = Products::find("cat = 'F' OR cat = 'C' OR cat = 'B' OR cat = 'E' OR cat = 'N'", Products::tableName());
-                break;
+        for ($idx = 0; $idx < count($catList); $idx++)
+        {
+            $catId      = $catList[$idx]['catId'];
+            $info  = Products::find("catId = '$catId'", Products::tableName());
+            array_push($result, $info);
         }
 
-        $this->setParams('fruits', $fruits);
-        $this->addToCart();
-        $this->addToFavorites(); 
+        $this->setParams('products', $result);
     }
 
-    public function actionVegetables() {
-
-        $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
-
-        switch ($cat) {
-            case 'potato':
-                $veggies = Products::find("cat = 'P'", Products::tableName());
-                break;
-            case 'mushroom':
-                $veggies = Products::find("cat = 'M'", Products::tableName());
-                break;
-            default:
-                $veggies = Products::find("cat = 'V' OR cat = 'P' OR cat = 'M'", Products::tableName());
-                break;
-        }
-
-        $this->setParams('vegetables', $veggies);
+    public function actionFruits()
+    {
+        $this->getProductsByCategory();
+        
         $this->addToCart();
         $this->addToFavorites();
     }
 
-    public function actionBargain() {
-        $bargain = Products::find("stdPrice < 1.50", Products::tableName());
+    public function actionVegetables()
+    {
+        $this->getProductsByCategory();
+        
+        $this->addToCart();
+        $this->addToFavorites();
+    }
 
-        $this->setParams('bargain', $bargain);
+    public function actionBargain()
+    {
+        $bargain = array();
+
+        $info = Products::find("stdPrice < 1.50", Products::tableName());
+        array_push($bargain, $info);
+
+        $this->setParams('products', $bargain);
         $this->addToCart();
         $this->addToFavorites();
     }
