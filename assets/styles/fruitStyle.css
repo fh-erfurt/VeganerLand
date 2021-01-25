@@ -1,7 +1,7 @@
-/* Molham Al-khodari    24.12.2020
-===================================
+/* Molham Al-khodari 
+=====================
 == rewrite html style
-===================================
+=====================
 */
 
 html {
@@ -37,25 +37,9 @@ img {
     background: white;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.cards {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-/*
-===================================
-== alle cards size and position
-===================================
-*/
-
-.cards__item {
-    padding: 1rem;
+    justify-content: center;
 }
 
 .block-container ul li {
@@ -66,6 +50,26 @@ img {
     box-sizing: border-box;
 }
 
+
+/*
+===================================
+== alle cards size and position
+===================================
+*/
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cards__item {
+    padding: 1rem;
+    list-style-type: none;
+}
+
 .col {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -74,10 +78,9 @@ img {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.23);
 }
 
-
-/* .block-container ul li:hover {
+.block-container ul li:hover {
     opacity: 0.8;
-} */
+}
 
 
 /*
@@ -93,6 +96,7 @@ img {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    width: 305px;
 }
 
 .card-title {
