@@ -8,7 +8,7 @@
     <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
     <li class="item"><a href="?c=pages&a=bargain">Angebote</a></li>
 
-    <li class="dropdown item">Obst
+    <li class="dropdown item"> <a>Obst</a>
       <div class="dropdown-content">
         <?
         $fruits = PagesController::getCategoryName('fruits');
@@ -20,7 +20,7 @@
         } ?>
       </div>
     </li>
-    <li class="dropdown item">Gemüse
+    <li class="dropdown item"><a>Gemüse</a>
       <div class="dropdown-content">
         <?
         $vegetables = PagesController::getCategoryName('vegetables');
