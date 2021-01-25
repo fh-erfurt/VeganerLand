@@ -12,7 +12,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-title"><?=strtr($products[$idx][$prodidx]["descrip"],"_"," ")?></div>
-                        <img class='ard__image card__image--fence' src="<?=IMAGEPATH.$products[$idx][$prodidx]["descrip"]?>.jpg" class="card-img-top" alt="Artikel">
+                        <img class='ard__image card__image--fence' src="<?=FRUITPATH.$products[$idx][$prodidx]["descrip"]?>.jpg" class="card-img-top" alt="Artikel">
                         <div class="card__text">
                             <p><? echo strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p> <!--wird später aus dem datenbank gelesen-->
                             <hr>
