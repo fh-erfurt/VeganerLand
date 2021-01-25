@@ -9,6 +9,18 @@ class PagesController extends Controller {
         header('Location: index.php?c=pages&a=homepage');
     }
     
+    public static function getCategoryName($mainCat)
+    {
+        $list = Category::find("descrip LIKE '$mainCat%'", Category::tableName());
+        $result = array();
+        for ($idx = 0; $idx < count($list); $idx++)
+        {
+            array_push($result, array($list[$idx]['name'], ltrim(strpbrk($list[$idx]['descrip'],"_"),"_")));
+        }
+
+        return $result;
+    }
+    
     public function actionHomepage() {
         // Here is nothing to do.
     }
