@@ -36,7 +36,7 @@ INSERT INTO `category` (`catId`, `descrip`, `name`) VALUES
 (5, 'fruits_nuts', 'nüsse'),
 (6, 'vegetables', 'alle'),
 (7, 'vegetables_potato', 'kartoffeln'),
-(8, 'vegetables_mushrooms', 'pilze');
+(8, 'vegetables_mushroom', 'pilze');
 
 --
 -- Indizes der exportierten Tabellen
