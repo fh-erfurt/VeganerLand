@@ -5,9 +5,9 @@
 
 class PagesController extends Controller {
 
-    public function actionIndex(){
-        header('Location: index.php?c=pages&a=homepage');
-    }
+    // public function actionIndex(){
+    //     header('Location: index.php?c=pages&a=homepage');
+    // }
     
     public static function getCategoryName($mainCat)
     {
@@ -91,10 +91,12 @@ class PagesController extends Controller {
         // This is a static site. So nothing is to do, but we kind off need the method, I think.
     }
 
-    public function actionSetting() {
+    public function actionSetting() 
+    {
         // Customer can look into his given data and change his address, phone number and favorite products.
     
-            if (isset($_SESSION['email'])) {
+            if (isset($_SESSION['email'])) 
+            {
                 $info = ['custId'   => null,
                         'firstName' => null,
                         'lastName'  => null,
@@ -119,7 +121,8 @@ class PagesController extends Controller {
                 $addressId = $custInfo[0]['addressId'];
                 $info['addressId'] = $addressId;
     
-                if (!empty($addressId)) {
+                if (!empty($addressId)) 
+                {
                     $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
                     $info['street'] = $addressInfo[0]['street'];
                     $info['number'] = $addressInfo[0]['number'];
@@ -129,7 +132,8 @@ class PagesController extends Controller {
     
                 $this->setParams('customerInfo', $info);
     
-                if (isset($_POST['submit'])) {
+                if (isset($_POST['submit'])) 
+                {
                     $newInfo = ['custId'    => $_POST['custId'],
                                 'email'     => $_POST['email'],
                                 'password'  => $_POST['oldPassword'],
@@ -142,20 +146,28 @@ class PagesController extends Controller {
                     $formErrors = 0;
                     $noNewAddress = false;
     
-                    if (!empty($_POST['newPassword'])) {
-                        if (isPasswordSafe($_POST['newPassword'])) {
+                    if (!empty($_POST['newPassword'])) 
+                    {
+                        if (isPasswordSafe($_POST['newPassword'])) 
+                        {
                             $newInfo['password'] = md5($_POST['newPassword']);
-                        } else {
+                        } 
+                        else 
+                        {
                             $formErrors++;
                         }
                     }
     
-                    if (empty($newInfo['email'])) {
+                    if (empty($newInfo['email'])) 
+                    {
                         $formErrors++;
-                    } else {
+                    } 
+                    else 
+                    {
                         // Checks if the email has been changed into another email already existing in the database.
                         if (doesEmailExists($newInfo['email'])
-                        &&  $newInfo['email'] !== $email) {
+                        &&  $newInfo['email'] !== $email) 
+                        {
                             $formErrors++;
                         }
                     }
@@ -164,7 +176,8 @@ class PagesController extends Controller {
                     if (!empty($newInfo['street'])
                     &&  !empty($newInfo['number'])
                     &&  !empty($newInfo['zip'])
-                    &&  !empty($newInfo['city'])){
+                    &&  !empty($newInfo['city']))
+                    {
     
                         $street = $newInfo['street'];
                         $number = $newInfo['number'];
@@ -176,19 +189,25 @@ class PagesController extends Controller {
                                                       city   = '$city'", 
                                                       Address::tableName());
     
-                    } else if (!empty($newInfo['street'])//Checks if only some fields are filled.
+                    } 
+                    else if (!empty($newInfo['street'])//Checks if only some fields are filled.
                            ||  !empty($newInfo['number'])
                            ||  !empty($newInfo['zip'])
-                           ||  !empty($newInfo['city'])) {
+                           ||  !empty($newInfo['city'])) 
+                    {
                         $formErrors++;
-                    } else {
+                    } 
+                    else 
+                    {
                         $noNewAddress = true;
                     }
     
-                    if ($formErrors !== 0) {
+                    if ($formErrors !== 0) 
+                    {
                         echo '<div class="alert alert-danger">Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.</div>';
-                        exit();
-                    } else {
+                    } 
+                    else 
+                    {
                         // Update the Database
                         if (empty($addressInfo) && !$noNewAddress){ //Creats an new entry in sddress table if address doesn't exists there.
                             try {
@@ -320,16 +339,6 @@ class PagesController extends Controller {
     }
     
     public function actionCart() {
-
-        if(isset($_SESSION['custId']))
-        {
-            $GLOBALS['custId'] = $_SESSION['custId'];
-            $sql = "SELECT COUNT(prodId) FROM orderitems WHERE custId =".$GLOBALS['custId'];
-            $cartResult = $GLOBALS['db']->query($sql);
-            $GLOBALS['cartItems'] = $cartResult->fetchColumn();
-
-            echo $GLOBALS['cartItems'];    // anzahl produkte im cart ;)
-        }
 
         if (isset($_SESSION['custId'])) {
             $this->removeFromCart();
