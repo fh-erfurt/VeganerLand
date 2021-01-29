@@ -11,5 +11,17 @@ class OrderItems extends BaseModel
         
     ];
 
+    static public function ItemsCart ()
+    {
+        if(isset($_SESSION['custId']))
+        {
+            $custId = $_SESSION['custId'];
+            $sql = "SELECT COUNT(prodId) FROM orderitems WHERE custId =".$custId;
+            $cartResult = $GLOBALS['db']->query($sql);
+            $cartItems = $cartResult->fetchColumn();
+            
+            return $cartItems;  // anzahl produkte im cart ;)
+        }
+    }
 }
 ?>

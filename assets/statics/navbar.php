@@ -42,7 +42,7 @@
     <li class="item">
       <div class="search-container">
         <form name="search" method="post">
-          <input type="text" name="search" placeholder="Suche" maxlength="50">
+          <input type="text" name="search" placeholder="Suche.." maxlength="50">
           <button class="search" type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
         </form>
       </div>
@@ -60,7 +60,7 @@
     <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
   <?php endif; ?>
 
-      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb(<?//echo $GLOBALS['cartItems'];?>)</a></li>
+      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb(<? echo OrderItems::ItemsCart();//echo $GLOBALS['cartItems'];?>)</a></li>
   </ul>
 </nav>
 
@@ -71,7 +71,7 @@
   ?>
 </div>
 
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded', function(){
     var btnCartPage = document.getElementById('cart');
     var btnPopoverClose = document.getElementById('close');
@@ -96,4 +96,4 @@
     }
 
   });
-</script>
+</script> -->
