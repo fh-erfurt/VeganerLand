@@ -49,7 +49,7 @@ body {
 }
 
 .footer .col ul li,
-a {
+.footer .col ul li a {
     color: #999999;
     font-size: 14px;
     font-weight: bold;
@@ -59,6 +59,10 @@ a {
     -webkit-transition: .2s;
     -moz-transition: .2s;
     text-decoration: none;
+}
+
+.footer .col ul li a:hover {
+    text-decoration: underline;
 }
 
 .social ul li {

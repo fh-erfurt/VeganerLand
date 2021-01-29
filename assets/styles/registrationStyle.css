@@ -89,6 +89,12 @@ input[class="form-input"] {
 }
 
 
+/* input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+} */
+
+
 /*
  ***************************
  ** focus
@@ -135,7 +141,7 @@ button,
 .submits {
     width: 48%;
     display: inline-block;
-    float: left;
+    /* float: left; */
     margin-left: 2%;
 }
 

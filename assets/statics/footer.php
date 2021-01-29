@@ -1,6 +1,8 @@
 <!-- Molham Al-khodari -->
 
 <link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
+<!-- nur für icorn aus w3schools wie gesprochen -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- 
 <header class="page-footer">
@@ -64,9 +66,13 @@
         <div class="col social">  <!--das haben wir nicht also keine icons ?-->
             <h1>SOZIAL</h1>
             <ul>
-            <li><img src="?c=pages&a=about" alt="F" width="32" style="width: 32px;"></li>
-            <li><img src="?c=pages&a=about" alt="I" width="32" style="width: 32px;"></li>
-            <li><img src="?c=pages&a=about" alt="T" width="32" style="width: 32px;"></li>
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-google"></a></li>
+            <li><a href="#" class="fa fa-linkedin"></a></li>
+            <li><a href="#" class="fa fa-youtube"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-snapchat-ghost"></a></li>
             </ul>
         </div>
         <div class="clearfix"></div>

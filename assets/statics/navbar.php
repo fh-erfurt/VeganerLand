@@ -41,9 +41,9 @@
     <!-- searchform -->
     <li class="item">
       <div class="search-container">
-        <form name="search" method="post">
+        <form class=search name="search" method="post">
           <input type="text" name="search" placeholder="Suche.." maxlength="50">
-          <button class="search" type="submit" name="submit" formaction="?c=pages&a=search">Suchen</button>
+          <button type="submit" name="submit" formaction="?c=pages&a=search"><i class="fa fa-search"></i></button>
         </form>
       </div>
     </li>
@@ -60,18 +60,18 @@
     <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
   <?php endif; ?>
 
-      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb(<? echo OrderItems::ItemsCart();//echo $GLOBALS['cartItems'];?>)</a></li>
+      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb(<? echo OrderItems::ItemsCart();?>)</a></li>
   </ul>
 </nav>
 
 <div id="popover" class="popover" style="width: 100vw; height: 100vw; display: none; background: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0;">
   <div id="close" style="position: absolute; top: 0; left: 0; height: 44px; width: 44px; background: white;">X</div>    
   <? 
-      include VIEWSPATH.'pages'.DIRECTORY_SEPARATOR.'cart.php'  // Controler Probleme 
+      include VIEWSPATH.'pages'.DIRECTORY_SEPARATOR.'cart.php'  // Controller Probleme 
   ?>
 </div>
 
-<!-- <script>
+<script>
   document.addEventListener('DOMContentLoaded', function(){
     var btnCartPage = document.getElementById('cart');
     var btnPopoverClose = document.getElementById('close');
@@ -96,4 +96,4 @@
     }
 
   });
-</script> -->
+</script>

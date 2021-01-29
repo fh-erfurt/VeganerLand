@@ -94,6 +94,12 @@ input[class="form-input"] {
 }
 
 
+/* input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;
+} */
+
+
 /*
  ***************************
  ** focus

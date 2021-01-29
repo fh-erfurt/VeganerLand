@@ -1,20 +1,6 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
-}
-
-body {
-    font-family: sans-serif;
-}
-
-
-/* .navbar-header,
-.navbar-header h1 {
-    background-color: #ffffffff;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 } */
 
 nav {
@@ -22,16 +8,25 @@ nav {
     padding: 5px 20px;
 }
 
-ul {
+nav ul {
     list-style-type: none;
 }
 
-a {
+nav a {
     color: black;
+    text-decoration: none;
+    color: #999999;
+    font-size: 14px;
+    /* font-weight: bold; */
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
     text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
@@ -54,6 +49,9 @@ a:hover {
     border-bottom: 1px #444 solid;
 }
 
+
+/* serch */
+
 .search {
     display: inline-block;
     color: #252537;
@@ -65,139 +63,53 @@ a:hover {
     letter-spacing: 0.05em;
 }
 
-
-/* Mobile menu */
-
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+form.search input[type=text] {
+    /* padding: 10px; */
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
 }
 
-.toggle {
-    order: 1;
-}
-
-.item.button {
-    order: 2;
-}
-
-.item {
-    width: 100%;
-    text-align: center;
-    order: 3;
-    display: none;
-}
-
-.item.active {
-    display: block;
-}
-
-
-/* Navbar Toggle */
-
-.toggle {
+form.search button {
+    float: left;
+    width: 20%;
+    /* padding: 10px; */
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
     cursor: pointer;
 }
 
-.bars {
-    background: #999;
-    display: inline-block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
+form.search button:hover {
+    background: #0b7dda;
 }
 
-.bars:before,
-.bars:after {
-    background: #999;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* icron search */
+
+
+/* input[type=text] {
+    background-color: white;
+    background-image: url('../images/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+} */
+
+.fixed {
+    position: fixed;
     width: 100%;
-}
-
-.bars:before {
-    top: 5px;
-}
-
-.bars:after {
-    top: -5px;
-}
-
-
-/* Tablet menu */
-
-@media all and (min-width: 468px) {
-    .menu {
-        justify-content: center;
-    }
-    .logo {
-        flex: 1;
-    }
-    .item.button {
-        width: auto;
-        order: 1;
-        display: block;
-    }
-    .toggle {
-        order: 2;
-    }
-    .button.secondary {
-        border: 0;
-    }
-    .button a {
-        padding: 7.5px 15px;
-        background: teal;
-        border: 1px #006d6d solid;
-        border-radius: 50em;
-    }
-    .button.secondary a {
-        background: transparent;
-    }
-    .button a:hover {
-        text-decoration: none;
-        transition: all .25s;
-    }
-    .button:not(.secondary) a:hover {
-        background: #006d6d;
-        border-color: #005959;
-    }
-    .button.secondary a:hover {
-        color: #ddd;
-    }
-}
-
-
-/* Desktop menu */
-
-@media all and (min-width: 768px) {
-    .item {
-        display: block;
-        width: auto;
-    }
-    .toggle {
-        display: none;
-    }
-    .logo {
-        order: 0;
-    }
-    .item {
-        order: 1;
-    }
-    .button {
-        order: 2;
-    }
-    .menu li {
-        padding: 15px 10px;
-    }
-    .menu li.button {
-        padding-right: 0;
-    }
+    top: 0;
 }
 
 
@@ -229,19 +141,134 @@ a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: red;
+    background-color: #AE3C58;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.nav-item {
-    float: left;
+@media only screen and (max-width: 500px) {
+    label {
+        display: block;
+    }
+    #check:checked+.item {
+        display: block;
+    }
 }
 
-.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0;
+
+/* Mobile menu */
+
+@media (max-width: 850px) {
+    .checkbtn {
+        order: 1;
+    }
+    .item.button {
+        order: 2;
+    }
+    .item {
+        width: 100%;
+        text-align: center;
+        order: 3;
+        display: none;
+    }
+    .item.active {
+        display: block;
+    }
+    /* Navbar Toggle */
+    .checkbtn {
+        font-size: 30px;
+        color: white;
+        float: right;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    #check:checked~.item {
+        display: block;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#check {
+    display: none;
+}
+
+
+/* Tablet menu */
+
+@media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .checkbtn {
+        order: 2;
+        display: block;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: rgb(128, 0, 0);
+        border: 1px #006d6d solid;
+        border-radius: 50em;
+        font-weight: bold;
+    }
+    .button.secondary a {
+        background: transparent;
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition: all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    }
+}
+
+
+/* Desktop menu */
+
+@media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .checkbtn {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
 }

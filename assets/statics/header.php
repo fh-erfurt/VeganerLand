@@ -8,15 +8,16 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php getTitle()?></title>
+
             <link rel="stylesheet" href="<?=STYLESPATH.'staticStyle.css'?>">
 
             <? if ($pageTitle == 'Sing Up') : ?> 
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
-            <script type="text/javascript" src="assets/js/forms.js"></script>
+            <script type="text/javascript" src="assets/js/signup.js"></script>
 
             <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort zurücksetzen'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
-            <script type="text/javascript" src="assets/js/forms.js"></script>
+            <script type="text/javascript" src="assets/js/login.js"></script>
 
             <? elseif ($pageTitle == 'Reset Password'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
@@ -26,6 +27,7 @@
 
             <? elseif ($pageTitle == 'Einstellungen'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
+            <script type="text/javascript" src="assets/js/login.js"></script>
 
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'aboutStyle.css'?>">
