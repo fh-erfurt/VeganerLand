@@ -26,17 +26,30 @@ document.addEventListener('DOMContentLoaded', function() {
         btnSubmit.addEventListener('click', function(event) {
             var valid = true;
 
-            if (inputFirstname || inputFirstname.value.length < 2) {
+            if (!inputFirstname || inputFirstname.value.length < 2) {
+                window.alert("please Enter your firstname");
+                firstName.focus({ preventScroll: true });
+                firstName.style.border = "solid red"
                 valid = false;
             }
 
-            if (inputLastname || inputLastname.value.length < 2) {
+            if (!inputLastname || inputLastname.value.length < 2) {
+                window.alert("please Enter your lastname");
+                lastname.focus({ preventScroll: true });
+                lastname.style.border = "solid red"
                 valid = false;
             }
 
             // var regex = /^(?=.*?[A-Z].*?[A-Z])(?=.*?[a-z])(?=.*?[0-9].*?[0-9])(?=.*?[^\w\s].*?[^\w\s]).{12,}$/m;
             var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
             if (!inputPassword || inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
+                valid = false;
+            }
+
+            if (password.value != passwordagain.value) {
+                window.alert("the Passwords must be the same");
+                passwordagain.focus({ preventScroll: true });
+                passwordagain.style.border = "solid red"
                 valid = false;
             }
 
