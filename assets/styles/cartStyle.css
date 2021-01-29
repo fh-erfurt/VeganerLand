@@ -1,0 +1,109 @@
+.block-container {
+    width: 600px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
+}
+
+.table-cart {
+    width: 100%;
+}
+
+.table-cart th {
+    text-align: left;
+    background-color: white;
+}
+
+.table-cart td {
+    background-color: rgba(255, 255, 255, 0.445);
+}
+
+.table-cart,
+.table-cart th,
+.table-cart tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.send {
+    background: #B8F2E6;
+    color: black;
+    display: inline-block;
+    color: #252537;
+    width: 375px;
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+
+.send:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+.send:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.head-form {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+
+.head-form p {
+    letter-spacing: 0.05em;
+}
+
+
+/* inputs form  */
+
+input[class="form-input"] {
+    width: 250px;
+    height: 25px;
+    margin-top: 2%;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    display: table;
+    margin: auto;
+}
+
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+.form-group {
+    display: inline-block;
+    padding: 5px;
+}
+
+.field-set {
+    display: table-caption;
+}
+
+
+/* buttons hover */
+
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}

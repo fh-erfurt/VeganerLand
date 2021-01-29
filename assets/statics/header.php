@@ -3,10 +3,10 @@
  -->
 
 <!Doctype html>
-    <html>
+    <html lang="en" dir="ltr"> 
         <head>
             <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php getTitle()?></title>
             <link rel="stylesheet" href="<?=STYLESPATH.'staticStyle.css'?>">
 
@@ -30,8 +30,11 @@
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'aboutStyle.css'?>">
 
-            <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse' || $pageTitle == 'Warenkorb'): ?>
+            <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'fruitStyle.css'?>">
+
+            <? elseif ($pageTitle == 'Warenkorb'): ?>
+            <link rel="stylesheet" href="<?=STYLESPATH.'cartStyle.css'?>">
 
             <? endif; ?>   
         </head>

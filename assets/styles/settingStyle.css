@@ -1,8 +1,4 @@
-/* Molham Al-khodari    21.12.2020  22:33 Uhr
-***************************
-** Start Global rules 
-***************************
-*/
+/* Molham Al-khodari */
 
 .from-horizonta {
     width: 600px;
@@ -13,19 +9,6 @@
     box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
     padding: 2%;
     background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
-}
-
-
-/* form Container */
-
-.from-horizonta .con {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
 }
 
 
@@ -80,44 +63,7 @@ input:focus {
 }
 
 
-/* Submits */
-
-.submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-}
-
-
-/* Forgot Password button FAF3DD  */
-
-.frgt-pass {
-    background: transparent;
-    margin-top: auto;
-}
-
-
-/* Sign Up button  */
-
-.sign-up {
-    background: #B8F2E6;
-}
-
-
-/* buttons hover */
-
-button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
-}
-
-
 /* buttons hover Animation */
-
-button:hover {
-    animation: ani9 0.4s ease-in-out infinite alternate;
-}
 
 .save {
     background: #B8F2E6;
@@ -138,12 +84,12 @@ button:hover {
     letter-spacing: 0.05em;
 }
 
+
+/* buttons hover */
+
 button:hover {
     transform: translatey(3px);
     box-shadow: none;
-}
-
-button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
 
