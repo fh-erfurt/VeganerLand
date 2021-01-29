@@ -52,10 +52,10 @@
     switch ($actionName) 
     {
         case 'error404':
-        $pageTitle = '404';
-        require_once TEMPLATESPATH.'header.php';
-        //include TEMPLATESPATH.'navbar.php';  // es macht probleme ...
-        break;
+            $pageTitle = '404';
+            require_once TEMPLATESPATH.'header.php';
+            //include TEMPLATESPATH.'navbar.php';  // es macht probleme ...
+            break;
         case 'fruits':
             $pageTitle = 'Obst';
             require_once TEMPLATESPATH.'header.php';

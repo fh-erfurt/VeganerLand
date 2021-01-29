@@ -1,7 +1,12 @@
 <!-- Molham Al-khodari -->
+
 <link rel="stylesheet" href="<?=STYLESPATH.'navbarStyle.css'?>">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- nur das menu icorn -->
+
 </head>
 <nav class="fixed">
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
   <ul class="menu">
     <li class="logo"><a href="?c=pages&a=homepage">VeganerLand</a></li>
     <li class="item"><a href="?c=pages&a=homepage">Startseite</a></li>
@@ -55,8 +60,7 @@
     <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
   <?php endif; ?>
 
-      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb()</a></li>
-      <li class="toggle"><span class="bars"></span></li>
+      <li class="item button secondary"><a id="cart" href="?c=pages&a=cart">Warenkorb(<?//echo $GLOBALS['cartItems'];?>)</a></li>
   </ul>
 </nav>
 
@@ -92,23 +96,4 @@
     }
 
   });
-</script>
-
-<!-- the script is only good for opening the three points (toggle) for Mobile devices -->
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-  crossorigin="anonymous">
-</script>
-
-<script>
-$(function() {
-    $(".toggle").on("click", function() {
-        if ($(".item").hasClass("active")) {
-            $(".item").removeClass("active");
-        } else {
-            $(".item").addClass("active");
-        }
-    });
-});
 </script>

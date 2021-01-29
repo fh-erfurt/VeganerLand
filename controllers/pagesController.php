@@ -320,6 +320,17 @@ class PagesController extends Controller {
     }
     
     public function actionCart() {
+
+        if(isset($_SESSION['custId']))
+        {
+            $GLOBALS['custId'] = $_SESSION['custId'];
+            $sql = "SELECT COUNT(prodId) FROM orderitems WHERE custId =".$GLOBALS['custId'];
+            $cartResult = $GLOBALS['db']->query($sql);
+            $GLOBALS['cartItems'] = $cartResult->fetchColumn();
+
+            echo $GLOBALS['cartItems'];    // anzahl produkte im cart ;)
+        }
+
         if (isset($_SESSION['custId'])) {
             $this->removeFromCart();
             
