@@ -119,6 +119,17 @@ img {
     width: 49%;
 }
 
+.qty {
+    width: 59%;
+    margin-left: 20px;
+}
+
+input[type=number] {
+    border: 1px solid red;
+    width: 153px;
+    margin-left: 10px;
+}
+
 
 /*
 ===================================

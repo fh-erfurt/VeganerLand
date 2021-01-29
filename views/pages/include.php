@@ -14,7 +14,7 @@
                         <div class="card-title"><?=strtr($products[$idx][$prodidx]["descrip"],"_"," ")?></div>
                         <img class='ard__image card__image--fence' src="<?=FRUITPATH.$products[$idx][$prodidx]["descrip"]?>.jpg" class="card-img-top" alt="Artikel">
                         <div class="card__text">
-                            <p><? echo strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p> <!--wird später aus dem datenbank gelesen-->
+                            <p><? echo strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p>
                             <hr>
                             <p><?=$products[$idx][$prodidx]['stdPrice']?></p>
                         </div>
@@ -26,7 +26,8 @@
                         <form class="card-footer" method="post">
                             <button class="btn btn--block card__btn" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
                             <button class="btn btn--block card__btn" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['descrip']?>">In den Warenkorb</button>
-                            <input name="qty" type="number">
+                            <label  class="qty" for="qty">Menge Eingebn!</label>
+                            <input  class="qty" id="qty" name="qty" type="number" min="1">
                         </form>
                         <? } ?>
                         </div>
