@@ -17,14 +17,14 @@
     <div class="rowBlock">
     
         <div class="block-fruit">
-            <a href="?c=pages&a=fruits">
+            <a href="?c=products&a=fruits">
                 <img src="assets/images/obst.jpg" alt="obst">
                 <p><button class="homepage-button" src="?c=pages&a=fruits">Obst</button></p>
             </a>
         </div>
     
         <div class="block-vegetable">
-            <a href="?c=pages&a=vegetables">
+            <a href="?c=products&a=vegetables">
                 <img src="assets/images/gemüse.jpg" alt="gemüse">
                 <p><button class="homepage-button" src="?c=pages&a=vegetables">Gemüse</button></p>
             </a>
@@ -35,7 +35,7 @@
 <!-- bargain block with photos and button -->
  <section class="angebot">
  <div class="blockFull">
-            <a href="?c=pages&a=bargain">
+            <a href="?c=products&a=bargain">
                 <img src="assets/images/angebot.jpg" alt="angebot">
                 <p><button class="homepage-button" src="?a=angebote">Angebote</button></p>
             </a>

@@ -71,7 +71,7 @@
   ?>
 </div>
 
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded', function(){
     var btnCartPage = document.getElementById('cart');
     var btnPopoverClose = document.getElementById('close');
@@ -96,4 +96,4 @@
     }
 
   });
-</script>
+</script> -->

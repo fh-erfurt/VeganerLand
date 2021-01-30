@@ -195,8 +195,11 @@ class ProductsController extends Controller
                 }
             }
 
-        } else {
-            header('Location: index.php?c=pages&a=homepage');
+        }
+         else 
+        {
+            $error = "you should first register";
+            redirectHome($error);
         }
     }
     

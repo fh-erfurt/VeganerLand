@@ -78,7 +78,7 @@
         {
             if ($url === null) 
             {
-                $url = VIEWSPATH.'/pages/homepage.php';
+                $url = '?c=pages&a=homepage';
                 $link = 'Homepage';
             }
             else {
@@ -88,7 +88,7 @@
                     $link = 'Previous Page';
                 }
                 else {
-                    $url = VIEWSPATH.'pages/homepage.php';
+                    $url = '?c=pages&a=homepage';
                     $link = 'Homepage'; 
                 }
             }

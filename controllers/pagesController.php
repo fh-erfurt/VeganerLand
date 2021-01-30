@@ -50,12 +50,94 @@ class PagesController extends Controller {
             }
         }
     }
+
+    public function actionResetPassword()
+    {
+        $do = isset($_GET['do']) ? $_GET['do'] : '';
+
+        if ($do == 'identify') 
+        {
+            // check is User coming from http post
+            if (isset($_POST['submit'])) 
+            {
+                $email = $_POST['email'];
+        
+                // check if the User Exist in Database
+
+                $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE email= :email LIMIT 1");
+                $stmt->bindParam(":email", $_POST['email']);
+                $stmt->execute();
+                $count = $stmt->rowCount();
+
+                // if Count > 0 This Mean The Database Cotanin Record About This Email
+                if ($count != 0) {
+                    $tocken = generateRandomString(25);
+                    $stmt = $GLOBALS['db']->prepare("UPDATE customers SET tocken = :tocken WHERE email = :email");
+                    $stmt->bindParam(":tocken", $tocken, );
+                    $stmt->bindParam(":email", $_POST['email']);
+                    $stmt->execute();
+
+                    $mailTo = $_POST['email'];
+                    $subject = "Passwort zurücksetzen";
+                    $txt = "http://localhost:8085/VeganerLand-main/index.php?a=resetPassword&do=setPassword&tocken=".$tocken;
+
+                    mail($mailTo, $subject, $txt);
+
+
+                    // mail($_POST["email"], "Passwort zurücksetzen", "http://localhost:8085/VeganerLand-Molham/index.php?a=resetPassword&do=setPassword&tocken=".$tocken);
+                    echo '<div class="alert alert-info">Email wurde versendet</div>';
+                } else 
+                {
+                    echo '<div class="alert alert-danger">There is no such Email</div>';
+                }
+            } 
+            elseif ($do == 'setPassword') 
+            {
+                if (isset($_GET["tocken"])) 
+                {
+                    $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
+                    $stmt->bindParam(":tocken", $_GET['tocken']);
+                    $stmt->execute();
+                    $count = $stmt->rowCount();
+                
+                    if ($count != 0) 
+                    {
+                        if (isset($_POST['submit'])) 
+                        {
+                            if ($_POST["password1"] == $_POST["password2"]) 
+                            {
+                                $passwordHash = md5($_POST['password1']);
+                                $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
+                                $stmt->bindParam(':password', $passwordHash);
+                                $stmt->bindParam(':tocken', $_GET["tocken"]);
+                                $stmt->execute();
+
+                                header('Location: ?a=login');
+                            } 
+                            else 
+                            {
+                                echo '<div class="alert alert-danger" die Passwörte stimmen nicht überein</div>';
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        echo '<div class="alert alert-danger">der tocken ist ungültig';
+                    }
+                }
+                else 
+                {
+                    echo '<div class="alert alert-danger">kein gültige tocken gesendet';
+                }
+            }
+        }
+    }       
     
     public function actionSearch()
     {
         // Input whta to search in field (Name of fruit of veggie)
-        if (isset($_POST['submit'])) {
-
+        if (isset($_POST['submit'])) 
+        {
             $search = $_POST['search'];
             $result = array();
 
