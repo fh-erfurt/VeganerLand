@@ -1,66 +1,32 @@
 # VeganerLand
 Webprogrammierung Project
 
-
-![Logo]()
 <h6>Ein web programmierung von Jessica Eckardtsberg, Molham Al-Khodari, Mahmoud Matar</h6>
 
 <h2>Online Shop mit Biss</h2>
 Im Rahmen der Veranstaltung "GWP & DWP" haben wir uns entschlossen, ein Online Shop zu programmieren.<br>
+alle info finde Sie in der HTML document unter Über uns seite, unten beim Impressum. 
 <br>
+
 <details>
-<summary> Projekt allgemein</summary><br>
-<h2>Projektteam</h2>
-Das Team vom VeganerLand besteht aus: <br>
-<br>
-<ul>
-<li><strong>Jessica Eckardtsberg</strong> https://github.com/... <br></li>
-<li><strong>Molham Al-Khodari</strong> https://github.com/Molham321 <br></li>
-<li><strong>Mahmoud Matar</strong> https://github.com/... <br></li>
-</ul>
-
-<h2>Idee und Produkt</h2>
-zum Miroboard für die Ideenfindung: link <br>
-<br>
-text...!
-
-<h2>Anforderungsbeschreibung</h2>
-Die groben Ziele umfassen für den jetzigen Stand:<br>
-text ...
-<br>
-
-<h2>Abgrenzungskriterien</h2>
-Nicht zum Projektumfang gehören:<br>
-
-text ...
+<summary>Installation Step by Step</summary><br> 
      
-</details>
+1. VeganerLand-main.zip entpacken
+2. Dateien in XAMMP Ordner kopieren
+3. Die erste und zweite Präsentationen und zusätzliche Dokumente sind im Verzeichnis documentation zu finde
+4. XAMPP starten und Apache und MySQL starten und Admin klicken
+5. In phpMyAdmin der Button Importieren Drücken: <br>
 
-<details>
-<summary>Programmcode</summary><br>
-<h2>Sprache</h2>
-<br>
-Der code wird mit Englisch geschrieben, es hat Sinnvolle sprechende, englische Bezeichner. es ist kommentiert und vermeidet unnötige Redundanzen.
-Jede Klasse besitzt einen einleitenden Kommentar -> hier vielleich ein photo vom code ?
-Jede hinreichend komplexe Methode besitzt einen Kommentar
-</details>
+![phpMyAdmin](https://github.com/fh-erfurt/VeganerLand/blob/main/documentation/docu-images/phpMyAdmin.png) <br>
 
-<details>
-<summary>Präsentationen</summary><br>
-<h2>Präsentationen 1</h2>
-<br>
-hier vielleicht unsere erste PowerPoint ?
-<h2>Präsentationen 2</h2>
-<br>
-hier vielleicht unsere 2. PowerPoint ?
-<h2>Präsentationen 3</h2>
-<br>
-hier vielleicht unsere letzte PowerPoint ?
-</details>
+6. Datei “veganerLandSQL“ auswählen (Projekt/database/)
+7. Ok Klicken
+8. Datei “category.sql“ auswählen (Projekt/database/)
+9. Ok Klicken
+10. Datei “products.sql“ auswählen (Projekt/database/)
+11. Ok Klicken
+12. Verzeichnis, wo sich das „index.php“ befindet, mit Apache aufmachen.
 
-<details>
-<summary>Installation Step by Step</summary><br>
-<h2>text...</h2>
+Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, kann man auch in /documentation/documentation.html direkt aufmachen, und die Dokumentation genießen.
 <br>
-text...
 </details>
