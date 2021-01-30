@@ -19,13 +19,17 @@ alle info finde Sie in der HTML document unter Über uns seite, unten beim Impre
 
 ![phpMyAdmin](https://github.com/fh-erfurt/VeganerLand/blob/main/documentation/docu-images/phpMyAdmin.png) <br>
 
-6. Datei “veganerLandSQL“ auswählen (Projekt/database/)
+6. Datei “veganerland.sql“ auswählen (Projekt/database/)
 7. Ok Klicken
 8. Datei “category.sql“ auswählen (Projekt/database/)
-9. Ok Klicken
+9. Ok Klicken  (es könnte Fehler schlagen, ist aber kein Problem)
 10. Datei “products.sql“ auswählen (Projekt/database/)
-11. Ok Klicken
+11. Ok Klicken (es könnte Fehler schlagen, ist aber kein Problem)
+
+![phpMyAdmin](https://github.com/fh-erfurt/VeganerLand/blob/main/documentation/docu-images/database.sql.png) <br>
+
 12. Verzeichnis, wo sich das „index.php“ befindet, mit Apache aufmachen.
+13. Sie können als Gast das webseite besuchen oder können Sie sich Regestieren und unsere Vorteile genießen.
 
 Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, kann man auch in /documentation/documentation.html direkt aufmachen, und die Dokumentation genießen.
 <br>
