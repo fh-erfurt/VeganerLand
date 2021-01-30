@@ -9,18 +9,6 @@ class PagesController extends Controller {
     //     header('Location: index.php?c=pages&a=homepage');
     // }
     
-    public static function getCategoryName($mainCat)
-    {
-        $list = Category::find("descrip LIKE '$mainCat%'", Category::tableName());
-        $result = array();
-        for ($idx = 0; $idx < count($list); $idx++)
-        {
-            array_push($result, array($list[$idx]['name'], ltrim(strpbrk($list[$idx]['descrip'],"_"),"_")));
-        }
-
-        return $result;
-    }
-    
     public function actionHomepage() {
         // Here is nothing to do.
     }
@@ -71,7 +59,7 @@ class PagesController extends Controller {
             $search = $_POST['search'];
             $result = array();
 
-            $info = Products::find("descrip LIKE '%$search%'", Products::tableName());
+            $info = Products::find("descrip LIKE '%$search%'");
             if (!empty($info))
             {
                 array_push($result, $info);
@@ -110,7 +98,7 @@ class PagesController extends Controller {
                         'city'      => null];
                 $email = $_SESSION['email'];
     
-                $custInfo = Customers::find("email = '$email'", Customers::tableName());
+                $custInfo = Customers::find("email = '$email'");
                 $info['custId'] = $custInfo[0]['custId'];
                 $info['firstName'] = $custInfo[0]['firstName'];
                 $info['lastName'] = $custInfo[0]['lastName'];
@@ -186,8 +174,7 @@ class PagesController extends Controller {
                         $addressInfo = Address::find("street = '$street' AND
                                                       number = '$number' AND 
                                                       zip    = '$zip'    AND 
-                                                      city   = '$city'", 
-                                                      Address::tableName());
+                                                      city   = '$city'");
     
                     } 
                     else if (!empty($newInfo['street'])//Checks if only some fields are filled.
@@ -250,225 +237,14 @@ class PagesController extends Controller {
                 header('Location: ?c=pages&a=homepage');
                 echo '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="?login">Anmelden</a></div>';
             }
-        }
-    
-    private function getProductsByCategory()
-    {
-        $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
-        $page = $_GET['a'];
-    
-        $result = array();
-        $catList = (!empty($cat)) ? Products::find("descrip LIKE '%$cat'", Category::tableName()) : Products::find("descrip LIKE '$page%'", Category::tableName());
-        
-        for ($idx = 0; $idx < count($catList); $idx++)
-        {
-            $catId      = $catList[$idx]['catId'];
-            $info  = Products::find("catId = '$catId'", Products::tableName());
-            array_push($result, $info);
-        }
-
-        $this->setParams('products', $result);
-    }
-
-    public function actionFruits()
-    {
-        $this->getProductsByCategory();
-        
-        $this->addToCart();
-        $this->addToFavorites();
-    }
-
-    public function actionVegetables()
-    {
-        $this->getProductsByCategory();
-        
-        $this->addToCart();
-        $this->addToFavorites();
-    }
-
-    public function actionBargain()
-    {
-        $bargain = array();
-
-        $info = Products::find("stdPrice < 1.50", Products::tableName());
-        array_push($bargain, $info);
-
-        $this->setParams('products', $bargain);
-        $this->addToCart();
-        $this->addToFavorites();
-    }
-
-   protected function addToCart() {
-        if (isset($_SESSION['custId'])) {
-            $idC = $_SESSION['custId'];
-            if (isset($_POST['submit'])) {
-                // $_POST['submit'] → Name of the product
-                if (!empty($_POST['qty'])){
-                    $item = $_POST['submit'];
-                    $itemdata = Products::find("descrip = '$item'", Products::tableName());
-                    $idP = $itemdata[0]['prodId'];
-                    $qty = $_POST['qty'];
-                    $check = OrderItems::find("custId = '$idC' AND prodId = '$idP' AND qyt = '$qty'", OrderItems::tableName());
-                    if (empty($check)) {
-                        try {
-                            $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$idP', '$qty')";
-                            $stmt = $GLOBALS['db']->prepare($sql);
-                            $stmt->execute();
-                        } catch (\PDOException $e) {
-                            echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
-                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                        }
-                    } else {
-                        $idI = $check[0]['itemId'];
-                        try {
-                            $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
-                            $stmt = $GLOBALS['db']->prepare($sql);
-                            $stmt->execute();
-                        } catch (\PDOException $e) {
-                            echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
-                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                        }
-                    }
-                } else {
-                    echo '<div class="alert alert-danger">Bitte gib die gewünschte Menge an!</div>';
-                }
-            } else {
-                // Nothing happens :P
-            }
-        } else {}
     }
     
-    public function actionCart() {
-
-        if (isset($_SESSION['custId'])) {
-            $this->removeFromCart();
-            
-            $id = $_SESSION['custId'];
-            
-            $cartList = OrderItems::find("custId = '$id' AND isSend = 'f'", OrderItems::tableName());
-            $productList = array();
-            $priceList = array();
-            $ttPrice = 0;
-
-            for ($idx = 0; $idx < count($cartList); $idx++) {
-                $id = $cartList[$idx]['prodId'];
-                $productInfo = Products::find("prodId = '$id'", Products::tableName());
-                array_push($productList, $productInfo);
-
-                $price = $cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'];
-                array_push($priceList, $price);
-                $ttPrice += $price;
-            }
-            
-            $this->setParams('cart', $cartList);
-            $this->setParams('prodInfo', $productList);
-            $this->setParams('price', $priceList);
-            $this->setParams('ttprice', $ttPrice);
-            $this->setParams('itemSend', false);
-            
-            if (isset($_POST['send'])) {
-                $this->setParams('itemSend', true);
-
-                $idC = $_SESSION['custId'];
-                $custInfo = Customers::find("custId = '$idC'", Customers::tableName());
-                $orderInfo = OrderItems::find("custId = '$idC'", OrderItems::tableName());
-                $idA = $custInfo[0]['addressId'];
-                
-                // Check if there is an adressId
-                if (!empty($idA)) {
-                    $addressInfo = Address::find("addressId = '$idA'", Address::tableName());
-                    $this->setParams('addressInfo', $addressInfo);
-                }
-
-                if (isset($_POST['address'])) {
-                    // Check if the address is valid.
-                    if (!empty($_POST['street'])
-                     && !empty($_POST['number'])
-                     && !empty($_POST['zip'])
-                     && !empty($_POST['city'])) {
-                         // Check if the address is already in the database and give back the id.
-                         $street = $_POST['street'];
-                         $number = $_POST['number'];
-                         $zip = $_POST['zip'];
-                         $city = $_POST['city'];
-
-                         $address = Address::find("street = '$street' AND number = '$number' AND zip = '$zip' AND city = '$city'", Address::tableName());
-                        var_dump($address);
-                         // → If not create a new entry in the database and get the id.
-                         // Ready to order!!
-                         /* try {
-                             for ($idx = 0; $idx < count($orderInfo); $idx++) {
-                                 $idI = $orderInfo[$idx]['itemId'];
-                                 
-                                 $sql1 = "INSERT INTO ". Orders::tableName() . " (itemId, addressId) VALUES ('$idI', '$idA');";
-                                 $stmt = $GLOBALS['db']->prepare($sql1);
-                                 $stmt->execute();
-         
-                                 $sql2 = "UPDATE " . OrderItems::tableName() . " SET isSend = 't' WHERE itemId = $idI;";
-                                 $stmt = $GLOBALS['db']->prepare($sql2);
-                                 $stmt->execute();
-         
-                                 header('Location: index.php?c=pages&a=homepage');
-                             }
-                         } catch (\PDOException $e) {
-                             echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
-                             echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                         } */
-                     } else {
-                        echo '<div class="alert alert-danger">Empfangsadresse unvollständig.</div>';
-                     }
-                }
-            }
-
-        } else {
-            header('Location: index.php?c=pages&a=homepage');
-        }
-    }
-    
-    protected function removeFromCart() {
-        if (isset($_POST['delete'])) {
-            $id = $_POST['delete'];
-
-            $sql = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
-            $stmt = $GLOBALS['db']->prepare($sql);
-            $stmt->execute();
-        }
-    }
-
-    public function actionLogout() {
+    public function actionLogout()
+    {
         $this->setParams('userId', null);
         $this->setParams('password', null);
 
         header('Location: index.php?c=pages&a=homepage');
     }
-    
-     protected function addToFavorites() {
-        if (!empty($_POST['fav'])) {
-            if (isset($_SESSION['custId'])) {
-                $idP = $_POST['fav'];
-                $idC = $_SESSION['custId'];
-
-                $check = Favorits::find("prodId = '$idP' AND custID = '$idC'", Favorits::tableName());
-                if (empty($check)) {
-                    try {
-                        $sql = "INSERT INTO " . Favorits::tableName() . "(prodId, custId) VALUES ('$idP', '$idC')";
-                        $stmt = $GLOBALS['db']->prepare($sql);
-                        $stmt->execute();
-                    } catch (\PDOException $e) {
-                        echo '<div class="alert alert-danger">Fehlgeschlag.</div>';
-                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                    }
-                } else {
-                    echo '<div class="alert alert-danger">Dieses Produkt ist bereits in den Favoriten eingetragen.</div>';
-                }
-
-
-            } else {
-                echo '<div class="alert alert-danger">Sie sind nicht angemeldet!</div>';
-            }
-        }
-    }
-
-    public static function removeFromfavorits() {}
 }
 ?>

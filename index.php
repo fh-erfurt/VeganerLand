@@ -54,7 +54,7 @@
         case 'error404':
             $pageTitle = '404';
             require_once TEMPLATESPATH.'header.php';
-            //include TEMPLATESPATH.'navbar.php';  // es macht probleme ...
+            //include TEMPLATESPATH.'navbar.php';
             break;
         case 'fruits':
             $pageTitle = 'Obst';
