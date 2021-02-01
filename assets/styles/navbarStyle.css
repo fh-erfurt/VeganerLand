@@ -1,11 +1,12 @@
-/* * {
-    box-sizing: border-box;
-    padding: 0;
-} */
-
 nav {
     background: #222;
     padding: 5px 20px;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 nav ul {
@@ -17,7 +18,6 @@ nav a {
     text-decoration: none;
     color: #999999;
     font-size: 14px;
-    /* font-weight: bold; */
     padding: 5px 0px 5px 0px;
     cursor: pointer;
     transition: .2s;
@@ -50,7 +50,7 @@ nav a:hover {
 }
 
 
-/* serch */
+/* search */
 
 .search {
     display: inline-block;
@@ -64,7 +64,6 @@ nav a:hover {
 }
 
 form.search input[type=text] {
-    /* padding: 10px; */
     font-size: 17px;
     border: 1px solid grey;
     float: left;
@@ -75,7 +74,6 @@ form.search input[type=text] {
 form.search button {
     float: left;
     width: 20%;
-    /* padding: 10px; */
     background: #2196F3;
     color: white;
     font-size: 17px;
@@ -92,24 +90,6 @@ form.search::after {
     content: "";
     clear: both;
     display: table;
-}
-
-
-/* icron search */
-
-
-/* input[type=text] {
-    background-color: white;
-    background-image: url('../images/search.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-} */
-
-.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0;
 }
 
 
@@ -148,13 +128,15 @@ form.search::after {
     display: block;
 }
 
-@media only screen and (max-width: 500px) {
-    label {
-        display: block;
-    }
-    #check:checked+.item {
-        display: block;
-    }
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#check {
+    display: none;
 }
 
 
@@ -171,7 +153,7 @@ form.search::after {
         width: 100%;
         text-align: center;
         order: 3;
-        display: none;
+        display: block;
     }
     .item.active {
         display: block;
@@ -184,20 +166,12 @@ form.search::after {
         margin-right: 40px;
         cursor: pointer;
     }
-    #check:checked~.item {
+    #check:checked~.menu .item {
         display: block;
     }
-}
-
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#check {
-    display: none;
+    #check~.menu .item {
+        display: none;
+    }
 }
 
 
@@ -218,6 +192,9 @@ form.search::after {
     .checkbtn {
         order: 2;
         display: block;
+    }
+    #ckeck {
+        display: none;
     }
     .button.secondary {
         border: 0;
@@ -248,11 +225,7 @@ form.search::after {
 
 /* Desktop menu */
 
-@media all and (min-width: 768px) {
-    .item {
-        display: block;
-        width: auto;
-    }
+@media all and (min-width: 935px) {
     .checkbtn {
         display: none;
     }
@@ -264,11 +237,5 @@ form.search::after {
     }
     .button {
         order: 2;
-    }
-    .menu li {
-        padding: 15px 10px;
-    }
-    .menu li.button {
-        padding-right: 0;
     }
 }
