@@ -51,106 +51,119 @@ class RegistrationController extends Controller
                 // Does this password work for our safety standards?
                 $isPasswordSafe = isPasswordSafe($password);
 
-                if ($availableEmail == true) 
+                // is the firstname and lastname valid?
+                $check = [',','<','>','=','*','/','$','%','§','!','(',')','?','&','|','@','€','~'];
+                $availableFirstname = validateInput($firstname, $check);
+                $availableLastname  = validateInput($lastname, $check);
+
+                if ($availableFirstname == true) 
                 {
-                    if ($password === $passwordagain) 
+                    if ($availableLastname == true) 
                     {
-                        if ($isPasswordSafe == true) 
+                        if ($availableEmail == true) 
                         {
-                            try 
+                            if ($password === $passwordagain) 
                             {
-                                if (!empty($_POST['street'])
-                                    && !empty($_POST['number'])
-                                    && !empty($_POST['zip'])
-                                    && !empty($_POST['city'])) {
-                                    $street         = $_POST['street'];
-                                    $number         = $_POST['number'];
-                                    $zip            = $_POST['zip'];
-                                    $city           = $_POST['city'];
+                                if ($isPasswordSafe == true) 
+                                {
+                                    try 
+                                    {
+                                        if (!empty($_POST['street'])
+                                         && !empty($_POST['number'])
+                                         && !empty($_POST['zip'])
+                                         && !empty($_POST['city'])) 
+                                        {
+                                            $street         = $_POST['street'];
+                                            $number         = $_POST['number'];
+                                            $zip            = $_POST['zip'];
+                                            $city           = $_POST['city'];
 
-                                    // prepare sql and bind parameters
-                                    $sql2 = "INSERT INTO address (street, number, zip, city) 
+                                            // prepare sql and bind parameters
+                                            $sql2 = "INSERT INTO address (street, number, zip, city) 
                                              VALUES (:street, :number, :zip, :city)";
-                                    $stmt = $GLOBALS['db']->prepare("$sql2");
-                                    $stmt->bindParam(":street", $street);
-                                    $stmt->bindParam(":number", $number);
-                                    $stmt->bindParam(":zip", $zip);
-                                    $stmt->bindParam(":city", $city);
-                                    $stmt->execute();
+                                            $stmt = $GLOBALS['db']->prepare("$sql2");
+                                            $stmt->bindParam(":street", $street);
+                                            $stmt->bindParam(":number", $number);
+                                            $stmt->bindParam(":zip", $zip);
+                                            $stmt->bindParam(":city", $city);
+                                            $stmt->execute();
 
-                                    $lastAddressId = $GLOBALS['db']->lastInsertId();
+                                            $lastAddressId = $GLOBALS['db']->lastInsertId();
+                                        } else 
+                                        {
+                                            $lastAddressId = null;
+                                        }
+                                    
+                                        // prepare sql and bind parameters
+                                        $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
+                                        VALUES      (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
+                                        
+                                        $stmt = $GLOBALS['db']->prepare("$sql");
+                                        $stmt->bindParam(':firstname', $firstname);
+                                        $stmt->bindParam(':lastname', $lastname);
+                                        $stmt->bindParam(':email', $email);
+                                        $stmt->bindParam(':phone', $phone);
+                                        $stmt->bindParam(':gender', $gender);
+                                        $stmt->bindParam(':password', $passwordHash);
+                                        $stmt->bindParam(':addressId', $lastAddressId);
+                                        $stmt->execute();
+
+                                        $stmt2 = $GLOBALS['db']->prepare("SELECT custId, addressId FROM customers WHERE email=?");
+                                        $stmt2->execute(array($email));
+                                        $row = $stmt2->fetch();
+                            
+                                        $stmt2->execute();
+                                        $_SESSION['email'] = $email;                    // Register Session Email
+                                        $_SESSION['custId']= $row['custId'];            // Register Customer ID
+                                        $_SESSION['addressId']= $row['addressId'];      // Register Address ID
+
+                                        if (isset($_GET['ajax'])) 
+                                        {
+                                            http_response_code(200);                    // OK
+                                            echo "<div class='alert alert-success'>login success</div>";
+                                        }
+                                        header('Location: ?c=pages&a=homepage');
+                                        exit();
+                                    } 
+                                    catch (PDOException $e)
+                                    {
+                                        echo "Error: " . $e->getMessage();
+                                    }
                                 } 
                                 else 
                                 {
-                                    $lastAddressId = null;
+                                    viewError('Password not safe enough');
+
+                                    if (isset($_GET['ajax'])) 
+                                    {
+                                        http_response_code(404); // NOT Found
+                                        viewError($status);
+                                        exit(0);
+                                    }
                                 }
-                                    
-                                // prepare sql and bind parameters
-                                $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
-                                        VALUES      (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
-                                        
-                                $stmt = $GLOBALS['db']->prepare("$sql");
-                                $stmt->bindParam(':firstname', $firstname);
-                                $stmt->bindParam(':lastname', $lastname);
-                                $stmt->bindParam(':email', $email);
-                                $stmt->bindParam(':phone', $phone);
-                                $stmt->bindParam(':gender', $gender);
-                                $stmt->bindParam(':password', $passwordHash);
-                                $stmt->bindParam(':addressId', $lastAddressId);
-                                $stmt->execute();
-
-                                $stmt2 = $GLOBALS['db']->prepare("SELECT custId, addressId FROM customers WHERE email=?");
-                                $stmt2->execute(array($email));
-                                $row = $stmt2->fetch();
-                            
-                                $stmt2->execute();
-                                $_SESSION['email'] = $email;                    // Register Session Email
-                                $_SESSION['custId']= $row['custId'];            // Register Customer ID
-                                $_SESSION['addressId']= $row['addressId'];      // Register Address ID
-
-                                if(isset($_GET['ajax']))
-                                {
-                                    http_response_code(200);                // OK
-                                    echo "<div class='alert alert-success'>login success</div>";
-                                }
-                                header('Location: ?a=homepage');
-                                exit();
-
                             } 
-                            catch (PDOException $e) 
+                            else 
                             {
-                                echo "Error: " . $e->getMessage();
+                                viewError('Password and Repeat Password must be the same!!');
                             }
-                        } 
-                        else 
+                        } else 
                         {
-                            $status = 'Password not safe enough';
-                            viewError($status);
-
-                            if(isset($_GET['ajax'])) 
-                            {
-                                http_response_code(404); // NOT Found  
-                                viewError($status);  
-                                exit(0);
-                            }
+                            viewError("Email already beeing used");
                         }
-                    } 
-                    else 
-                    {
-                        $status = 'Password and Repeat Password must be the same!!';
-                        viewError($status);
                     }
-                } 
-                else 
+                    else
+                    {
+                        viewError("lastname not found");
+                    }
+                }
+                else
                 {
-                    $status = 'Email already beeing used';
-                    viewError($status);
+                    viewError("firstname not found");
                 }
             } 
             else 
             {
-                $status = 'All fields must be filled';
-                viewError($status);
+                viewError('All fields must be filled');
             }
         } 
     }

@@ -144,3 +144,31 @@
         {
             echo "<div class='alert alert-danger'>$errorMessage</div>"; 
         }
+
+        /*
+        ===================================================================================================
+        == validateInput this function checks whether the string does not contain 
+        == any special characters [',','<','>','=','*','/','$','%','§','!','(',')','?','&','|','@','€','~']
+        ===================================================================================================
+        */
+
+        function validateInput($str, $check)
+        {
+            if(is_array($check))
+            {
+                foreach($check as $checkValue)
+                {
+                    if(strpos($str, $checkValue) !== false)
+                    {
+                        return false;
+                    }   
+                }
+            }
+            else
+            {
+                if (strpos($str, $check) !== false) {
+                    return false;
+                }
+            }
+            return true;
+        }
