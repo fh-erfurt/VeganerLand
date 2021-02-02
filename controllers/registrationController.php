@@ -17,7 +17,7 @@ class RegistrationController extends Controller
             && !empty($_POST['email'])
             && !empty($_POST['password'])) 
             {
-                if (isset($_POST['gender'])) {
+                if (!empty($_POST['gender'])) {
                     switch ($_POST['gender']) {
 
                     case 'female':
