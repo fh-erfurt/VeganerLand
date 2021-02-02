@@ -132,3 +132,14 @@
             }
             return $randomString;
         }
+
+        /*
+        ============================================================
+        == generateRandomString gemacht für Tocken (Forgot Password)
+        ============================================================
+        */
+
+        function viewError($errorMessage)
+        {
+            echo "<div class='alert alert-danger'>$errorMessage</div>"; 
+        }

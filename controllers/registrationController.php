@@ -2,7 +2,7 @@
 
 /**
  * @author Molham Alkhodari
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 class RegistrationController extends Controller
@@ -30,7 +30,9 @@ class RegistrationController extends Controller
                     $gender = 'd';
                     break;
                     }
-                } else {
+                } 
+                else 
+                {
                     $gender = null;
                 }
 
@@ -49,10 +51,14 @@ class RegistrationController extends Controller
                 // Does this password work for our safety standards?
                 $isPasswordSafe = isPasswordSafe($password);
 
-                if ($availableEmail == true) {
-                    if ($password === $passwordagain) {
-                        if ($isPasswordSafe == true) {
-                            try {
+                if ($availableEmail == true) 
+                {
+                    if ($password === $passwordagain) 
+                    {
+                        if ($isPasswordSafe == true) 
+                        {
+                            try 
+                            {
                                 if (!empty($_POST['street'])
                                     && !empty($_POST['number'])
                                     && !empty($_POST['zip'])
@@ -64,7 +70,7 @@ class RegistrationController extends Controller
 
                                     // prepare sql and bind parameters
                                     $sql2 = "INSERT INTO address (street, number, zip, city) 
-                                        VALUES (:street, :number, :zip, :city)";
+                                             VALUES (:street, :number, :zip, :city)";
                                     $stmt = $GLOBALS['db']->prepare("$sql2");
                                     $stmt->bindParam(":street", $street);
                                     $stmt->bindParam(":number", $number);
@@ -73,13 +79,15 @@ class RegistrationController extends Controller
                                     $stmt->execute();
 
                                     $lastAddressId = $GLOBALS['db']->lastInsertId();
-                                } else {
+                                } 
+                                else 
+                                {
                                     $lastAddressId = null;
                                 }
                                     
                                 // prepare sql and bind parameters
                                 $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
-                                            VALUES     (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
+                                        VALUES      (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
                                         
                                 $stmt = $GLOBALS['db']->prepare("$sql");
                                 $stmt->bindParam(':firstname', $firstname);
@@ -100,41 +108,50 @@ class RegistrationController extends Controller
                                 $_SESSION['custId']= $row['custId'];            // Register Customer ID
                                 $_SESSION['addressId']= $row['addressId'];      // Register Address ID
 
-                                    if(isset($_GET['ajax']))
-                                    {
-                                        http_response_code(200);                // OK
-                                        echo "<div class='alert alert-success'>login success</div>";
-                                    }
+                                if(isset($_GET['ajax']))
+                                {
+                                    http_response_code(200);                // OK
+                                    echo "<div class='alert alert-success'>login success</div>";
+                                }
                                 header('Location: ?a=homepage');
                                 exit();
-                            } catch (PDOException $e) {
+
+                            } 
+                            catch (PDOException $e) 
+                            {
                                 echo "Error: " . $e->getMessage();
                             }
-                        } else {
+                        } 
+                        else 
+                        {
                             $status = 'Password not safe enough';
-                            echo "<div class='alert alert-danger'>$status</div>";
+                            viewError($status);
 
                             if(isset($_GET['ajax'])) 
                             {
-                                http_response_code(404); // NOT Found
-                                echo "<div class='alert alert-danger'>$status</div>";    
+                                http_response_code(404); // NOT Found  
+                                viewError($status);  
                                 exit(0);
                             }
                         }
-                    } else {
+                    } 
+                    else 
+                    {
                         $status = 'Password and Repeat Password must be the same!!';
-                        echo "<div class='alert alert-danger'>$status</div>";
+                        viewError($status);
                     }
-                } else {
+                } 
+                else 
+                {
                     $status = 'Email already beeing used';
-                    echo "<div class='alert alert-danger'>$status</div>";
+                    viewError($status);
                 }
-            } else {
+            } 
+            else 
+            {
                 $status = 'All fields must be filled';
-                echo "<div class='alert alert-danger'>$status</div>";
+                viewError($status);
             }
-        } else {
-            // da kann michts schilmmes passieren :D
-        }
+        } 
     }
 }

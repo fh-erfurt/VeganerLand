@@ -24,8 +24,8 @@ class PagesController extends Controller {
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST') 
         {
-            $email      = $_POST['email'];
-            $password   = $_POST['password'];
+            $email          = $_POST['email'];
+            $password       = $_POST['password'];
             $hashedPassword = md5($password);  
     
             // check if the User Exist in Database
@@ -45,8 +45,10 @@ class PagesController extends Controller {
                 header('Location: ?c=pages&a=homepage');
                 exit();
             }
-            else {
-                echo '<div class="alert alert-danger">You Email or Password is incorrect</div>';
+            else 
+            {
+                $status = "You Email or Password is incorrect";
+                viewError($status);
             }
         }
     }

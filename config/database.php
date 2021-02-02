@@ -1,9 +1,9 @@
 <?php 
 
 /*
-===============================
-== Molham Al-khodari 26.12.2020
-===============================
+====================
+== Molham Al-khodari
+====================
 */
 
 $dbName = 'veganerland';
@@ -16,7 +16,7 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ];
 
-$_GLOBALS['db'] = null; 
+$db = null; 
 
 try
 {
