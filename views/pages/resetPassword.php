@@ -35,7 +35,7 @@
     elseif($do == 'setPassword')
     {
 ?>
-        <form action="?a=resetPassword&do=setPassword&tocken=<?echo $_GET['tocken'];?>" method="post">
+        <form action="" method="post">
             <div class="con">
                 <header class="head-form">
                     <h2> Neues Passwort setzten </h2>

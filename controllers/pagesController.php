@@ -72,7 +72,8 @@ class PagesController extends Controller {
                 $count = $stmt->rowCount();
 
                 // if Count > 0 This Mean The Database Cotanin Record About This Email
-                if ($count != 0) {
+                if ($count != 0) 
+                {
                     $tocken = generateRandomString(25);
                     $stmt = $GLOBALS['db']->prepare("UPDATE customers SET tocken = :tocken WHERE email = :email");
                     $stmt->bindParam(":tocken", $tocken, );
@@ -81,56 +82,61 @@ class PagesController extends Controller {
 
                     $mailTo = $_POST['email'];
                     $subject = "Passwort zurücksetzen";
-                    $txt = "http://localhost:8085/VeganerLand-main/index.php?a=resetPassword&do=setPassword&tocken=".$tocken;
+                    $txt = "http://localhost:8085/VeganerLand-main/?c=pages&a=resetPassword&do=setPassword&tocken=".$tocken;
+                    
+                    // reset alternative password
 
-                    mail($mailTo, $subject, $txt);
+                    $file = fopen('controllers/reternPassword.txt', 'a+');
+                    fwrite($file, $txt.PHP_EOL);
+                    fclose($file);
 
+                    mail($mailTo, $subject, $txt);  // macht Probleme aber egal wir habe kein mail server 
 
-                    // mail($_POST["email"], "Passwort zurücksetzen", "http://localhost:8085/VeganerLand-Molham/index.php?a=resetPassword&do=setPassword&tocken=".$tocken);
                     echo '<div class="alert alert-info">Email wurde versendet</div>';
-                } else 
+                } 
+                else 
                 {
-                    echo '<div class="alert alert-danger">There is no such Email</div>';
+                    viewError("There is no such Email");
                 }
-            } 
-            elseif ($do == 'setPassword') 
+            }
+        }
+        elseif ($do == 'setPassword') 
+        {
+            if (isset($_GET["tocken"])) 
             {
-                if (isset($_GET["tocken"])) 
+                $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
+                $stmt->bindParam(":tocken", $_GET['tocken']);
+                $stmt->execute();
+                $count = $stmt->rowCount();
+            
+                if ($count != 0) 
                 {
-                    $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
-                    $stmt->bindParam(":tocken", $_GET['tocken']);
-                    $stmt->execute();
-                    $count = $stmt->rowCount();
-                
-                    if ($count != 0) 
+                    if (isset($_POST['submit'])) 
                     {
-                        if (isset($_POST['submit'])) 
+                        if ($_POST["password1"] == $_POST["password2"]) 
                         {
-                            if ($_POST["password1"] == $_POST["password2"]) 
-                            {
-                                $passwordHash = md5($_POST['password1']);
-                                $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
-                                $stmt->bindParam(':password', $passwordHash);
-                                $stmt->bindParam(':tocken', $_GET["tocken"]);
-                                $stmt->execute();
+                            $passwordHash = md5($_POST['password1']);
+                            $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
+                            $stmt->bindParam(':password', $passwordHash);
+                            $stmt->bindParam(':tocken', $_GET["tocken"]);
+                            $stmt->execute();
 
-                                header('Location: ?a=login');
-                            } 
-                            else 
-                            {
-                                echo '<div class="alert alert-danger" die Passwörte stimmen nicht überein</div>';
-                            }
+                            header('Location: ?c=pages&a=login');
+                        } 
+                        else 
+                        {
+                            viewError("die Passwörte stimmen nicht überein");
                         }
-                    }
-                    else 
-                    {
-                        echo '<div class="alert alert-danger">der tocken ist ungültig';
                     }
                 }
                 else 
                 {
-                    echo '<div class="alert alert-danger">kein gültige tocken gesendet';
+                    viewError("kein gültige tocken gesendet");
                 }
+            }
+            else 
+            {
+                viewError("kein gültige tocken gesendet");
             }
         }
     }       
@@ -275,7 +281,7 @@ class PagesController extends Controller {
     
                     if ($formErrors !== 0) 
                     {
-                        echo '<div class="alert alert-danger">Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.</div>';
+                        viewError("Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.");
                     } 
                     else 
                     {
@@ -289,10 +295,14 @@ class PagesController extends Controller {
                                 $stmt->execute();
     
                                 $newInfo['addressId'] = $GLOBALS['db']->lastInsertId();
-                            } catch (\PDOException $e){
+                            } 
+                            catch (\PDOException $e)
+                            {
                                 echo 'Fehlschlag: ' . $e->getMessage();
                             }
-                        } else if (!$noNewAddress){
+                        } 
+                        else if (!$noNewAddress)
+                        {
                             $newInfo['addressId'] = $addressInfo[0]['addressId'];
                         }
     
@@ -310,16 +320,20 @@ class PagesController extends Controller {
                             
                             $stmt = $GLOBALS['db']->prepare($sql2);
                             $stmt->execute();
-                        } catch (\PDOException $e) {
+                        } 
+                        catch (\PDOException $e) 
+                        {
                             echo 'Update fehlgeschlagen: ' . $e->getMessage();
                         }
                         header('Location: ?c=pages&a=setting');
                         echo '<div class="alert alert-success">Update erfolgreich!</div>';
                     }
                 }
-            } else {
+            } 
+            else 
+            {
                 header('Location: ?c=pages&a=homepage');
-                echo '<div class="alert alert-danger">Du bist nicht angemeldet! <a href="?login">Anmelden</a></div>';
+                viewError('Du bist nicht angemeldet! <a href="?c=pages&a=login">Anmelden</a>'); // das macht hier kein sinn!
             }
     }
     

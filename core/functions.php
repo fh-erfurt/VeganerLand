@@ -117,9 +117,10 @@
         }
 
         /*
-        ============================================================
-        == generateRandomString gemacht für Tocken (Forgot Password)
-        ============================================================
+        =================================================================
+        == generateRandomString this function makes a random url (token), 
+        == and only then can the user change his password
+        =================================================================
         */
 
         function generateRandomString($length = 10) 
@@ -134,9 +135,9 @@
         }
 
         /*
-        ============================================================
-        == generateRandomString gemacht für Tocken (Forgot Password)
-        ============================================================
+        ========================================================================
+        == viewError the function properly displays an error message on the page
+        ========================================================================
         */
 
         function viewError($errorMessage)
