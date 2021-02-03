@@ -79,7 +79,7 @@ class RegistrationController extends Controller
                                             $city           = $_POST['city'];
 
                                             // prepare sql and bind parameters
-                                            $sql2 = "INSERT INTO address (street, number, zip, city) 
+                                            $sql2 = "INSERT INTO " . Address::tableName() . "(street, number, zip, city) 
                                              VALUES (:street, :number, :zip, :city)";
                                             $stmt = $GLOBALS['db']->prepare("$sql2");
                                             $stmt->bindParam(":street", $street);
@@ -93,11 +93,11 @@ class RegistrationController extends Controller
                                         {
                                             $lastAddressId = null;
                                         }
-                                    
-                                        // prepare sql and bind parameters
-                                        $sql = "INSERT INTO customers (firstname, lastname, email, tocken, phone, gender, password, addressId)
-                                        VALUES      (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId)";
-                                        
+
+                                        // prepare sql and bind parameters 
+                                        $sql = "INSERT INTO " . Customers::tableName() . " (firstname, lastname, email, tocken, phone, gender, password, addressId) 
+                                        VALUES (:firstname, :lastname, :email, null, :phone, :gender, :password, :addressId);";
+                               
                                         $stmt = $GLOBALS['db']->prepare("$sql");
                                         $stmt->bindParam(':firstname', $firstname);
                                         $stmt->bindParam(':lastname', $lastname);
@@ -108,6 +108,7 @@ class RegistrationController extends Controller
                                         $stmt->bindParam(':addressId', $lastAddressId);
                                         $stmt->execute();
 
+                                        // check if the User Exist in Database for direkt login 
                                         $stmt2 = $GLOBALS['db']->prepare("SELECT custId, addressId FROM customers WHERE email=?");
                                         $stmt2->execute(array($email));
                                         $row = $stmt2->fetch();
