@@ -150,6 +150,12 @@ CREATE TABLE IF NOT EXISTS `veganerland`.`favorits` (
     REFERENCES `veganerland`.`customers` (`custId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+               
+INSERT INTO `address` (`addressId`, `street`, `number`, `zip`, `city`) 
+VALUES (1, 'Döllstädtstraße', '8', '99423', 'Weimar');
+
+INSERT INTO `customers` (`custId`, `firstName`, `lastName`, `email`, `tocken`, `phone`, `gender`, `password`, `addressId`) 
+VALUES (NULL, 'Max', 'Mustermann', 'mustermann@gmail.de', NULL, '015721154196', 'm', '256dfa07820d7d34acbe3a41744b8e09', '1');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
