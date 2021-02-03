@@ -16,19 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
         btnSubmit.addEventListener('click', function(event) {
             var valid = true;
 
-            if (!inputEmail) {
+            if (inputEmail.value == "") {
                 window.alert("please Enter your Email");
                 inputEmail.focus({ preventScroll: true });
                 inputEmail.style.border = "solid red"
                 valid = false;
             }
 
-            var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
-            if (inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
-                window.alert("the Passwords not safe enough");
-                inputPassword.focus({ preventScroll: true });
-                inputPassword.style.border = "solid red"
-                valid = false;
+            if (inputPassword.value != "") {
+                var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
+                if (inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
+                    window.alert("the Passwords not safe enough");
+                    inputPassword.focus({ preventScroll: true });
+                    inputPassword.style.border = "solid red"
+                    valid = false;
+                }
             }
 
             if (valid == false) {

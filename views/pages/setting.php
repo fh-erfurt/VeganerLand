@@ -15,13 +15,13 @@
 
                         <div class="form-group">
                                 <label class="label">Email</label>
-                                <input class="form-input" type="text" name="email" value="<?echo $customerInfo['email']?>">
+                                <input class="form-input" id="email" type="text" name="email" value="<?echo $customerInfo['email']?>">
                         </div>
 
                         <div class="form-group">
                                 <label class="col-sm-2 control-label">Password</label>
                                 <input class="form-input" type ="hidden" name="oldPassword" value="<?php echo $customerInfo['password']; ?>">
-                                <input class="form-input" type="password" name="newPassword">
+                                <input class="form-input" id="password" type="password" name="newPassword">
                         </div>
 
                         <div class="form-group">
@@ -54,7 +54,7 @@
                 </div>
 
                         <div>
-                                <button class="save" type="submit" name="submit">Save</button>
+                                <button class="save" id="submit" type="submit" name="submit">Save</button>
                         </div>
         </form>
 </div>
