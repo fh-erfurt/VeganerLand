@@ -27,7 +27,7 @@
 
             <? elseif ($pageTitle == 'Einstellungen'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
-            <script type="text/javascript" src="assets/js/login.js"></script>
+            <script type="text/javascript" src="assets/js/setting.js"></script>
 
             <? elseif ($pageTitle == 'Über uns'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'aboutStyle.css'?>">
@@ -37,6 +37,7 @@
 
             <? elseif ($pageTitle == 'Warenkorb'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'cartStyle.css'?>">
+            <script type="text/javascript" src="assets/js/cart.js"></script>
 
             <? endif; ?>   
         </head>

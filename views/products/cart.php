@@ -39,27 +39,27 @@
         <div class="field-set">
             <div class="form-group">
                 <label class="label">Straße</label>
-                <input class="form-input" id="street" type="text" name="street" placeholder="Straße" value="<?=$addressInfo[0]['street'] ?? htmlspecialchars($_POST['street'] ?? '')?>" >
+                <input class="form-input" id="street" type="text" name="street" placeholder="Straße" value="<?=$addressInfo[0]['street'] ?? htmlspecialchars($_POST['street'] ?? '')?>" required>
             </div>
 
             <div class="form-group">
                 <label class="label">Hausnummer</label>
-                <input class="form-input" id="number" type="number" name="number" placeholder="Hausnummer" value="<?=$addressInfo[0]['number'] ?? htmlspecialchars($_POST['number'] ?? '')?>" > <br>
+                <input class="form-input" id="number" type="number" name="number" placeholder="Hausnummer" value="<?=$addressInfo[0]['number'] ?? htmlspecialchars($_POST['number'] ?? '')?>" required> <br>
 
             </div>
             
             <div class="form-group">
                 <label class="label">zip</label>
-                <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP" value="<?=$addressInfo[0]['zip'] ?? htmlspecialchars($_POST['zip'] ?? '')?>">
+                <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP" value="<?=$addressInfo[0]['zip'] ?? htmlspecialchars($_POST['zip'] ?? '')?>" required>
             </div>
         
             <div class="form-group">
                 <label class="label">Stadt</label>
-                <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=$addressInfo[0]['city'] ?? htmlspecialchars($_POST['city'] ?? '')?>"><br>
+                <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=$addressInfo[0]['city'] ?? htmlspecialchars($_POST['city'] ?? '')?>" required><br>
             </div>
         </div>
        
-        <button class="send" type="submit" name="address"> Senden </button> 
+        <button class="send" id="send" type="submit" name="address"> Senden </button> 
     </form>
     <? } else {
         echo "Warenkorb ist leer.";

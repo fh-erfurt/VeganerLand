@@ -15,7 +15,7 @@
 
                         <div class="form-group">
                                 <label class="label">Email</label>
-                                <input class="form-input" id="email" type="text" name="email" value="<?echo $customerInfo['email']?>">
+                                <input class="form-input" id="email" type="text" name="email" value="<?echo $customerInfo['email']?>" required>
                         </div>
 
                         <div class="form-group">
