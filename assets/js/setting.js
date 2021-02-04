@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 valid = false;
             }
 
-            if (inputPassword.value != "") {
+            if (inputPassword.value !== "") {
                 var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
                 if (inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
                     window.alert("the Passwords not safe enough");
