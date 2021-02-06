@@ -8,8 +8,8 @@ Im Rahmen der Veranstaltung "GWP & DWP" haben wir uns entschlossen, ein Online S
 alle info finde Sie in der HTML document unter Über uns seite, unten beim Impressum. 
 <br>
 
-<details>
-<summary>Installation Step by Step</summary><br> 
+
+## Installation Step by Step 
      
 1. VeganerLand-main.zip entpacken
 2. Dateien in XAMMP Ordner kopieren
@@ -33,4 +33,13 @@ alle info finde Sie in der HTML document unter Über uns seite, unten beim Impre
 
 Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, kann man auch in /documentation/documentation.html direkt aufmachen, und die Dokumentation genießen.
 <br>
-</details>
+
+## Passwort zurücksetzen
+
+1. Gehsen Sie zu Login Seite
+2. Klicken Sie auf (Passwort vergessen)
+3. Schreiben Sie ihre Email 
+4. Klicken Sie auf (Recover your password) Sie bekommen eine Info angezeigt (Email wurde versendet)
+5. gehen Sie zu -> VeganerLand-main -> data und öffnen Sie returnPassword.txt
+6. Kopieren Sie das letzte link in der URL 
+7. nun Dürfen Sie ihr Passwort neue schreiben. 
