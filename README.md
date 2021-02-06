@@ -42,4 +42,5 @@ Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, k
 4. Klicken Sie auf (Recover your password) Sie bekommen eine Info angezeigt (Email wurde versendet)
 5. gehen Sie zu -> VeganerLand-main -> data und öffnen Sie returnPassword.txt
 6. Kopieren Sie das letzte link in der URL 
-7. nun Dürfen Sie ihr Passwort neue schreiben. 
+7. nun Dürfen Sie ihr Passwort neue schreiben.
+![returnPassword](https://github.com/fh-erfurt/VeganerLand/blob/main/documentation/docu-images/returnPassword.png) <br>
