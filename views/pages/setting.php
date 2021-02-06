@@ -1,5 +1,9 @@
-
-<!-- @author Molham Al-khodari, @author Jessica Eckardtsberg -->
+<!-- 
+================================
+== @author Molham Al-khodari 
+== @author Jessica Eckardtsberg 
+================================
+-->
 
 <div class="con">
         <form class="from-horizonta" method="post">
@@ -57,4 +61,28 @@
                                 <button class="save" id="submit" type="submit" name="submit">Save</button>
                         </div>
         </form>
+
+        <!-- favotit list in setting -->
+
+        <div class="favorit-list">
+                <h3>Favoritlist (<?echo Favorits::ItemsFavorits();?>)</h3>
+                <table class="table-favorit">
+                <tr>
+                        <th>produkt</th>
+                        <th>prise</th>
+                </tr>
+                <tr>
+                        <?/*
+                        foreach ($result as $key => $value) 
+                        {
+                        */?>
+                        <td><? //echo ucfirst($prodInfo[$idx][0]['descrip']) ?>Apfel</td>
+                        <td><? //echo $price[$idx]." €"; ?>10€</td>
+                        <td><form method = "post"><button name="delete" type="submit" value="<?//=$cart[$idx]['itemId']?>">X</button></form></td>
+                        <?/*              
+                        }
+                        */?>
+                </tr>
+                </table>
+        </div>
 </div>
