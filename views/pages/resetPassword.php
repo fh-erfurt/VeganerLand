@@ -21,11 +21,10 @@
                     <input class="form-input" id="email" type="text" name="email" placeholder="Email" required> <br>
 
                     <!--button Recover your password -->
-                    <button class="log-in" name="submit" type="submit"> Recover your password</button> </button>
+                    <button class="log-in" id="submit" name="submit" type="submit"> Recover your password</button> </button>
                 </div>
-                    <!--other buttons -->
+                    <!--Sign Up button -->
                 <div class="other">
-                    <!--     Sign Up button -->
                     <button class="btn submits sign-up"><a href="?c=registration&a=registration">Registrieren</a> </button>
                 </div>
             </div>
@@ -35,15 +34,16 @@
     elseif($do == 'setPassword')
     {
 ?>
+            <!--Set new password form -->
         <form action="" method="post">
             <div class="con">
                 <header class="head-form">
                     <h2> Neues Passwort setzten </h2>
                     <p>bearbeiten Sie hier Passwort</p>
                 </header>
-                    <input class="form-input" type = "password" name="password1" placeholder ="Password" required> <br>
-                    <input class="form-input" type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
-                    <button class="log-in" type="submit" name="submit">passwort setzten</button>
+                <input class="form-input" id="password" type = "password" name="password1" placeholder ="Password" required> <br>
+                <input class="form-input" id="passwordagain" type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
+                <button class="log-in" id="submit" type="submit" name="submit">passwort setzten</button>
             </div>
         </form>
 <?php
