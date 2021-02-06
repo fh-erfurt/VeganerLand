@@ -1,5 +1,9 @@
 <?
-    //@author Molham Al-Khodari, Jessica Eckardtsberg
+/*
+================================
+== @author Jessica Eckardtsberg
+================================
+*/
 
     include "include.php";
 ?>

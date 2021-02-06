@@ -1,19 +1,18 @@
-/* Molham Al-khodari 
+/*  
 =====================
-== rewrite html style
+== Molham Al-khodari
 =====================
 */
+
+
+/* rewrite html style */
 
 html {
     background-color: #f0f0f0;
 }
 
 
-/*
-===================================
-== phots size and style 
-===================================
-*/
+/* phots size and style */
 
 img {
     width: 332px;
@@ -24,11 +23,7 @@ img {
 }
 
 
-/*
-===================================
-== Block size and style 
-===================================
-*/
+/* Block size and style */
 
 .block-container {
     width: 98%;
@@ -51,11 +46,7 @@ img {
 }
 
 
-/*
-===================================
-== alle cards size and position
-===================================
-*/
+/* alle cards size and position */
 
 .cards {
     display: flex;
@@ -83,11 +74,7 @@ img {
 }
 
 
-/*
-===================================
-** inner card
-===================================
-*/
+/* inner card */
 
 .card {
     background-color: white;
@@ -131,11 +118,7 @@ input[type=number] {
 }
 
 
-/*
-===================================
-** alert messages in Fruit
-===================================
-*/
+/* alert messages in Fruit */
 
 .alert-danger {
     margin-top: 110px;

@@ -1,5 +1,10 @@
 <?
-    // @author Jessica Eckardtsberg, @author Molham Al-khodari
+/*
+================================
+== @author Molham Al-khodari
+== @author Jessica Eckardtsberg
+================================ 
+*/
 ?>
 
 <div class="block-container">
