@@ -1,6 +1,11 @@
-/*****************
-Section 
-******************/
+/*
+====================
+== Molham Al-khodari
+====================
+*/
+
+
+/* Header */
 
 .header {
     background-image: linear-gradient(to top, #8cec6d 0%, #589b72 100%);
@@ -39,11 +44,62 @@ span {
     color: #DCBE5C;
 }
 
+
+/* block */
+
+.grid-full {
+    margin: 12px;
+    padding: 1px;
+}
+
+
+/*fruit & vegetable */
+
+.rowBlock {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+.block-fruit {
+    width: 50%;
+}
+
+.block-vegetable {
+    width: 50%;
+}
+
+.bargain {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    margin: 12px;
+}
+
+
+/* photos */
+
+.block-fruit img,
+.block-vegetable img {
+    width: 99%;
+    height: 650px;
+}
+
+.blockFull img {
+    width: 100%;
+    height: 400px;
+}
+
+
+/* button */
+
 .homepage-button {
     height: 50px;
-    width: 220px;
-    background-image: linear-gradient(-225deg, #f3f3f300 50%, #3cc80e 50%);
-    color: inherit;
+    width: 99%;
+    color: black;
+    background-image: linear-gradient(130deg, #3cc80e 65%, #f3f3f3f2 65%);
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     letter-spacing: 3px;
@@ -62,70 +118,6 @@ span {
     box-shadow: 0 0 10px #BA4662;
 }
 
-
-/* block */
-
-.grid-full {
-    margin: 12px;
-    padding: 1px;
-}
-
-.rowBlock {
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 75px;
-}
-
-.block-fruit {
-    width: 50%;
-}
-
-.block-vegetable {
-    width: 50%;
-}
-
-.angebot {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1px;
-    margin: 12px;
-}
-
-
-/* photo */
-
-.block-fruit img {
-    width: 99%;
-    height: 650px;
-}
-
-.block-vegetable img {
-    width: 99%;
-    height: 650px;
-}
-
-.blockFull img {
-    width: 100%;
-    height: 400px;
-}
-
 .blockFull button {
     width: 100%;
-}
-
-.homepage-button {
-    border: none;
-    outline: 0;
-    padding: 8px;
-    color: black;
-    background-image: linear-gradient(-225deg, #f3f3f300 50%, #3cc80e 50%);
-    cursor: pointer;
-    width: 99%;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 2px;
-    padding: auto;
 }
