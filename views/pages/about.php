@@ -130,14 +130,14 @@
         <h2>AGB</h2>
         <p>
             <p>
-                <strong>Allgemeine Geschäftsbedingungen der Firma Hansen Obst (Claus Hansen e.K) für Bestellungen über die Internetpräsenz www.hansenobst.de</strong>
+                <strong>Allgemeine Geschäftsbedingungen der Firma Veganer Land Obst für Bestellungen über die Internetpräsenz www.veganerland.de</strong>
             </p>
 
             <h2>1. Allgemeines, Kundenkreis, Sprache</h2>
 
             <ol>
                 <li>
-                    Alle Angebote, Kaufverträge, Lieferungen und Dienstleistungen aufgrund von Bestellungen unserer Kunden über unseren Online Shop www.hansenobst.
+                    Alle Angebote, Kaufverträge, Lieferungen und Dienstleistungen aufgrund von Bestellungen unserer Kunden über unseren Online Shop www.veganerland.
                     de (nachfolgend der „Webshop“) unterliegen diesen Allgemeinen Geschäftsbedingungen.
                 </li>
                 <li>
