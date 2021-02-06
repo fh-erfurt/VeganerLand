@@ -22,8 +22,7 @@
                 <li><a href="#tools">Tools</a></li>
                 <li><a href="#recherche">Ergebnisse der Recherche</a></li>
                 <li><a href="#checklist">Checkliste</a></li>
-                <li><a href="#sitemap">Seitenlayout</a></li>
-                <li><a href="#sitemap">Verlinkung/Navigationsstruktur</a></li>
+                <li><a href="#sitemap">Sitemap/Navigationsstruktur</a></li>
                 <li><a href="#design">Design</a></li>
                 <li><a href="#funktionalitaeten">Funktionalit&auml;ten</a></li>
                 <li><a href="#erModell">ERModell</a></li>
@@ -116,7 +115,7 @@
                         <ul>
                             <li><s>Mindestens 6 Seiten</s></li>
                             <ul>
-                                <li>VeganerLand besitzt 9 Seiten</li>
+                                <li>VeganerLand besitzt 11 Seiten</li>
                                 <ul>
                                     <li>Homepage</li>
                                     <li>Über uns</li>
@@ -127,6 +126,8 @@
                                     <li>SignUp</li>
                                     <li>Passwort vergessen</li>
                                     <li>Einstellung</li>
+                                    <li>Einkaufskorb</li>
+                                    <li>error404</li>
                                 </ul>
                             </ul>
                             <li><s>Mindestens 3 Unterseiten</s></li>
@@ -145,65 +146,88 @@
                                     <li>Kartoffeln</li>
                                     <li>Pilze</li>
                                 </ul>
+                                <li>Unterseiten von return Password</li>
+                                <ul>
+                                    <li>identify</li>
+                                    <li>Set Password</li>
+                                </ul>
+                                <li>Unterseiten von Einkaufskorb (jesse)</li>
+                                <ul>
+                                    <li>jesse</li>
+                                    <li>jesse</li>
+                                </ul>
 
                             </ul>
 
                             <li><s>Einheitliche Navigation</s></li>
                             <ul>
                                 <li>Header ist Semi-Statisch (Abhängig von Besucher)</li>
-                                <li>Ist immer im gleichen Stelle und gleiche maß</li>
+                                <li>Ist immer in dem gleichen Stelle und gleiche maß</li>
                                 <img src="./docu-images/Header.png" alt="header" style="width: 80%;">
                             </ul>
                             <li><s>Navigation mit Untermenü</s></li>
                             <ul>
                                 <li>Konto hat zwei Untermenüs</li>
-                                <img src="./docu-images/Konto.png" alt="Konto" style="height: 100px;">
+                                <img src="./docu-images/Konto.png" alt="Untermenüs" style="height: 100px;">
+                                <li>Obst hat fünf Untermenüs</li>
+                                <li>Gemüse hat drei Untermenüs</li>
+                                <li>Obst und Gemüse Untermenüs und Unterseiten werden dynamisch dargestellt in bezug auf Datenbank(jesse)</li>
+                                <img src="./docu-images/Untermenü.png" alt="Konto" style="height: 200px;">
+
                             </ul>
                             <li><s>Mindestens 3 Formulare</s></li>
                             <ul>
                                 <li>VeganerLand Formulare</li>
                                 <img src="./docu-images/Forms.png" alt="formulare" style="width: 80%;">
+                                <img src="./docu-images/Forms2.png" alt="formulare" style="width: 80%;">
                             </ul>
                             <li><s>Vermeidung von doppelten Code</s></li>
                             <ul>
-                                <li>Wir haben alle Funktionen in /init/20.funtions.php auszulagern</li>
+                                <li>Wir haben alle Funktionen in /core/funtions.php auszulagern</li>
                             </ul>
                             <li><s>Codestyle und Dokumentation</s></li>
                             <ul>
-                                <li>Alle notwendige Kommentare (f&uuml;r alle Funktionen und Code die nicht selbstverstänlich ist)</li>
+                                <li>Alle notwendige Kommentare (für alle Funktionen und Code die nicht selbstverstänlich ist)</li>
                             </ul>
                             <li><s>Keine Verwendung von Frameworks</s></li>
+                            <ul>
+                                <li>es würde einmal benutzt um icorns zu zeigen</li>
+                                <img src="./docu-images/icorns.png" alt="icorns" style="height: 100px;">
+
+                            </ul>
                             <li><s>Projektdokumentation</s></li>
                             <ul>
-                                <li>Es wurde versucht die Dokumentation so ausf&uuml;hrlich wie m&ouml;glich zu machen</li>
+                                <li>Es wurde versucht die Dokumentation so ausführlich wie möglich zu machen</li>
                             </ul>
                             <li><s>Installationshinweise</s></li>
                             <ul>
-                                <li>Zu Finden im \README.pdf</li>
+                                <li>Zu Finden im \README.md</li>
                                 <li>Da sind auch die Logins vorhanden</li>
+                                <li>"Code Style" sowie "return password" ist vorhanden</li>
                             </ul>
                             <li><s>Datenbank-Export</s></li>
                             <ul>
-                                <li>Zu Finden im \Projekt\src\database\taketec-pdo-version-1.sql</li>
-                                <li>Dazu sind auch &auml;ltere Versionen von dem Datenbank</li>
+                                <li>Zu Finden im \VeganerLand\database</li>
                             </ul>
                             <li><s>Test</s></li>
                             <ul>
                                 <li>Chrome: 24 Zoll Monitor, 14 Zoll Monitor</li>
-                                <li>Edge: 24 Zoll Monitor, 14 Zoll Monitor</li>
+                                <li>Mozilla Firefox Monitor, 14 Zoll Monitor</li>
+                                <li>Chrome Dev-Tools: iPhone X, Pixel 2</li>
                                 <li>Chrome Dev-Tools: iPhone X, Pixel 2</li>
                             </ul>
                         </ul>
                         <p>Allgemein GWP</p>
                         <ul>
                             <li><s>Passende, abwechslungsreiche Gestaltung</s></li>
-                            <li><s>Interaktivit&auml;t schaffen mit CSS/JavasCript</s></li>
+                            <li><s>Interaktivität schaffen mit CSS/JavasCript</s></li>
                             <ul>
-                                <li>Es wurde versucht, einfaches und klares Design zu erstellen</li>
+                                <li>Es wurde versucht, einfaches, schönes und klares Design zu erstellen</li>
                             </ul>
                             <li><s>Quelltext Optimierung durch Metas, Alt, Title, Noscript</s></li>
                             <ul>
-                                <li>alt Attribut wurde bei allen Bilder als Quelle eingesetzt</li>
+                                <li>alt Attribut wurde bei allen Bilder eingesetzt</li>
+                                <li>title Attribut wurde bei allen links eingesetzt</li>
                             </ul>
                             <li><s>Sinvolle Verwendung von HTML5</s></li>
                             <ul>
@@ -211,14 +235,14 @@
                             </ul>
                             <li><s>Einbindung von Bilder</s></li>
                             <ul>
-                                <li>Die Einbindung von Bildern geht dynamisch durch php, der Admin soll die Name des Bildes
-                                    <br> die Nameendung beim Artikelhinzuf&uuml;gen geben und das Bild in Projekt/assets/images/ speichern
+                                <li>Die Einbindung von Bildern geht dynamisch durch php, es soll die Name des Bildes
+                                    <br> die Nameendung beim Artikelhinzufügen geben und das Bild in Projekt/assets/images/speichern(jesse)
                                 </li>
                             </ul>
                             <li><s>Responsive Webdesign</s></li>
                             <ul>
-                                <li>Optimiert f&uuml;r Bildschrirme kleiner und gr&ouml;ser als 720px</li>
-                                <li>F&uuml;r die Ausl&ouml;sung der Laptops und Handys</li>
+                                <li>Optimiert für Bildschrirme kleiner und gröser als 720px</li>
+                                <li>Für die Auslösung der Laptops und Handys</li>
                             </ul>
 
                         </ul>
@@ -242,30 +266,23 @@
                             </ul>
                             <li><s>Funktionsbereitstellung mit/ohne JS</s></li>
                             <ul>
-                                <li>Die Seitefunktionalit&auml;t arbeitet komplett ohne Javascript.
-                                    <br> noscript Tag wurde auch benutzt</li>
+                                <li>Die Seitefunktionalit&auml;t arbeitet komplett ohne Javascript.</li>
                             </ul>
                             <li><s>Absenden von Formulare mit AJAX</s></li>
                             <ul>
-                                <li>Wurde Implementiert aber leider hat nicht funktioniert (das Code ist noch zusehen) <br> Siehe contact.php/contact.js und registration.php/registration.js</li>
+                                <li>Wurde Implementiert aber leider hat nicht funktioniert (das Code ist noch zusehen)</li>
                             </ul>
                             <li><s>Seiten werden dynamisch ausgebaut (Datenbank)</s></li>
                             <ul>
-                                <li>Home, topTen, readArticle, buy Article und profile werden alle aus der Datenbank gebaut</li>
+                                <li>Navbar untermenü, Cart, Favorit list, Obst, Gemüße und Angebote Seiten mit allen Produkten, werden alle aus der Datenbank gebaut</li>
                             </ul>
                             <li>Nachlade Funktion mit JS</li>
                             <ul>
-                                <li>Wir wollten in HomePage die anzahl von Artikel auf 4 reduzieren. Wenn der nutzer gescrollt
-                                    <br> hat, sollten mehrere Artikel von dem Datenbank herausgeholt. Leider hat diese Funktion
-                                    <br> bei uns nicht funktioniert. Alles was wir in Netzt gefunden haben, brauchte JQuery.
-                                    <br> Hier was uns gefehlt hat, war eigentlich Zeit.
-                                </li>
+                                <li>Hier was uns gefehlt hat, war eigentlich Zeit.</li>
                             </ul>
                             <li><s>Seite Nicht gefunden (404)</s></li>
                             <ul>
-                                <li>Bei einem falschen Seitename, wird 404 aufgerufen und von dort wurde ein Link zu Home gebaut
-                                    <br> Hinweis: Es lohnt sich, die sich anzugucken
-                                </li>
+                                <li>Bei einem falschen contoller bzw. action name, wird 404 aufgerufen und von dort wurde ein Link zu Home gebaut</li>
                             </ul>
                             <li><s>Datenbank angebunden</s></li>
                             <ul>
@@ -277,17 +294,15 @@
                             </ul>
                             <li><s>Daten werden in Datenbank geschrieben</s></li>
                             <ul>
-                                <li>Passiert in mehrere Orten. Beispiel daf&uuml;r ist die Eingabe bei Registrierung</li>
+                                <li>Passiert in mehrere Orten. Beispiel dafür ist die Eingabe bei Registrierung, zu Einkaufskorb hinzufügern, zu Favotit hinzufügen
+                                    <br> beim Einställungen (Daten bearbeiten) beim Password vergessen etc .. </li>
                             </ul>
                         </ul>
 
             </div>
             <div class="sitemap" id="sitemap">
-                <h3>Wireframe & Sitemap</h3>
-                <p>&uuml;berlegung f&uuml;r das Wireframe von Home</p>
-                <img src="./Screenshots/Wireframe.png" alt="wireframe">
                 <p>Sitemap</p>
-                <img src="./Screenshots/sitemap.png" alt="sitemap">
+                <img src="./docu-images/Sitemap.png" alt="sitemap" style="width: 80%;">
                 <hr>
             </div>
             <div id="design">
