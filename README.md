@@ -63,6 +63,7 @@ Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, k
 </ul>
 
  <br>
+ 
     1. Enum
     2. Konstanten und Klassenvariablen 
     3. Variablen
@@ -70,6 +71,7 @@ Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, k
     5. abstrakte Methoden
     6. Methoden
     7. Getter & Setter
+    
     
  - Die Sektionen werden jeweilig mit folgendem Kommentar initiiert:
 <br>
