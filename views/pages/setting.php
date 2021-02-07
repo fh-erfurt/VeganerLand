@@ -83,7 +83,7 @@
                         <td>
                         <form method = "post">
                         <input  class="qty" id="qty" name="qty" type="number" min="1">
-                        <button name="submit" type="submit" value="<?=$prodInfo[$idx][0]['descrip']?>">Senden</button>
+                        <button name="toCart" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">in den Warenkorb</button>
                         </form>
                         </td>
                 </tr>

@@ -1,14 +1,19 @@
 <?
-
-// @author Molham Al-Khodari, @author Jessica Eckardtsberg
-// @version 1.0.0
+/*
+====================================
+== @author Jessica Eckardtsberg
+== @author Molham Al-Khodari
+== @author Mahmoud Matar
+====================================
+*/
 
 class PagesController extends Controller
 {
 
-    // public function actionIndex(){
-    //     header('Location: index.php?c=pages&a=homepage');
-    // }
+    public function actionIndex()
+    {
+        header('Location: index.php?c=pages&a=homepage');
+    }
     
     public function actionHomepage()
     {
@@ -17,13 +22,15 @@ class PagesController extends Controller
 
     public function actionLogin()
     {
-        if (isset($_SESSION['email'])) {
+        if (isset($_SESSION['email'])) 
+        {
             header('Location: ?c=pages&a=homepage');
         }
         
         // check if User coming from http post
     
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+        {
             $email          = $_POST['email'];
             $password       = $_POST['password'];
             $hashedPassword = md5($password);
@@ -37,15 +44,18 @@ class PagesController extends Controller
     
             // if Count > 0 This Mean The Database Cotanin Record About This Email
     
-            if ($count > 0) {
+            if ($count > 0) 
+            {
                 $_SESSION['email'] = $email;                    // Register Session Email
                 $_SESSION['custId']= $row['custId'];            // Register Customer ID
                 $_SESSION['addressId']= $row['addressId'];      // Register Address ID
+
                 header('Location: ?c=pages&a=homepage');
                 exit();
-            } else {
-                $status = "You Email or Password is incorrect";
-                viewError($status);
+            } 
+            else 
+            {
+                viewError("You Email or Password is incorrect");
             }
         }
     }
@@ -54,9 +64,11 @@ class PagesController extends Controller
     {
         $do = isset($_GET['do']) ? $_GET['do'] : '';
 
-        if ($do == 'identify') {
+        if ($do == 'identify') 
+        {
             // check is User coming from http post
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) 
+            {
                 $email = $_POST['email'];
         
                 // check if the User Exist in Database
@@ -67,7 +79,8 @@ class PagesController extends Controller
                 $count = $stmt->rowCount();
 
                 // if Count > 0 This Mean The Database Cotanin Record About This Email
-                if ($count != 0) {
+                if ($count != 0) 
+                {
                     $tocken = generateRandomString(25);
                     $stmt = $GLOBALS['db']->prepare("UPDATE customers SET tocken = :tocken WHERE email = :email");
                     $stmt->bindParam(":tocken", $tocken, );
@@ -78,29 +91,36 @@ class PagesController extends Controller
                     $subject = "Passwort zurücksetzen";
                     $txt = "http://localhost:8085/VeganerLand-main/?c=pages&a=resetPassword&do=setPassword&tocken=".$tocken;
                     
-                    // reset alternative password
+                    // reset alternative password. the URL link will be right in the returnPassword.txt
 
                     $file = fopen('data/returnPassword.txt', 'a+');
                     fwrite($file, $txt.PHP_EOL);
                     fclose($file);
 
                     //mail($mailTo, $subject, $txt);  // macht Probleme aber egal wir habe kein mail server
-
-                    echo '<div class="alert alert-info">Email wurde versendet</div>';
-                } else {
+                    viewInfo("Email wurde versendet");
+                } 
+                else 
+                {
                     viewError("There is no such Email");
                 }
             }
-        } elseif ($do == 'setPassword') {
-            if (isset($_GET["tocken"])) {
+        } 
+        elseif ($do == 'setPassword') 
+        {
+            if (isset($_GET["tocken"])) 
+            {
                 $stmt = $GLOBALS['db']->prepare("SELECT * FROM customers WHERE tocken= :tocken LIMIT 1");
                 $stmt->bindParam(":tocken", $_GET['tocken']);
                 $stmt->execute();
                 $count = $stmt->rowCount();
             
-                if ($count != 0) {
-                    if (isset($_POST['submit'])) {
-                        if ($_POST["password1"] == $_POST["password2"]) {
+                if ($count != 0) 
+                {
+                    if (isset($_POST['submit'])) 
+                    {
+                        if ($_POST["password1"] == $_POST["password2"]) 
+                        {
                             $passwordHash = md5($_POST['password1']);
                             $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
                             $stmt->bindParam(':password', $passwordHash);
@@ -108,14 +128,20 @@ class PagesController extends Controller
                             $stmt->execute();
 
                             header('Location: ?c=pages&a=login');
-                        } else {
+                        } 
+                        else 
+                        {
                             viewError("die Passwörte stimmen nicht überein");
                         }
                     }
-                } else {
+                } 
+                else 
+                {
                     viewError("kein gültige tocken gesendet");
                 }
-            } else {
+            } 
+            else 
+            {
                 viewError("kein gültige tocken gesendet");
             }
         }
@@ -124,16 +150,20 @@ class PagesController extends Controller
     public function actionSearch()
     {
         // Input whta to search in field (Name of fruit of veggie)
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) 
+        {
             $search = $_POST['search'];
             $result = array();
 
             $info = Products::find("descrip LIKE '%$search%'");
-            if (!empty($info)) {
+            if (!empty($info)) 
+            {
                 array_push($result, $info);
 
                 $this->setParams('products', $result);
-            } else {
+            } 
+            else 
+            {
                 $this->setParams('products', array());
                 echo "<div class='alert alert-danger'>Es konnte nichts gefunden werden.</div>";
             }
@@ -142,13 +172,15 @@ class PagesController extends Controller
 
     public function actionAbout()
     {
-        // This is a static site. So nothing is to do, but we kind off need the method, I think.
+        // This is a static site. So nothing is to do, but we kind off need the method.
     }
 
     public function actionSetting()
-    {
+    {        
         // Customer can look into his given data and change his address, phone number and favorite products.
-    
+        // update Favorits
+        $this->viewFavorites();
+
         if (isset($_SESSION['email'])) {
             $info = ['custId'   => null,
                         'firstName' => null,
@@ -186,28 +218,37 @@ class PagesController extends Controller
     
             if (isset($_POST['submit'])) {
                 $newInfo = ['custId'    => $_POST['custId'],
-                                'email'     => $_POST['email'],
-                                'password'  => $_POST['oldPassword'],
-                                'phone'     => $_POST['phone'],
-                                'addressId' => $_POST['addressId'],
-                                'street'    => $_POST['street'],
-                                'number'    => $_POST['number'],
-                                'zip'       => $_POST['zip'],
-                                'city'      => $_POST['city']];
+                            'email'     => $_POST['email'],
+                            'password'  => $_POST['oldPassword'],
+                            'phone'     => $_POST['phone'],
+                            'addressId' => $_POST['addressId'],
+                            'street'    => $_POST['street'],
+                            'number'    => $_POST['number'],
+                            'zip'       => $_POST['zip'],
+                            'city'      => $_POST['city']];
+
                 $formErrors = 0;
                 $noNewAddress = false;
     
-                if (!empty($_POST['newPassword'])) {
-                    if (isPasswordSafe($_POST['newPassword'])) {
+                if (!empty($_POST['newPassword'])) 
+                {
+                    if (isPasswordSafe($_POST['newPassword'])) 
+                    {
                         $newInfo['password'] = md5($_POST['newPassword']);
-                    } else {
+                    } 
+                    else 
+                    {
                         $formErrors++;
                     }
                 }
-    
-                if (empty($newInfo['email'])) {
+                
+                // check whether the email is not specified
+                if (empty($newInfo['email'])) 
+                {
                     $formErrors++;
-                } else {
+                } 
+                else 
+                {
                     // Checks if the email has been changed into another email already existing in the database.
                     if (doesEmailExists($newInfo['email'])
                         &&  $newInfo['email'] !== $email) {
@@ -219,30 +260,40 @@ class PagesController extends Controller
                 if (!empty($newInfo['street'])
                     &&  !empty($newInfo['number'])
                     &&  !empty($newInfo['zip'])
-                    &&  !empty($newInfo['city'])) {
+                    &&  !empty($newInfo['city'])) 
+                    {
                     $street = $newInfo['street'];
                     $number = $newInfo['number'];
                     $zip = $newInfo['zip'];
                     $city = $newInfo['city'];
                     $addressInfo = Address::find("street = '$street' AND
-                                                      number = '$number' AND 
-                                                      zip    = '$zip'    AND 
-                                                      city   = '$city'");
-                } elseif (!empty($newInfo['street'])//Checks if only some fields are filled.
-                           ||  !empty($newInfo['number'])
-                           ||  !empty($newInfo['zip'])
-                           ||  !empty($newInfo['city'])) {
+                                                  number = '$number' AND 
+                                                  zip    = '$zip'    AND 
+                                                  city   = '$city'");
+                } 
+                elseif (!empty($newInfo['street'])  //Checks if only some fields are filled.
+                    ||  !empty($newInfo['number'])
+                    ||  !empty($newInfo['zip'])
+                    ||  !empty($newInfo['city'])) 
+                {
                     $formErrors++;
-                } else {
+                } 
+                else 
+                {
                     $noNewAddress = true;
                 }
     
-                if ($formErrors !== 0) {
+                if ($formErrors !== 0) 
+                {
                     viewError("Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.");
-                } else {
+                } 
+                else 
+                {
                     // Update the Database
-                        if (empty($addressInfo) && !$noNewAddress) { //Creats an new entry in sddress table if address doesn't exists there.
-                            try {
+                        if (empty($addressInfo) && !$noNewAddress) //Creats an new entry in sddress table if address doesn't exists there.
+                        { 
+                            try 
+                            {
                                 $sql1 = "INSERT INTO " . Address::tableName() . " (street, number, zip, city) 
                                          VALUES ('$street', '$number', '$zip', '$city');";
                                 
@@ -250,10 +301,14 @@ class PagesController extends Controller
                                 $stmt->execute();
     
                                 $newInfo['addressId'] = $GLOBALS['db']->lastInsertId();
-                            } catch (\PDOException $e) {
+                            } 
+                            catch (\PDOException $e) 
+                            {
                                 echo 'Fehlschlag: ' . $e->getMessage();
                             }
-                        } elseif (!$noNewAddress) {
+                        } 
+                        elseif (!$noNewAddress) 
+                        {
                             $newInfo['addressId'] = $addressInfo[0]['addressId'];
                         }
     
@@ -264,26 +319,31 @@ class PagesController extends Controller
                     $addressId = $newInfo['addressId'];
                     $id = $newInfo['custId'];
     
-                    try {
+                    try 
+                    {
                         $sql2 = "UPDATE " . Customers::tableName() . " SET 
                                     email = '$email', phone = '$phone', password = '$password', addressId = '$addressId' 
                                     WHERE custId = $id;";
                             
                         $stmt = $GLOBALS['db']->prepare($sql2);
                         $stmt->execute();
-                    } catch (\PDOException $e) {
+                    } 
+                    catch (\PDOException $e) 
+                    {
                         echo 'Update fehlgeschlagen: ' . $e->getMessage();
                     }
+
                     header('Location: ?c=pages&a=setting');
-                    echo '<div class="alert alert-success">Update erfolgreich!</div>';
+                    //echo '<div class="alert alert-success">Update erfolgreich!</div>';
                 }
             }
-        } else {
+        } 
+        else 
+        {
             header('Location: ?c=pages&a=homepage');
-            viewError('Du bist nicht angemeldet! <a href="?c=pages&a=login">Anmelden</a>'); // das macht hier kein sinn!
+            //viewError('Du bist nicht angemeldet! <a href="?c=pages&a=login">Anmelden</a>'); // das macht hier kein sinn!
         }
-
-        $this->viewFavorites();
+        $this->addToCart();
     }
     
     public function actionLogout()
@@ -296,41 +356,82 @@ class PagesController extends Controller
 
     public function viewFavorites()
     {
-            //$this->removeFromCart();
-        
-            // $custId = $_SESSION['custId'];
+        // The customer can look at his favorites list, delete entries and quickly order again.
 
-            // $sql = 'SELECT * from favorits WHERE custId = ' . $custId;
-            // $result = $GLOBALS['db']->query($sql)->fetchAll();
+        $this->removeFromfavorits();
 
-            // print_r($result);
+        $id = $_SESSION['custId'];
+        $favoritsList = Favorits::find("custId = '$id'");
+        $productList = array();
 
-            $id = $_SESSION['custId'];
-        
-            $favoritsList = Favorits::find("custId = '$id'");
-
-            $productList = array();
-
-            for ($idx = 0; $idx < count($favoritsList); $idx++) 
-            {
-                $id = $favoritsList[$idx]['prodId'];
-                $productInfo = Products::findOne("prodId, descrip, stdPrice", "prodId = '$id'");
-                array_push($productList, $productInfo);
-            }
-        
-            $this->setParams('prodInfo', $productList);
-            $this->removeFromfavorits();
-
+        for ($idx = 0; $idx < count($favoritsList); $idx++) 
+        {
+            $id = $favoritsList[$idx]['prodId'];
+            $productInfo = Products::findOne("prodId, descrip, stdPrice", "prodId = '$id'");
+            array_push($productList, $productInfo);
+        }
+    
+        $this->setParams('prodInfo', $productList);
     }
 
     public function removeFromfavorits()
     {
-        if (isset($_POST['delete'])) {
+        if (isset($_POST['delete'])) 
+        {
             $id = $_POST['delete'];
 
             $sql = "DELETE FROM " . Favorits::tableName() . " WHERE prodId = $id";
             $stmt = $GLOBALS['db']->prepare($sql);
             $stmt->execute();
+        }
+    }
+
+    protected function addToCart()
+    {
+        $idC = $_SESSION['custId'];
+        if (isset($_POST['toCart'])) 
+        {
+            // $_POST['toCart'] → Id of product.
+            if (!empty($_POST['qty']))
+            {
+                $item = $_POST['toCart'];
+                $itemdata = Products::find("prodId = '$item'");
+                $qty = $_POST['qty'];
+                $check = OrderItems::find("custId = '$idC' AND prodId = '$item' AND qyt = '$qty'");
+                if (empty($check)) 
+                {
+                    try 
+                    {
+                        $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$item', '$qty')";
+                        $stmt = $GLOBALS['db']->prepare($sql);
+                        $stmt->execute();
+                    } 
+                    catch (\PDOException $e) 
+                    {
+                        viewError("Bestellung fehlgeschlagen 1.");
+                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                    }
+                } 
+                else 
+                {
+                    $idI = $check[0]['itemId'];
+                    try 
+                    {
+                        $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
+                        $stmt = $GLOBALS['db']->prepare($sql);
+                        $stmt->execute();
+                    } 
+                    catch (\PDOException $e) 
+                    {
+                        viewError("Bestellung fehlgeschlagen 2.");
+                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                    }
+                }
+            } 
+            else 
+            {
+                viewError("Bitte gib die gewünschte Menge an!");
+            }
         }
     }
 }

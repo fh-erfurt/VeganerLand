@@ -51,7 +51,8 @@ class ProductsController extends Controller
     public function actionSearch()
     {
         // Input whta to search in field (Name of fruit of veggie)
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) 
+        {
 
             $search = $_POST['search'];
             $result = array();
@@ -66,60 +67,73 @@ class ProductsController extends Controller
             else
             {
                 $this->setParams('products', array());
-                echo "<div class='alert alert-danger'>Es konnte nichts gefunden werden.</div>";
+                viewError("Es konnte nichts gefunden werden.");
             }
         }
     }
 
     protected function addToCart()
     {
-        if (isset($_SESSION['custId'])) {
+        if (isset($_SESSION['custId'])) 
+        {
             $idC = $_SESSION['custId'];
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) 
+            {
                 // $_POST['submit'] → Id of product.
-                if (!empty($_POST['qty'])){
+                if (!empty($_POST['qty']))
+                {
                     $item = $_POST['submit'];
                     $itemdata = Products::find("prodId = '$item'");
                     $qty = $_POST['qty'];
                     $check = OrderItems::find("custId = '$idC' AND prodId = '$item' AND qyt = '$qty'");
-                    if (empty($check)) {
-                        try {
+                    if (empty($check)) 
+                    {
+                        try 
+                        {
                             $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$item', '$qty')";
                             $stmt = $GLOBALS['db']->prepare($sql);
                             $stmt->execute();
-                        } catch (\PDOException $e) {
-                            echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
-                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                        }
-                    } else {
-                        $idI = $check[0]['itemId'];
-                        try {
-                            $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
-                            $stmt = $GLOBALS['db']->prepare($sql);
-                            $stmt->execute();
-                        } catch (\PDOException $e) {
-                            echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
+                        } 
+                        catch (\PDOException $e) 
+                        {
+                            viewError("Bestellung fehlgeschlagen.");
                             echo 'Update fehlgeschlagen: ' . $e->getMessage();
                         }
                     }
-                } else {
-                    echo '<div class="alert alert-danger">Bitte gib die gewünschte Menge an!</div>';
+                    else
+                    {
+                        $idI = $check[0]['itemId'];
+                        try 
+                        {
+                            $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
+                            $stmt = $GLOBALS['db']->prepare($sql);
+                            $stmt->execute();
+                        } 
+                        catch (\PDOException $e) {
+                            viewError("Bestellung fehlgeschlagen.");
+                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                        }
+                    }
+                } 
+                else 
+                {
+                    viewError("Bitte gib die gewünschte Menge an!");
                 }
-            } else {
-                // Nothing happens :P
-            }
-        } else {}
+            } 
+        } 
     }
 
     public function actionCart()
     {
         $do = isset($_GET['do']) ? $_GET['do'] : ''; 
-        if (isset($_SESSION['custId'])) {
-
-            switch ($do) {
+        if (isset($_SESSION['custId'])) 
+        {
+            switch ($do) 
+            {
                 case 'identify':
+
                     $this->removeFromCart();
-                    
+            
                     $id = $_SESSION['custId'];
                     
                     $cartList = OrderItems::find("custId = '$id' AND isSend = 'f'");
@@ -127,7 +141,8 @@ class ProductsController extends Controller
                     $priceList = array();
                     $ttPrice = 0;
         
-                    for ($idx = 0; $idx < count($cartList); $idx++) {
+                    for ($idx = 0; $idx < count($cartList); $idx++) 
+                    {
                         $id = $cartList[$idx]['prodId'];
                         $productInfo = Products::find("prodId = '$id'");
                         array_push($productList, $productInfo);
@@ -155,17 +170,20 @@ class ProductsController extends Controller
                     $idA = $custInfo[0]['addressId'];
                     
                     // Check if there is an adressId
-                    if (!empty($idA)) {
+                    if (!empty($idA)) 
+                    {
                         $addressInfo = Address::find("addressId = '$idA'");
                         $this->setParams('addressInfo', $addressInfo);
                     }
         
-                    if (isset($_POST['address'])) {
+                    if (isset($_POST['address'])) 
+                    {
                         // Check if the address is valid.
                         if (!empty($_POST['street'])
                          && !empty($_POST['number'])
                          && !empty($_POST['zip'])
-                         && !empty($_POST['city'])) {
+                         && !empty($_POST['city'])) 
+                         {
                              // Check if the address is already in the database and give back the id.
                              $street = $_POST['street'];
                              $number = $_POST['number'];
@@ -184,18 +202,20 @@ class ProductsController extends Controller
                                 }
                                 catch (\PDOException $e)
                                 {
-                                    echo '<div class="alert alert-danger">Eintrag fehlgeschlagen.</div>';
+                                    viewError("Eintrag fehlgeschlagen.");
                                     echo 'Update fehlgeschlagen: ' . $e->getMessage();
                                 }
+
                                 $address = Address::find("street = '$street' AND number = '$number' AND zip = '$zip' AND city = '$city'");
                             }
 
-                            var_dump($address);
                             $idA = $address[0]['addressId'];
                              // → If not create a new entry in the database and get the id.
                              // Ready to order!!
-                            try {
-                                for ($idx = 0; $idx < count($orderInfo); $idx++) {
+                            try 
+                            {
+                                for ($idx = 0; $idx < count($orderInfo); $idx++) 
+                                {
                                     $idI = $orderInfo[$idx]['itemId'];
                                     
                                     $sql1 = "INSERT INTO ". Orders::tableName() . " (itemId, addressId) VALUES ('$idI', '$idA');";
@@ -208,33 +228,33 @@ class ProductsController extends Controller
             
                                     header('Location: index.php?c=products&a=cart');
                                 }
-                            } catch (\PDOException $e) {
-                                echo '<div class="alert alert-danger">Bestellung fehlgeschlagen.</div>';
+                            } 
+                            catch (\PDOException $e) 
+                            {
+                                viewError("Bestellung fehlgeschlagen.");
                                 echo 'Update fehlgeschlagen: ' . $e->getMessage();
                             }
-                         } else {
-                            echo '<div class="alert alert-danger">Empfangsadresse unvollständig.</div>';
+                         } 
+                         else 
+                         {
+                            viewError("Empfangsadresse unvollständig.");
                          }
-                    } else {echo "Funktioniert nicht!";}
-
-                    break;
-                default:
-                    // does nothing
+                    } 
                     break;
             }
             
-
         }
          else 
         {
-            $error = "you should first register";
+            viewErrors("you should first register");
             redirectHome($error);
         }
     }
     
     protected function removeFromCart()
     {
-        if (isset($_POST['delete'])) {
+        if (isset($_POST['delete'])) 
+        {
             $id = $_POST['delete'];
 
             $sql = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
@@ -245,32 +265,39 @@ class ProductsController extends Controller
     
     protected function addToFavorites()
     {
-        if (!empty($_POST['fav'])) {
-            if (isset($_SESSION['custId'])) {
+        if (!empty($_POST['fav'])) 
+        {
+            if (isset($_SESSION['custId'])) 
+            {
                 $idP = $_POST['fav'];
                 $idC = $_SESSION['custId'];
 
                 $check = Favorits::find("prodId = '$idP' AND custID = '$idC'");
-                if (empty($check)) {
-                    try {
+                if (empty($check)) 
+                {
+                    try 
+                    {
                         $sql = "INSERT INTO " . Favorits::tableName() . "(prodId, custId) VALUES ('$idP', '$idC')";
                         $stmt = $GLOBALS['db']->prepare($sql);
                         $stmt->execute();
-                    } catch (\PDOException $e) {
-                        echo '<div class="alert alert-danger">Fehlgeschlag.</div>';
+                    } 
+                    catch (\PDOException $e) 
+                    {
+                        viewError("Fehlgeschlag.");
                         echo 'Update fehlgeschlagen: ' . $e->getMessage();
                     }
-                } else {
-                    echo '<div class="alert alert-danger">Dieses Produkt ist bereits in den Favoriten eingetragen.</div>';
+                } 
+                else 
+                {
+                    viewError("Dieses Produkt ist bereits in den Favoriten eingetragen.");
                 }
-
-
-            } else {
-                echo '<div class="alert alert-danger">Sie sind nicht angemeldet!</div>';
+            } 
+            else 
+            {
+                    viewError("Sie sind nicht angemeldet!");
             }
         }
     }
-
 }
 
 ?>

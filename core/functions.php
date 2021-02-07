@@ -146,6 +146,17 @@
         }
 
         /*
+        ========================================================================
+        == viewinfo the function properly displays an info message on the page
+        ========================================================================
+        */
+
+        function viewInfo($infoMessage)
+        {
+            echo "<div class='alert alert-info'>$infoMessage</div>"; 
+        }
+
+        /*
         ===================================================================================================
         == validateInput this function checks whether the string does not contain 
         == any special characters [',','<','>','=','*','/','$','%','§','!','(',')','?','&','|','@','€','~']
