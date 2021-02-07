@@ -68,21 +68,28 @@
                 <h3>Favoritlist (<?echo Favorits::ItemsFavorits();?>)</h3>
                 <table class="table-favorit">
                 <tr>
+                        <th></th>
                         <th>produkt</th>
                         <th>prise</th>
                 </tr>
+                <?
+                for ($idx = 0; $idx < count($prodInfo); $idx++) 
+                {
+                ?>
                 <tr>
-                        <?/*
-                        foreach ($result as $key => $value) 
-                        {
-                        */?>
-                        <td><? //echo ucfirst($prodInfo[$idx][0]['descrip']) ?>Apfel</td>
-                        <td><? //echo $price[$idx]." €"; ?>10€</td>
-                        <td><form method = "post"><button name="delete" type="submit" value="<?//=$cart[$idx]['itemId']?>">X</button></form></td>
-                        <?/*              
-                        }
-                        */?>
+                        <td><form method = "post"><button name="delete" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">X</button></form></td>
+                        <td><?=ucfirst($prodInfo[$idx][0]['descrip'])?></td>
+                        <td><? echo $prodInfo[$idx][0]['stdPrice']." €"; ?></td>
+                        <td>
+                        <form method = "post">
+                        <input  class="qty" id="qty" name="qty" type="number" min="1">
+                        <button name="submit" type="submit" value="<?=$prodInfo[$idx][0]['descrip']?>">Senden</button>
+                        </form>
+                        </td>
                 </tr>
+                <?              
+                }
+                ?>
                 </table>
         </div>
 </div>

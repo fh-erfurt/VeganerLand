@@ -7,7 +7,9 @@
 
 <div class="block-container">
     <?
-    if (!empty($cart) && !$itemSend) { ?>
+    $do = isset($_GET['do']) ? $_GET['do'] : '';
+    if ($do === 'identify') 
+    { ?>
         <table class="table-cart">
             <tr>
                 <th>Produkt</th>
@@ -32,8 +34,8 @@
                 <td style="text-align: center;"><? echo $ttprice." €" ?></td>
             </tr>
         </table>
-        <form method = "post"><button class="send" name="send" type="submit">Versenden</button></form>
-    <? } else if (!empty($cart) && $itemSend) { ?>
+        <form  action = "?c=products&a=cart&do=others" method = "post"><button class="send" name="send" type="submit">Versenden</button></form>
+    <? } else if ($do === 'others') { ?>
 
         <form name="DeliveryAddress" method="post">
             <header class="head-form">
@@ -64,7 +66,7 @@
                 </div>
             </div>
         
-            <button class="send" id="send" type="submit" name="address"> Senden </button> 
+            <button class="send" id="address" type="submit" name="address"> Senden </button> 
         </form>
     <? } else { echo "Warenkorb ist leer."; } ?>
 </div>

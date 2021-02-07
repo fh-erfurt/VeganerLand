@@ -30,8 +30,8 @@
                         { ?>
                         <form class="card-footer" method="post">
                             <button class="btn btn--block card__btn" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
-                            <button class="btn btn--block card__btn" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['descrip']?>">In den Warenkorb</button>
-                            <label  class="qty" for="qty">Menge Eingebn!</label>
+                            <button class="btn btn--block card__btn" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
+                            <label  class="qty" for="qty">Menge Eingeben!</label>
                             <input  class="qty" id="qty" name="qty" type="number" min="1">
                         </form>
                         <? } ?>

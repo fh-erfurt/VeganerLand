@@ -308,26 +308,30 @@ class PagesController extends Controller
             $id = $_SESSION['custId'];
         
             $favoritsList = Favorits::find("custId = '$id'");
-            var_dump($favoritsList);
 
             $productList = array();
 
             for ($idx = 0; $idx < count($favoritsList); $idx++) 
             {
                 $id = $favoritsList[$idx]['prodId'];
-                $productInfo = Products::find("prodId = '$id'");
+                $productInfo = Products::findOne("prodId, descrip, stdPrice", "prodId = '$id'");
                 array_push($productList, $productInfo);
-
-                $price =  $productList[$idx][0]['stdPrice'];
-                //array_push($priceList, $price);
             }
         
-            $this->setParams('cart', $favoritsList);
             $this->setParams('prodInfo', $productList);
-            $this->setParams('price', $priceList);
+            $this->removeFromfavorits();
 
-        
+    }
 
+    public function removeFromfavorits()
+    {
+        if (isset($_POST['delete'])) {
+            $id = $_POST['delete'];
+
+            $sql = "DELETE FROM " . Favorits::tableName() . " WHERE prodId = $id";
+            $stmt = $GLOBALS['db']->prepare($sql);
+            $stmt->execute();
+        }
     }
 }
 ?>
