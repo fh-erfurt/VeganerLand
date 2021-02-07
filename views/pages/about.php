@@ -76,8 +76,8 @@
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#support" accesskey="5">
-                    Unterstützung
+                <a class = "list-group" href="#Widerrufsrecht" accesskey="5">
+                Widerrufsrecht
                 </a>
             </li>
             <li>
@@ -323,14 +323,64 @@
             <p>&nbsp;</p>
         </p>
     </article>
-    <article id="support">
-        <h2>Unterstützung</h2>
-        <p>
-            Donec dapibus sapien quis erat pretium sodales. Donec tincidunt justo arcu, nec mollis nunc venenatis ut. Aenean gravida tempus elit non hendrerit. Sed at ultricies dolor. Donec sed mauris urna. Mauris lectus lorem, pulvinar at lacinia eget, vestibulum
-            quis turpis. Quisque commodo, mi sit amet ultricies sagittis, diam est eleifend neque, eget aliquam lacus sem vitae dolor. Cras sit amet fermentum odio. Aliquam scelerisque enim odio, non gravida massa scelerisque quis
-        </p>
+    <article id="Widerrufsrecht">
+        <h2>Widerrufsrecht</h2>
+            <em>- Beginn der Belehrung -</em>
+            <h2>Widerrufsbelehrung</h2>
+            <h3>Widerrufsrecht</h3>
+            <p>Sie haben das Recht, innen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat. Um Ihr Widerrufsrecht auszuüben, müssen Sie uns Firma</p>
+            <p>
+                Veganer Land
+                <br>
+                Anger 7
+                <br>
+                99084 Erfurt
+                <br>
+                Fax: +49 (0) 3 41 / 555 06 31 
+                <br>
+                Tel.: +49 (0) 3 41/ 555 06 32
+                <br>
+                E-Mail: service@veganerland.de
+            </p>
+            <p>mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+            <h3>Folgen des Widerrufs</h3>
+            <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+            <p>Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden. Sie tragen die unmittelbaren Kosten der Rücksendung der Waren. Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.</p>
+            <h3>Das Widerrufsrecht besteht nicht bei</h3>
+            <p>- Verträgen zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind,</p>
+            <p>- Verträgen zur Lieferung von Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde,</p>
+            <p>- Verträgen zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde.</p>
+            <p>
+                <em>- ENDE der Widerrufsbelehrung –</em>
+            </p>
+            <h3>Muster-Widerrufsformular</h3>
+            <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+            <p>
+                An: 
+                <br>
+                Firma Veganer Land
+                <br>
+                Anger 7
+                <br>
+                99084 Erfurt
+                <br>
+                Fax: +49 (0) 3 41 / 555 06 31
+                <br>
+                E-Mail: service@veganerland.de
+            </p>
+            <p>Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*):</p>
+            <p>&nbsp;</p>
+            <p>Bestellt am (*)/erhalten am (*)</p>
+            <p>&nbsp;</p>
+            <p>Name des/der Verbraucher(s)</p>
+            <p>&nbsp;</p>
+            <p>Anschrift des/der Verbraucher(s)</p>
+            <p>&nbsp;</p>
+            <p>Unterschrift des/der Verbraucher(s)</p>
+            <p>&nbsp;</p>
+            <p>Datum</p>
+            <p class="source">(*) Unzutreffendes streichen.</p>
     </article>
-
     <article id="impressum">
         <h2>Impressum</h2>
         <p>
