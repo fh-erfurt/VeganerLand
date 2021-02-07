@@ -94,42 +94,21 @@
 
     <article id="dashboard">
         <h2>Dashboard</h2>
-        <p>
-        <div class="container--small cs-add-margin-top ">
-                                <h1 class="sub-headline">Qualität seit über 10 Jahren</h1>
-                                <hr class="saw-tooth-line"/>
-                                <div style="text-align:center">
-                                    <h2>
-                                        <strong>Tradition mit unserem Online-Shop</strong>
-                                    </h2>
-                                    <p>
-                                        Unser unternehmen wurde im Jahr 2011 gegründet. Wir Betreiben seitdem für unsere Kunden Online-Shop mit einem großen Sortiment an frischem Obst und Gemüse.
-                                    </p>
-                                    <>
-                                        Unser zentraler Firmensitz befindet sich im Erfurt , Jede Nacht ab 2 Uhr sind unsere Lieferranten für unsere Kunden unterwegs, um Waren in bester Qualität zu liefern, Natürlich jeden Tag frisch.
-                                        <br>
-                                        <br>
-                                        Seit nunmehr 
-                                        <strong>über 10 Jahren</strong>
-                                         konzentrieren wir uns auf ein qualitätsbewusstes, umfassendes und einfallsreiches Angebot und engagierten Kundenservice.</div>
-                                <hr class="saw-tooth-line"/>
-                                <div style="text-align:center">
-                                    <h2>
-                                        <strong>Innovation mit unserem modernen Online-Shop</strong>
-                                    </h2>
-                                    <p>
-                                        Mit der Idee, Kunden deutschlandweit beliefern zu können, wurde 2011 der Online-Shop veganerland.de geboren. Kunden können seitdem Obst & Gemüse an eine Wunschlieferadresse liefern lassen. Die Obst & Gemüse werden per Post verschickt und erreichen ihre Empfänger frisch am nächsten Tag oder zum ausgewählten Wunschtermin. Das positive Feedback zeigt uns, dass unsere frische Versandidee immer wieder gut ankommt.
-                                        <br>
-                                        <br>
-                                        Unsere Obst & Gemüse werden von unseren Versandmitarbeiterinnen in der Firmenzentrale frisch und mit viel Liebe gepackt. Danach gelangen sie direkt und ohne Zwischenlagerung in den Versand zu DHL. So können wir Bestellungen, die bis 14 Uhr eingehen, noch am gleichen Tag bearbeiten bereits am Folgetag werden sie beim Empfänger zugestellt. Ein Service, der unsere Kunden immer wieder positiv überrascht.
-                                        <br>
-                                        <br>
-                                        Inzwischen versenden wir über 100.000 Kilo jährlich. Die Nähe zum DHL macht es uns möglich, den Obstversand innerhalb 24 Stunden ohne Expresszuschlag anzubieten.
-                                        <br>
-                                        <br>
-                                        Im Februar 2021 startete unser Relaunch und veganerland.de präsentiert sich seitdem mit einem neuen Online-Auftritt. Unser Online-Shop ist moderner, serviceorientierter und komfortabler geworden. Nun ist es für unsere Kunden noch einfacher, unsere Obst & Gemüse online zu bestellen. Neu durchdachte und bequemere Bestellabläufe garantieren eine schnellere Auftragsabwicklung und einen besseren Kundenservice.</p>
-                                </div>
-                                <strong>Veganer Land steht für höchste Qualitätsansprüche, besten Service und Kundenfreundlichkeit. Wir sind bestrebt uns ständig weiterzuentwickeln und zu verbessern.</strong>
+            <h3>
+                <strong>Tradition</strong>
+            </h3>
+                Unser Unternehmen wurde im Jahr 2011 gegründet. Wir Betreiben seitdem für unsere Kunden Online-Shop mit einem großen Sortiment an frischem Obst und Gemüse.
+                Unser zentraler Firmensitz befindet sich im Erfurt, Jede Nacht ab 2 Uhr sind unsere Lieferranten für unsere Kunden unterwegs, um Waren in bester Qualität zu liefern, Natürlich jeden Tag frisch. Seit nunmehr 
+                 <strong>über 10 Jahren</strong> konzentrieren wir uns auf ein qualitätsbewusstes, umfassendes und einfallsreiches Angebot und engagierten Kundenservice.
+                </div>
+            <h3>
+                <strong>Innovation</strong>
+            </h3>
+                Mit der Idee, Kunden deutschlandweit beliefern zu können, wurde 2011 der Online-Shop veganerland.de geboren. Kunden können seitdem Obst & Gemüse an eine Wunschlieferadresse liefern lassen. Die Obst & Gemüse werden per Post verschickt und erreichen ihre Empfänger frisch am nächsten Tag oder zum ausgewählten Wunschtermin. Das positive Feedback zeigt uns, dass unsere frische Versandidee immer wieder gut ankommt.
+                Unsere Obst & Gemüse werden von unseren Versandmitarbeiterinnen in der Firmenzentrale frisch und mit viel Liebe gepackt. Danach gelangen sie direkt und ohne Zwischenlagerung in den Versand zu DHL. So können wir Bestellungen, die bis 14 Uhr eingehen, noch am gleichen Tag bearbeiten bereits am Folgetag werden sie beim Empfänger zugestellt. Ein Service, der unsere Kunden immer wieder positiv überrascht.
+                Inzwischen versenden wir über 100.000 Kilo jährlich. Die Nähe zum DHL macht es uns möglich, den Obstversand innerhalb 24 Stunden ohne Expresszuschlag anzubieten.
+                Im Februar 2021 startete unser Relaunch und veganerland.de präsentiert sich seitdem mit einem neuen Online-Auftritt. Unser Online-Shop ist moderner, serviceorientierter und komfortabler geworden. Nun ist es für unsere Kunden noch einfacher, unsere Obst & Gemüse online zu bestellen. Neu durchdachte und bequemere Bestellabläufe garantieren eine schnellere Auftragsabwicklung und einen besseren Kundenservice.
+                <strong>Veganer Land steht für höchste Qualitätsansprüche, besten Service und Kundenfreundlichkeit. Wir sind bestrebt uns ständig weiterzuentwickeln und zu verbessern.</strong>
     </article>
 
     <article id="content">
