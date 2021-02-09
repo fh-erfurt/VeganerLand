@@ -147,8 +147,7 @@ class PagesController extends Controller
         }
     }
     
-    public function actionAbout()
-    {
+    
         public function actionAbout()
     {
         if (isset($_POST['send']))
