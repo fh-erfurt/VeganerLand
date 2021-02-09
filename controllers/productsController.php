@@ -252,12 +252,10 @@ class ProductsController extends Controller
                     } 
                     break;
             }
-            
         }
-         else 
+        else 
         {
-            viewErrors("you should first register");
-            redirectHome($error);
+            redirectHome(viewError("you should first register"));
         }
     }
     
