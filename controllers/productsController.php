@@ -137,6 +137,16 @@ class ProductsController extends Controller
                     $id = $_SESSION['custId'];
                     
                     $cartList = OrderItems::find("custId = '$id' AND isSend = 'f'");
+                    if (empty($cartList))
+                    {
+                        $this->setParams('emptyList', true);
+                        break;
+                    }
+                    else
+                    {
+                        $this->setParams('emptyList', false);
+                    }
+                    
                     $productList = array();
                     $priceList = array();
                     $ttPrice = 0;
