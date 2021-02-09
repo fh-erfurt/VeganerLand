@@ -149,7 +149,29 @@ class PagesController extends Controller
     
     public function actionAbout()
     {
-        // This is a static site. So nothing is to do, but we kind off need the method.
+        public function actionAbout()
+    {
+        if (isset($_POST['send']))
+        {
+            $name = $_POST['userName'];
+            $email = $_POST['userEmail'];
+            $subject = $_POST['subject'];
+            $content = $_POST['content'];
+
+            $txt = "Name: ".$name. "<br>";
+            $txt .= "Email: " .$email. "<br>";
+            $txt .= "Subject: " .$subject. "<br>";
+            $txt .= "Content: " .$content. "<br>";
+
+
+            $file = fopen('data/contact.txt', 'a+');
+                    fwrite($file, $txt.PHP_EOL);
+                    fclose($file);
+        }
+        else
+        {
+           
+        }
     }
 
     public function actionSetting()
