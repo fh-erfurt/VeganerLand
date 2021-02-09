@@ -1,16 +1,12 @@
+/*
+======================
+== Molham Al-khodari
+======================
+*/
+
 html,
 body {
     background-color: #070617;
-}
-
-.page-footer,
-.page-footer h1 {
-    background-color: white;
-    color: black;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .footer {
@@ -36,7 +32,7 @@ body {
     font-size: 12px;
     line-height: 17px;
     padding: 20px 0px 5px 0px;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 0.250em;
@@ -50,7 +46,7 @@ body {
 
 .footer .col ul li,
 .footer .col ul li a {
-    color: #999999;
+    color: #999999c5;
     font-size: 14px;
     font-weight: bold;
     padding: 5px 0px 5px 0px;

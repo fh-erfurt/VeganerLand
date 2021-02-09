@@ -1,43 +1,42 @@
 /*
-===================================
-== Molham Al-khodari    29.12.2020
-===================================
+=====================
+== Molham Al-khodari 
+=====================
 */
-
-
-/* wir müssen hier body überschreiben wegen navbar fixed */
 
 body {
     margin-top: 0px;
 }
 
 
-/*
-=================
- == Veganer land 
-=================
-*/
+/* Veganer land logo */
 
 .page-header,
 .page-header h1 {
-    background-color: white;
-    color: black;
     width: 100%;
+    color: black;
+    background-color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 
-/*
-=========
- == Team
-=========
-*/
+/* page */
+
+article,
+.page-title {
+    margin: 2em 10%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* Team */
 
 .column {
-    float: left;
     width: 33.3%;
+    float: left;
     margin-bottom: 16px;
     padding: 0 8px;
     background-color: #fcfbe377;
@@ -77,20 +76,6 @@ body {
 
 
 /*
-=========
- == page
-=========
-*/
-
-article,
-.page-title {
-    margin: 2em 10%;
-    line-height: 1.5em;
-    border-bottom: 1px solid #ccc;
-}
-
-
-/*
 ===========
  == navbar 
 ===========
@@ -119,7 +104,6 @@ article,
 
 .menu-bottom li {
     flex: 1;
-    /* for IE */
     float: left;
     width: auto;
 }
@@ -148,11 +132,7 @@ article,
 }
 
 
-/*
-===========
- == documentation 
-===========
-*/
+/* documentation */
 
 .documentation a {
     color: black;
@@ -168,3 +148,49 @@ article,
 .documentation a:hover {
     background-color: pink;
 }
+
+
+/* @media only screen and (min-width: 1280px) {
+    .nav-container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+} */
+
+
+/* @media only screen and (max-width: 1139px) {
+    .nav-container {
+        width: 1000px;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .menu-bottom .col {
+        width: 33%;
+    }
+    .menu-bottom .col h1 {
+        font-size: 14px;
+    }
+    .menu-bottom .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menu-bottom .col {
+        width: 50%;
+    }
+    .menu-bottom .col h1 {
+        font-size: 14px;
+    }
+    .menu-bottom .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .menu-bottom .col {
+        width: 100%;
+    }
+} */
