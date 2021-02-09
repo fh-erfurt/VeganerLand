@@ -16,7 +16,7 @@ class OrderItems extends BaseModel
         if(isset($_SESSION['custId']))
         {
             $custId = $_SESSION['custId'];
-            $sql = "SELECT COUNT(prodId) FROM orderitems WHERE custId =".$custId;
+            $sql = "SELECT COUNT(prodId) FROM orderitems WHERE custId =".$custId." AND isSend = 'f'";
             $cartResult = $GLOBALS['db']->query($sql);
             $cartItems = $cartResult->fetchColumn();
             
