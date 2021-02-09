@@ -147,29 +147,6 @@ class PagesController extends Controller
         }
     }
     
-    public function actionSearch()
-    {
-        // Input whta to search in field (Name of fruit of veggie)
-        if (isset($_POST['submit'])) 
-        {
-            $search = $_POST['search'];
-            $result = array();
-
-            $info = Products::find("descrip LIKE '%$search%'");
-            if (!empty($info)) 
-            {
-                array_push($result, $info);
-
-                $this->setParams('products', $result);
-            } 
-            else 
-            {
-                $this->setParams('products', array());
-                echo "<div class='alert alert-danger'>Es konnte nichts gefunden werden.</div>";
-            }
-        }
-    }
-
     public function actionAbout()
     {
         // This is a static site. So nothing is to do, but we kind off need the method.
