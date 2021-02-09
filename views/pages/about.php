@@ -2,7 +2,7 @@
     <h1>Veganer Land</h1>
     </header>
 
-    <article>
+  <  <article>
     <h2 id="team">Team</h2>
     <div class="row">
         <div class="column">
@@ -120,12 +120,75 @@
     </article>
 
     <article id="email">
+    
         <h2>E-Mail</h2>
-        <p>
-            Praesent non lectus sit amet justo vestibulum eleifend. Suspendisse potenti. Ut pulvinar feugiat odio congue pharetra. Curabitur varius bibendum quam sit amet mattis. Duis cursus euismod neque in facilisis. Ut ut adipiscing nulla. Proin varius, tellus
-            sit amet ornare convallis, leo magna rhoncus magna, vel dignissim nulla purus id dolor. Donec consequat consequat tellus, sed faucibus odio imperdiet in. Aenean sagittis lacinia sapien, id fringilla arcu dignissim ut. Vestibulum elementum
-            lorem in erat facilisis, vitae luctus tellus fringilla. Quisque non diam in ipsum convallis viverra at quis dui. Sed nisl tellus, bibendum vitae commodo vel, tristique vel velit. Integer a nunc in quam pulvinar euismod.
-        </p>
+        <p><div class="form-container">
+        <form method="post">
+            <div class="input-row">
+                <label style="padding-top: 20px;">Name</label>
+                <input type="text"  name="userName">
+            </div>
+            <div class="input-row">
+                <label>Email</label>
+                <input type="text" name="userEmail" />
+            </div>
+            <div class="input-row">
+                <label>Subject</label>
+                <input type="text" name="subject">
+            </div>
+            <div class="input-row">
+                <label>Message</label>
+                <input type="text" name="content" cols="60" rows="6">
+            </div>
+            <div>
+                <input type="submit" name="send" value="Send" />
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        function validateContactForm() {
+            var valid = true;
+
+            $(".info").html("");
+            $(".input-field").css('border', '#e0dfdf 1px solid');
+            var userName = $("#userName").val();
+            var userEmail = $("#userEmail").val();
+            var subject = $("#subject").val();
+            var content = $("#content").val();
+            
+            if (userName == "") {
+                $("#userName-info").html("Required.");
+                $("#userName").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (userEmail == "") {
+                $("#userEmail-info").html("Required.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+            {
+                $("#userEmail-info").html("Invalid Email Address.");
+                $("#userEmail").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (subject == "") {
+                $("#subject-info").html("Required.");
+                $("#subject").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            if (content == "") {
+                $("#userMessage-info").html("Required.");
+                $("#content").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+            return valid;
+        }
+</script></p>
     </article>
 
     <article id="analytics">
