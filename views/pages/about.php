@@ -2,7 +2,7 @@
     <h1>Veganer Land</h1>
     </header>
 
-  <  <article>
+    <article>
     <h2 id="team">Team</h2>
     <div class="row">
         <div class="column">
@@ -17,7 +17,6 @@
                 </div>
             </div>
         </div>
-
         <div class="column">
             <div class="card">
                 <img src="#" alt="jesse" style="width:100%">
@@ -30,7 +29,6 @@
                 </div>
             </div>
         </div>
-
         <div class="column">
             <div class="card">
                 <img src="#" alt="Mo" style="width:100%">
@@ -45,9 +43,7 @@
         </div>
     </div>
     </article>
-
     <!-- code for the menu -->
-
     <nav class="menu-bottom">
         <ul>
             <li>
@@ -87,11 +83,8 @@
             </li>
         </ul>
     </nav>
-
     <!-- information about the company and products for customers. -->
-
     <h1 class="page-title">Sticky Responsive Bottom Menu</h1>
-
     <article id="dashboard">
         <h2>Dashboard</h2>
             <h3>
@@ -110,7 +103,6 @@
                 Im Februar 2021 startete unser Relaunch und veganerland.de präsentiert sich seitdem mit einem neuen Online-Auftritt. Unser Online-Shop ist moderner, serviceorientierter und komfortabler geworden. Nun ist es für unsere Kunden noch einfacher, unsere Obst & Gemüse online zu bestellen. Neu durchdachte und bequemere Bestellabläufe garantieren eine schnellere Auftragsabwicklung und einen besseren Kundenservice.
                 <strong>Veganer Land steht für höchste Qualitätsansprüche, besten Service und Kundenfreundlichkeit. Wir sind bestrebt uns ständig weiterzuentwickeln und zu verbessern.</strong>
     </article>
-
     <article id="content">
         <h2>Inhalt</h2>
         <p>
@@ -120,75 +112,30 @@
     </article>
 
     <article id="email">
-    
         <h2>E-Mail</h2>
-        <p><div class="form-container">
-        <form method="post">
-            <div class="input-row">
-                <label style="padding-top: 20px;">Name</label>
-                <input type="text"  name="userName">
-            </div>
-            <div class="input-row">
-                <label>Email</label>
-                <input type="text" name="userEmail" />
-            </div>
-            <div class="input-row">
-                <label>Subject</label>
-                <input type="text" name="subject">
-            </div>
-            <div class="input-row">
-                <label>Message</label>
-                <input type="text" name="content" cols="60" rows="6">
-            </div>
-            <div>
-                <input type="submit" name="send" value="Send" />
-            </div>
-        </form>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
-        type="text/javascript"></script>
-    <script type="text/javascript">
-        function validateContactForm() {
-            var valid = true;
-
-            $(".info").html("");
-            $(".input-field").css('border', '#e0dfdf 1px solid');
-            var userName = $("#userName").val();
-            var userEmail = $("#userEmail").val();
-            var subject = $("#subject").val();
-            var content = $("#content").val();
-            
-            if (userName == "") {
-                $("#userName-info").html("Required.");
-                $("#userName").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (userEmail == "") {
-                $("#userEmail-info").html("Required.");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
-            {
-                $("#userEmail-info").html("Invalid Email Address.");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-
-            if (subject == "") {
-                $("#subject-info").html("Required.");
-                $("#subject").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (content == "") {
-                $("#userMessage-info").html("Required.");
-                $("#content").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            return valid;
-        }
-</script></p>
+        <div class="form-container">
+            <form method="post">
+                <div class="input-row">
+                    <label style="padding-top: 20px;">Name</label>
+                    <input type="text"  name="userName">
+                </div>
+                <div class="input-row">
+                    <label>Email</label>
+                    <input type="text" name="userEmail">
+                </div>
+                <div class="input-row">
+                    <label>Subject</label>
+                    <input type="text" name="subject">
+                </div>
+                <div class="input-row">
+                    <label>Message</label> <br>
+                    <textarea type="text" name="content" cols="60" rows="6"> </textarea>
+                </div>
+                <div>
+                    <input type="submit" name="send" value="Send">
+                </div>
+            </form>
+        </div>
     </article>
 
     <article id="analytics">
@@ -205,9 +152,7 @@
             <p>
                 <strong>Allgemeine Geschäftsbedingungen der Firma Veganer Land Obst für Bestellungen über die Internetpräsenz www.veganerland.de</strong>
             </p>
-
             <h2>1. Allgemeines, Kundenkreis, Sprache</h2>
-
             <ol>
                 <li>
                     Alle Angebote, Kaufverträge, Lieferungen und Dienstleistungen aufgrund von Bestellungen unserer Kunden über unseren Online-Shop www.veganerland.
@@ -223,9 +168,7 @@
                 <li>Geschäftsbedingungen des Kunden finden keine Anwendung, auch wenn wir ihrer Geltung im Einzelfall nicht gesondert widersprechen.</li>
                 <li>Die Verträge mit dem Kunden werden ausschließlich in deutscher Sprache geschlossen.</li>
             </ol>
-
             <h2>2. Urheberrechte/ Rechte Dritter</h2>
-
             <ol>
                 <li>
                     Der Kunde ist für die inhaltliche Richtigkeit der übermittelten Daten verantwortlich. 
@@ -241,9 +184,7 @@
                     zuständigen Strafverfolgungsbehörden, sobald der Kunde gegen diese Zusicherung verstößt.
                 </li>
             </ol>
-
             <h2>3. Vertragsschluss</h2>
-
             <ol>
                 <li> Unsere Angebote im Online-Shop sind unverbindlich.</li>
                 <li> 
@@ -266,9 +207,7 @@
                     nur nach besonderer Maßgabe der Ziffer 9 dieser Allgemeinen Geschäftsbedingungen verlangen kann.
                 </li>
             </ol>
-
             <h2>4. Preise und Zahlung</h2>
-
             <ol>
                 <li>Unsere Preise schließen die gesetzliche Umsatzsteuer ein, nicht jedoch Versandkosten. Zölle und ähnliche Abgaben hat der Kunde zu tragen.</li>
                 <li>
@@ -281,9 +220,7 @@
                 </li>
                 <li>Dem Kunden steht kein Aufrechnungs- oder Zurückbehaltungsrecht zu, soweit nicht die Gegenforderung unbestritten oder rechtskräftig festgestellt ist.</li>
             </ol>
-
             <h2>5. Versendung der Ware</h2>
-
             <ol>
                 <li>
                     Soweit in der Artikelbeschreibung keine Lieferzeiten angegeben sind und solange der Kunde kein Wunschlieferdatum angegeben hat, erfolgt die Lieferung bei
@@ -308,7 +245,6 @@
                     Versandkosten tragen.
                 </li>
             </ol>
-
             <h2>6. Versand, Versicherung und Gefahrübergang</h2>
             
             <ol>
@@ -320,9 +256,7 @@
                 </li>
                 <li>Wir werden die Ware gegen die üblichen Transportrisiken auf unsere Kosten versichern.</li>
             </ol>
-
             <h2>7. Gewährleistung</h2>
-
             <ol>
                 <li>Für Gewährleistungsansprüche gelten die gesetzlichen Regelungen.</li>
                 <li>
@@ -331,9 +265,7 @@
                     sonst (ii) innerhalb von fünf Werktagen nach Entdeckung des Mangels angezeigt wird.
                 </li>
             </ol>
-
             <h2>8. Haftung</h2>
-
             <ol>
                 <li>
                     Unsere Haftung für Fahrlässigkeit (ausgenommen grobe Fahrlässigkeit) ist im Fall des Lieferverzugs auf einen Betrag von (10)% des jeweiligen 
@@ -346,9 +278,7 @@
                     Lebens, des Körpers oder der Gesundheit oder nach dem Produkthaftungsgesetz.
                 </li>
             </ol>
-
             <h2>9. Datenschutz</h2>
-
             <ol>
                 <li>
                     Wir dürfen die die jeweiligen Kaufverträge betreffenden Daten verarbeiten und speichern, soweit dies für die Ausführung und Abwicklung des Kaufvertrages 
@@ -363,9 +293,7 @@
                     gestattet.
                 </li>
             </ol>
-
             <h2>10. Anwendbares Recht und Gerichtsstand</h2>
-
             <ol>
                 <li>
                     Der zwischen uns und dem Kunden bestehende Vertrag unterliegt vorbehaltlich zwingender internationalprivatrechtlicher Vorschriften dem Recht der 
@@ -377,9 +305,7 @@
                     zuständig. In allen anderen Fällen können wir oder der Kunde Klage vor jedem aufgrund gesetzlicher Vorschriften zuständigen Gericht erheben.
                 </li>
             </ol>
-
             <h2>11. Widerruf, Rücksendekosten bei Widerruf</h2>
-
             <p>Verbraucher haben das Recht, den Vertrag nach Maßgabe der Widerrufsbelehrung zu widerrufen. Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft 
             zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden kann. Im Falle des 
             Widerrufs trägt der Kunde die Kosten der Rücksendung.</p>
@@ -447,12 +373,11 @@
     <article id="impressum">
         <h2>Impressum</h2>
         <p>
-        <strong>Seitenbetreiber der Webseite </strong>
+        <strong>Seitenbetreiber der Webseite </strong>
         <a href="Localhost/VeganerLand-main/index.php">
         <strong>www.vaganerland.de</strong>
         </a>
         </p>
-
         <p>
         <strong>Vaganer Land GmbH</strong>
         <br/>
@@ -467,7 +392,6 @@
         <br/>
         </p>
     </article>
-
     <!--da muss man der richtige pfart dazu noch machen, beiu mir geht bei euch bestimmt nicht ... <a href = ...... -->
     <article class="documentation">
          <a href="../VeganerLand-main/documentation/documentation.html" target="_blank" title=" Go to Documentation">Documentation</a> 

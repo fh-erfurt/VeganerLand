@@ -146,9 +146,8 @@ class PagesController extends Controller
             }
         }
     }
-    
-    
-        public function actionAbout()
+
+    public function actionAbout()
     {
         if (isset($_POST['send']))
         {
@@ -157,10 +156,10 @@ class PagesController extends Controller
             $subject = $_POST['subject'];
             $content = $_POST['content'];
 
-            $txt = "Name: ".$name. "<br>";
-            $txt .= "Email: " .$email. "<br>";
-            $txt .= "Subject: " .$subject. "<br>";
-            $txt .= "Content: " .$content. "<br>";
+            $txt = "Name: ".$name.PHP_EOL;
+            $txt .= "Email: " .$email.PHP_EOL;
+            $txt .= "Subject: " .$subject.PHP_EOL;
+            $txt .= "Content: " .$content.PHP_EOL;
 
 
             $file = fopen('data/contact.txt', 'a+');
