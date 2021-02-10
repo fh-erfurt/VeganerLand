@@ -7,36 +7,33 @@
     <div class="row">
         <div class="column">
             <div class="card">
-                <img src="#" alt="Molham" style="width:100%">
                 <div class="container">
                     <h2>Molham Al-khodari</h2>
-                    <p class="title">Geschäftsführer und Gründer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>molhamalkhodari@gmail.com</p>
+                    <p class="title">Medieninformatiker</p>
+                    <p>Computerspiele und Gitarre</p>
+                    <p><a href="mailto:molham.al.khodari@fh-erfurt.de">alkhodari@veganerland.de</a></p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="card">
-                <img src="#" alt="jesse" style="width:100%">
                 <div class="container">
-                    <h2>jesse Müller</h2>
-                    <p class="title">Künstlerischer Leiter</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>jesse@hotmail.com</p>
+                    <h2>Jesse Müller</h2>
+                    <p class="title">Ingenieurinformatikerin</p>
+                    <p>Copmuterspiele, Lesen und Musik</p>
+                    <p><a href="mailto:fake@gmail.com">müller@veganerland.de</a></p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="card">
-                <img src="#" alt="Mo" style="width:100%">
                 <div class="container">
                     <h2>Mahmoud Matar</h2>
-                    <p class="title">Designer</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>salah@gmail.com</p>
+                    <p class="title">Wirtschaftsinformatiker</p>
+                    <p>Schach und Filme</p>
+                    <p><a href="mailto:mahmoud.matar@fh-erfurt.de">matar@veganerland.de</a></p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>
@@ -84,7 +81,7 @@
         </ul>
     </nav>
     <!-- information about the company and products for customers. -->
-    <h1 class="page-title">Sticky Responsive Bottom Menu</h1>
+    <!-- <h1 class="page-title">Sticky Responsive Bottom Menu</h1> -->
     <article id="dashboard">
         <h2>Dashboard</h2>
             <h3>
