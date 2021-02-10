@@ -1,3 +1,9 @@
+<!--
+=====================
+== Molham Al-khodari
+=====================
+-->
+
 <div class="con">
    <form name="registration" action="" method="post">
       <header class="head-form">
@@ -8,7 +14,7 @@
          <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Vorname" value="<?=htmlspecialchars($_POST['firstname'] ?? '')?>" required>
          <input class="form-input" id="lastname"  type="text" name="lastname" placeholder="Nachname" value="<?=htmlspecialchars($_POST['lastname'] ?? '')?>" required> <br>
 
-         <input class="form-input" id="email" type="text" name="email" placeholder="Email" value="<?=htmlspecialchars($_POST['email'] ?? '')?>" required> <br>
+         <input class="form-input" id="email" type="email" name="email" placeholder="Email" value="<?=htmlspecialchars($_POST['email'] ?? '')?>" required> <br>
 
          <input class="form-input" id="password"         type="password" name="password" placeholder="Passwort" required>
          <input class="form-input" id="passwordagain"  type="password" name="passwordagain" placeholder="Passwort widerholen" required> <br>
