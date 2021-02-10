@@ -97,6 +97,11 @@
             require_once TEMPLATESPATH.'header.php';
             include TEMPLATESPATH.'navbar.php';
             break;
+        case 'filter':
+            $pageTitle = 'Suchergebnisse';
+            require_once TEMPLATESPATH.'header.php';
+            include TEMPLATESPATH.'navbar.php';
+            break;
         case 'cart':
             $pageTitle = 'Warenkorb';
             require_once TEMPLATESPATH.'header.php';

@@ -26,7 +26,6 @@
         position: fixed;
         top: 0;
         left: 0;
-        /* background-image: linear-gradient(to top, #90e275 0%, #4f976b 100%); */
         background-image: linear-gradient(-225deg, #d1d8e0 50%, #90e275 50%);
         padding-top: 20px;
     }
