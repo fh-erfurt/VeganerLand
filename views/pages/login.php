@@ -1,4 +1,8 @@
-<!-- @author Molham Al-khodari-->
+<!--
+=====================
+== Molham Al-khodari
+=====================
+-->
 
 <form action="" method="post">
     <div class="con">
@@ -9,7 +13,7 @@
             <br>
         <!--inputs-->
         <div class="field-set">
-            <input class="form-input" id="email" type="text" name="email" placeholder="Email" required> <br>
+            <input class="form-input" id="email" type="email" name="email" placeholder="Email" required> <br>
             <input class="form-input" id="password" type="password" name="password" placeholder="Password" required> <br>
             <button class="log-in" id="submit" name="submit" type="submit"> Login </button>
         </div>
