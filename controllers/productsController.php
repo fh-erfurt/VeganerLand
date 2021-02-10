@@ -308,6 +308,138 @@ class ProductsController extends Controller
             }
         }
     }
+    
+    public function actionFilter()
+    {
+        // check if the user has filtered
+        if (isset($_POST['submitFilter'])) 
+        {
+            // filter by bio
+            if(!empty($_POST['bio']))
+            {
+                $bioFilter = $_POST['bio'];
+                $info = Products::find("comment LIKE '%$bioFilter%'"); 
+            }
+            // filter by regional
+            if(!empty($_POST['regional']))
+            { 
+                $regionalFilter = $_POST['regional'];
+                $info = Products::find("comment LIKE '%$regionalFilter%'");
+            }
+            // filter by price
+            if(!empty($_POST['price']))
+            { 
+                $priceFilter = $_POST['price'];
+                $info = Products::find("stdPrice <= '$priceFilter'");
+            }
+            // filter by weight
+            if(!empty($_POST['weight']))
+            { 
+                $weightFilter = $_POST['weight'];
+                $info = Products::find("comment LIKE '%$weightFilter%'");
+            }
+
+            // filter by regional & bio
+            if(!empty($_POST['regional']) && !empty($_POST['bio']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $regionalFilter = $_POST['regional'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$bioFilter%'");
+            }
+            // filter by price & bio
+            if(!empty($_POST['price']) && !empty($_POST['bio']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $priceFilter = $_POST['price'];
+                $info = Products::find("comment LIKE '%$bioFilter%' AND stdPrice <= '$priceFilter'");
+            }
+            // filter by weight & bio
+            if(!empty($_POST['weight']) && !empty($_POST['bio']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $weightFilter = $_POST['weight'];
+                $info = Products::find("comment LIKE '%$bioFilter%' AND comment LIKE '%$weightFilter%'");
+            }
+            // filter by weight & regional
+            if(!empty($_POST['weight']) && !empty($_POST['regional']))
+            { 
+                $regionalFilter = $_POST['regional'];
+                $weightFilter = $_POST['weight'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$weightFilter%'");
+            }
+            // filter by price & regional
+            if(!empty($_POST['price']) && !empty($_POST['regional']))
+            { 
+                $regionalFilter = $_POST['regional'];
+                $priceFilter = $_POST['price'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND stdPrice <= '$priceFilter'");
+            }
+            // filter by price & weight
+            if(!empty($_POST['price']) && !empty($_POST['weight']))
+            { 
+                $weightFilter = $_POST['weight'];
+                $priceFilter = $_POST['price'];
+                $info = Products::find("comment LIKE '%$weightFilter%' AND stdPrice <= '$priceFilter'");
+            }
+
+            // filter by regional & bio & price
+            if(!empty($_POST['regional']) && !empty($_POST['bio']) && !empty($_POST['price']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $regionalFilter = $_POST['regional'];
+                $priceFilter = $_POST['price'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$bioFilter%' AND stdPrice <= '$priceFilter'");
+            }
+            // filter by regional & bio & weight
+            if(!empty($_POST['regional']) && !empty($_POST['bio']) && !empty($_POST['weight']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $regionalFilter = $_POST['regional'];
+                $weightFilter = $_POST['weight'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$bioFilter%' AND comment LIKE '%$weightFilter%'");
+            }
+            // filter by regional & bio & price
+            if(!empty($_POST['weight']) && !empty($_POST['bio']) && !empty($_POST['price']))
+            { 
+                $bioFilter = $_POST['bio'];
+                $weightFilter = $_POST['weight'];
+                $priceFilter = $_POST['price'];
+                $info = Products::find("comment LIKE '%$bioFilter%' AND comment LIKE '%$weightFilter%' AND stdPrice <= '$priceFilter'");
+            }
+            // filter by regional & price & weight
+            if(!empty($_POST['regional']) && !empty($_POST['price']) && !empty($_POST['weight']))
+            { 
+                $priceFilter = $_POST['price'];
+                $regionalFilter = $_POST['regional'];
+                $weightFilter = $_POST['weight'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$weightFilter%' AND stdPrice <= '$priceFilter'");
+            }
+            // filter by regional & price & weight & bio
+            if(!empty($_POST['regional']) && !empty($_POST['price']) && !empty($_POST['weight'])&& !empty($_POST['bio']))
+            { 
+                $priceFilter = $_POST['price'];
+                $regionalFilter = $_POST['regional'];
+                $weightFilter = $_POST['weight'];
+                $bioFilter = $_POST['bio'];
+                $info = Products::find("comment LIKE '%$regionalFilter%' AND comment LIKE '%$bioFilter%' AND comment LIKE '%$weightFilter%' AND stdPrice <= '$priceFilter'");
+            }
+
+            // save the info from the database in the array
+            $result = array();
+
+            if (!empty($info))
+            {
+                array_push($result, $info);
+
+                $this->setParams('products', $result);
+            }
+            else
+            {
+                $this->setParams('products', array());
+                viewError("Es konnte nichts gefunden werden.");
+            }
+        }
+    }
 }
 
 ?>
