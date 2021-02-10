@@ -8,35 +8,9 @@
 <div class="block-container">
     <?
     $do = isset($_GET['do']) ? $_GET['do'] : '';
-    
     if ($do === 'identify') 
-    { ?>
-        <table class="table-cart">
-            <tr>
-                <th>Produkt</th>
-                <th>Anzahl</th>
-                <th colspan="2">Preis</th>
-            </tr>
-            <? 
-            for ($idx = 0; $idx < count($cart); $idx++)
-            { ?>
-            <tr>
-                <td><? echo ucfirst($prodInfo[$idx][0]['descrip']) ?></td>
-                <td><? echo $cart[$idx]['qyt'] ?></td>
-                <td><? echo $price[$idx]." €"; ?></td>
-                <td><form method = "post"><button name="delete" type="submit" value="<?=$cart[$idx]['itemId']?>">X</button></form></td>
-            </tr>
-            <? } ?>
-        </table>
-        <br>
-            <hr>
-        <table class = "table-cart">
-            <tr>
-                <th>Gesamt:</th>
-                <td style="text-align: center;"><? echo $ttprice." €" ?></td>
-            </tr>
-        </table>
-        <form  action = "?c=products&a=cart&do=others" method = "post"><button class="send" name="send" type="submit">Versenden</button></form>if ($emptyList === false)
+    { 
+        if ($emptyList === false)
         {?>
             <table class="table-cart">
                 <tr>
@@ -45,15 +19,14 @@
                     <th colspan="2">Preis</th>
                 </tr>
                 <? 
-                for ($idx = 0; $idx < count($cart); $idx++)
-                { ?>
+                for ($idx = 0; $idx < count($cart); $idx++) { ?>
                 <tr>
                     <td><? echo ucfirst($prodInfo[$idx][0]['descrip']) ?></td>
                     <td><? echo $cart[$idx]['qyt'] ?></td>
                     <td><? echo $price[$idx]." €"; ?></td>
                     <td><form method = "post"><button name="delete" type="submit" value="<?=$cart[$idx]['itemId']?>">X</button></form></td>
                 </tr>
-                <? } ?>
+                    <? } ?>
             </table>
             <br>
                 <hr>
@@ -68,10 +41,8 @@
         else if ($emptyList === true)
         {
             echo "Ihr Warenkorb ist leer.";
-        }
-    }
-    else if ($do === 'others')
-    { ?>
+        } ?>
+    <? } else if ($do === 'others') { ?>
 
         <form name="DeliveryAddress" method="post">
             <header class="head-form">
@@ -104,5 +75,5 @@
         
             <button class="send" id="address" type="submit" name="address"> Senden </button> 
         </form>
-    <? } ?>
+    <? }?>
 </div>
