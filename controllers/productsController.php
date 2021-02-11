@@ -266,10 +266,20 @@ class ProductsController extends Controller
         if (isset($_POST['delete'])) 
         {
             $id = $_POST['delete'];
+            $check = Orders::find("itemId = '$id'");
 
-            $sql = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
-            $stmt = $GLOBALS['db']->prepare($sql);
-            $stmt->execute();
+            if (empty($check))
+            {
+                $sql1 = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
+                $stmt = $GLOBALS['db']->prepare($sql1);
+                $stmt->execute();
+            }
+            else
+            {
+                $sql2 = "UPDATE " . OrderItems::tableName() . " SET isSend = 't' WHERE itemId = $id;";
+                $stmt = $GLOBALS['db']->prepare($sql2);
+                $stmt->execute();
+            }
         }
     }
     
