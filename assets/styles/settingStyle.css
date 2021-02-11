@@ -84,7 +84,6 @@
 
 .head-form h2 {
     font-size: 250%;
-    font-family: Arial, Helvetica, sans-serif;
     color: #3e403f;
 }
 
@@ -104,7 +103,6 @@ input[class="form-input"] {
     margin-top: 2%;
     padding: 15px;
     font-size: 16px;
-    font-family: 'Abel', sans-serif;
     color: #5E6472;
     outline: none;
     border: none;
