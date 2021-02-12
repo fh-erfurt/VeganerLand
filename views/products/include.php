@@ -24,6 +24,7 @@
 
                 <label for="weight">Wähle ein Gewicht:</label>
                 <select class="form-control" name="weight" id="weight">
+                    <option value="">-</option>
                     <option value="Stück">Stück</option>
                     <option value="100g">100g</option>
                     <option value="250g">250g</option>
@@ -57,12 +58,12 @@
                             <?
                             if (!empty($_SESSION['email']))
                             { ?>
-                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['descrip']?>_Fav">
-                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['descrip']?>_Fav')" id="fav" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
+                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['prodId']?>_Fav">
+                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Fav')" id="fav" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
                                 <input class="form-input" type="hidden" name = "fav" value="<?=$products[$idx][$prodidx]['prodId']?>">
                             </form>
-                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['descrip']?>_Cart">
-                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['descrip']?>_Cart')" id="submit" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
+                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['prodId']?>_Cart">
+                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Cart')" id="submit" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
                                 <input class="form-input" type="hidden" name = "submit" value="<?=$products[$idx][$prodidx]['prodId']?>">
                                 <input  class="qty" id="qty" name="qty" type="number" min="1">
                             </form>
