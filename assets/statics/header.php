@@ -34,6 +34,7 @@
 
             <? elseif ($pageTitle == 'Obst' || $pageTitle == 'Gemüse' || $pageTitle == 'Angebote' || $pageTitle == 'Suchergebnisse'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'fruitStyle.css'?>">
+            <script type="text/javascript" src="assets/js/products.js"></script>
 
             <? elseif ($pageTitle == 'Warenkorb'): ?>
             <link rel="stylesheet" href="<?=STYLESPATH.'cartStyle.css'?>">
