@@ -48,19 +48,22 @@
                             <div class="card-title"><?=strtr($products[$idx][$prodidx]["descrip"],"_"," ")?></div>
                             <img class='ard__image card__image--fence' src="<?=FRUITPATH.$products[$idx][$prodidx]["descrip"]?>.jpg" class="card-img-top" alt="Artikel">
                             <div class="card__text">
-                                <p><? echo strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p>
+                                <p><? echo "&nbsp;" . strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p>
                                 <hr>
-                                <p><?=$products[$idx][$prodidx]['stdPrice']?></p>
+                                <p><?="&nbsp" . $products[$idx][$prodidx]['stdPrice'] . " €"?></p>
                             </div>
 
                             <div class="card-footer">
                             <?
                             if (!empty($_SESSION['email']))
                             { ?>
-                            <form class="card-footer" method="post">
-                                <button class="btn btn--block card__btn" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
-                                <button class="btn btn--block card__btn" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
-                                <label  class="qty" for="qty">Menge Eingeben!</label>
+                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['descrip']?>_Fav">
+                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['descrip']?>_Fav')" id="fav" name="fav" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">Favorit</button>
+                                <input class="form-input" type="hidden" name = "fav" value="<?=$products[$idx][$prodidx]['prodId']?>">
+                            </form>
+                            <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['descrip']?>_Cart">
+                                <button class="btn btn--block card__btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['descrip']?>_Cart')" id="submit" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
+                                <input class="form-input" type="hidden" name = "submit" value="<?=$products[$idx][$prodidx]['prodId']?>">
                                 <input  class="qty" id="qty" name="qty" type="number" min="1">
                             </form>
                             <? } ?>
@@ -68,7 +71,7 @@
                         </div>
                     </div>
                 </li>
-            <?
+              <?
             }
         }?>
     </div>
