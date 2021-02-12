@@ -81,7 +81,6 @@
         </ul>
     </nav>
     <!-- information about the company and products for customers. -->
-    <!-- <h1 class="page-title">Sticky Responsive Bottom Menu</h1> -->
     <article id="dashboard">
         <h2>Dashboard</h2>
             <h3>
@@ -371,7 +370,7 @@
         <h2>Impressum</h2>
         <p>
         <strong>Seitenbetreiber der Webseite </strong>
-        <a href="Localhost/VeganerLand-main/index.php">
+        <a href="/VeganerLand/index.php?c=pages&a=homepage">
         <strong>www.vaganerland.de</strong>
         </a>
         </p>
