@@ -14,24 +14,24 @@
             <h3>Filter</h3>
 
                 <label for="bio">Bio</label>
-                <input type="checkbox" name="bio" id="bio" value="bio" /> <br>
+                <input class="form-control" type="checkbox" name="bio" id="bio" value="bio" />
 
                 <label for="regional">Regional</label>
-                <input type="checkbox" name="regional" id="regional" value="regional" /> <br>
+                <input class="form-control" type="checkbox" name="regional" id="regional" value="regional" />
 
                 <label for="price">price</label>
-                <input type="text" name="price" id="price" placeholder="mindest price" /> <br>
+                <input class="form-control" type="text" name="price" id="price" placeholder="mindest price" />
 
                 <label for="weight">Wähle ein Gewicht:</label>
-                <select name="weight" id="weight">
+                <select class="form-control" name="weight" id="weight">
                     <option value="Stück">Stück</option>
                     <option value="100g">100g</option>
                     <option value="250g">250g</option>
                     <option value="500g">500g</option>
                     <option value="1kg">1kg</option>
-                </select> <br>
+                </select>
 
-                <input type="submit" name="submitFilter" formaction="?c=products&a=filter">
+                <input class="submit" type="submit" name="submitFilter" formaction="?c=products&a=filter" value="Filtern">
 
         </form>
     </div>

@@ -40,7 +40,7 @@
         <? }
         else if ($emptyList === true)
         {
-            echo "Ihr Warenkorb ist leer.";
+            viewInfo("Ihr Warenkorb ist leer.");
         } ?>
     <? } else if ($do === 'others') { ?>
 

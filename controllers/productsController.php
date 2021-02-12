@@ -256,8 +256,7 @@ class ProductsController extends Controller
         }
          else 
         {
-            viewErrors("you should first register");
-            redirectHome($error);
+            redirectHome("you should first register");
         }
     }
     
@@ -318,7 +317,7 @@ class ProductsController extends Controller
             }
         }
     }
-    
+
     public function actionFilter()
     {
         // check if the user has filtered
@@ -451,5 +450,4 @@ class ProductsController extends Controller
         }
     }
 }
-
 ?>
