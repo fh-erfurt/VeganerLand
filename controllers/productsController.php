@@ -282,7 +282,7 @@ class ProductsController extends Controller
         }
     }
     
-    protected function addToFavorites()
+    public static function addToFavorites()
     {
         if (!empty($_POST['fav'])) 
         {
