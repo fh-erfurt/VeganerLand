@@ -49,6 +49,21 @@
         redirect('index.php?c=errors&a=error404&error=nocontroller');  // error, redirect to error page 404 because not found
     }
 
+    if (isset($_GET['ajax']))
+    {
+        $ajax = $_GET['ajax'];
+        switch ($ajax)
+        {
+            case (1):
+                ProductsController::addToCart();
+                break;
+            case (2):
+                ProductsController::addToFavorites();
+            default:
+                break;
+        }
+    }
+
     switch ($actionName) 
     {
         case 'error404':
