@@ -4,12 +4,14 @@
 =====================
 -->
 
-<div class="con">
-   <form name="registration" action="" method="post">
+
+<form class="login-form" name="registration" action="" method="post">
+   <div class="container">
       <header class="head-form">
          <h2>Sing Up</h2>
          <p>Es geht schnell und einfach</p>
       </header>
+      <br>
       <div class="field-set">
          <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Vorname" value="<?=htmlspecialchars($_POST['firstname'] ?? '')?>" required>
          <input class="form-input" id="lastname"  type="text" name="lastname" placeholder="Nachname" value="<?=htmlspecialchars($_POST['lastname'] ?? '')?>" required> <br>
@@ -19,7 +21,7 @@
          <input class="form-input" id="password"         type="password" name="password" placeholder="Passwort" required>
          <input class="form-input" id="passwordagain"  type="password" name="passwordagain" placeholder="Passwort widerholen" required> <br>
 
-        <div class="gender">
+         <div class="gender">
          
          <label for="male">Männlich</label>
          <input type="radio" name="gender" id="male" value="male">
@@ -40,5 +42,6 @@
          <button class="log-in" id="submit" name="submit" type="submit"> Register </button> <br>
          <spam id ="login"><a href="?c=pages&a=login"> hast du schon ein Konto! melde dich an</a></spam>
       </div>
-   </form>
-</div>
+   </div>
+</form>
+

@@ -1,13 +1,12 @@
-/* Molham Al-khodari    31.12.2020  22:33 Uhr
- ***************************
- ** Start Global rules 
- ***************************
+/* 
+ ====================
+ == Molham Al-khodari 
+ ====================
  */
 
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 body {
@@ -15,13 +14,9 @@ body {
 }
 
 
-/*
- ***************************
- ** Start form  attributes 
- ***************************
- */
+/* Start form  attributes */
 
-form {
+.login-form {
     width: 450px;
     min-height: 500px;
     height: auto;
@@ -33,13 +28,9 @@ form {
 }
 
 
-/*
- ***************************
- ** form Container 
- ***************************
- */
+/* form Container */
 
-form .con {
+form .container {
     display: flex;
     -webkit-justify-content: space-around;
     justify-content: space-around;
@@ -49,35 +40,23 @@ form .con {
 }
 
 
-/*
- ***************************
- ** the header form form
- ***************************
- */
+/* the header form form */
 
-header {
+.head-form {
     margin: 2% auto 10% auto;
     text-align: center;
 }
 
 
-/*
- ***************************
- ** Login title form form
- ***************************
- */
+/* Login title form form */
 
-header h2 {
+.head-form h2 {
     font-size: 250%;
     color: #3e403f;
 }
 
 
-/*
- ***************************
- ** inputs form
- ***************************
- */
+/* inputs form */
 
 input[class="form-input"] {
     width: 240px;
@@ -93,17 +72,7 @@ input[class="form-input"] {
 }
 
 
-/* input[type=text] {
-    border: 2px solid red;
-    border-radius: 4px;
-} */
-
-
-/*
- ***************************
- ** focus
- ***************************
- */
+/* focus */
 
 input:focus {
     transform: translateX(-2px);
@@ -111,11 +80,7 @@ input:focus {
 }
 
 
-/*
- ***************************
- ** buttons
- ***************************
- */
+/* buttons */
 
 button {
     display: inline-block;
@@ -134,67 +99,29 @@ button {
     letter-spacing: 0.05em;
 }
 
+.other {
+    display: flex;
+    width: 75%;
+}
 
-/*
- ***************************
- ** Submits
- ***************************
- */
+
+/* Submits */
 
 .submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-}
-
-
-/*
- ***************************
- ** Forgot Password button
- ***************************
- */
-
-.frgt-pass {
+    margin-left: 13%;
     background: #B8F2E6;
 }
 
 
-/*
- ***************************
- ** Sign Up button
- ***************************
- */
-
-.sign-up {
-    background: #B8F2E6;
-    width: auto;
-}
-
-
-/*
- ***************************
- ** buttons hover
- ***************************
- */
+/* buttons hover */
 
 button:hover {
     transform: translatey(3px);
     box-shadow: none;
-}
-
-
-/*
- ***************************
- ** buttons hover Animation
- ***************************
- */
-
-button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
 
-a {
-    color: block;
+.other a {
+    color: black;
     text-decoration: none;
 }

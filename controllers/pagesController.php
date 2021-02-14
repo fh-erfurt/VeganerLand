@@ -149,6 +149,11 @@ class PagesController extends Controller
 
     public function actionAbout()
     {
+        // alles static .. 
+    }
+
+    public function actionContact()
+    {
         if (isset($_POST['send']))
         {
             $name = $_POST['userName'];
@@ -165,10 +170,6 @@ class PagesController extends Controller
             $file = fopen('data/contact.txt', 'a+');
                     fwrite($file, $txt.PHP_EOL);
                     fclose($file);
-        }
-        else
-        {
-           
         }
     }
 

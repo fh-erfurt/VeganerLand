@@ -5,7 +5,7 @@
 ================================ 
 -->
 
-<div class="block-container">
+<div class="from-horizonta block-container">
     <?
     $do = isset($_GET['do']) ? $_GET['do'] : '';
     if ($do === 'identify') 
@@ -36,7 +36,7 @@
                     <td style="text-align: center;"><? echo $ttprice." €" ?></td>
                 </tr>
             </table>
-            <form  action = "?c=products&a=cart&do=others" method = "post"><button class="send" name="send" type="submit">Versenden</button></form>
+            <form  action = "?c=products&a=cart&do=others" method = "post"><button class="save" name="send" type="submit">Versenden</button></form>
         <? }
         else if ($emptyList === true)
         {
@@ -44,7 +44,7 @@
         } ?>
     <? } else if ($do === 'others') { ?>
 
-        <form name="DeliveryAddress" method="post">
+        <form class="" name="DeliveryAddress" method="post">
             <header class="head-form">
                 <h2>Adresse bearbeiten</h2>
                 <p> Bitte geben sie die gewünschte Adresse ein.</p>
@@ -73,7 +73,7 @@
                 </div>
             </div>
         
-            <button class="send" id="address" type="submit" name="address"> Senden </button> 
+            <button class="save" id="address" type="submit" name="address"> Senden </button> 
         </form>
     <? }?>
 </div>

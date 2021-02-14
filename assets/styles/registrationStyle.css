@@ -1,115 +1,18 @@
-/* Molham Al-khodari    31.12.2020  22:33 Uhr
+/* 
 ***************************
-** Start Global rules 
+** Molham Al-khodari 
 ***************************
 */
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-body {
-    padding-top: 0;
-    margin-top: 0;
-}
+/* Start form  attributes */
 
-form {
+.login-form {
     width: 600px;
-    min-height: 500px;
-    height: auto;
-    border-radius: 5px;
-    margin: 2% auto;
-    box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
-    padding: 2%;
-    background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
 }
 
 
-/*
-***************************
-** Start form  attributes 
-***************************
-*/
-
-form .con {
-    display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-
-
-/*
- ***************************
- ** the header form form
- ***************************
- */
-
-header {
-    margin: 2% auto 10% auto;
-    text-align: center;
-}
-
-
-/*
- ***************************
- ** Login title form form
- ***************************
- */
-
-header h2 {
-    font-size: 250%;
-    color: #3e403f;
-}
-
-
-/*
- ***************************
- ** inputs form
- ***************************
- */
-
-input[class="form-input"] {
-    width: 250px;
-    height: 25px;
-    margin-top: 2%;
-    padding: 15px;
-    font-size: 16px;
-    color: #5E6472;
-    outline: none;
-    border: none;
-    border-radius: 0px 5px 5px 0px;
-    transition: 0.2s linear;
-}
-
-
-/* input[type=text] {
-    border: 2px solid red;
-    border-radius: 4px;
-} */
-
-
-/*
- ***************************
- ** focus
- ***************************
- */
-
-input:focus {
-    transform: translateX(-2px);
-    border-radius: 5px;
-}
-
-
-/*
- ***************************
- ** buttons
- ***************************
- */
+/* buttons */
 
 button,
 .gender {
@@ -127,59 +30,6 @@ button,
     transition: all 0.2s linear;
     margin: 7% auto;
     letter-spacing: 0.05em;
-}
-
-
-/*
- ***************************
- ** Submits
- ***************************
- */
-
-.submits {
-    width: 48%;
-    display: inline-block;
-    /* float: left; */
-    margin-left: 2%;
-}
-
-
-/*
- ***************************
- ** Sign Up button
- ***************************
- */
-
-.sign-up {
-    background: #B8F2E6;
-}
-
-
-/*
- ***************************
- ** buttons hover
- ***************************
- */
-
-button:hover {
-    transform: translatey(3px);
-    box-shadow: none;
-}
-
-
-/*
- ***************************
- ** buttons hover Animation
- ***************************
- */
-
-button:hover {
-    animation: ani9 0.4s ease-in-out infinite alternate;
-}
-
-a {
-    color: block;
-    text-decoration: none;
 }
 
 .gender {

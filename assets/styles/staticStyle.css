@@ -1,6 +1,6 @@
-/* Molham Al-khodari    21.12.2020  22:33 Uhr
+/* 
 ***************************
-** Start Global rules 
+** Molham Al-khodari 
 ***************************
 */
 
@@ -28,11 +28,7 @@ body {
 }
 
 
-/* 
-***************************
-** alert messages success, info and danger
-***************************
-*/
+/* alert messages success, info and danger */
 
 .alert {
     padding: 15px;

@@ -11,6 +11,7 @@
     <li class="logo"><a href="?c=pages&a=homepage">VeganerLand</a></li>
     <li class="item"><a href="?c=pages&a=homepage">Startseite</a></li>
     <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
+    <li class="item"><a href="?c=pages&a=contact">Kontact</a></li>
     <li class="item"><a href="?c=products&a=bargain">Angebote</a></li>
 
     <li class="dropdown item"> <a>Obst</a>

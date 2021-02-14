@@ -11,7 +11,12 @@
 
             <link rel="stylesheet" href="<?=STYLESPATH.'staticStyle.css'?>">
 
-            <? if ($pageTitle == 'Sing Up') : ?> 
+            <? if ($pageTitle == 'Kontakt') : ?> 
+            <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
+            <script type="text/javascript" src="assets/js/contact.js"></script>
+
+            <? elseif ($pageTitle == 'Sing Up') : ?>
+            <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
             <script type="text/javascript" src="assets/js/signup.js"></script>
 
@@ -37,6 +42,7 @@
             <script type="text/javascript" src="assets/js/products.js"></script>
 
             <? elseif ($pageTitle == 'Warenkorb'): ?>
+            <link rel="stylesheet" href="<?=STYLESPATH.'settingStyle.css'?>">
             <link rel="stylesheet" href="<?=STYLESPATH.'cartStyle.css'?>">
             <script type="text/javascript" src="assets/js/cart.js"></script>
 

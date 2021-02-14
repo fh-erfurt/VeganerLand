@@ -59,6 +59,10 @@
                 break;
             case (2):
                 ProductsController::addToFavorites();
+                break;
+            case (3):
+                pagesController::actionSetting();   // ich darf das actionSetting nicht static machen.  
+                break;
             default:
                 break;
         }
@@ -66,6 +70,11 @@
 
     switch ($actionName) 
     {
+        case 'contact':
+            $pageTitle = 'Kontakt';
+            require_once TEMPLATESPATH.'header.php';
+            include TEMPLATESPATH.'navbar.php';
+            break;
         case 'error404':
             $pageTitle = '404';
             require_once TEMPLATESPATH.'header.php';
