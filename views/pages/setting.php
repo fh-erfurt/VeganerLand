@@ -6,7 +6,7 @@
 -->
 
 <div class="con">
-        <form class="from-horizonta" method="post">
+        <form class="form-horizontal" method="post">
                 <header class="head-form">
                         <h2>Mitglied bearbeiten</h2>
                         <p> bearbeite einfach deine Daten</p>

@@ -5,7 +5,7 @@
 ================================ 
 -->
 
-<div class="from-horizonta block-container">
+<div class="form-horizontal block-container">
     <?
     $do = isset($_GET['do']) ? $_GET['do'] : '';
     if ($do === 'identify') 

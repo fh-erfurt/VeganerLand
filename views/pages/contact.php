@@ -1,5 +1,5 @@
 <div class="contact-form" id="email">
-    <form class="from-horizonta" method="post">
+    <form class="form-horizontal" method="post">
         <header class="head-form">
         <h2>E-Mail</h2>
         <p>Sie können hier eine Email an uns schreiben.</p>
