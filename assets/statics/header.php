@@ -20,12 +20,13 @@
             <link rel='stylesheet' href ="<?=STYLESPATH.'registrationStyle.css'?>">
             <script type="text/javascript" src="assets/js/signup.js"></script>
 
-            <? elseif ($pageTitle == 'Login' || $pageTitle == 'Passwort zurücksetzen'): ?>
+            <? elseif ($pageTitle == 'Login'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
             <script type="text/javascript" src="assets/js/login.js"></script>
 
-            <? elseif ($pageTitle == 'Reset Password'): ?>
+            <? elseif ($pageTitle == 'Passwort zurücksetzen'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'loginStyle.css'?>">
+            <script type="text/javascript" src="assets/js/login.js"></script>
 
             <? elseif ($pageTitle == 'Homepage'): ?>
             <link rel='stylesheet' href ="<?=STYLESPATH.'homepageStyle.css'?>">

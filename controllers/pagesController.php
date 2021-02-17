@@ -89,7 +89,7 @@ class PagesController extends Controller
 
                     $mailTo = $_POST['email'];
                     $subject = "Passwort zurücksetzen";
-                    $txt = "http://localhost:8085/VeganerLand-main/?c=pages&a=resetPassword&do=setPassword&tocken=".$tocken;
+                    $txt = "http://localhost:8085/VeganerLand/?c=pages&a=resetPassword&do=setPassword&tocken=".$tocken;
                     
                     // reset alternative password. the URL link will be right in the returnPassword.txt
 
@@ -119,15 +119,24 @@ class PagesController extends Controller
                 {
                     if (isset($_POST['submit'])) 
                     {
+                        // Does this password work for our safety standards?
+                        $isPasswordSafe = isPasswordSafe($_POST['password1']);
+
                         if ($_POST["password1"] == $_POST["password2"]) 
                         {
-                            $passwordHash = md5($_POST['password1']);
-                            $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
-                            $stmt->bindParam(':password', $passwordHash);
-                            $stmt->bindParam(':tocken', $_GET["tocken"]);
-                            $stmt->execute();
+                            if ($isPasswordSafe) 
+                            {
+                                $passwordHash = md5($_POST['password1']);
+                                $stmt = $GLOBALS['db']->prepare('UPDATE customers SET password = :password, tocken = null WHERE tocken = :tocken');
+                                $stmt->bindParam(':password', $passwordHash);
+                                $stmt->bindParam(':tocken', $_GET["tocken"]);
+                                $stmt->execute();
 
-                            header('Location: ?c=pages&a=login');
+                                header('Location: ?c=pages&a=login');
+                            }
+                            else{
+                                viewError("das Passwort ist nicht sicher genug");
+                            }
                         } 
                         else 
                         {

@@ -9,8 +9,8 @@
     if ($do == 'identify') 
     {
 ?>
-        <form action="" method="post">
-            <div class="con">
+        <form class="login-form" action="" method="post">
+            <div class="container">
                 <header class="head-form">
                     <h2>Reset Password</h2>
                     <p>please enter your email address</p>
@@ -21,7 +21,7 @@
                     <input class="form-input" id="email" type="text" name="email" placeholder="Email" required> <br>
 
                     <!--button Recover your password -->
-                    <button class="log-in" id="submit" name="submit" type="submit"> Recover your password</button> </button>
+                    <button id="submit" name="submit" type="submit"> Recover your password</button> </button>
                 </div>
                     <!--Sign Up button -->
                 <div class="other">
@@ -35,15 +35,15 @@
     {
 ?>
             <!--Set new password form -->
-        <form action="" method="post">
-            <div class="con">
+        <form class="login-form" method="post">
+            <div class="container">
                 <header class="head-form">
                     <h2> Neues Passwort setzten </h2>
                     <p>bearbeiten Sie hier Passwort</p>
                 </header>
                 <input class="form-input" id="password" type = "password" name="password1" placeholder ="Password" required> <br>
                 <input class="form-input" id="passwordagain" type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
-                <button class="log-in" id="submit" type="submit" name="submit">passwort setzten</button>
+                <button id="submit" type="submit" name="submit">passwort setzten</button>
             </div>
         </form>
 <?php
