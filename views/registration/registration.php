@@ -11,7 +11,6 @@
          <h2>Sing Up</h2>
          <p>Es geht schnell und einfach</p>
       </header>
-      <br>
       <div class="field-set">
          <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Vorname" value="<?=htmlspecialchars($_POST['firstname'] ?? '')?>" required>
          <input class="form-input" id="lastname"  type="text" name="lastname" placeholder="Nachname" value="<?=htmlspecialchars($_POST['lastname'] ?? '')?>" required> <br>
@@ -39,8 +38,8 @@
          <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=htmlspecialchars($_POST['city'] ?? '')?>">
          <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP" value="<?=htmlspecialchars($_POST['zip'] ?? '')?>">
          
-         <button class="log-in" id="submit" name="submit" type="submit"> Register </button> <br>
-         <spam id ="login"><a href="?c=pages&a=login"> hast du schon ein Konto! melde dich an</a></spam>
+         <button id="submit" name="submit" type="submit"> Register </button> <br>
+         <spam id ="login"><a href="?c=pages&a=login" title="go to Login page"> hast du schon ein Konto! melde dich an</a></spam>
       </div>
    </div>
 </form>
