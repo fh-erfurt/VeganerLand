@@ -1,0 +1,20 @@
+.container {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(157, 172, 172);
+}
+
+.container a {
+    color: #795548;
+}
+
+.container a:hover {
+    color: green;
+}
+
+img {
+    width: 850px;
+    height: 650px;
+    margin-left: 250px;
+}

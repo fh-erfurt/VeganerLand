@@ -43,6 +43,9 @@
             <link rel="stylesheet" href="<?=STYLESPATH.'cartStyle.css'?>">
             <script type="text/javascript" src="assets/js/cart.js"></script>
 
+            <? elseif ($pageTitle == '404'): ?>
+            <link rel="stylesheet" href="<?=STYLESPATH.'errorStyle.css'?>">
+
             <? endif; ?>   
         </head>
         <body>
