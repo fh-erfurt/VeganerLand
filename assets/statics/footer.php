@@ -16,54 +16,54 @@
         <div class="col">
             <h1>UNTERNEHMEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about">About</a></li>
-            <li><a href="?c=pages&a=about#team">Team</a></li>
-            <li><a href="?c=pages&a=about">Services</a></li>
-            <li><a href="?c=pages&a=about#impressum">Impressum</a></li>
-            <li><a href="?c=pages&a=about">Analytik</a></li>
-            <li><a href="?c=pages&a=contact">Get in touch</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
+            <li><a href="?c=pages&a=about#team" title="go to About">Team</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Services</a></li>
+            <li><a href="?c=pages&a=about#impressum" title="go to Impressum">Impressum</a></li>
+            <li><a href="?c=pages&a=about" title="go to Analytik">Analytik</a></li>
+            <li><a href="?c=pages&a=contact" title="send Email">Get in touch</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>PRODUKTE</h1>
             <ul>
-            <li><a href="?c=pages&a=about">About</a></li>
-            <li><a href="?c=pages&a=about#dashboard">Dashboard</a></li>
-            <li><a href="?c=pages&a=about#content">Content</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
+            <li><a href="?c=pages&a=about#dashboard" title="go to Dashboard">Dashboard</a></li>
+            <li><a href="?c=pages&a=about#content" title="go to Content">Content</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>KONTEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about">About</a></li>
-            <li><a href="?c=pages&a=about">Mission</a></li>
-            <li><a href="?c=pages&a=about">Services</a></li>
-            <li><a href="?c=pages&a=about">Social</a></li>
-            <li><a href="?c=pages&a=contact">Get in touch</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Mission</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Services</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Social</a></li>
+            <li><a href="?c=pages&a=contact" title="send Email">Get in touch</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>RESSOURCEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about">Webmail</a></li>
-            <li><a href="?c=pages&a=about">Redeem code</a></li>
-            <li><a href="?c=pages&a=about">WHOIS lookup</a></li>
-            <li><a href="?c=pages&a=about">Site map</a></li>
-            <li><a href="?c=pages&a=about">Web templates</a></li>
-            <li><a href="?c=pages&a=contact">Email templates</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Webmail</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Redeem code</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">WHOIS lookup</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Site map</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Web templates</a></li>
+            <li><a href="?c=pages&a=contact" title="send Email">Email templates</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>UNTERSTÜTZUNG</h1>
             <ul>
-            <li><a href="?c=pages&a=contact">Contact us</a></li>
-            <li><a href="?c=pages&a=about#impressum">E-Mail</a></li>
-            <li><a href="?c=pages&a=about#support">Support</a></li>
-            <li><a href="?c=pages&a=about">Web chat</a></li>
-            <li><a href="?c=pages&a=about">Open ticket</a></li>
+            <li><a href="?c=pages&a=contact" title="send Email">Contact us</a></li>
+            <li><a href="?c=pages&a=about#impressum" title="go to Email">E-Mail</a></li>
+            <li><a href="?c=pages&a=about#support" title="go to About">Support</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Web chat</a></li>
+            <li><a href="?c=pages&a=about" title="go to About">Open ticket</a></li>
             </ul>
         </div>
-        <div class="col social">  <!--das haben wir nicht also keine icons ?-->
+        <div class="col social">
             <h1>SOZIAL</h1>
             <ul>
             <li><a href="#" class="fa fa-facebook"></a></li>
