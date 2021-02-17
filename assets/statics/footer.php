@@ -1,14 +1,8 @@
 <!-- Molham Al-khodari -->
 
 <link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
-<!-- nur für icorn aus w3schools wie gesprochen -->
+<!-- nur für icorn aus w3schools wie gesprochen (mit Herr Kurse) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- 
-<header class="page-footer">
-    <h1>Veganer Land</h1>
-</header> 
--->
 
 <!-- FOOTER START -->
 <div class="footer">
