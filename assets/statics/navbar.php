@@ -1,7 +1,6 @@
 <!-- Molham Al-khodari -->
 
 <link rel="stylesheet" href="<?=STYLESPATH.'navbarStyle.css'?>">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- nur das menu icorn -->
 
 </head>
 <nav class="fixed">
@@ -64,37 +63,3 @@
       <li class="item button secondary"><a id="cart" href="?c=products&a=cart&do=identify">Warenkorb(<? echo OrderItems::ItemsCart();?>)</a></li>
   </ul>
 </nav>
-
-<div id="popover" class="popover" style="width: 100vw; height: 100vw; display: none; background: rgba(0,0,0,0.8); position: absolute; top: 0; left: 0;">
-  <div id="close" style="position: absolute; top: 0; left: 0; height: 44px; width: 44px; background: white;">X</div>    
-  <? 
-      include VIEWSPATH.'pages'.DIRECTORY_SEPARATOR.'cart.php'  // Controller Probleme 
-  ?>
-</div>
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    var btnCartPage = document.getElementById('cart');
-    var btnPopoverClose = document.getElementById('close');
-    if(btnCartPage)
-    {
-      btnCartPage.addEventListener('click', function(event){
-        event.preventDefault();
-
-        var elmPopover = document.getElementById('popover');
-        elmPopover.style.display = 'block';
-      });
-    }
-
-    if(btnCartPage)
-    {
-      btnPopoverClose.addEventListener('click', function(){
-        event.preventDefault();
-
-        var elmPopover = document.getElementById('popover');
-        elmPopover.style.display = 'none';
-      });
-    }
-
-  });
-</script> -->
