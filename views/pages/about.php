@@ -44,37 +44,37 @@
     <nav class="menu-bottom">
         <ul>
             <li>
-                <a href="?c=pages&a=homepage" class="logo" accesskey="h">
+                <a href="?c=pages&a=homepage" class="logo" title="go to Homepage">
                     <img src="assets/images/logo.png" alt="logo" width="50px" height="50px" />
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#dashboard" accesskey="1">
+                <a class = "list-group" href="#dashboard" title="jump to Dashboard">
                     Dashboard
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#content" accesskey="2" class="active">
+                <a class = "list-group" href="#content" class="active" title="jump to content">
                     Inhalt
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#email" accesskey="3">
-                    E-Mail
+                <a class = "list-group" href="?c=pages&a=contact" title="go to contact page">
+                    Kontakt
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#analytics" accesskey="4">
-                    Analytik
+                <a class = "list-group" href="#analytics" title="jump to AGB">
+                    AGB
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#Widerrufsrecht" accesskey="5">
+                <a class = "list-group" href="#Widerrufsrecht" title="jump to Right of withdrawal">
                 Widerrufsrecht
                 </a>
             </li>
             <li>
-                <a class = "list-group" href="#impressum" accesskey="6">
+                <a class = "list-group" href="#impressum" title="jump to Impressum">
                     Impressum
                 </a>
             </li>
@@ -105,33 +105,6 @@
             Donec dapibus sapien quis erat pretium sodales. Donec tincidunt justo arcu, nec mollis nunc venenatis ut. Aenean gravida tempus elit non hendrerit. Sed at ultricies dolor. Donec sed mauris urna. Mauris lectus lorem, pulvinar at lacinia eget, vestibulum
             quis turpis. Quisque commodo, mi sit amet ultricies sagittis, diam est eleifend neque, eget aliquam lacus sem vitae dolor. Cras sit amet fermentum odio. Aliquam scelerisque enim odio, non gravida massa scelerisque quis.
         </p>
-    </article>
-
-    <article id="email">
-        <h2>E-Mail</h2>
-        <div class="form-container">
-            <form method="post">
-                <div class="input-row">
-                    <label style="padding-top: 20px;">Name</label>
-                    <input type="text"  name="userName">
-                </div>
-                <div class="input-row">
-                    <label>Email</label>
-                    <input type="text" name="userEmail">
-                </div>
-                <div class="input-row">
-                    <label>Subject</label>
-                    <input type="text" name="subject">
-                </div>
-                <div class="input-row">
-                    <label>Message</label> <br>
-                    <textarea type="text" name="content" cols="60" rows="6"> </textarea>
-                </div>
-                <div>
-                    <input type="submit" name="send" value="Send">
-                </div>
-            </form>
-        </div>
     </article>
 
     <article id="analytics">
@@ -370,7 +343,7 @@
         <h2>Impressum</h2>
         <p>
         <strong>Seitenbetreiber der Webseite </strong>
-        <a href="/VeganerLand/index.php?c=pages&a=homepage">
+        <a href="/VeganerLand/index.php?c=pages&a=homepage" title="Go to Homepage">
         <strong>www.vaganerland.de</strong>
         </a>
         </p>
@@ -384,11 +357,11 @@
         <br/>
         <p>
         E-Mail: 
-        <a href="mailto:mahmoud.matar@fh-erfurt.de">impressum@veganerland.de</a>
+        <a href="mailto:mahmoud.matar@fh-erfurt.de" title="send email">impressum@veganerland.de</a>
         <br/>
         </p>
     </article>
     <!--da muss man der richtige pfart dazu noch machen, beiu mir geht bei euch bestimmt nicht ... <a href = ...... -->
     <article class="documentation">
-         <a href="../VeganerLand-main/documentation/documentation.html" target="_blank" title=" Go to Documentation">Documentation</a> 
+         <a href="../VeganerLand/documentation/documentation.html" target="_blank" title=" Go to Documentation">Documentation</a> 
     </article>
