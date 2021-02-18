@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var inputSubject = document.getElementById('subject');
     var inputMessage = document.getElementById('message');
 
+    console.log(inputName, inputEmail, inputSubject, inputMessage);
+
     if (btnSubmit) {
         btnSubmit.addEventListener('click', function(event) {
             var valid = true;

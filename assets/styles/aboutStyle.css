@@ -149,48 +149,20 @@ article,
     background-color: pink;
 }
 
-
-/* @media only screen and (min-width: 1280px) {
-    .nav-container {
-        width: 1200px;
-        margin: 0 auto;
+@media only screen and (max-width: 850px) {
+    .row {
+        display: flex;
+        flex-direction: column;
     }
-} */
+    .column {
+        width: 100%;
+    }
+}
 
-
-/* @media only screen and (max-width: 1139px) {
-    .nav-container {
-        width: 1000px;
+@media only screen and (max-width: 850px) {
+    .menu-item {
+        padding: 10px;
+        margin: -20px;
         display: block;
     }
 }
-
-@media only screen and (max-width: 950px) {
-    .menu-bottom .col {
-        width: 33%;
-    }
-    .menu-bottom .col h1 {
-        font-size: 14px;
-    }
-    .menu-bottom .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .menu-bottom .col {
-        width: 50%;
-    }
-    .menu-bottom .col h1 {
-        font-size: 14px;
-    }
-    .menu-bottom .col ul li {
-        font-size: 13px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .menu-bottom .col {
-        width: 100%;
-    }
-} */

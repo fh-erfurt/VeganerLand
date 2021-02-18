@@ -10,51 +10,51 @@
         <div class="col">
             <h1>UNTERNEHMEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
-            <li><a href="?c=pages&a=about#team" title="go to About">Team</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Services</a></li>
-            <li><a href="?c=pages&a=about#impressum" title="go to Impressum">Impressum</a></li>
-            <li><a href="?c=pages&a=about" title="go to Analytik">Analytik</a></li>
-            <li><a href="?c=pages&a=contact" title="send Email">Get in touch</a></li>
+            <li><a href="?c=pages&a=about" title="Über uns">About</a></li>
+            <li><a href="?c=pages&a=about#team" title="Über uns - Team">Team</a></li>
+            <li><a href="?c=pages&a=about#Tradition" title="Über uns - Tradition">Tradition</a></li>
+            <li><a href="?c=pages&a=about#Innovation" title="Über uns - Innovation">Innovation</a></li>
+            <li><a href="?c=pages&a=about#impressum" title="Über uns - Impressum">Impressum</a></li>
+            <li><a href="?c=pages&a=contact" title="Email schicken">Get in touch</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>PRODUKTE</h1>
             <ul>
-            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
-            <li><a href="?c=pages&a=about#dashboard" title="go to Dashboard">Dashboard</a></li>
-            <li><a href="?c=pages&a=about#content" title="go to Content">Content</a></li>
+            <li><a href="?c=products&a=fruits" title="Über uns - Obst">Obst</a></li>
+            <li><a href="?c=products&a=vegetables" title="Über uns - Gemüse">Gemüse</a></li>
+            <li><a href="?c=products&a=bargain" title="Über uns - Angebote">Angebote</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>KONTEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about" title="go to About">About</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Mission</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Services</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Social</a></li>
-            <li><a href="?c=pages&a=contact" title="send Email">Get in touch</a></li>
+            <li><a href="?c=pages&a=about#AGB" title="Über uns - AGB">AGB</a></li>
+            <li><a href="?c=pages&a=about#Vertragsschluss" title="Über uns - Vertragsschluss">Vertragsschluss</a></li>
+            <li><a href="?c=pages&a=about#Preise&Zahlung" title="Über uns - Preise und Zahlung">Preise und Zahlung</a></li>
+            <li><a href="?c=pages&a=about#Gewährleistung" title="Über uns - Gewährleistung">Gewährleistung</a></li>
+            <li><a href="?c=pages&a=about#Datenschutz" title="Über uns - Datenschutz">Datenschutz</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>RESSOURCEN</h1>
             <ul>
-            <li><a href="?c=pages&a=about" title="go to About">Webmail</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Redeem code</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">WHOIS lookup</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Site map</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Web templates</a></li>
-            <li><a href="?c=pages&a=contact" title="send Email">Email templates</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Webmail</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Redeem code</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">WHOIS lookup</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Site map</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web templates</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="send Email">Email templates</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>UNTERSTÜTZUNG</h1>
             <ul>
-            <li><a href="?c=pages&a=contact" title="send Email">Contact us</a></li>
+            <li><a href="?c=pages&a=contact" title="Email schicken">Contact us</a></li>
             <li><a href="?c=pages&a=about#impressum" title="go to Email">E-Mail</a></li>
-            <li><a href="?c=pages&a=about#support" title="go to About">Support</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Web chat</a></li>
-            <li><a href="?c=pages&a=about" title="go to About">Open ticket</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Support</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web chat</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Open ticket</a></li>
             </ul>
         </div>
         <div class="col social">
@@ -69,7 +69,6 @@
             <li><a href="#" class="fa fa-snapchat-ghost"></a></li>
             </ul>
         </div>
-        <div class="clearfix"></div>
     </div>
 </div>
 <!-- END OF FOOTER -->

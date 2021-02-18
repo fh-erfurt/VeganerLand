@@ -2,7 +2,7 @@
     <h1>Veganer Land</h1>
     </header>
 
-    <article>
+    <article class="team-blocks">
     <h2 id="team">Team</h2>
     <div class="row">
         <div class="column">
@@ -12,7 +12,7 @@
                     <p class="title">Medieninformatiker</p>
                     <p>Computerspiele und Gitarre</p>
                     <p><a href="mailto:molham.al.khodari@fh-erfurt.de">alkhodari@veganerland.de</a></p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button"> <a href="mailto:molham.al.khodari@fh-erfurt.de">Contact</a> </button></p>
                 </div>
             </div>
         </div>
@@ -43,37 +43,37 @@
     <!-- code for the menu -->
     <nav class="menu-bottom">
         <ul>
-            <li>
+            <li class="menu-item">
                 <a href="?c=pages&a=homepage" class="logo" title="go to Homepage">
                     <img src="assets/images/logo.png" alt="logo" width="50px" height="50px" />
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="#dashboard" title="jump to Dashboard">
                     Dashboard
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="#content" class="active" title="jump to content">
                     Inhalt
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="?c=pages&a=contact" title="go to contact page">
                     Kontakt
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="#analytics" title="jump to AGB">
                     AGB
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="#Widerrufsrecht" title="jump to Right of withdrawal">
                 Widerrufsrecht
                 </a>
             </li>
-            <li>
+            <li class="menu-item">
                 <a class = "list-group" href="#impressum" title="jump to Impressum">
                     Impressum
                 </a>
@@ -83,14 +83,14 @@
     <!-- information about the company and products for customers. -->
     <article id="dashboard">
         <h2>Dashboard</h2>
-            <h3>
+            <h3 id="Tradition">
                 <strong>Tradition</strong>
             </h3>
                 Unser Unternehmen wurde im Jahr 2011 gegründet. Wir Betreiben seitdem für unsere Kunden Online-Shop mit einem großen Sortiment an frischem Obst und Gemüse.
                 Unser zentraler Firmensitz befindet sich im Erfurt, Jede Nacht ab 2 Uhr sind unsere Lieferranten für unsere Kunden unterwegs, um Waren in bester Qualität zu liefern, Natürlich jeden Tag frisch. Seit nunmehr 
                  <strong>über 10 Jahren</strong> konzentrieren wir uns auf ein qualitätsbewusstes, umfassendes und einfallsreiches Angebot und engagierten Kundenservice.
                 </div>
-            <h3>
+            <h3 id="Innovation">
                 <strong>Innovation</strong>
             </h3>
                 Mit der Idee, Kunden deutschlandweit beliefern zu können, wurde 2011 der Online-Shop veganerland.de geboren. Kunden können seitdem Obst & Gemüse an eine Wunschlieferadresse liefern lassen. Die Obst & Gemüse werden per Post verschickt und erreichen ihre Empfänger frisch am nächsten Tag oder zum ausgewählten Wunschtermin. Das positive Feedback zeigt uns, dass unsere frische Versandidee immer wieder gut ankommt.
@@ -153,7 +153,7 @@
                     zuständigen Strafverfolgungsbehörden, sobald der Kunde gegen diese Zusicherung verstößt.
                 </li>
             </ol>
-            <h2>3. Vertragsschluss</h2>
+            <h2 id="Vertragsschluss">3. Vertragsschluss</h2>
             <ol>
                 <li> Unsere Angebote im Online-Shop sind unverbindlich.</li>
                 <li> 
@@ -176,7 +176,7 @@
                     nur nach besonderer Maßgabe der Ziffer 9 dieser Allgemeinen Geschäftsbedingungen verlangen kann.
                 </li>
             </ol>
-            <h2>4. Preise und Zahlung</h2>
+            <h2 id="Preise&Zahlung">4. Preise und Zahlung</h2>
             <ol>
                 <li>Unsere Preise schließen die gesetzliche Umsatzsteuer ein, nicht jedoch Versandkosten. Zölle und ähnliche Abgaben hat der Kunde zu tragen.</li>
                 <li>
@@ -225,7 +225,7 @@
                 </li>
                 <li>Wir werden die Ware gegen die üblichen Transportrisiken auf unsere Kosten versichern.</li>
             </ol>
-            <h2>7. Gewährleistung</h2>
+            <h2 id="Gewährleistung">7. Gewährleistung</h2>
             <ol>
                 <li>Für Gewährleistungsansprüche gelten die gesetzlichen Regelungen.</li>
                 <li>
@@ -247,7 +247,7 @@
                     Lebens, des Körpers oder der Gesundheit oder nach dem Produkthaftungsgesetz.
                 </li>
             </ol>
-            <h2>9. Datenschutz</h2>
+            <h2 id="Datenschutz">9. Datenschutz</h2>
             <ol>
                 <li>
                     Wir dürfen die die jeweiligen Kaufverträge betreffenden Daten verarbeiten und speichern, soweit dies für die Ausführung und Abwicklung des Kaufvertrages 
@@ -365,3 +365,4 @@
     <article class="documentation">
          <a href="../VeganerLand/documentation/documentation.html" target="_blank" title=" Go to Documentation">Documentation</a> 
     </article>
+    <br>

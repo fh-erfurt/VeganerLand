@@ -1,4 +1,4 @@
-<div class="contact-form" id="email">
+<div class="contact-form">
     <form class="form-horizontal" method="post">
         <header class="head-form">
         <h2>E-Mail</h2>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label>Nachricht</label> <br>
-                <textarea type="text" id="message" name="content" cols="60" rows="6"> </textarea>
+                <textarea type="text" id="message" name="content" cols="60" rows="6"></textarea>
             </div>
         </div>
         <div>
