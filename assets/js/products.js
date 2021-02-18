@@ -10,6 +10,9 @@ function sendProductData(event, formData = 'form') {
     event.preventDefault();
 
     var form = document.getElementById(formData);
+    var cart = document.getElementById('cartCount');
+    var count = cart.innerHTML;
+    
     var request = new XMLHttpRequest();
 
     // This somehow works on all pages that deal with products.
@@ -25,6 +28,8 @@ function sendProductData(event, formData = 'form') {
             if (form.length == 3) {
                 if (form[2].value) {
                     alert("Die Bestellung wurde erfolgreich in den Warenkorb gelegt.");
+                    count++;
+                    cart.innerHTML = count;
                 } else {
                     alert("Es gab ein Problem beim bearbeiten ihrer Bestellung.");
                 }
