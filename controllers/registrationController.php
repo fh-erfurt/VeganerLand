@@ -68,16 +68,13 @@ class RegistrationController extends Controller
                                 {
                                     try 
                                     {
-                                        if (!empty($_POST['street'])
-                                         && !empty($_POST['number'])
-                                         && !empty($_POST['zip'])
-                                         && !empty($_POST['city'])) 
+                                        $addressInfo = Address::findOne('addressId', "street = '$street' AND 
+                                                                                          number = '$number' AND 
+                                                                                          zip    = '$zip' AND 
+                                                                                          city   = '$city'");
+                                            
+                                        if (empty($addressInfo))
                                         {
-                                            $street         = $_POST['street'];
-                                            $number         = $_POST['number'];
-                                            $zip            = $_POST['zip'];
-                                            $city           = $_POST['city'];
-
                                             // prepare sql and bind parameters
                                             $sql2 = "INSERT INTO " . Address::tableName() . "(street, number, zip, city) 
                                              VALUES (:street, :number, :zip, :city)";
@@ -89,7 +86,13 @@ class RegistrationController extends Controller
                                             $stmt->execute();
 
                                             $lastAddressId = $GLOBALS['db']->lastInsertId();
-                                        } else 
+                                        }
+                                        else
+                                        {
+                                            $lastAddressId = $addressInfo[0]['addressId'];
+                                        }
+                                        }
+                                        else 
                                         {
                                             $lastAddressId = null;
                                         }
