@@ -51,7 +51,7 @@
                             <div class="card-text">
                                 <p><? echo "&nbsp;" . strtr($products[$idx][$prodidx]["comment"],"_"," ")?></p>
                                 <hr>
-                                <p><?="&nbsp" . $products[$idx][$prodidx]['stdPrice'] . " €"?></p>
+                                <p><span class="price"><?="&nbsp" . $products[$idx][$prodidx]['stdPrice'] . " €"?> </span></p>
                             </div>
 
                             <div class="card-footer">

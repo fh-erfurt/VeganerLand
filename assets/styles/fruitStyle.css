@@ -60,7 +60,7 @@ img {
     width: 98%;
     margin: auto;
     overflow: hidden;
-    background: white;
+    background: #b9b9b9;
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -120,6 +120,7 @@ img {
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .card-footer {
@@ -145,4 +146,18 @@ input[type=number] {
 
 .alert-danger {
     margin-top: 110px;
+}
+
+
+/* price style */
+
+.price {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: revert;
+    background-color: #AE3C58;
+    border: 1px solid #346021;
+    border-width: 5px;
+    color: white;
+    padding: 0.5rem;
 }
