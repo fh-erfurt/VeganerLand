@@ -76,6 +76,9 @@ body {
         width: 40%;
         display: block;
     }
+    .container {
+        height: 250px;
+    }
 }
 
 @media screen and (max-width: 600px) {

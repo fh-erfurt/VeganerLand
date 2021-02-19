@@ -154,3 +154,20 @@ button:hover {
 .form-group {
     display: inline-block;
 }
+
+@media only screen and (max-width: 950px) {
+    input[class="form-input"] {
+        width: 100%;
+        height: 25px;
+    }
+    textarea {
+        width: 100%;
+        height: auto;
+    }
+    .save {
+        width: 100%;
+    }
+    .con {
+        display: block;
+    }
+}

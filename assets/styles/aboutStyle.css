@@ -149,7 +149,7 @@ article,
     background-color: pink;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 950px) {
     .row {
         display: flex;
         flex-direction: column;
@@ -157,12 +157,7 @@ article,
     .column {
         width: 100%;
     }
-}
-
-@media only screen and (max-width: 850px) {
-    .menu-item {
-        padding: 10px;
-        margin: -20px;
-        display: block;
+    .menu-bottom {
+        display: none;
     }
 }
