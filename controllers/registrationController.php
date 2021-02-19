@@ -68,29 +68,40 @@ class RegistrationController extends Controller
                                 {
                                     try 
                                     {
-                                        $addressInfo = Address::findOne('addressId', "street = '$street' AND 
-                                                                                          number = '$number' AND 
-                                                                                          zip    = '$zip' AND 
-                                                                                          city   = '$city'");
-                                            
-                                        if (empty($addressInfo))
+                                        if (!empty($_POST['street'])
+                                         && !empty($_POST['number'])
+                                         && !empty($_POST['zip'])
+                                         && !empty($_POST['city'])) 
                                         {
-                                            // prepare sql and bind parameters
-                                            $sql2 = "INSERT INTO " . Address::tableName() . "(street, number, zip, city) 
-                                             VALUES (:street, :number, :zip, :city)";
-                                            $stmt = $GLOBALS['db']->prepare("$sql2");
-                                            $stmt->bindParam(":street", $street);
-                                            $stmt->bindParam(":number", $number);
-                                            $stmt->bindParam(":zip", $zip);
-                                            $stmt->bindParam(":city", $city);
-                                            $stmt->execute();
+                                            $street         = $_POST['street'];
+                                            $number         = $_POST['number'];
+                                            $zip            = $_POST['zip'];
+                                            $city           = $_POST['city'];
 
-                                            $lastAddressId = $GLOBALS['db']->lastInsertId();
-                                        }
-                                        else
-                                        {
-                                            $lastAddressId = $addressInfo[0]['addressId'];
-                                        }
+                                            // check if the address info allready exists
+                                            $addressInfo = Address::findOne('addressId', "street = '$street' AND 
+                                                                                        number = '$number' AND 
+                                                                                        zip    = '$zip' AND 
+                                                                                        city   = '$city'");
+                                                
+                                            if (empty($addressInfo))
+                                            {
+                                                // prepare sql and bind parameters
+                                                $sql2 = "INSERT INTO " . Address::tableName() . "(street, number, zip, city) 
+                                                VALUES (:street, :number, :zip, :city)";
+                                                $stmt = $GLOBALS['db']->prepare("$sql2");
+                                                $stmt->bindParam(":street", $street);
+                                                $stmt->bindParam(":number", $number);
+                                                $stmt->bindParam(":zip", $zip);
+                                                $stmt->bindParam(":city", $city);
+                                                $stmt->execute();
+
+                                                $lastAddressId = $GLOBALS['db']->lastInsertId();
+                                            }
+                                            else
+                                            {
+                                                $lastAddressId = $addressInfo[0]['addressId'];
+                                            }
                                         }
                                         else 
                                         {
@@ -136,7 +147,7 @@ class RegistrationController extends Controller
                                 } 
                                 else 
                                 {
-                                    viewError('Password not safe enough');
+                                    viewError('Passwort nicht sicher genug');
 
                                     if (isset($_GET['ajax'])) 
                                     {
