@@ -78,6 +78,26 @@ a:hover {
     clear: both;
 }
 
+.backToTop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-color: #d40511;
+    border-color: #d40511;
+    border-width: 1px;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+    transition-property: color, background-color, border-color;
+    float: right;
+}
+
 @media only screen and (min-width: 1280px) {
     .contain {
         width: 1200px;
