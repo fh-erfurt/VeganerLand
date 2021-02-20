@@ -98,22 +98,7 @@
                 Inzwischen versenden wir über 100.000 Kilo jährlich. Die Nähe zum DHL macht es uns möglich, den Obstversand innerhalb 24 Stunden ohne Expresszuschlag anzubieten.
                 Im Februar 2021 startete unser Relaunch und veganerland.de präsentiert sich seitdem mit einem neuen Online-Auftritt. Unser Online-Shop ist moderner, serviceorientierter und komfortabler geworden. Nun ist es für unsere Kunden noch einfacher, unsere Obst & Gemüse online zu bestellen. Neu durchdachte und bequemere Bestellabläufe garantieren eine schnellere Auftragsabwicklung und einen besseren Kundenservice.
                 <strong>Veganer Land steht für höchste Qualitätsansprüche, besten Service und Kundenfreundlichkeit. Wir sind bestrebt uns ständig weiterzuentwickeln und zu verbessern.</strong>
-    </article>
-    <article id="content">
-        <h2>Inhalt</h2>
-        <p>
-            Donec dapibus sapien quis erat pretium sodales. Donec tincidunt justo arcu, nec mollis nunc venenatis ut. Aenean gravida tempus elit non hendrerit. Sed at ultricies dolor. Donec sed mauris urna. Mauris lectus lorem, pulvinar at lacinia eget, vestibulum
-            quis turpis. Quisque commodo, mi sit amet ultricies sagittis, diam est eleifend neque, eget aliquam lacus sem vitae dolor. Cras sit amet fermentum odio. Aliquam scelerisque enim odio, non gravida massa scelerisque quis.
-        </p>
-    </article>
-
-    <article id="analytics">
-        <h2>Analytik</h2>
-        <p>
-            Aenean pellentesque aliquet nibh eu molestie. Vivamus sit amet dignissim nunc. Integer tempor metus sit amet elementum interdum. Nunc pellentesque, odio non ornare sagittis, tellus dolor commodo sapien, non laoreet magna nunc in libero. Aliquam dictum
-            augue congue aliquam dictum. Donec eget purus elit. Phasellus metus nibh, aliquet sit amet dapibus non, vulputate et ipsum. In eget fermentum tellus. Nunc enim justo, consectetur eget euismod eu, consequat pulvinar nulla. Aenean in sem vitae
-            nulla vehicula scelerisque. Sed ut auctor lorem. Ut non tristique nisi. Nulla vitae neque a nisi facilisis aliquam vel in nisl. Donec blandit pulvinar ligula quis vestibulum. Proin at rutrum augue. Aliquam sit amet porttitor tortor.
-        </p>
+                <p>&nbsp;</p>
     </article>
     <article id="AGB">
         <h2>AGB</h2>
