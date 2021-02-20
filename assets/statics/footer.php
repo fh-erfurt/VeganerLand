@@ -1,7 +1,7 @@
 <!-- Molham Al-khodari -->
 
 <link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
-<!-- nur für icorn aus w3schools wie gesprochen (mit Herr Kurse) -->
+<!-- nur Icons aus w3schools, wie gesprochen (mit Herrn Kurse) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- FOOTER START -->
