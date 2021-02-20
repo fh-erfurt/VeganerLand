@@ -20,7 +20,6 @@
             <li><a href="?c=pages&a=about#Tradition" title="Über uns - Tradition">Tradition</a></li>
             <li><a href="?c=pages&a=about#Innovation" title="Über uns - Innovation">Innovation</a></li>
             <li><a href="?c=pages&a=about#impressum" title="Über uns - Impressum">Impressum</a></li>
-            <li><a href="?c=pages&a=contact" title="Email schicken">Get in touch</a></li>
             </ul>
         </div>
         <div class="col">
@@ -32,7 +31,7 @@
             </ul>
         </div>
         <div class="col">
-            <h1>KONTEN</h1>
+            <h1>RECHTLICHES</h1>
             <ul>
             <li><a href="?c=pages&a=about#AGB" title="Über uns - AGB">AGB</a></li>
             <li><a href="?c=pages&a=about#Vertragsschluss" title="Über uns - Vertragsschluss">Vertragsschluss</a></li>
@@ -44,22 +43,20 @@
         <div class="col">
             <h1>RESSOURCEN</h1>
             <ul>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Webmail</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Redeem code</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">WHOIS lookup</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Site map</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web templates</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="send Email">Email templates</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Code einlösen</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Website-Karte</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web-Vorlagen</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="send Email">E-Mail-Vorlagen</a></li>
             </ul>
         </div>
         <div class="col">
             <h1>UNTERSTÜTZUNG</h1>
             <ul>
-            <li><a href="?c=pages&a=contact" title="Email schicken">Contact us</a></li>
+            <li><a href="?c=pages&a=contact" title="Email schicken">Kontakt</a></li>
             <li><a href="?c=pages&a=about#impressum" title="go to Email">E-Mail</a></li>
             <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Support</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web chat</a></li>
-            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Open ticket</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Web-Chat</a></li>
+            <li><a href="?c=errors&a=error404&error=nonaction" title="go to About">Ticket öffnen</a></li>
             </ul>
         </div>
         <div class="col social">
