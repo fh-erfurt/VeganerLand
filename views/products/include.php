@@ -32,7 +32,7 @@
                     <option value="1kg">1kg</option>
                 </select>
 
-                <input class="submitFilter" type="submit" name="submitFilter" formaction="?c=products&a=filter" value="Filtern">
+                <input class="submitFilter" onclick="reload(event)" type="submit" name="submitFilter" formaction="?c=products&a=filter" value="Filtern">
 
         </form>
     </div>
