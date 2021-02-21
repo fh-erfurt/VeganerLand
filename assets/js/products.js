@@ -50,15 +50,27 @@ function changeDisplay(index, tag, filter, call = 0) {
 
     if (call == filter.length) {
         li[index].style.display = "inline-block";
+        li[index].removeAttribute("title");
     } else {
         var currentTag = tag[call];
         var check = li[index].getElementsByTagName('p')[currentTag].textContent;
-        if (check.indexOf(filter[call]) == -1) {
-            li[index].style.display = "none";
-            alert("Nichts da!");
+        if (currentTag == 0) {
+            if (check.indexOf(filter[call]) == -1) {
+                li[index].style.display = "none";
+                li[index].setAttribute("title", "hidden");
+            } else {
+                call++;
+                changeDisplay(index, tag, filter, call);
+            }
         } else {
-            call++;
-            changeDisplay(index, tag, filter, call);
+            console.log(filter[call]);
+            if (parseFloat(check) < parseFloat(filter[call])) {
+                li[index].style.display = "none";
+                li[index].setAttribute("title", "hidden");
+            } else {
+                call++;
+                changeDisplay(index, tag, filter, call);
+            }
         }
     }
 }
@@ -81,110 +93,97 @@ function reload(event) {
         case bioFilter[0] && regionalFilter[0] && priceFilter[0] != "" && weightFilter[0] != "":
             var tagList = [bioFilter[1], regionalFilter[1], priceFilter[1], weightFilter[1]];
             var filterList = [bioFilter[2], regionalFilter[2], priceFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && regionalFilter[0] && priceFilter[0] != "":
             var tagList = [bioFilter[1], regionalFilter[1], priceFilter[1]];
             var filterList = [bioFilter[2], regionalFilter[2], priceFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && regionalFilter[0] && weightFilter[0] != "":
             var tagList = [bioFilter[1], regionalFilter[1], weightFilter[1]];
             var filterList = [bioFilter[2], regionalFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && priceFilter[0] != "" && weightFilter[0] != "":
             var tagList = [bioFilter[1], priceFilter[1], weightFilter[1]];
             var filterList = [bioFilter[2], priceFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case regionalFilter[0] && priceFilter[0] != "" && weightFilter[0] != "":
             var tagList = [regionalFilter[1], priceFilter[1], weightFilter[1]];
             var filterList = [regionalFilter[2], priceFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && regionalFilter[0]:
             var tagList = [bioFilter[1], regionalFilter[1]];
             var filterList = [bioFilter[2], regionalFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && priceFilter[0] != "":
             var tagList = [bioFilter[1], priceFilter[1]];
             var filterList = [bioFilter[2], priceFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0] && weightFilter[0] != "":
             var tagList = [bioFilter[1], weightFilter[1]];
             var filterList = [bioFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case regionalFilter[0] && priceFilter[0] != "":
             var tagList = [regionalFilter[1], priceFilter[1]];
             var filterList = [regionalFilter[2], priceFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case regionalFilter[0] && weightFilter[0] != "":
             var tagList = [regionalFilter[1], weightFilter[1]];
             var filterList = [regionalFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case priceFilter[0] != "" && weightFilter[0] != "":
             var tagList = [priceFilter[1], weightFilter[1]];
             var filterList = [priceFilter[2], weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case bioFilter[0]:
             var tagList = [bioFilter[1]];
             var filterList = [bioFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case regionalFilter[0]:
             var tagList = [regionalFilter[1]];
             var filterList = [regionalFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case priceFilter[0] != "":
             var tagList = [priceFilter[1]];
             var filterList = [priceFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            repeat(content, tagList, filterList);
             break;
         case weightFilter[0] != "":
             var tagList = [weightFilter[1]];
             var filterList = [weightFilter[2]];
-            for (i; i < content.length; i++) {
-                changeDisplay(i, tagList, filterList);
-            }
+            var array = [];
+            repeat(content, tagList, filterList);
             break;
         default:
             location.reload();
             break;
     }
+}
+
+function repeat(li, tag, filter) {
+    var array = [];
+    for (var i = 0; i < li.length; i++) {
+        changeDisplay(i, tag, filter);
+        array.push(li[i].title);
+    }
+    var checkArray = array.filter(check);
+    if (checkArray.length == li.length) {
+        alert("Nichts gefunden!");
+    }
+}
+
+function check(value) {
+    return value == "hidden";
 }
