@@ -10,7 +10,7 @@
 <div>
 
     <div class="filter">
-        <form method="post">
+        <form method="post" id="form">
             <h3>Filter</h3>
 
                 <label for="bio">Bio</label>
@@ -37,7 +37,7 @@
         </form>
     </div>
 
-    <div class="block-container">
+    <div class="block-container" id="products">
         <?
         for ($idx = 0; $idx < count($products); $idx++) 
         {
