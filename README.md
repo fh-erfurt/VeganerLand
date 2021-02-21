@@ -34,6 +34,11 @@ alle info finde Sie in der HTML document unter Über uns seite, unten beim Impre
 Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, kann man auch in /documentation/documentation.html direkt aufmachen, und die Dokumentation genießen.
 <br>
 
+## Zugangsdaten
+
+Email: mustermann@gmail.de <br>
+Password: Test321.
+
 ## Passwort zurücksetzen
 
 1. Gehsen Sie zu Login Seite
