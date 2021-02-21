@@ -11,7 +11,6 @@
                     <h2>Molham Al-khodari</h2>
                     <p class="title">Medieninformatiker</p>
                     <p>Computerspiele und Gitarre</p>
-                    <p><a href="mailto:molham.al.khodari@fh-erfurt.de">alkhodari@veganerland.de</a></p>
                     <p><button class="button"> <a href="mailto:molham.al.khodari@fh-erfurt.de">Contact</a> </button></p>
                 </div>
             </div>
@@ -22,8 +21,7 @@
                     <h2>Jesse Müller</h2>
                     <p class="title">Ingenieurinformatikerin</p>
                     <p>Copmuterspiele, Lesen und Musik</p>
-                    <p><a href="mailto:fake@gmail.com">müller@veganerland.de</a></p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button"> <a href="mailto:fake@gmail.com">Contact</a> </button></p>
                 </div>
             </div>
         </div>
@@ -33,8 +31,7 @@
                     <h2>Mahmoud Matar</h2>
                     <p class="title">Wirtschaftsinformatiker</p>
                     <p>Schach und Filme</p>
-                    <p><a href="mailto:mahmoud.matar@fh-erfurt.de">matar@veganerland.de</a></p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button"> <a href="mailto:mahmoud.matar@fh-erfurt.de">Contact</a> </button></p>
                 </div>
             </div>
         </div>
@@ -49,22 +46,17 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a class = "list-group" href="#dashboard" title="jump to Dashboard">
-                    Dashboard
+                <a class = "list-group" href="#team" title="jump to Team">
+                    Team
                 </a>
             </li>
             <li class="menu-item">
-                <a class = "list-group" href="#content" class="active" title="jump to content">
-                    Inhalt
+                <a class = "list-group" href="#überblick" title="jump to Überblick">
+                    Überblick
                 </a>
             </li>
             <li class="menu-item">
-                <a class = "list-group" href="?c=pages&a=contact" title="go to contact page">
-                    Kontakt
-                </a>
-            </li>
-            <li class="menu-item">
-                <a class = "list-group" href="#analytics" title="jump to AGB">
+                <a class = "list-group" href="#AGB" title="jump to AGB">
                     AGB
                 </a>
             </li>
@@ -81,8 +73,8 @@
         </ul>
     </nav>
     <!-- information about the company and products for customers. -->
-    <article id="dashboard">
-        <h2>Dashboard</h2>
+    <article id="überblick">
+        <h2>Überblick</h2>
             <h3 id="Tradition">
                 <strong>Tradition</strong>
             </h3>
