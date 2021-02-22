@@ -81,6 +81,7 @@ function changeDisplay(index, tag, filter, call = 0) {
 function reload(event) {
     event.stopPropagation();
     event.preventDefault();
+    document.getElementById('alert').innerHTML = ""; // Delets the error-message.
 
     // Gets all elements from form and saves them in an array.
     var form = document.getElementById('form');
@@ -190,7 +191,7 @@ function repeat(li, tag, filter) {
     var checkArray = array.filter(check);
     // When all elements are hidden checkArray and li will have the same length.
     if (checkArray.length == li.length) {
-        alert("Es konnte leider nichts gefunden werden.");
+        document.getElementById('alert').innerHTML = "<div class='alert alert-danger'>Es konnte leider nichts gefunden werden.</div>"; // Error Message
     }
 }
 
