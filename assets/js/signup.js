@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var btnSubmit = document.getElementById('submit');
     var inputFirstname = document.getElementById('firstname');
     var inputLastname = document.getElementById('lastname');
+    var inputEmail = document.getElementById('email');
     var inputPassword = document.getElementById('password');
     var inputPasswordagain = document.getElementById('passwordagain');
 
@@ -38,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.alert("please Enter your lastname");
                 inputLastname.focus({ preventScroll: true });
                 inputLastname.style.border = "solid red"
+                valid = false;
+            }
+
+            if (inputEmail.value == "") {
+                window.alert("please Enter your Email");
+                inputEmail.focus({ preventScroll: true });
+                inputEmail.style.border = "solid red"
                 valid = false;
             }
 
