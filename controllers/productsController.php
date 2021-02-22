@@ -24,16 +24,16 @@ class ProductsController extends Controller
     {
         $this->getProductsByCategory();
         
-        $this->addToCart();
-        $this->addToFavorites();
+        Products::addToCart();
+        Products::addToFavorites();
     }
 
     public function actionVegetables()
     {
         $this->getProductsByCategory();
         
-        $this->addToCart();
-        $this->addToFavorites();
+        Products::addToCart();
+        Products::addToFavorites();
     }
 
     public function actionBargain()
@@ -44,83 +44,38 @@ class ProductsController extends Controller
         array_push($bargain, $info);
 
         $this->setParams('products', $bargain);
-        $this->addToCart();
-        $this->addToFavorites();
+        Products::addToCart();
+        Products::addToFavorites();
     }
 
     public function actionSearch()
     {
         // Input whta to search in field (Name of fruit of veggie)
-        if (isset($_POST['submit'])) 
+        if (isset($_POST['submitSearch'])) 
         {
-
             $search = $_POST['search'];
-            $result = array();
-
-            $info = Products::find("descrip LIKE '%$search%'");
-            if (!empty($info))
-            {
-                array_push($result, $info);
-
-                $this->setParams('products', $result);
-            }
-            else
-            {
-                $this->setParams('products', array());
-                viewError("Es konnte nichts gefunden werden.");
-            }
+            setcookie("search", $search);
         }
-    }
-
-    protected function addToCart()
-    {
-        if (isset($_SESSION['custId'])) 
+        else
         {
-            $idC = $_SESSION['custId'];
-            if (isset($_POST['submit'])) 
-            {
-                // $_POST['submit'] → Id of product.
-                if (!empty($_POST['qty']))
-                {
-                    $item = $_POST['submit'];
-                    $itemdata = Products::find("prodId = '$item'");
-                    $qty = $_POST['qty'];
-                    $check = OrderItems::find("custId = '$idC' AND prodId = '$item' AND qyt = '$qty'");
-                    if (empty($check)) 
-                    {
-                        try 
-                        {
-                            $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$item', '$qty')";
-                            $stmt = $GLOBALS['db']->prepare($sql);
-                            $stmt->execute();
-                        } 
-                        catch (\PDOException $e) 
-                        {
-                            viewError("Bestellung fehlgeschlagen.");
-                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                        }
-                    }
-                    else
-                    {
-                        $idI = $check[0]['itemId'];
-                        try 
-                        {
-                            $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
-                            $stmt = $GLOBALS['db']->prepare($sql);
-                            $stmt->execute();
-                        } 
-                        catch (\PDOException $e) {
-                            viewError("Bestellung fehlgeschlagen.");
-                            echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                        }
-                    }
-                } 
-                else 
-                {
-                    viewError("Bitte gib die gewünschte Menge an!");
-                }
-            } 
-        } 
+            $search = $_COOKIE['search'];
+        }
+        $result = array();
+        
+        $info = Products::find("descrip LIKE '%$search%'");
+        if (!empty($info))
+        {
+            array_push($result, $info);
+            
+            $this->setParams('products', $result);
+        }
+        else
+        {
+            $this->setParams('products', array());
+            viewError("Es konnte nichts gefunden werden.");
+        }
+        Products::addToCart();
+        Products::addToFavorites();
     }
 
     public function actionCart()
@@ -256,65 +211,7 @@ class ProductsController extends Controller
         }
          else 
         {
-            redirectHome("you should first register");
-        }
-    }
-    
-    protected function removeFromCart()
-    {
-        if (isset($_POST['delete'])) 
-        {
-            $id = $_POST['delete'];
-            $check = Orders::find("itemId = '$id'");
-
-            if (empty($check))
-            {
-                $sql1 = "DELETE FROM " . OrderItems::tableName() . " WHERE itemId = $id";
-                $stmt = $GLOBALS['db']->prepare($sql1);
-                $stmt->execute();
-            }
-            else
-            {
-                $sql2 = "UPDATE " . OrderItems::tableName() . " SET isSend = 't' WHERE itemId = $id;";
-                $stmt = $GLOBALS['db']->prepare($sql2);
-                $stmt->execute();
-            }
-        }
-    }
-    
-    public static function addToFavorites()
-    {
-        if (!empty($_POST['fav'])) 
-        {
-            if (isset($_SESSION['custId'])) 
-            {
-                $idP = $_POST['fav'];
-                $idC = $_SESSION['custId'];
-
-                $check = Favorits::find("prodId = '$idP' AND custID = '$idC'");
-                if (empty($check)) 
-                {
-                    try 
-                    {
-                        $sql = "INSERT INTO " . Favorits::tableName() . "(prodId, custId) VALUES ('$idP', '$idC')";
-                        $stmt = $GLOBALS['db']->prepare($sql);
-                        $stmt->execute();
-                    } 
-                    catch (\PDOException $e) 
-                    {
-                        viewError("Fehlgeschlag.");
-                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                    }
-                } 
-                else 
-                {
-                    viewError("Dieses Produkt ist bereits in den Favoriten eingetragen.");
-                }
-            } 
-            else 
-            {
-                    viewError("Sie sind nicht angemeldet!");
-            }
+            redirectHome("Du solltest dich erst anmelden.");
         }
     }
 
