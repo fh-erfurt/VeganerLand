@@ -13,7 +13,7 @@
 /* left block */
 
 .form-horizontal {
-    width: 600px;
+    width: 40%;
     min-height: 500px;
     height: auto;
     border-radius: 5px;
@@ -21,7 +21,6 @@
     box-shadow: 0 9px 50px hsla(24, 26%, 4%, 0.548);
     padding: 2%;
     background-image: linear-gradient(-225deg, #90e27500 50%, #90e275 50%);
-    width: 50%;
 }
 
 
