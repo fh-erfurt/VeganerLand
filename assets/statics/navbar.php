@@ -46,7 +46,7 @@
       <div class="search-container">
         <form class=search name="search" method="post">
           <input type="text" name="search" placeholder="Suche.." maxlength="50">
-          <button type="submit" name="submit" formaction="?c=products&a=search"><i class="fa fa-search"></i></button>
+          <button type="submit" name="submitSearch" formaction="?c=products&a=search"><i class="fa fa-search"></i></button>
         </form>
       </div>
     </li>
