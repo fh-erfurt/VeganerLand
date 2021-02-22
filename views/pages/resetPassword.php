@@ -43,7 +43,7 @@
                 </header>
                 <input class="form-input" id="password" type = "password" name="password1" placeholder ="Password" required> <br>
                 <input class="form-input" id="passwordagain" type = "password" name="password2" placeholder ="Password wiederholen" required> <br>
-                <button id="submit" type="submit" name="submit">passwort setzten</button>
+                <button id="submitResetPassword" type="submit" name="submit">passwort setzten</button>
             </div>
         </form>
 <?php
