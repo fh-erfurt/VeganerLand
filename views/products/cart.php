@@ -21,7 +21,7 @@
                 <? 
                 for ($idx = 0; $idx < count($cart); $idx++) { ?>
                 <tr>
-                    <td><? echo ucfirst($prodInfo[$idx][0]['descrip']) ?></td>
+                    <td><? echo ucfirst(strtr($prodInfo[$idx][0]['descrip'])) ?></td>
                     <td><? echo $cart[$idx]['qyt'] ?></td>
                     <td><? echo $price[$idx]." €"; ?></td>
                     <td><form method = "post"><button name="delete" type="submit" value="<?=$cart[$idx]['itemId']?>">X</button></form></td>
