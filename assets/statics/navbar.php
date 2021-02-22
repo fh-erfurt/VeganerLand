@@ -9,10 +9,6 @@
   <ul class="menu">
     <li class="logo"><a href="?c=pages&a=homepage">VeganerLand</a></li>
     <li class="item"><a href="?c=pages&a=homepage">Startseite</a></li>
-    <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
-    <li class="item"><a href="?c=pages&a=contact">Kontakt</a></li>
-    <li class="item"><a href="?c=products&a=bargain">Angebote</a></li>
-
     <li class="dropdown item"> <a>Obst</a>
       <div class="dropdown-content">
         <?
@@ -37,6 +33,13 @@
         } ?>
       </div>
     </li>
+    <li class="item"><a href="?c=products&a=bargain">Angebote</a></li>
+    <li class="item"><a href="?c=pages&a=about">Über uns</a></li>
+    <li class="item"><a href="?c=pages&a=contact">Kontakt</a></li>
+
+
+
+
     
     <!-- searchform -->
     <li class="item">
