@@ -6,7 +6,7 @@
 
 
 <form class="login-form" name="registration" action="" method="post">
-   <div class="container">
+   <div class="container" style="height:100%">
       <header class="head-form">
          <h2>Sing Up</h2>
          <p>Es geht schnell und einfach</p>
