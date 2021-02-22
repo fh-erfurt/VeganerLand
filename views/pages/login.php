@@ -21,8 +21,8 @@
 
         <!--Forgot Password and Sign Up  -->
         <div class="other">
-               <button class="submits"> <a href="?c=pages&a=resetPassword&do=identify" title="Reset your Password"> Passwort vergessen </a> </button>
-               <button class="submits"><a href="?c=registration&a=registration" title="go to Registrieren">Registrieren</a> </button>
+               <button class="submits"> <a href="?c=pages&a=resetPassword&do=identify" title="Passwort zurücksetzen"> Passwort vergessen </a> </button>
+               <button class="submits"><a href="?c=registration&a=registration" title="Konto erstellen">Registrieren</a> </button>
         </div>
     </div>
 </form>
