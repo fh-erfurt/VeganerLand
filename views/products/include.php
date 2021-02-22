@@ -38,6 +38,7 @@
     </div>
 
     <div class="block-container" id="products">
+        <p id="alert"></p>
         <?
         for ($idx = 0; $idx < count($products); $idx++) 
         {
