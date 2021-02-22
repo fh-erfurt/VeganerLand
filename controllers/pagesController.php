@@ -188,7 +188,7 @@ class PagesController extends Controller
         // update Favorits
         $this->viewFavorites();
 
-        if (isset($_SESSION['email'])) {
+        if (isset($_SESSION['custId'])) {
             $info = ['custId'   => null,
                         'firstName' => null,
                         'lastName'  => null,
@@ -200,9 +200,9 @@ class PagesController extends Controller
                         'number'    => null,
                         'zip'       => null,
                         'city'      => null];
-            $email = $_SESSION['email'];
+            $custId = $_SESSION['custId'];
     
-            $custInfo = Customers::find("email = '$email'");
+            $custInfo = Customers::find("custId = '$custId'");
             $info['custId'] = $custInfo[0]['custId'];
             $info['firstName'] = $custInfo[0]['firstName'];
             $info['lastName'] = $custInfo[0]['lastName'];
