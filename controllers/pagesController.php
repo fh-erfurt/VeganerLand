@@ -158,7 +158,7 @@ class PagesController extends Controller
 
     public function actionAbout()
     {
-        // alles static .. 
+        // all static .. 
     }
 
     public function actionContact()
@@ -350,7 +350,7 @@ class PagesController extends Controller
             header('Location: ?c=pages&a=homepage');
             //viewError('Du bist nicht angemeldet! <a href="?c=pages&a=login">Anmelden</a>'); // das macht hier kein sinn!
         }
-        $this->addToCart();
+        Products::addToCart();
     }
     
     public function actionLogout()
@@ -365,7 +365,7 @@ class PagesController extends Controller
     {
         // The customer can look at his favorites list, delete entries and quickly order again.
 
-        $this->removeFromfavorits();
+        Products::removeFromfavorits();
 
         $id = $_SESSION['custId'];
         $favoritsList = Favorits::find("custId = '$id'");
@@ -379,67 +379,6 @@ class PagesController extends Controller
         }
     
         $this->setParams('prodInfo', $productList);
-    }
-
-    public function removeFromfavorits()
-    {
-        if (isset($_POST['delete'])) 
-        {
-            $id = $_POST['delete'];
-
-            $sql = "DELETE FROM " . Favorits::tableName() . " WHERE prodId = $id";
-            $stmt = $GLOBALS['db']->prepare($sql);
-            $stmt->execute();
-        }
-    }
-
-    protected function addToCart()
-    {
-        $idC = $_SESSION['custId'];
-        if (isset($_POST['toCart'])) 
-        {
-            // $_POST['toCart'] → Id of product.
-            if (!empty($_POST['qty']))
-            {
-                $item = $_POST['toCart'];
-                $itemdata = Products::find("prodId = '$item'");
-                $qty = $_POST['qty'];
-                $check = OrderItems::find("custId = '$idC' AND prodId = '$item' AND qyt = '$qty'");
-                if (empty($check)) 
-                {
-                    try 
-                    {
-                        $sql = "INSERT INTO ". OrderItems::tableName() . " (custId, prodId, qyt) VALUES ('$idC', '$item', '$qty')";
-                        $stmt = $GLOBALS['db']->prepare($sql);
-                        $stmt->execute();
-                    } 
-                    catch (\PDOException $e) 
-                    {
-                        viewError("Bestellung fehlgeschlagen 1.");
-                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                    }
-                } 
-                else 
-                {
-                    $idI = $check[0]['itemId'];
-                    try 
-                    {
-                        $sql = "UPDATE " . OrderItems::tableName() . " SET isSend = 'f' WHERE itemId = $idI;";
-                        $stmt = $GLOBALS['db']->prepare($sql);
-                        $stmt->execute();
-                    } 
-                    catch (\PDOException $e) 
-                    {
-                        viewError("Bestellung fehlgeschlagen 2.");
-                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
-                    }
-                }
-            } 
-            else 
-            {
-                viewError("Bitte gib die gewünschte Menge an!");
-            }
-        }
     }
 }
 ?>
