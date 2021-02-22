@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!inputLastname || inputLastname.value.length < 2) {
                 window.alert("please Enter your lastname");
                 inputLastname.focus({ preventScroll: true });
-                inputLastname.style.border = "solid red"
+                inputLastname.style.border = "solid red";
                 valid = false;
             }
 
             if (inputEmail.value == "") {
                 window.alert("please Enter your Email");
                 inputEmail.focus({ preventScroll: true });
-                inputEmail.style.border = "solid red"
+                inputEmail.style.border = "solid red";
                 valid = false;
             }
 
@@ -53,18 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!inputPassword || inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
                 window.alert("the Passwords not safe enough");
                 inputPassword.focus({ preventScroll: true });
-                inputPassword.style.border = "solid red"
+                inputPassword.style.border = "solid red";
                 inputPasswordagain.focus({ preventScroll: true });
-                inputPasswordagain.style.border = "solid red"
+                inputPasswordagain.style.border = "solid red";
                 valid = false;
             }
 
             if (inputPassword.value != inputPasswordagain.value) {
                 window.alert("the Passwords must be the same");
                 inputPassword.focus({ preventScroll: true });
-                inputPassword.style.border = "solid red"
+                inputPassword.style.border = "solid red";
                 inputPasswordagain.focus({ preventScroll: true });
-                inputPasswordagain.style.border = "solid red"
+                inputPasswordagain.style.border = "solid red";
                 valid = false;
             }
 
