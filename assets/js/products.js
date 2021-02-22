@@ -171,7 +171,6 @@ function reload(event) {
         case weightFilter[0] != "":
             var tagList = [weightFilter[1]];
             var filterList = [weightFilter[2]];
-            var array = [];
             repeat(content, tagList, filterList);
             break;
         default:
@@ -192,6 +191,7 @@ function repeat(li, tag, filter) {
     // When all elements are hidden checkArray and li will have the same length.
     if (checkArray.length == li.length) {
         document.getElementById('alert').innerHTML = "<div class='alert alert-danger'>Es konnte leider nichts gefunden werden.</div>"; // Error Message
+        document.getElementById('products').style.background = "none";
     }
 }
 
