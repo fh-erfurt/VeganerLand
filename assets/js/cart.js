@@ -7,7 +7,7 @@
 // check password email and password right
 
 document.addEventListener('DOMContentLoaded', function() {
-    var btnSend = document.getElementById('send');
+    var btnSend = document.getElementById('address');
     var inputStreet = document.getElementById('street');
     var inputNumber = document.getElementById('number');
     var inputZip = document.getElementById('zip');
