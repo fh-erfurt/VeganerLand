@@ -63,7 +63,7 @@
                                     <input class="form-input" type="hidden" name = "fav" value="<?=$products[$idx][$prodidx]['prodId']?>">
                                 </form>
                                 <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['prodId']?>_Cart">
-                                    <button class="btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Cart')" id="submit" name="submit" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
+                                    <button class="btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Cart')" id="submit" name="addCart" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
                                     <input type = "hidden" name = "submit" value = "<?=$products[$idx][$prodidx]['prodId']?>">
                                     <input  class="qty" id="qty" name="qty" type="number" min="1">
                                 </form>
