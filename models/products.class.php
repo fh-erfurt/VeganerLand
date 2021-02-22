@@ -120,7 +120,7 @@ class Products extends BaseModel
         }
     }
   
-    public function removeFromfavorits()
+    public static function removeFromfavorits()
     {
         if (isset($_POST['delete'])) 
         {
