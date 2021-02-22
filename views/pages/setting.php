@@ -8,8 +8,9 @@
 <div class="con">
         <form class="form-horizontal" method="post">
                 <header class="head-form">
-                        <h2>Mitglied bearbeiten</h2>
-                        <p> bearbeite einfach deine Daten</p>
+                        <h2>Konto bearbeiten</h2>
+                        <p>Geben Sie einfach Ihre neuen Daten ein.</p>
+                        <p>(Adresse und Telefonnummer sind nicht notwendig.)</p>
                 </header>
 
                 <div class="field-set">
@@ -23,13 +24,13 @@
                         </div>
 
                         <div class="form-group">
-                                <label class="col-sm-2 control-label">Password</label>
+                                <label class="col-sm-2 control-label">Passwort</label>
                                 <input class="form-input" type ="hidden" name="oldPassword" value="<?php echo $customerInfo['password']; ?>">
                                 <input class="form-input" id="password" type="password" name="newPassword">
                         </div>
 
                         <div class="form-group">
-                                <label class="col-sm-2 control-label">Phone</label>
+                                <label class="col-sm-2 control-label">Telefonnummer</label>
                                 <input class="form-input" type="text" name="phone" value="<?echo $customerInfo['phone']?>">
                         </div>
 
@@ -58,7 +59,7 @@
                 </div>
 
                         <div>
-                                <button class="save" id="submit" type="submit" name="submit">Save</button>
+                                <button class="save" id="submit" type="submit" name="submit">Speichern</button>
                         </div>
         </form>
 
@@ -69,8 +70,8 @@
                 <table class="table-favorit">
                 <tr>
                         <th></th>
-                        <th>produkt</th>
-                        <th>prise</th>
+                        <th>Produkt</th>
+                        <th>Preis</th>
                 </tr>
                 <?
                 for ($idx = 0; $idx < count($prodInfo); $idx++) 
@@ -83,7 +84,7 @@
                         <td>
                         <form method = "post">
                         <input  class="qty" id="qty" name="qty" type="number" min="1">
-                        <button name="toCart" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">in den Warenkorb</button>
+                        <button name="toCart" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">In den Warenkorb</button>
                         </form>
                         </td>
                 </tr>
