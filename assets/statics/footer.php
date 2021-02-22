@@ -5,12 +5,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- FOOTER START -->
-<div>
-<a class="backToTop" href="#top" title="return to Top">
-    <i class="fa fa-arrow-up" aria-hidden="true"></i>
-</a>
-</div>
+
 <div class="footer">
+    <div>
+        <a class="backToTop" href="#top" title="return to Top">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
     <div class="contain">
         <div class="col">
             <h1>UNTERNEHMEN</h1>
