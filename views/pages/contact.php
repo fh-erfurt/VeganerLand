@@ -23,7 +23,7 @@
             </div>
         </div>
         <div>
-            <input class="save" id="send" type="submit" name="send" value="Send">
+            <input class="save" id="send" type="submit" name="send" value="Senden">
         </div>
     </form>
 </div>
