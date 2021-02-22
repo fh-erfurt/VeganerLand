@@ -18,7 +18,7 @@
          <input class="form-input" id="email" type="email" name="email" placeholder="Email" value="<?=htmlspecialchars($_POST['email'] ?? '')?>" required> <br>
 
          <input class="form-input" id="password"         type="password" name="password" placeholder="Passwort" required>
-         <input class="form-input" id="passwordagain"  type="password" name="passwordagain" placeholder="Passwort widerholen" required> <br>
+         <input class="form-input" id="passwordagain"  type="password" name="passwordagain" placeholder="Passwort wiederholen" required> <br>
 
          <div class="gender">
          
