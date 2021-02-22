@@ -78,7 +78,7 @@
                 ?>
                 <tr>
                         <td><form method = "post"><button name="delete" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">X</button></form></td>
-                        <td><?=ucfirst(strtr($prodInfo[$idx][0]['descrip']))?></td>
+                        <td><?=ucfirst(strtr($prodInfo[$idx][0]['descrip'],"_"," "))?></td>
                         <td><? echo $prodInfo[$idx][0]['stdPrice']." €"; ?></td>
                         <td>
                         <form method = "post">
