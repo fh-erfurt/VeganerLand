@@ -5,7 +5,7 @@
 -->
 
 
-form class="login-form" name="registration" action="" method="post">
+<form class="login-form" name="registration" action="" method="post">
    <div class="container">
       <header class="head-form">
          <h2>Konto erstellen</h2>
