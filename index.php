@@ -60,11 +60,6 @@
             case (2):
                 ProductsController::addToFavorites();
                 break;
-            case (3):
-                pagesController::actionSetting();   // ich darf das actionSetting nicht static machen.  
-                break;
-            default:
-                break;
         }
     }
 
@@ -156,6 +151,8 @@
             </div>
             <?endif;?>
         </section>
+
+        <!-- include footer on all pages except Login, Sing Up and reset Password -->
 
         <?
             if($pageTitle != 'Login' and $pageTitle != 'Sing Up' and $pageTitle != 'Passwort zurücksetzen') 
