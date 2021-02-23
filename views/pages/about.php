@@ -1,8 +1,15 @@
-<header class="page-header">
+<!-- 
+====================
+== Mahmoud Mater
+== Molham Al-khodari
+====================
+-->
+
+<header class="page-header">    <!--Logo-->
     <h1>Veganer Land</h1>
     </header>
 
-    <article class="team-blocks">
+    <article class="team-blocks">   <!--start Team block-->
     <h2 id="team">Team</h2>
     <div class="row">
         <div class="column">
@@ -36,9 +43,9 @@
             </div>
         </div>
     </div>
-    </article>
-    <!-- code for the menu -->
-    <nav class="menu-bottom">
+    </article>  <!--end Team block-->
+
+    <nav class="menu-bottom">   <!-- start navbar -->
         <ul>
             <li class="menu-item">
                 <a href="?c=pages&a=homepage" class="logo" title="zur Startseite">
@@ -71,9 +78,9 @@
                 </a>
             </li>
         </ul>
-    </nav>
-    <!-- information about the company and products for customers. -->
-    <article id="überblick">
+    </nav>  <!-- end navbar -->
+
+    <article id="überblick">    <!-- information about the company and products for customers. -->
         <h2>Überblick</h2>
             <h3 id="Tradition">
                 <strong>Tradition</strong>
@@ -100,6 +107,7 @@
                 weiterzuentwickeln und zu verbessern.</strong> <br><br>
                 
     </article>
+
     <article id="AGB">
         <h2>AGB</h2>
         <p>
@@ -123,7 +131,6 @@
                 <li>Die Verträge mit dem Kunden werden ausschließlich in deutscher Sprache geschlossen.</li>
             </ol>
             <h2>2. Urheberrechte/ Rechte Dritter</h2>
-            <!--We don't get pictures from customers, but who cares.-->
             <ol>
                 <li>
                     Der Kunde ist für die inhaltliche Richtigkeit der übermittelten Daten verantwortlich. 
