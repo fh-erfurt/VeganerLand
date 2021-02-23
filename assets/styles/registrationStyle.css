@@ -40,3 +40,11 @@ button,
     margin-block-end: auto;
     height: 25px;
 }
+
+
+/* inputs form  */
+
+input[class="form-input"] {
+    width: 250px;
+    height: 25px;
+}
