@@ -10,22 +10,23 @@ class Products extends BaseModel
         'cat'       => ['type' => BaseModel::TYPE_STRING], 
         'stdPrice'  => ['type' => BaseModel::TYPE_FLOAT],
     ];
+
+    // Deleting and adding products from the favorite list and shoping cart would be used in different controllers
     
     public static function addToCart()
     {
-        if (isset($_SESSION['custId'])) 
+        if (isset($_SESSION['custId'])) // user should be logged in first
         {
             $idC = $_SESSION['custId'];
-            if (isset($_POST['addCart'])) 
+            if (isset($_POST['addCart'])) // user put a product into cart
             {
-                // $_POST['addCart'] → Id of product.
-                if (!empty($_POST['qty']))
+                if (!empty($_POST['qty'])) // Number is necessary
                 {
                     $item = $_POST['addCart'];
                     $itemdata = self::find("prodId = '$item'");
                     $qty = $_POST['qty'];
                     $check = OrderItems::find("custId = '$idC' AND prodId = '$item' AND qyt = '$qty'");
-                    if (empty($check)) 
+                    if (empty($check)) // if the products are not in database table cart -> insert
                     {
                         try 
                         {
@@ -39,7 +40,7 @@ class Products extends BaseModel
                             echo 'Update fehlgeschlagen: ' . $e->getMessage();
                         }
                     }
-                    else
+                    else // // if the products are in database table cart -> update
                     {
                         $idI = $check[0]['itemId'];
                         try 
@@ -64,9 +65,9 @@ class Products extends BaseModel
     
     public static function removeFromCart()
     {
-        if (isset($_POST['delete'])) 
+        if (isset($_POST['delete'])) // check if the user wants to delete a product from cart
         {
-            $id = $_POST['delete'];
+            $id = $_POST['delete']; 
             $check = Orders::find("itemId = '$id'");
 
             if (empty($check))
