@@ -144,22 +144,12 @@
             $controller->render();
         ?>
 
-        <section>
-            <?if (isset($error)) : ?>
-            <div class="error">
-                <?=$error?>
-            </div>
-            <?endif;?>
-        </section>
-
         <!-- include footer on all pages except Login, Sing Up and reset Password -->
-
         <?
             if($pageTitle != 'Login' and $pageTitle != 'Sing Up' and $pageTitle != 'Passwort zurücksetzen') 
             {
                 require_once TEMPLATESPATH.'footer.php';
             }
         ?>
-
     </body>
 </html>
