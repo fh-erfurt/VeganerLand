@@ -7,11 +7,11 @@
 
 <form class="login-form" name="registration" action="" method="post">
    <div class="container">
-      <header class="head-form">
+      <header class="head-form"> <!--form text-->
          <h2>Konto erstellen</h2>
          <p>Notwendig sind Vorname, Nachname, Email und Passwort.</p>
       </header>
-      <div class="field-set">
+      <div class="field-set"> <!--inputs-->
          <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Vorname" value="<?=htmlspecialchars($_POST['firstname'] ?? '')?>" required>
          <input class="form-input" id="lastname"  type="text" name="lastname" placeholder="Nachname" value="<?=htmlspecialchars($_POST['lastname'] ?? '')?>" required> <br>
 
@@ -38,6 +38,7 @@
          <input class="form-input" id="zip" type="text" name="zip" placeholder="Postleitzahl" value="<?=htmlspecialchars($_POST['zip'] ?? '')?>">
          <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=htmlspecialchars($_POST['city'] ?? '')?>">
          
+         <!--submit and link for login page-->
          <button id="submit" name="submit" type="submit"> Anmelden </button> <br>
          <spam id ="login"><a href="?c=pages&a=login" title="Log In">Wen Sie schon ein Konto haben, können Sie sich hier anmelden.</a></spam>
       </div>
