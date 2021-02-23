@@ -5,11 +5,11 @@
 -->
 
 
-<form class="login-form" name="registration" action="" method="post">
-   <div class="container" style="height:100%">
+form class="login-form" name="registration" action="" method="post">
+   <div class="container">
       <header class="head-form">
-         <h2>Sing Up</h2>
-         <p>Es geht schnell und einfach</p>
+         <h2>Konto erstellen</h2>
+         <p>Notwendig sind Vorname, Nachname, Email und Passwort.</p>
       </header>
       <div class="field-set">
          <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Vorname" value="<?=htmlspecialchars($_POST['firstname'] ?? '')?>" required>
@@ -30,17 +30,16 @@
          <input type="radio" name="gender" id="divers" value="divers"> <br>
          </div>
 
-         <input class="form-input" type="phone" name="phone" id="phone" placeholder="Phone" value="<?=htmlspecialchars($_POST['phone'] ?? '')?>"><br>
+         <input class="form-input" type="phone" name="phone" id="phone" placeholder="Telefonnummer" value="<?=htmlspecialchars($_POST['phone'] ?? '')?>"><br>
 
-         <input class="form-input" id="street" type="text" name="street" placeholder="Straße" value="<?=htmlspecialchars($_POST['street'] ?? '')?>" ><br>
+         <input class="form-input" id="street" type="text" name="street" placeholder="Straße" value="<?=htmlspecialchars($_POST['street'] ?? '')?>" >
          <input class="form-input" id="number" type="number" name="number" placeholder="Hausnummer" value="<?=htmlspecialchars($_POST['number'] ?? '')?>" > <br>
                      
+         <input class="form-input" id="zip" type="text" name="zip" placeholder="Postleitzahl" value="<?=htmlspecialchars($_POST['zip'] ?? '')?>">
          <input class="form-input" id="city" type="text" name="city" placeholder="Stadt" value="<?=htmlspecialchars($_POST['city'] ?? '')?>">
-         <input class="form-input" id="zip" type="text" name="zip" placeholder="ZIP" value="<?=htmlspecialchars($_POST['zip'] ?? '')?>">
          
-         <button id="submit" name="submit" type="submit"> Register </button> <br>
-         <spam id ="login"><a href="?c=pages&a=login" title="go to Login page"> hast du schon ein Konto! melde dich an</a></spam>
+         <button id="submit" name="submit" type="submit"> Anmelden </button> <br>
+         <spam id ="login"><a href="?c=pages&a=login" title="Log In">Wen Sie schon ein Konto haben, können Sie sich hier anmelden.</a></spam>
       </div>
    </div>
 </form>
-
