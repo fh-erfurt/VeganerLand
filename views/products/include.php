@@ -19,14 +19,15 @@
                 <label for="regional">Regional</label>
                 <input class="form-control" type="checkbox" name="regional" id="regional" value="regional" />
 
-                <label for="price">price</label>
-                <input class="form-control" type="text" name="price" id="price" placeholder="mindest price" />
+                <label for="price">Preis</label>
+                <input class="form-control" type="text" name="price" id="price" placeholder="min. Preis" />
 
                 <label for="weight">Wähle ein Gewicht:</label>
                 <select class="form-control" name="weight" id="weight">
                     <option value="">-</option>
                     <option value="Stück">Stück</option>
                     <option value="100g">100g</option>
+                    <option value="150g">150g</option>
                     <option value="250g">250g</option>
                     <option value="500g">500g</option>
                     <option value="1kg">1kg</option>
@@ -64,8 +65,8 @@
                                     <input class="form-input" type="hidden" name = "fav" value="<?=$products[$idx][$prodidx]['prodId']?>">
                                 </form>
                                 <form class="card-footer" method="post" id="<?=$products[$idx][$prodidx]['prodId']?>_Cart">
-                                    <button class="btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Cart')" id="submit" name="addCart" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
-                                    <input type = "hidden" name = "submit" value = "<?=$products[$idx][$prodidx]['prodId']?>">
+                                    <button class="btn" onclick="sendProductData(event, '<?=$products[$idx][$prodidx]['prodId']?>_Cart')" id="addCart" name="addCart" type="submit" value="<?=$products[$idx][$prodidx]['prodId']?>">In den Warenkorb</button>
+                                    <input type = "hidden" name = "addCart" value = "<?=$products[$idx][$prodidx]['prodId']?>">
                                     <input  class="qty" id="qty" name="qty" type="number" min="1">
                                 </form>
                                 <? } ?>
