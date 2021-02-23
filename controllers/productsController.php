@@ -87,7 +87,7 @@ class ProductsController extends Controller
             {
                 case 'identify':
 
-                    $this->removeFromCart();
+                    Products::removeFromCart();
             
                     $id = $_SESSION['custId'];
                     
@@ -168,7 +168,6 @@ class ProductsController extends Controller
                                 catch (\PDOException $e)
                                 {
                                     viewError("Eintrag fehlgeschlagen.");
-                                    echo 'Update fehlgeschlagen: ' . $e->getMessage();
                                 }
 
                                 $address = Address::find("street = '$street' AND number = '$number' AND zip = '$zip' AND city = '$city'");
@@ -197,7 +196,6 @@ class ProductsController extends Controller
                             catch (\PDOException $e) 
                             {
                                 viewError("Bestellung fehlgeschlagen.");
-                                echo 'Update fehlgeschlagen: ' . $e->getMessage();
                             }
                          } 
                          else 
