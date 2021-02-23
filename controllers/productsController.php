@@ -4,20 +4,21 @@ class ProductsController extends Controller
 {
     private function getProductsByCategory()
     {
-        $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
-        $page = $_GET['a'];
+        $cat = isset($_GET['cat']) ? $_GET['cat'] : ''; //looks if we're on a sub-site
+        $page = $_GET['a']; //gets the name of the site
     
-        $result = array();
+        $result = array(); //an empty array for saving informations
+        //looks if we are on a sub-site. If not it gets all categories related to the page (in the database: main_sub)
         $catList = (!empty($cat)) ? Category::findOne('catId', "descrip LIKE '%$cat'") : Category::findOne('catId', "descrip LIKE '$page%'");
         
-        for ($idx = 0; $idx < count($catList); $idx++)
+        for ($idx = 0; $idx < count($catList); $idx++) //given there can be a bunch of entries → start of the for-loop
         {
             $catId      = $catList[$idx]["catId"];
-            $info       = Products::find("catId = '$catId'");
-            array_push($result, $info);
+            $info       = Products::find("catId = '$catId'"); //finds all products that have the category and...
+            array_push($result, $info); // ...pushes them into the array.
         }
 
-        $this->setParams('products', $result);
+        $this->setParams('products', $result); // Note: To get the name of the product one has to ask for $products[0][0]['descrip'] to get the first entry.
     }
 
     public function actionFruits()
@@ -40,7 +41,7 @@ class ProductsController extends Controller
     {
         $bargain = array();
 
-        $info = Products::find("stdPrice < 1.50");
+        $info = Products::find("stdPrice < 1.50"); //This in and out itself would be fine, but bargain.php uses the include so the products need an extra push.
         array_push($bargain, $info);
 
         $this->setParams('products', $bargain);
@@ -54,16 +55,16 @@ class ProductsController extends Controller
         if (isset($_POST['submitSearch'])) 
         {
             $search = $_POST['search'];
-            setcookie("search", $search);
+            setcookie("search", $search); //Sets a cookie in case the site reloads and the POST disappears.
         }
         else
         {
-            $search = $_COOKIE['search'];
+            $search = $_COOKIE['search']; //Here is the cookie again.
         }
         $result = array();
         
-        $info = Products::find("descrip LIKE '%$search%'");
-        if (!empty($info))
+        $info = Products::find("descrip LIKE '%$search%'"); //Same as with actionBargain()
+        if (!empty($info)) //Looks if there is something similar in the database
         {
             array_push($result, $info);
             
@@ -81,18 +82,18 @@ class ProductsController extends Controller
     public function actionCart()
     {
         $do = isset($_GET['do']) ? $_GET['do'] : ''; 
-        if (isset($_SESSION['custId'])) 
+        if (isset($_SESSION['custId'])) //Technically speaking one can only access the Cart when logged in, but some might try to get around it.
         {
             switch ($do) 
             {
-                case 'identify':
+                case 'identify': //Gets the information for the List
 
                     Products::removeFromCart();
             
                     $id = $_SESSION['custId'];
                     
-                    $cartList = OrderItems::find("custId = '$id' AND isSend = 'f'");
-                    if (empty($cartList))
+                    $cartList = OrderItems::find("custId = '$id' AND isSend = 'f'"); //Looks if the customer has any products in the cart. If the products have been send then isSend has the value 't'.
+                    if (empty($cartList)) 
                     {
                         $this->setParams('emptyList', true);
                         break;
@@ -106,13 +107,13 @@ class ProductsController extends Controller
                     $priceList = array();
                     $ttPrice = 0;
         
-                    for ($idx = 0; $idx < count($cartList); $idx++) 
+                    for ($idx = 0; $idx < count($cartList); $idx++) //Loop to get the information on the products.
                     {
                         $id = $cartList[$idx]['prodId'];
                         $productInfo = Products::find("prodId = '$id'");
                         array_push($productList, $productInfo);
         
-                        $price = number_format($cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'], 2);
+                        $price = number_format($cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'], 2); //number_format to get the 0 behind the point
                         array_push($priceList, $price);
                         $ttPrice += $price;
                     }
@@ -120,28 +121,28 @@ class ProductsController extends Controller
                     $this->setParams('cart', $cartList);
                     $this->setParams('prodInfo', $productList);
                     $this->setParams('price', $priceList);
-                    $this->setParams('ttprice', number_format($ttPrice, 2));
+                    $this->setParams('ttprice', number_format($ttPrice, 2)); //I wanted to do the number_format on line 118, but it didn't work.
 
                     break;
-                case 'others':
+                case 'others': //Stuff to do when getting the delivery address
                     $idC = $_SESSION['custId'];
     
                     // Information on the customer.
-                    $custInfo = Customers::find("custId = '$idC'");
+                    $custInfo = Customers::find("custId = '$idC'"); // Gets all information on the customer.
     
                     // Information on the order.
-                    $orderInfo = OrderItems::find("custId = '$idC'");
+                    $orderInfo = OrderItems::find("custId = '$idC' AND isSend = 'f'"); //Get all product-references needed.
     
                     $idA = $custInfo[0]['addressId'];
                     
                     // Check if there is an adressId
-                    if (!empty($idA)) 
+                    if (!empty($idA)) //Looks if there is an address for the customer registered.
                     {
-                        $addressInfo = Address::find("addressId = '$idA'");
+                        $addressInfo = Address::find("addressId = '$idA'"); //gets the information on it and shows them in the form.
                         $this->setParams('addressInfo', $addressInfo);
                     }
         
-                    if (isset($_POST['address'])) 
+                    if (isset($_POST['address'])) //The send-button has been pushed.
                     {
                         // Check if the address is valid.
                         if (!empty($_POST['street'])
@@ -157,7 +158,7 @@ class ProductsController extends Controller
     
                              $address = Address::find("street = '$street' AND number = '$number' AND zip = '$zip' AND city = '$city'");
                             
-                            if (empty($address))
+                            if (empty($address)) //New entry in the database if the address doesn't exists.
                             {
                                 try
                                 {
@@ -178,7 +179,7 @@ class ProductsController extends Controller
                              // Ready to order!!
                             try 
                             {
-                                for ($idx = 0; $idx < count($orderInfo); $idx++) 
+                                for ($idx = 0; $idx < count($orderInfo); $idx++) //A loop for a mass-INSERT into orders and a mass-UPDATE of orderitem's isSend
                                 {
                                     $idI = $orderInfo[$idx]['itemId'];
                                     
@@ -203,6 +204,8 @@ class ProductsController extends Controller
                             viewError("Empfangsadresse unvollständig.");
                          }
                     } 
+                    break;
+                default: //Do nothing on default.
                     break;
             }
             
