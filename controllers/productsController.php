@@ -112,7 +112,7 @@ class ProductsController extends Controller
                         $productInfo = Products::find("prodId = '$id'");
                         array_push($productList, $productInfo);
         
-                        $price = $cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'];
+                        $price = number_format($cartList[$idx]['qyt']*$productList[$idx][0]['stdPrice'], 2);
                         array_push($priceList, $price);
                         $ttPrice += $price;
                     }
@@ -120,7 +120,7 @@ class ProductsController extends Controller
                     $this->setParams('cart', $cartList);
                     $this->setParams('prodInfo', $productList);
                     $this->setParams('price', $priceList);
-                    $this->setParams('ttprice', $ttPrice);
+                    $this->setParams('ttprice', number_format($ttPrice, 2));
 
                     break;
                 case 'others':
