@@ -6,9 +6,9 @@
     */
 
     $do = isset($_GET['do']) ? $_GET['do'] : '';
-    if ($do == 'identify') 
+    if ($do == 'identify') // check if (do equal identify) so the user can enter his email first
     {
-?>
+    ?>
         <form class="login-form" action="" method="post">
             <div class="container">
                 <header class="head-form">
@@ -25,15 +25,15 @@
                 </div>
                     <!--Sign Up button -->
                 <div class="other">
-                    <button class="btn submits sign-up"><a href="?c=registration&a=registration" title="Konto erstellen">Registrieren</a> </button>
+                    <button class="submits"><a href="?c=registration&a=registration" title="Konto erstellen">Registrieren</a> </button>
                 </div>
             </div>
         </form>
-<?php
+    <?php
     }
-    elseif($do == 'setPassword')
+    elseif($do == 'setPassword') // check if (do equal setPassword) so the user can chenge his password.
     {
-?>
+    ?>
             <!--Set new password form -->
         <form class="login-form" method="post">
             <div class="container">
@@ -46,5 +46,5 @@
                 <button id="submitResetPassword" type="submit" name="submit">Bestätigen</button>
             </div>
         </form>
-<?php
+    <?php
     }
