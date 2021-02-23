@@ -1,7 +1,11 @@
 <? 
-
-    // @author Molham Al-Kodari, @author Jessica Eckardtsberg
-    // @version 1.0.0
+    /*
+    ================================
+    == @author Molham Al-khodari
+    == @author Jessica Eckardtsberg 
+    == @author @version 1.0.0 
+    ================================
+    */
 
     // Load files from the config.
     require_once './config/init.php';
