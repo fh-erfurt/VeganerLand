@@ -7,13 +7,13 @@
 
 <div class="con">
         <form class="form-horizontal" method="post">
-                <header class="head-form">
+                <header class="head-form"> <!--some text-->
                         <h2>Konto bearbeiten</h2>
                         <p>Geben Sie einfach Ihre neuen Daten ein.</p>
                         <p>(Adresse und Telefonnummer sind nicht notwendig.)</p>
                 </header>
 
-                <div class="field-set">
+                <div class="field-set"> <!--inputs-->
                         <input class="form-input" type="hidden" name = "custId" value="<?php echo $customerInfo['custId']; ?>" />
                         <input class="form-input" type="hidden" name = "addressId" value="<?php echo $customerInfo['addressId']; ?>" />
 
@@ -58,39 +58,34 @@
 
                 </div>
 
-                        <div>
+                        <div> <!--submit-->
                                 <button class="save" id="submit" type="submit" name="submit">Speichern</button>
                         </div>
         </form>
 
-        <!-- favotit list in setting -->
+        <!-- start favotit list in setting -->
 
         <div class="favorit-list">
                 <h3>Favoritlist (<?echo Favorits::ItemsFavorits();?>)</h3>
                 <table class="table-favorit">
-                <tr>
-                        <th></th>
-                        <th>Produkt</th>
-                        <th>Preis</th>
-                </tr>
-                <?
-                for ($idx = 0; $idx < count($prodInfo); $idx++) 
-                {
-                ?>
-                <tr>
-                        <td><form method = "post"><button name="delete" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">X</button></form></td>
-                        <td><?=ucfirst(strtr($prodInfo[$idx][0]['descrip'],"_"," "))?></td>
-                        <td><? echo $prodInfo[$idx][0]['stdPrice']." €"; ?></td>
-                        <td>
-                        <form method = "post">
-                        <input  class="qty" id="qty" name="qty" type="number" min="1">
-                        <button name="toCart" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">In den Warenkorb</button>
-                        </form>
-                        </td>
-                </tr>
-                <?              
-                }
-                ?>
+                        <tr>
+                                <th></th>
+                                <th>Produkt</th>
+                                <th>Preis</th>
+                        </tr>
+                        <? for ($idx = 0; $idx < count($prodInfo); $idx++) { ?> <!--start for-->
+                        <tr>
+                                <td><form method = "post"><button name="delete" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">X</button></form></td>
+                                <td><?=ucfirst(strtr($prodInfo[$idx][0]['descrip'],"_"," "))?></td>
+                                <td><? echo $prodInfo[$idx][0]['stdPrice']." €"; ?></td>
+                                <td>
+                                        <form method = "post">
+                                                <input  class="qty" id="qty" name="qty" type="number" min="1">
+                                                <button name="toCart" type="submit" value="<?=$prodInfo[$idx][0]['prodId']?>">In den Warenkorb</button>
+                                        </form>
+                                </td>
+                        </tr>
+                        <? } ?> <!--end for-->
                 </table>
         </div>
 </div>
