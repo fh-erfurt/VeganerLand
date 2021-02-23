@@ -9,10 +9,11 @@
 
 <div>
 
-    <div class="filter">
+    <div class="filter">    <!--start Filter-->
         <form method="post" id="form">
-            <h3>Filter</h3>
+            <h3>Filter</h3> <!--title-->
 
+                <!--inputs-->
                 <label for="bio">Bio</label>
                 <input class="form-control" type="checkbox" name="bio" id="bio" value="bio" />
 
@@ -33,10 +34,11 @@
                     <option value="1kg">1kg</option>
                 </select>
 
+                <!--submit-->
                 <input class="submitFilter" onclick="reload(event)" type="submit" name="submitFilter" formaction="?c=products&a=filter" value="Filtern">
 
         </form>
-    </div>
+    </div>  <!--end Filter-->
 
     <div class="block-container" id="products">
         <p id="alert"></p>
