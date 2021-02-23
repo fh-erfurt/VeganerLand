@@ -1,4 +1,3 @@
-
 <!-- 
 ====================
 == Molham Al-khodari
@@ -16,7 +15,6 @@
     <h1>Willkommen bei <em>VeganerLand</em></h1>
     <p>VeganerLand ist eine Website zum Verkauf von Obst- und Gemüseprodukten.</p>
     <a href="?c=registration&a=registration" title="Konto erstellen">
-        <!-- <input type="submit" class="homepage-button" value="SIGN UP HERE"> -->
         <button class="homepage-button">Konto erstellen</button>
     </a>
 </section>
