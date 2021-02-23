@@ -225,7 +225,7 @@ class ProductsController extends Controller
             if(!empty($_POST['bio']))
             {
                 $bioFilter = $_POST['bio'];
-                $info = Products::find("comment LIKE '%$bioFilter%'"); 
+                $info = Products::find("comment LIKE '%$bioFilter%'"); //Same as with actionBargain()
             }
             // filter by regional
             if(!empty($_POST['regional']))
@@ -334,7 +334,7 @@ class ProductsController extends Controller
             // save the info from the database in the array
             $result = array();
 
-            if (!empty($info))
+            if (!empty($info)) //Looks if there is something similar in the database
             {
                 array_push($result, $info);
 
