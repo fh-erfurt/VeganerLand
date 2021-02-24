@@ -40,7 +40,7 @@
          
          <!--submit and link for login page-->
          <button id="submit" name="submit" type="submit"> Anmelden </button> <br>
-         <spam id ="login"><a href="?c=pages&a=login" title="Log In">haben Sie schon ein Konto! melden sie sich hier</a></spam>
+         <spam id ="login"><a href="?c=pages&a=login" title="Log In">Wenn Sie schon ein Konto haben haben, können Sie sich hier anmelden.</a></spam>
       </div>
    </div>
 </form>
