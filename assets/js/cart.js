@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (inputStreet.value == "" || inputNumber.value == "" || inputZip.value == "" || inputCity.value == "") {
-                window.alert("All field are required!");
+                window.alert("Alle Felder müssen ausgefüllt werden.");
                 if (inputStreet.value == "") {
                     inputStreet.focus({ preventScroll: true });
                     inputStreet.style.border = "solid red"
