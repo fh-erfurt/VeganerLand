@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (inputEmail.value == "") {
-                window.alert("please Enter your Email");
+                window.alert("Geben Sie bitte eine Email an.");
                 inputEmail.focus({ preventScroll: true });
                 inputEmail.style.border = "solid red";
                 valid = false;
             }
 
             if (inputPassword.value == "") {
-                window.alert("please Enter your Password");
+                window.alert("Geben Sie bitte ein Passwort ein.");
                 inputPassword.focus({ preventScroll: true });
                 inputPassword.style.border = "solid red";
                 valid = false;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
         if (!inputPassword || inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
-            window.alert("the Passwords not safe enough");
+            window.alert("Das Passwort ist nicht sicher genug.");
             inputPassword.focus({ preventScroll: true });
             inputPassword.style.border = "solid red";
             inputPasswordagain.focus({ preventScroll: true });
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (inputPassword.value != inputPasswordagain.value) {
-            window.alert("the Passwords must be the same");
+            window.alert("Die Passwörter sind nicht identisch.");
             inputPassword.focus({ preventScroll: true });
             inputPassword.style.border = "solid red";
             inputPasswordagain.focus({ preventScroll: true });
