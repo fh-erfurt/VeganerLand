@@ -9,7 +9,7 @@
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
     if (x == "") {
-        alert("Name must be filled out");
+        alert("Geben Sie bitte Ihren Namen an.");
         return false;
     }
 }
@@ -29,21 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (!inputFirstname || inputFirstname.value.length < 2) {
-                window.alert("please Enter your firstname");
+                window.alert("Geben Sie bitte Ihren Vornamen an.");
                 inputFirstname.focus({ preventScroll: true });
                 inputFirstname.style.border = "solid red"
                 valid = false;
             }
 
             if (!inputLastname || inputLastname.value.length < 2) {
-                window.alert("please Enter your lastname");
+                window.alert("Geben Sie bitte Ihren Familiennamen an.");
                 inputLastname.focus({ preventScroll: true });
                 inputLastname.style.border = "solid red";
                 valid = false;
             }
 
             if (inputEmail.value == "") {
-                window.alert("please Enter your Email");
+                window.alert("Geben Sie bitte Ihre Email an.");
                 inputEmail.focus({ preventScroll: true });
                 inputEmail.style.border = "solid red";
                 valid = false;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
             if (!inputPassword || inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
-                window.alert("the Passwords not safe enough");
+                window.alert("Das Passwort ist nicht sicher genug.");
                 inputPassword.focus({ preventScroll: true });
                 inputPassword.style.border = "solid red";
                 inputPasswordagain.focus({ preventScroll: true });
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (inputPassword.value != inputPasswordagain.value) {
-                window.alert("the Passwords must be the same");
+                window.alert("Die Passwörter müssen identisch sein.");
                 inputPassword.focus({ preventScroll: true });
                 inputPassword.style.border = "solid red";
                 inputPasswordagain.focus({ preventScroll: true });
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         } else if (this.status == 404) {
                             alert(this.responseText);
                         } else {
-                            alert('Fehler beim Signup');
+                            alert('Es gab einen Fehler beim Erstellen des Kontos.');
                         }
                     }
                 };
