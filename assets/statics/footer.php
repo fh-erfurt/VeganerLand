@@ -1,4 +1,9 @@
-<!-- Molham Al-khodari -->
+<!-- 
+====================
+== Mahmoud Matar
+== Molham Al-khodari
+====================
+-->
 
 <link rel="stylesheet" href="<?=STYLESPATH.'footerStyle.css'?>">
 <!-- nur Icons aus w3schools, wie gesprochen (mit Herrn Kurse) -->

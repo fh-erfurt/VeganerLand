@@ -1,9 +1,9 @@
 <? 
     /*
     ================================
-    == @author Molham Al-khodari
-    == @author Jessica Eckardtsberg 
-    == @author @version 1.0.0 
+    == Molham Al-khodari
+    == Jessica Eckardtsberg 
+    == Mahmoud Matar 
     ================================
     */
 

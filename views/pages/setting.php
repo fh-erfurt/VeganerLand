@@ -1,7 +1,8 @@
 <!-- 
 ================================
-== @author Molham Al-khodari 
-== @author Jessica Eckardtsberg 
+== Molham Al-khodari 
+== Jessica Eckardtsberg 
+== Mahmoud Matar
 ================================
 -->
 
