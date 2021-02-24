@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (inputEmail.value == "") {
-                window.alert("please Enter your Email");
+                window.alert("Geben Sie bitte Ihre Email an.");
                 inputEmail.focus({ preventScroll: true });
                 inputEmail.style.border = "solid red"
                 valid = false;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (inputPassword.value !== "") {
                 var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
                 if (inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
-                    window.alert("the Passwords not safe enough");
+                    window.alert("Das Passwort ist nicht sicher genug.");
                     inputPassword.focus({ preventScroll: true });
                     inputPassword.style.border = "solid red"
                     valid = false;
