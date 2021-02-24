@@ -14,7 +14,7 @@
 <div class="footer">
     <div>
         <a class="backToTop" href="#top" title="return to Top">
-            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            <i class="fa fa-arrow-up"></i>
         </a>
     </div>
     <div class="contain">
