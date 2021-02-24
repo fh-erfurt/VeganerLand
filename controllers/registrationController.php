@@ -147,7 +147,7 @@ class RegistrationController extends Controller
                                 } 
                                 else 
                                 {
-                                    viewError('Passwort nicht sicher genug');
+                                    viewError('Das Passwort ist nicht sicher genug.');
 
                                     if (isset($_GET['ajax'])) 
                                     {
@@ -159,26 +159,26 @@ class RegistrationController extends Controller
                             } 
                             else 
                             {
-                                viewError('Password and Repeat Password must be the same!!');
+                                viewError('Die Passwörter müssen übereinstimmen.');
                             }
                         } else 
                         {
-                            viewError("Email already beeing used");
+                            viewError("Die Email wird bereits verwendet.");
                         }
                     }
                     else
                     {
-                        viewError("lastname not found");
+                        viewError("Geben Sie bitte einen gültigen Familiennamen an.");
                     }
                 }
                 else
                 {
-                    viewError("firstname not found");
+                    viewError("Geben Sie bitte einen gültigen Vornamen an.");
                 }
             } 
             else 
             {
-                viewError('All fields must be filled');
+                viewError('Alle Felder müssen ausgefüllt sein.');
             }
         } 
     }
