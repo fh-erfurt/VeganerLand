@@ -12,19 +12,19 @@
     <li class="dropdown item"> <a>Obst</a>
       <div class="dropdown-content">
         <?
-        $fruits = Category::getCategoryName('fruits');
+        $fruits = Category::getCategoryName('fruits'); //Dynamic dropdown-menu for fruit-categories
         foreach ($fruits as $cat)
         {
-          $name = ($cat[0] === 'alle') ? 'a=fruits' : "a=fruits&cat=$cat[1]";
+          $name = ($cat[0] === 'alle') ? 'a=fruits' : "a=fruits&cat=$cat[1]"; //creats the right link for all the categories.
           ?>
-        <a href="?c=products&<?=$name?>"><? echo ucfirst($cat[0]); ?></a> <?
+        <a href="?c=products&<?=$name?>"><? echo ucfirst($cat[0]); ?></a> <? //The 'name' shows up in the dropdown.
         } ?>
       </div>
     </li>
     <li class="dropdown item"><a>Gemüse</a>
       <div class="dropdown-content">
         <?
-        $vegetables = Category::getCategoryName('vegetables');
+        $vegetables = Category::getCategoryName('vegetables'); //Same as with fruits.
         foreach ($vegetables as $cat)
         {
           $name = ($cat[0] === 'alle') ? 'a=vegetables' : "a=vegetables&cat=$cat[1]";
