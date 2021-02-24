@@ -33,6 +33,10 @@ Sollte die Dokumentation nicht ordentlich angezeigt von dem Link im Impressum, k
 Email: mustermann@gmail.de <br>
 Password: Test321.
 
+## Link zu Ihrem freigegebenen Repository
+
+https://github.com/fh-erfurt/VeganerLand
+
 ## Passwort zurücksetzen
 
 1. Gehsen Sie zu Login Seite
