@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return valid;
         });
     }
+    
     if (btnSubmitResetPassord) {
+    btnSubmitResetPassord.addEventListener('click', function(event) {
+        valid = true;
 
         var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/m;
         if (!inputPassword || inputPassword.value.length < 8 || !inputPassword.value.macht(regex)) {
@@ -59,8 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
             inputPasswordagain.style.border = "solid red";
             valid = false;
         }
+            return valid;
+        });
     }
-
 
     if (inputPassword) {
         inputPassword.addEventListener('keyup', function() {
