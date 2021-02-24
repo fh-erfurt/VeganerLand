@@ -193,7 +193,7 @@ INSERT INTO `products` (`prodId`, `descrip`, `stdPrice`, `catId`, `comment`) VAL
 (NULL, 'judasohr', '6.95', 8, 'Bio,_250g'),
 (NULL, 'pfifferlinge', '5.55', 8, 'Bio,_Regional,_250g'),
 (NULL, 'steinpilze', '4.55', 8, 'Regional,_250g'),
-(NULL, 'championg_(klasse_a)', '4.55', 8, 'Regional,_250g'),
+(NULL, 'champignons_(klasse_a)', '4.55', 8, 'Regional,_250g'),
 (NULL, 'tomaten', '3.95', 6, 'Bio,_500g'),
 (NULL, 'paprika_(gelb)', '5.40', 6, '3_Stück'),
 (NULL, 'paprika_(grün)', '5.40', 6, '3_Stück'),
