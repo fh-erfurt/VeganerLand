@@ -20,25 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (inputEmail.value == "") {
-                window.alert("please Enter your Email");
+                window.alert("Geben Sie bitte Ihre Email an.");
                 inputEmail.focus({ preventScroll: true });
                 inputEmail.style.border = "solid red"
                 valid = false;
             }
             if (inputName.value == "") {
-                window.alert("please Enter your name");
+                window.alert("Geben Sie bitte Ihren Namen an.");
                 inputName.focus({ preventScroll: true });
                 inputName.style.border = "solid red"
                 valid = false;
             }
             if (inputSubject.value == "") {
-                window.alert("please Enter your subject");
+                window.alert("Bitte geben Sie den Betreff an.");
                 inputSubject.focus({ preventScroll: true });
                 inputSubject.style.border = "solid red"
                 valid = false;
             }
             if (inputMessage.value == "") {
-                window.alert("please Enter your message");
+                window.alert("Bitte geben Sie eine Nachricht an. Sonst hat das Ganze keinen Sinn.");
                 inputMessage.focus({ preventScroll: true });
                 inputMessage.style.border = "solid red"
                 valid = false;
