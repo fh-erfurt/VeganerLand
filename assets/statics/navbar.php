@@ -59,10 +59,11 @@
         <a href="?c=pages&a=logout">Logout</a>
       </div>
     </li>
+    <li class="item button secondary"><a id="cart" href="?c=products&a=cart&do=identify">Warenkorb(<span id="cartCount"><?=OrderItems::ItemsCart();?></span>)</a></li>
   <?php else : ?>
     <li class="dropdown item button"><a href="?c=pages&a=login">Log In</a></li>
   <?php endif; ?>
 
-      <li class="item button secondary"><a id="cart" href="?c=products&a=cart&do=identify">Warenkorb(<span id="cartCount"><?=OrderItems::ItemsCart();?></span>)</a></li>
+      
   </ul>
 </nav>
