@@ -17,7 +17,7 @@ class PagesController extends Controller
     
     public function actionHomepage()
     {
-        // Here is nothing to do.
+        // Does nothing, because there is nothing to do here.
     }
 
     public function actionLogin()
@@ -55,7 +55,7 @@ class PagesController extends Controller
             } 
             else 
             {
-                viewError("You Email or Password is incorrect");
+                viewError("Ihre Email oder Ihr Passwort sind nicht korrekt.");
             }
         }
     }
@@ -102,7 +102,7 @@ class PagesController extends Controller
                 } 
                 else 
                 {
-                    viewError("There is no such Email");
+                    viewError("Die Email-Addresse ist nicht korrekt.");
                 }
             }
         } 
@@ -140,25 +140,25 @@ class PagesController extends Controller
                         } 
                         else 
                         {
-                            viewError("die Passwörte stimmen nicht überein");
+                            viewError("Die Passwörte stimmen nicht überein.");
                         }
                     }
                 } 
                 else 
                 {
-                    viewError("kein gültige tocken gesendet");
+                    viewError("Es gab einen Fehler bei der Übertragung.");
                 }
             } 
             else 
             {
-                viewError("kein gültige tocken gesendet");
+                viewError("Es gab einen Fehler bei der Übertragung.");
             }
         }
     }
 
     public function actionAbout()
     {
-        // all static .. 
+        // Nothing happens here. Enjoy your break.
     }
 
     public function actionContact()
@@ -188,7 +188,8 @@ class PagesController extends Controller
         // update Favorits
         $this->viewFavorites();
 
-        if (isset($_SESSION['custId'])) {
+        if (isset($_SESSION['custId'])) { // Looks if the user is logged in.
+            //An array to store information.
             $info = ['custId'   => null,
                         'firstName' => null,
                         'lastName'  => null,
@@ -202,7 +203,7 @@ class PagesController extends Controller
                         'city'      => null];
             $custId = $_SESSION['custId'];
     
-            $custInfo = Customers::find("custId = '$custId'");
+            $custInfo = Customers::find("custId = '$custId'"); //Gets all the information about the customer from the database
             $info['custId'] = $custInfo[0]['custId'];
             $info['firstName'] = $custInfo[0]['firstName'];
             $info['lastName'] = $custInfo[0]['lastName'];
@@ -210,10 +211,10 @@ class PagesController extends Controller
             $info['phone'] = $custInfo[0]['phone'];
             $info['password'] = $custInfo[0]['password'];
     
-            $addressId = $custInfo[0]['addressId'];
+            $addressId = $custInfo[0]['addressId']; //The adress is saved in a seperate table and can be empty.
             $info['addressId'] = $addressId;
     
-            if (!empty($addressId)) {
+            if (!empty($addressId)) { //Checks if the customer has saved the adress in the database.
                 $addressInfo = Address::find("addressId = '$addressId'", Address::tableName());
                 $info['street'] = $addressInfo[0]['street'];
                 $info['number'] = $addressInfo[0]['number'];
@@ -221,9 +222,10 @@ class PagesController extends Controller
                 $info['city'] = $addressInfo[0]['city'];
             }
     
-            $this->setParams('customerInfo', $info);
+            $this->setParams('customerInfo', $info); //The information shown on the setting.php at the left.
     
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) { //Some action happen if the customer wants to change the infomation
+                //Array with the infomation in the form.
                 $newInfo = ['custId'    => $_POST['custId'],
                             'email'     => $_POST['email'],
                             'password'  => $_POST['oldPassword'],
@@ -234,36 +236,37 @@ class PagesController extends Controller
                             'zip'       => $_POST['zip'],
                             'city'      => $_POST['city']];
 
+                //Two new variables. One for errors that might occure and one to see if the adress has been changed.
                 $formErrors = 0;
                 $noNewAddress = false;
     
-                if (!empty($_POST['newPassword'])) 
+                if (!empty($_POST['newPassword'])) //Looks if a new password has been entered.
                 {
-                    if (isPasswordSafe($_POST['newPassword'])) 
+                    if (isPasswordSafe($_POST['newPassword'])) //Looks if the password is safe to use.
                     {
-                        $newInfo['password'] = md5($_POST['newPassword']);
+                        $newInfo['password'] = md5($_POST['newPassword']); //Encodes the new password and saves it in the array.
                     } 
                     else 
                     {
-                        $formErrors++;
+                        $formErrors++; //If it isn't save enough there is an error. Because we're (actually I'm) mean the user doesn't get to know this.
                     }
                 }
                 
                 // check whether the email is not specified
                 if (empty($newInfo['email'])) 
                 {
-                    $formErrors++;
+                    $formErrors++; //The user can't delete their email. Errors 1up.
                 } 
                 else 
                 {
                     // Checks if the email has been changed into another email already existing in the database.
                     if (doesEmailExists($newInfo['email'])
                         &&  $newInfo['email'] !== $email) {
-                        $formErrors++;
+                        $formErrors++; //Errors 1up.
                     }
                 }
     
-                // Checks if all fields are filled.
+                // Checks if all fields for the adress are filled.
                 if (!empty($newInfo['street'])
                     &&  !empty($newInfo['number'])
                     &&  !empty($newInfo['zip'])
@@ -273,6 +276,7 @@ class PagesController extends Controller
                     $number = $newInfo['number'];
                     $zip = $newInfo['zip'];
                     $city = $newInfo['city'];
+                    //Looks if the new adress is already in the database.
                     $addressInfo = Address::find("street = '$street' AND
                                                   number = '$number' AND 
                                                   zip    = '$zip'    AND 
@@ -283,21 +287,21 @@ class PagesController extends Controller
                     ||  !empty($newInfo['zip'])
                     ||  !empty($newInfo['city'])) 
                 {
-                    $formErrors++;
+                    $formErrors++; //If it so Errors 1up. The adress has to be complete.
                 } 
                 else 
                 {
-                    $noNewAddress = true;
+                    $noNewAddress = true; //If all are empty then there is no new adress.
                 }
     
-                if ($formErrors !== 0) 
+                if ($formErrors !== 0) //Looks if any errors did happen.
                 {
                     viewError("Update konnte nicht ausgeführt werden. Angaben waren unvollständig oder unzulässig.");
                 } 
                 else 
                 {
                     // Update the Database
-                        if (empty($addressInfo) && !$noNewAddress) //Creats an new entry in sddress table if address doesn't exists there.
+                        if (empty($addressInfo) && !$noNewAddress) //Creats an new entry in address table if address doesn't exists there.
                         { 
                             try 
                             {
@@ -311,12 +315,12 @@ class PagesController extends Controller
                             } 
                             catch (\PDOException $e) 
                             {
-                                echo 'Fehlschlag: ' . $e->getMessage();
+                                viewError("Update fehlgeschlagen.");
                             }
                         } 
                         elseif (!$noNewAddress) 
                         {
-                            $newInfo['addressId'] = $addressInfo[0]['addressId'];
+                            $newInfo['addressId'] = $addressInfo[0]['addressId']; //The new adress is already in the database so we only need the id.
                         }
     
                     // Update Customer Entry
@@ -337,7 +341,7 @@ class PagesController extends Controller
                     } 
                     catch (\PDOException $e) 
                     {
-                        echo 'Update fehlgeschlagen: ' . $e->getMessage();
+                        viewError("Update fehlgeschlagen.");
                     }
 
                     header('Location: ?c=pages&a=setting');
