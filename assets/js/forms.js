@@ -9,7 +9,7 @@
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
     if (x == "") {
-        alert("Name must be filled out");
+        alert("Bitte geben Sie Ihren Namen an.");
         return false;
     }
 }
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var valid = true;
 
             if (!inputFirstname || inputFirstname.value.length < 2) {
-                window.alert("please Enter your firstname");
+                window.alert("Bitte geben Sie Ihren Vornamen an.");
                 firstName.focus({ preventScroll: true });
                 firstName.style.border = "solid red"
                 valid = false;
             }
 
             if (!inputLastname || inputLastname.value.length < 2) {
-                window.alert("please Enter your lastname");
+                window.alert("Bitte geben Sie Ihren Nachnamen an.");
                 lastname.focus({ preventScroll: true });
                 lastname.style.border = "solid red"
                 valid = false;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (password.value != passwordagain.value) {
-                window.alert("the Passwords must be the same");
+                window.alert("Die Passwörter sind nicht identisch.");
                 passwordagain.focus({ preventScroll: true });
                 passwordagain.style.border = "solid red"
                 valid = false;
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         } else if (this.status == 404) {
                             alert(this.responseText);
                         } else {
-                            alert('Fehler beim Signup');
+                            alert('Es gab einen Fehler bei der Erstellung des Kontos.');
                         }
                     }
                 };
