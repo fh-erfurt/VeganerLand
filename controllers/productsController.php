@@ -191,7 +191,7 @@ class ProductsController extends Controller
                                     $stmt = $GLOBALS['db']->prepare($sql2);
                                     $stmt->execute();
             
-                                    header('Location: index.php?c=products&a=cart');
+                                    header('Location: index.php?c=products&a=cart&do=identify');
                                 }
                             } 
                             catch (\PDOException $e) 

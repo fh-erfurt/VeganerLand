@@ -21,7 +21,7 @@
                 <input class="form-control" type="checkbox" name="regional" id="regional" value="regional" />
 
                 <label for="price">Preis</label>
-                <input class="form-control" type="text" name="price" id="price" placeholder="min. Preis" />
+                <input class="form-control" type="text" name="price" id="price" placeholder="max. Preis" />
 
                 <label for="weight">Wähle ein Gewicht:</label>
                 <select class="form-control" name="weight" id="weight">

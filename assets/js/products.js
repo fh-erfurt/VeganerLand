@@ -12,7 +12,7 @@ function sendProductData(event, formData = 'form') {
     var form = document.getElementById(formData);
     var cart = document.getElementById('cartCount');
     var count = cart.innerHTML;
-    
+
     var request = new XMLHttpRequest();
 
     // This somehow works on all pages that deal with products.
@@ -66,7 +66,7 @@ function changeDisplay(index, tag, filter, call = 0) {
             }
         } else {
             // check and filter[call] are strings. parseFloat turns them into numbers (float) so they can be compared.
-            if (parseFloat(check) < parseFloat(filter[call])) {
+            if (parseFloat(check) >= parseFloat(filter[call])) {
                 li[index].style.display = "none";
                 li[index].setAttribute("title", "hidden");
             } else {

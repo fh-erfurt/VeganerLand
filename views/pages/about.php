@@ -6,7 +6,7 @@
 -->
 
 <header class="page-header">    <!--Logo-->
-    <h1>Veganer Land</h1>
+    <h1>VeganerLand</h1>
     </header>
 
     <article class="team-blocks">   <!--start Team block-->

@@ -261,7 +261,7 @@ class PagesController extends Controller
                 {
                     // Checks if the email has been changed into another email already existing in the database.
                     if (doesEmailExists($newInfo['email'])
-                        &&  $newInfo['email'] !== $email) {
+                        &&  $newInfo['email'] !== $info['email']) {
                         $formErrors++; //Errors 1up.
                     }
                 }
